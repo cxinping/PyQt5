@@ -1,3 +1,14 @@
+# -*- coding: utf-8 -*- 
+'''
+    【简介】
+	PyQT5的表格控件选中单元格
+  
+    作者：信平
+    QQ： 759949947	
+    Email: xpws2006@163.com   
+  
+'''
+
 import sys
 from PyQt5.QtWidgets import  *
 from PyQt5 import QtCore  

@@ -1,3 +1,14 @@
+# -*- coding: utf-8 -*- 
+'''
+    【简介】
+	PyQT5中单元格内的文本颜色
+  
+    作者：信平
+    QQ： 759949947	
+    Email: xpws2006@163.com   
+  
+'''
+
 import sys
 from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QTableWidgetItem )
 from PyQt5.QtGui import QBrush,  QColor ,  QFont 

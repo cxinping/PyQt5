@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 '''
     【简介】
-	PyQT5中单元格的基本例子
+	PyQT5中单元格合并例子
   
     作者：信平
     QQ： 759949947	
@@ -27,6 +27,7 @@ class Table(QWidget):
         conLayout.addWidget(tableWidget )
         
         tableWidget.setHorizontalHeaderLabels(['姓名','性别','体重(kg)'])  
+        tableWidget.setSpan(0, 0, 3, 1)   
           
         newItem = QTableWidgetItem("张三")  
         tableWidget.setItem(0, 0, newItem)  
