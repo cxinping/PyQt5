@@ -36,17 +36,20 @@ class Table(QWidget):
         
         for i in range(3):   # 让列宽和图片相同  
            table.setColumnWidth(i , 300)  
-           for i in range(5):   # 让行高和图片相同  
-               table.setRowHeight(i , 200)  
-               for k in range(15): # 27 examples of DDA  
-                   i = k/3  
-                   j = k%3  
-                   item = QTableWidgetItem()  
-                   item.setFlags(Qt.ItemIsEnabled)  #用户点击时表格时，图片被选中  
-                   icon = QIcon(r'.\images\win.png' ) 
-                   item.setIcon(QIcon(icon )  )  
-                                      
-                   table.setItem(i,j,item)  
+        for i in range(5):   # 让行高和图片相同  
+            table.setRowHeight(i , 200)  
+        
+        for k in range(15): # 27 examples of DDA  
+            i = k/3  
+            j = k%3  
+            item = QTableWidgetItem()  
+            item.setFlags(Qt.ItemIsEnabled)  #用户点击时表格时，图片被选中  
+            icon = QIcon(r'.\images\bao%d.png' % k  ) 
+            item.setIcon(QIcon(icon )  )  
+                                    
+            print('e/icons/%d.png i=%d  j=%d' %( k , i , j ) )   
+                   
+            table.setItem(i,j,item)  
         
         conLayout.addWidget( table)  
         self.setLayout(conLayout)
