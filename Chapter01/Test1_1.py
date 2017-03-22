@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+'''
+    【简介】
+	PyQT5的第一个简单例子
+  
+    作者：信平
+    QQ： 759949947	
+    Email: xpws2006@163.com   
+  
+'''
+
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 
