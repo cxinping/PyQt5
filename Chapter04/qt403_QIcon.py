@@ -6,8 +6,10 @@ from PyQt5.QtWidgets  import QWidget , QApplication
 class Icon(QWidget):  
     def __init__(self,  parent = None):  
         super(Icon,self).__init__(parent)    
-        
-        #2
+        self.initUI()
+     
+    #2   
+    def initUI(self):
         self.setGeometry(300,  300,  250,  150)  
         self.setWindowTitle('³ÌÐòÍ¼±ê')  
         self.setWindowIcon(QIcon('./images/cartoon1.ico'))  
