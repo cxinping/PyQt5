@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Support for Qt Interfaces &mdash; PyQt 5.6 Reference Guide</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo_tn.ico"/>
+    <link rel="top" title="PyQt 5.6 Reference Guide" href="index.html" />
+    <link rel="next" title="Support for QVariant" href="pyqt_qvariant.html" />
+    <link rel="prev" title="Support for OpenGL" href="opengl.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyqt_qvariant.html" title="Support for QVariant"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="opengl.html" title="Support for OpenGL"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="support-for-qt-interfaces">
+<h1>Support for Qt Interfaces<a class="headerlink" href="#support-for-qt-interfaces" title="Permalink to this headline">¶</a></h1>
+<p>PyQt5 does not, generally, support defining a class that inherits from more
+than one Qt class.  The exception is when inheriting from classes that Qt
+defines as <em>interfaces</em>, for example
+<a class="reference internal" href="api/qtextobjectinterface.html#PyQt5.QtGui.QTextObjectInterface" title="PyQt5.QtGui.QTextObjectInterface"><code class="xref py py-class docutils literal"><span class="pre">QTextObjectInterface</span></code></a>.</p>
+<p>A Qt interface is an abstract class contains only pure virtual methods and is
+used as a mixin with (normally) a <a class="reference internal" href="api/qobject.html#PyQt5.QtCore.QObject" title="PyQt5.QtCore.QObject"><code class="xref py py-class docutils literal"><span class="pre">QObject</span></code></a> sub-class.  It
+is often used to define the interface that a plugin must implement.</p>
+<p>Note that PyQt5 does not need an equivalent of Qt&#8217;s <code class="docutils literal"><span class="pre">Q_INTERFACES</span></code> macro in
+order to use an interface class.</p>
+<p>The <code class="docutils literal"><span class="pre">textobject.py</span></code> example includedd with PyQt5 demonstrates the use of an
+interface.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="opengl.html"
+                        title="previous chapter">Support for OpenGL</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyqt_qvariant.html"
+                        title="next chapter">Support for <code class="docutils literal"><span class="pre">QVariant</span></code></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyqt_qvariant.html" title="Support for QVariant"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="opengl.html" title="Support for OpenGL"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 Riverbank Computing Limited.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

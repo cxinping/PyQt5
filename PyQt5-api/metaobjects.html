@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Other Support for Dynamic Meta-objects &mdash; PyQt 5.6 Reference Guide</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo_tn.ico"/>
+    <link rel="top" title="PyQt 5.6 Reference Guide" href="index.html" />
+    <link rel="next" title="Support for OpenGL" href="opengl.html" />
+    <link rel="prev" title="Support for Qt Properties" href="qt_properties.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="opengl.html" title="Support for OpenGL"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="qt_properties.html" title="Support for Qt Properties"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="other-support-for-dynamic-meta-objects">
+<h1>Other Support for Dynamic Meta-objects<a class="headerlink" href="#other-support-for-dynamic-meta-objects" title="Permalink to this headline">¶</a></h1>
+<p>PyQt5 creates a <a class="reference internal" href="api/qmetaobject.html#PyQt5.QtCore.QMetaObject" title="PyQt5.QtCore.QMetaObject"><code class="xref py py-class docutils literal"><span class="pre">QMetaObject</span></code></a> instance for any Python
+sub-class of <a class="reference internal" href="api/qobject.html#PyQt5.QtCore.QObject" title="PyQt5.QtCore.QObject"><code class="xref py py-class docutils literal"><span class="pre">QObject</span></code></a> without the need for the equivalent
+of Qt&#8217;s <code class="docutils literal"><span class="pre">Q_OBJECT</span></code> macro.  Most of a <a class="reference internal" href="api/qmetaobject.html#PyQt5.QtCore.QMetaObject" title="PyQt5.QtCore.QMetaObject"><code class="xref py py-class docutils literal"><span class="pre">QMetaObject</span></code></a> is
+populated automatically by defining signals, slots and properties as described
+in previous sections.  In this section we cover the ways in which the remaining
+parts of a <a class="reference internal" href="api/qmetaobject.html#PyQt5.QtCore.QMetaObject" title="PyQt5.QtCore.QMetaObject"><code class="xref py py-class docutils literal"><span class="pre">QMetaObject</span></code></a> are populated.</p>
+<div class="section" id="q-enums-and-q-flags">
+<h2><code class="xref py py-func docutils literal"><span class="pre">Q_ENUMS()</span></code> and <code class="xref py py-func docutils literal"><span class="pre">Q_FLAGS()</span></code><a class="headerlink" href="#q-enums-and-q-flags" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.2.</span></p>
+</div>
+<p>The <code class="xref py py-func docutils literal"><span class="pre">Q_ENUMS()</span></code> and <code class="xref py py-func docutils literal"><span class="pre">Q_FLAGS()</span></code> functions
+declare enumerated types and flag types respectively that are published in the
+<a class="reference internal" href="api/qmetaobject.html#PyQt5.QtCore.QMetaObject" title="PyQt5.QtCore.QMetaObject"><code class="xref py py-class docutils literal"><span class="pre">QMetaObject</span></code></a>.  The typical use in PyQt5 is to declare
+symbolic constants that can be used by QML, and as type of properties that can
+be set in Qt Designer.</p>
+<p>Each function takes a number of Python type objects that implement the
+enumerated or flag type.  For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtCore</span> <span class="k">import</span> <span class="n">Q_ENUMS</span><span class="p">,</span> <span class="n">Q_FLAGS</span><span class="p">,</span> <span class="n">QObject</span>
+
+
+<span class="k">class</span> <span class="nc">Instruction</span><span class="p">(</span><span class="n">QObject</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Direction</span><span class="p">:</span>
+        <span class="n">Up</span><span class="p">,</span> <span class="n">Down</span><span class="p">,</span> <span class="n">Left</span><span class="p">,</span> <span class="n">Right</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="n">Q_ENUMS</span><span class="p">(</span><span class="n">Direction</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Status</span><span class="p">:</span>
+        <span class="n">Null</span> <span class="o">=</span> <span class="mh">0x00</span>
+        <span class="n">Urgent</span> <span class="o">=</span> <span class="mh">0x01</span>
+        <span class="n">Acknowledged</span> <span class="o">=</span> <span class="mh">0x02</span>
+        <span class="n">Completed</span> <span class="o">=</span> <span class="mh">0x04</span>
+
+    <span class="n">Q_FLAGS</span><span class="p">(</span><span class="n">Status</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="q-classinfo">
+<h2><code class="xref py py-func docutils literal"><span class="pre">Q_CLASSINFO()</span></code><a class="headerlink" href="#q-classinfo" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-func docutils literal"><span class="pre">Q_CLASSINFO()</span></code> function is used in the same way as Qt&#8217;s
+macro of the same name, i.e. it is called from a class&#8217;s definition in order to
+specify a name/value pair that is placed in the class&#8217;s
+<a class="reference internal" href="api/qmetaobject.html#PyQt5.QtCore.QMetaObject" title="PyQt5.QtCore.QMetaObject"><code class="xref py py-class docutils literal"><span class="pre">QMetaObject</span></code></a>.</p>
+<p>For example it is used by QML to define the default property of a class:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtCore</span> <span class="k">import</span> <span class="n">Q_CLASSINFO</span><span class="p">,</span> <span class="n">QObject</span>
+
+
+<span class="k">class</span> <span class="nc">BirthdayParty</span><span class="p">(</span><span class="n">QObject</span><span class="p">):</span>
+
+    <span class="n">Q_CLASSINFO</span><span class="p">(</span><span class="s1">&#39;DefaultProperty&#39;</span><span class="p">,</span> <span class="s1">&#39;guests&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Other Support for Dynamic Meta-objects</a><ul>
+<li><a class="reference internal" href="#q-enums-and-q-flags"><code class="docutils literal"><span class="pre">Q_ENUMS()</span></code> and <code class="docutils literal"><span class="pre">Q_FLAGS()</span></code></a></li>
+<li><a class="reference internal" href="#q-classinfo"><code class="docutils literal"><span class="pre">Q_CLASSINFO()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="qt_properties.html"
+                        title="previous chapter">Support for Qt Properties</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="opengl.html"
+                        title="next chapter">Support for OpenGL</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="opengl.html" title="Support for OpenGL"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="qt_properties.html" title="Support for Qt Properties"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 Riverbank Computing Limited.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

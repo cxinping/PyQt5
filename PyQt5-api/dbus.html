@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DBus Support &mdash; PyQt 5.6 Reference Guide</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo_tn.ico"/>
+    <link rel="top" title="PyQt 5.6 Reference Guide" href="index.html" />
+    <link rel="next" title="Deploying Commercial PyQt5 Applications" href="deploy_commercial.html" />
+    <link rel="prev" title="Internationalisation of PyQt5 Applications" href="i18n.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="deploy_commercial.html" title="Deploying Commercial PyQt5 Applications"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="i18n.html" title="Internationalisation of PyQt5 Applications"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="dbus-support">
+<span id="ref-dbus"></span><h1>DBus Support<a class="headerlink" href="#dbus-support" title="Permalink to this headline">¶</a></h1>
+<p>PyQt5 provides two different modules that implement support for DBus.  The
+<a class="reference internal" href="introduction.html#module-PyQt5.QtDBus" title="PyQt5.QtDBus (UNIX)"><code class="xref py py-mod docutils literal"><span class="pre">QtDBus</span></code></a> module provides wrappers for the standard Qt DBus classes.
+The <code class="xref py py-mod docutils literal"><span class="pre">dbus.mainloop.pyqt5</span></code> module add support for the Qt event loop to the
+standard <code class="docutils literal"><span class="pre">dbus-python</span></code> Python module.</p>
+<div class="section" id="qtdbus">
+<h2><a class="reference internal" href="introduction.html#module-PyQt5.QtDBus" title="PyQt5.QtDBus (UNIX)"><code class="xref py py-mod docutils literal"><span class="pre">QtDBus</span></code></a><a class="headerlink" href="#qtdbus" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="introduction.html#module-PyQt5.QtDBus" title="PyQt5.QtDBus (UNIX)"><code class="xref py py-mod docutils literal"><span class="pre">QtDBus</span></code></a> module is used in a similar way to the C++ library it
+wraps.  The main difference is in the way it supports the demarshalling of
+DBus structures.  C++ relies on the template-based registration of types using
+<code class="docutils literal"><span class="pre">qDBusRegisterMetaType()</span></code> which isn&#8217;t possible from Python.  Instead a slot
+that accepts a DBus structure in an argument should specify a slot with a
+single <a class="reference internal" href="api/qdbusmessage.html#PyQt5.QtDBus.QDBusMessage" title="PyQt5.QtDBus.QDBusMessage"><code class="xref py py-class docutils literal"><span class="pre">QDBusMessage</span></code></a> argument.  The implementation of the
+slot should then extract the arguments from the message using its
+<code class="xref py py-meth docutils literal"><span class="pre">arguments()</span></code> method.</p>
+<p>For example, say we have a DBus method called <code class="docutils literal"><span class="pre">setColors()</span></code> that has a single
+argument that is an array of structures of three integers (red, green and
+blue).  The DBus signature of the argument would then be <code class="docutils literal"><span class="pre">a(iii)</span></code>.  In C++
+you would typically define a class to hold the red, green and blue values and
+so your code would include the following (incomplete) fragments:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">Color</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">red</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">green</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">blue</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">Q_DECLARE_METATYPE</span><span class="p">(</span><span class="n">Color</span><span class="p">)</span>
+
+<span class="n">qDBusRegisterMetaType</span><span class="o">&lt;</span><span class="n">Color</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="k">class</span> <span class="nc">ServerAdaptor</span> <span class="p">:</span> <span class="n">public</span> <span class="n">QDBusAbstractAdaptor</span>
+<span class="p">{</span>
+    <span class="n">Q_OBJECT</span>
+
+<span class="n">public</span> <span class="n">slots</span><span class="p">:</span>
+    <span class="n">void</span> <span class="n">setColors</span><span class="p">(</span><span class="n">QList</span><span class="o">&lt;</span><span class="n">const</span> <span class="n">Color</span> <span class="o">&amp;&gt;</span> <span class="n">colors</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The Python version is, of course, much simpler:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ServerAdaptor</span><span class="p">(</span><span class="n">QDBusAbstractAdaptor</span><span class="p">):</span>
+
+    <span class="nd">@pyqtSlot</span><span class="p">(</span><span class="n">QDBusMessage</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">setColors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="c1"># Get the single argument.</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">arguments</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># The argument will be a list of 3-tuples of ints.</span>
+        <span class="k">for</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RGB:&quot;</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that this technique can be used for arguments of any type, it is only
+require if DBus structures are involved.</p>
+</div>
+<div class="section" id="dbus-mainloop-pyqt5">
+<h2><code class="xref py py-mod docutils literal"><span class="pre">dbus.mainloop.pyqt5</span></code><a class="headerlink" href="#dbus-mainloop-pyqt5" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-mod docutils literal"><span class="pre">dbus.mainloop.pyqt5</span></code> module provides support for the Qt event loop to
+<code class="docutils literal"><span class="pre">dbus-python</span></code>.  The module&#8217;s API is almost identical to that of the
+<code class="xref py py-mod docutils literal"><span class="pre">dbus.mainloop.glib</span></code> modules that provides support for the GLib event
+loop.</p>
+<p>The <code class="xref py py-mod docutils literal"><span class="pre">dbus.mainloop.pyqt5</span></code> module contains the following function.</p>
+<dl class="function">
+<dt id="DBusQtMainLoop">
+<code class="descname">DBusQtMainLoop</code><span class="sig-paren">(</span><em>set_as_default=False</em><span class="sig-paren">)</span><a class="headerlink" href="#DBusQtMainLoop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <code class="docutils literal"><span class="pre">dbus.mainloop.NativeMainLoop</span></code> object that uses the the Qt event
+loop.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>set_as_default</strong> &#8211; is optionally set to make the main loop instance the default for all
+new Connection and Bus instances.  It may only be specified as a
+keyword argument, and not as a positional argument.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>The following code fragment is all that is normally needed to set up the
+standard <code class="docutils literal"><span class="pre">dbus-python</span></code> language bindings package to be used with PyQt5:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dbus.mainloop.pyqt5</span> <span class="k">import</span> <span class="n">DBusQtMainLoop</span>
+
+<span class="n">DBusQtMainLoop</span><span class="p">(</span><span class="n">set_as_default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">DBus Support</a><ul>
+<li><a class="reference internal" href="#qtdbus"><code class="docutils literal"><span class="pre">QtDBus</span></code></a></li>
+<li><a class="reference internal" href="#dbus-mainloop-pyqt5"><code class="docutils literal"><span class="pre">dbus.mainloop.pyqt5</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="i18n.html"
+                        title="previous chapter">Internationalisation of PyQt5 Applications</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="deploy_commercial.html"
+                        title="next chapter">Deploying Commercial PyQt5 Applications</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="deploy_commercial.html" title="Deploying Commercial PyQt5 Applications"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="i18n.html" title="Internationalisation of PyQt5 Applications"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 Riverbank Computing Limited.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

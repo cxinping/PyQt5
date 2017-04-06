@@ -1,0 +1,1091 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PyQt5 Class Reference &mdash; PyQt 5.6 Reference Guide</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo_tn.ico"/>
+    <link rel="top" title="PyQt 5.6 Reference Guide" href="index.html" />
+    <link rel="next" title="Enginio" href="api/enginio.html" />
+    <link rel="prev" title="Differences Between PyQt4 and PyQt5" href="pyqt4_differences.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api/enginio.html" title="Enginio"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyqt4_differences.html" title="Differences Between PyQt4 and PyQt5"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pyqt5-class-reference">
+<h1>PyQt5 Class Reference<a class="headerlink" href="#pyqt5-class-reference" title="Permalink to this headline">¶</a></h1>
+<p>This section contains the reference documentation for the classes and functions
+implemented by <a class="reference internal" href="introduction.html#module-PyQt5" title="PyQt5"><code class="xref py py-mod docutils literal"><span class="pre">PyQt5</span></code></a>.  At the moment most of this consists of links to
+the corresponding C++ documentation.  Future versions will include more
+Pythonic documentation.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/enginio.html">Enginio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/enginioclient.html">EnginioClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/enginioclientconnection.html">EnginioClientConnection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/enginioidentity.html">EnginioIdentity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/enginiomodel.html">EnginioModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/enginiooauth2authentication.html">EnginioOAuth2Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/enginioreply.html">EnginioReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractanimation.html">QAbstractAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractbutton.html">QAbstractButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstracteventdispatcher.html">QAbstractEventDispatcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractextensionfactory.html">QAbstractExtensionFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractextensionmanager.html">QAbstractExtensionManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractformbuilder.html">QAbstractFormBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractgraphicsshapeitem.html">QAbstractGraphicsShapeItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractitemdelegate.html">QAbstractItemDelegate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractitemmodel.html">QAbstractItemModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractitemview.html">QAbstractItemView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractlistmodel.html">QAbstractListModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractmessagehandler.html">QAbstractMessageHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractnativeeventfilter.html">QAbstractNativeEventFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractnetworkcache.html">QAbstractNetworkCache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractprintdialog.html">QAbstractPrintDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractproxymodel.html">QAbstractProxyModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractscrollarea.html">QAbstractScrollArea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractslider.html">QAbstractSlider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractsocket.html">QAbstractSocket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractspinbox.html">QAbstractSpinBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractstate.html">QAbstractState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstracttablemodel.html">QAbstractTableModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstracttextdocumentlayout.html">QAbstractTextDocumentLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstracttransition.html">QAbstractTransition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstracturiresolver.html">QAbstractUriResolver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractvideobuffer.html">QAbstractVideoBuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractvideosurface.html">QAbstractVideoSurface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractxmlnodemodel.html">QAbstractXmlNodeModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qabstractxmlreceiver.html">QAbstractXmlReceiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaccelerometer.html">QAccelerometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaccelerometerfilter.html">QAccelerometerFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaccelerometerreading.html">QAccelerometerReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaction.html">QAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qactionevent.html">QActionEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qactiongroup.html">QActionGroup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaltimeter.html">QAltimeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaltimeterfilter.html">QAltimeterFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaltimeterreading.html">QAltimeterReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qambientlightfilter.html">QAmbientLightFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qambientlightreading.html">QAmbientLightReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qambientlightsensor.html">QAmbientLightSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qambienttemperaturefilter.html">QAmbientTemperatureFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qambienttemperaturereading.html">QAmbientTemperatureReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qambienttemperaturesensor.html">QAmbientTemperatureSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qanimationgroup.html">QAnimationGroup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qapplication.html">QApplication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudio.html">QAudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudiobuffer.html">QAudioBuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudiodecoder.html">QAudioDecoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudiodeviceinfo.html">QAudioDeviceInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudioencodersettings.html">QAudioEncoderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudioformat.html">QAudioFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudioinput.html">QAudioInput</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudiooutput.html">QAudioOutput</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudioprobe.html">QAudioProbe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaudiorecorder.html">QAudioRecorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qauthenticator.html">QAuthenticator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaxbase.html">QAxBase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaxobject.html">QAxObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qaxwidget.html">QAxWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbackingstore.html">QBackingStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbasictimer.html">QBasicTimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbitarray.html">QBitArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbitmap.html">QBitmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothaddress.html">QBluetoothAddress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothdevicediscoveryagent.html">QBluetoothDeviceDiscoveryAgent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothhostinfo.html">QBluetoothHostInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothlocaldevice.html">QBluetoothLocalDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothserver.html">QBluetoothServer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothservicediscoveryagent.html">QBluetoothServiceDiscoveryAgent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothserviceinfo.html">QBluetoothServiceInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothsocket.html">QBluetoothSocket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothtransfermanager.html">QBluetoothTransferManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothtransferreply.html">QBluetoothTransferReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothtransferrequest.html">QBluetoothTransferRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbluetoothuuid.html">QBluetoothUuid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qboxlayout.html">QBoxLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbrush.html">QBrush</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbuffer.html">QBuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbuttongroup.html">QButtonGroup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbytearray.html">QByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qbytearraymatcher.html">QByteArrayMatcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcalendarwidget.html">QCalendarWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcamera.html">QCamera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcameraexposure.html">QCameraExposure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcamerafocus.html">QCameraFocus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcamerafocuszone.html">QCameraFocusZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcameraimagecapture.html">QCameraImageCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcameraimageprocessing.html">QCameraImageProcessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcamerainfo.html">QCameraInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcameraviewfinder.html">QCameraViewFinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcheckbox.html">QCheckBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qchildevent.html">QChildEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qclipboard.html">QClipboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcloseevent.html">QCloseEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcollator.html">QCollator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcollatorsortkey.html">QCollatorSortKey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcolor.html">QColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcolordialog.html">QColorDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcolumnview.html">QColumnView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcombobox.html">QComboBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcommandlineoption.html">QCommandLineOption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcommandlineparser.html">QCommandLineParser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcommandlinkbutton.html">QCommandLinkButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcommonstyle.html">QCommonStyle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcompass.html">QCompass</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcompassfilter.html">QCompassFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcompassreading.html">QCompassReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcompleter.html">QCompleter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qconicalgradient.html">QConicalGradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcontextmenuevent.html">QContextMenuEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcoreapplication.html">QCoreApplication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcryptographichash.html">QCryptographicHash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qcursor.html">QCursor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdatastream.html">QDataStream</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdatawidgetmapper.html">QDataWidgetMapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdate.html">QDate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdateedit.html">QDateEdit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdatetime.html">QDateTime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdatetimeedit.html">QDateTimeEdit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbus.html">QDBus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusabstractadaptor.html">QDBusAbstractAdaptor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusabstractinterface.html">QDBusAbstractInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusargument.html">QDBusArgument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusconnection.html">QDBusConnection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusconnectioninterface.html">QDBusConnectionInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbuserror.html">QDBusError</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusinterface.html">QDBusInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusmessage.html">QDBusMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusobjectpath.html">QDBusObjectPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbuspendingcall.html">QDBusPendingCall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbuspendingcallwatcher.html">QDBusPendingCallWatcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbuspendingreply.html">QDBusPendingReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusreply.html">QDBusReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusservicewatcher.html">QDBusServiceWatcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbussignature.html">QDBusSignature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusunixfiledescriptor.html">QDBusUnixFileDescriptor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdbusvariant.html">QDBusVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesigneractioneditorinterface.html">QDesignerActionEditorInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignercontainerextension.html">QDesignerContainerExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignercustomwidgetcollectioninterface.html">QDesignerCustomWidgetCollectionInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignercustomwidgetinterface.html">QDesignerCustomWidgetInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignerformwindowcursorinterface.html">QDesignerFormWindowCursorInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignerformwindowmanagerinterface.html">QDesignerFormWindowManagerInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignermembersheetextension.html">QDesignerMemberSheetExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignerobjectinspectorinterface.html">QDesignerObjectInspectorInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignerpropertyeditorinterface.html">QDesignerPropertyEditorInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignerpropertysheetextension.html">QDesignerPropertySheetExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesignerwidgetboxinterface.html">QDesignerWidgetBoxInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesktopservices.html">QDesktopServices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdesktopwidget.html">QDesktopWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdial.html">QDial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdialog.html">QDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdialogbuttonbox.html">QDialogButtonBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdir.html">QDir</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdiriterator.html">QDirIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdirmodel.html">QDirModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdistancefilter.html">QDistanceFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdistancereading.html">QDistanceReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdistancesensor.html">QDistanceSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdnsdomainnamerecord.html">QDnsDomainNameRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdnshostaddressrecord.html">QDnsHostAddressRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdnslookup.html">QDnsLookup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdnsmailexchangerecord.html">QDnsMailExchangeRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdnsservicerecord.html">QDnsServiceRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdnstextrecord.html">QDnsTextRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdockwidget.html">QDockWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomattr.html">QDomAttr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomcdatasection.html">QDomCDATASection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomcharacterdata.html">QDomCharacterData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomcomment.html">QDomComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomdocument.html">QDomDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomdocumentfragment.html">QDomDocumentFragment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomdocumenttype.html">QDomDocumentType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomelement.html">QDomElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomentity.html">QDomEntity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomentityreference.html">QDomEntityReference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomimplementation.html">QDomImplementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomnamednodemap.html">QDomNamedNodeMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomnode.html">QDomNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomnodelist.html">QDomNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomnotation.html">QDomNotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomprocessinginstruction.html">QDomProcessingInstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdomtext.html">QDomText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdoublespinbox.html">QDoubleSpinBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdoublevalidator.html">QDoubleValidator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdrag.html">QDrag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdragenterevent.html">QDragEnterEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdragleaveevent.html">QDragLeaveEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdragmoveevent.html">QDragMoveEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdropevent.html">QDropEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qdynamicpropertychangeevent.html">QDynamicPropertyChangeEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qeasingcurve.html">QEasingCurve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qelapsedtimer.html">QElapsedTimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qenterevent.html">QEnterEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qerrormessage.html">QErrorMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qevent.html">QEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qeventloop.html">QEventLoop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qeventlooplocker.html">QEventLoopLocker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qeventtransition.html">QEventTransition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qexposeevent.html">QExposeEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qextensionfactory.html">QExtensionFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qextensionmanager.html">QExtensionManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfile.html">QFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfiledevice.html">QFileDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfiledialog.html">QFileDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfileiconprovider.html">QFileIconProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfileinfo.html">QFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfileopenevent.html">QFileOpenEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfileselector.html">QFileSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfilesystemmodel.html">QFileSystemModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfilesystemwatcher.html">QFileSystemWatcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfinalstate.html">QFinalState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfocusevent.html">QFocusEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfocusframe.html">QFocusFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfont.html">QFont</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfontcombobox.html">QFontComboBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfontdatabase.html">QFontDatabase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfontdialog.html">QFontDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfontinfo.html">QFontInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfontmetrics.html">QFontMetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qfontmetricsf.html">QFontMetricsF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qformbuilder.html">QFormBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qformlayout.html">QFormLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qframe.html">QFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgenericargument.html">QGenericArgument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgenericreturnargument.html">QGenericReturnArgument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoaddress.html">QGeoAddress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoareamonitorinfo.html">QGeoAreaMonitorInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoareamonitorsource.html">QGeoAreaMonitorSource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeocircle.html">QGeoCircle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeocodereply.html">QGeoCodeReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeocodingmanager.html">QGeoCodingManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeocodingmanagerengine.html">QGeoCodingManagerEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeocoordinate.html">QGeoCoordinate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeolocation.html">QGeoLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeomaneuver.html">QGeoManeuver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeopositioninfo.html">QGeoPositionInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeopositioninfosource.html">QGeoPositionInfoSource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeorectangle.html">QGeoRectangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoroute.html">QGeoRoute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoroutereply.html">QGeoRouteReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeorouterequest.html">QGeoRouteRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoroutesegment.html">QGeoRouteSegment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoroutingmanager.html">QGeoRoutingManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoroutingmanagerengine.html">QGeoRoutingManagerEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeosatelliteinfo.html">QGeoSatelliteInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeosatelliteinfosource.html">QGeoSatelliteInfoSource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoserviceprovider.html">QGeoServiceProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgeoshape.html">QGeoShape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgesture.html">QGesture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgestureevent.html">QGestureEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgesturerecognizer.html">QGestureRecognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgl.html">QGL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qglcontext.html">QGLContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qglformat.html">QGLFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qglwidget.html">QGLWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qglyphrun.html">QGlyphRun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgradient.html">QGradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsanchor.html">QGraphicsAnchor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsanchorlayout.html">QGraphicsAnchorLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsblureffect.html">QGraphicsBlurEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicscolorizeeffect.html">QGraphicsColorizeEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsdropshadoweffect.html">QGraphicsDropShadowEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicseffect.html">QGraphicsEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsellipseitem.html">QGraphicsEllipseItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsgridlayout.html">QGraphicsGridLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsitem.html">QGraphicsItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsitemgroup.html">QGraphicsItemGroup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicslayout.html">QGraphicsLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicslayoutitem.html">QGraphicsLayoutItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicslinearlayout.html">QGraphicsLinearLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicslineitem.html">QGraphicsLineItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsobject.html">QGraphicsObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsopacityeffect.html">QGraphicsOpacityEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicspathitem.html">QGraphicsPathItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicspixmapitem.html">QGraphicsPixmapItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicspolygonitem.html">QGraphicsPolygonItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsproxywidget.html">QGraphicsProxyWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsrectitem.html">QGraphicsRectItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsrotation.html">QGraphicsRotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsscale.html">QGraphicsScale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsscene.html">QGraphicsScene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsscenecontextmenuevent.html">QGraphicsSceneContextMenuEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsscenedragdropevent.html">QGraphicsSceneDragDropEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicssceneevent.html">QGraphicsSceneEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsscenehelpevent.html">QGraphicsSceneHelpEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsscenemoveevent.html">QGraphicsSceneMoveEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicssceneresizeevent.html">QGraphicsSceneResizeEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsscenewheelevent.html">QGraphicsSceneWheelEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicssvgitem.html">QGraphicsSvgItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicstextitem.html">QGraphicsTextItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicstransform.html">QGraphicsTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsvideoitem.html">QGraphicsVideoItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicsview.html">QGraphicsView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicswebview.html">QGraphicsWebView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgraphicswidget.html">QGraphicsWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgridlayout.html">QGridLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgroupbox.html">QGroupBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qguiapplication.html">QGuiApplication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgyroscope.html">QGyroscope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgyroscopefilter.html">QGyroscopeFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qgyroscopereading.html">QGyroscopeReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhboxlayout.html">QHBoxLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qheaderview.html">QHeaderView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpcontentitem.html">QHelpContentItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpcontentmodel.html">QHelpContentModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpcontentwidget.html">QHelpContentWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpengine.html">QHelpEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpenginecore.html">QHelpEngineCore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpevent.html">QHelpEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpindexmodel.html">QHelpIndexModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpindexwidget.html">QHelpIndexWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpsearchengine.html">QHelpSearchEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpsearchquery.html">QHelpSearchQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpsearchquerywidget.html">QHelpSearchQueryWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhelpsearchresultwidget.html">QHelpSearchResultWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhideevent.html">QHideEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhistorystate.html">QHistoryState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qholsterfilter.html">QHolsterFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qholsterreading.html">QHolsterReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qholstersensor.html">QHolsterSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhostaddress.html">QHostAddress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhostinfo.html">QHostInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhoverevent.html">QHoverEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhttpmultipart.html">QHttpMultiPart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qhttppart.html">QHttpPart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qicon.html">QIcon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qicondragevent.html">QIconDragEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qiconengine.html">QIconEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qidentityproxymodel.html">QIdentityProxyModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qimage.html">QImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qimageencodersettings.html">QImageEncoderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qimageiohandler.html">QImageIOHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qimagereader.html">QImageReader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qimagewriter.html">QImageWriter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qinputdialog.html">QInputDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qinputevent.html">QInputEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qinputmethod.html">QInputMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qinputmethodevent.html">QInputMethodEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qinputmethodqueryevent.html">QInputMethodQueryEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qintvalidator.html">QIntValidator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qiodevice.html">QIODevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qirproximityfilter.html">QIRProximityFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qirproximityreading.html">QIRProximityReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qirproximitysensor.html">QIRProximitySensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qitemdelegate.html">QItemDelegate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qitemeditorcreatorbase.html">QItemEditorCreatorBase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qitemeditorfactory.html">QItemEditorFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qitemselection.html">QItemSelection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qitemselectionmodel.html">QItemSelectionModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qitemselectionrange.html">QItemSelectionRange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qjsengine.html">QJSEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qjsonarray.html">QJsonArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qjsondocument.html">QJsonDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qjsonobject.html">QJsonObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qjsonparseerror.html">QJsonParseError</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qjsonvalue.html">QJsonValue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qjsvalue.html">QJSValue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qjsvalueiterator.html">QJSValueIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qkeyevent.html">QKeyEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qkeyeventtransition.html">QKeyEventTransition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qkeysequence.html">QKeySequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qkeysequenceedit.html">QKeySequenceEdit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlabel.html">QLabel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlayout.html">QLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlayoutitem.html">QLayoutItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlcdnumber.html">QLCDNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlibrary.html">QLibrary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlibraryinfo.html">QLibraryInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlightfilter.html">QLightFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlightreading.html">QLightReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlightsensor.html">QLightSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qline.html">QLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlineargradient.html">QLinearGradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlineedit.html">QLineEdit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlinef.html">QLineF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlistview.html">QListView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlistwidget.html">QListWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlistwidgetitem.html">QListWidgetItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlocale.html">QLocale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlocalserver.html">QLocalServer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlocalsocket.html">QLocalSocket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlocation.html">QLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlockfile.html">QLockFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlowenergycharacteristic.html">QLowEnergyCharacteristic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlowenergycontroller.html">QLowEnergyController</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlowenergydescriptor.html">QLowEnergyDescriptor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qlowenergyservice.html">QLowEnergyService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmaccocoaviewcontainer.html">QMacCocoaViewContainer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmacpasteboardmime.html">QMacPasteboardMime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmactoolbar.html">QMacToolBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmactoolbaritem.html">QMacToolBarItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmagnetometer.html">QMagnetometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmagnetometerfilter.html">QMagnetometerFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmagnetometerreading.html">QMagnetometerReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmainwindow.html">QMainWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmargins.html">QMargins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmarginsf.html">QMarginsF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmaskgenerator.html">QMaskGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmatrix2x2.html">QMatrix2x2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmatrix2x3.html">QMatrix2x3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmatrix2x4.html">QMatrix2x4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmatrix3x2.html">QMatrix3x2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmatrix3x3.html">QMatrix3x3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmatrix3x4.html">QMatrix3x4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmatrix4x2.html">QMatrix4x2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmatrix4x3.html">QMatrix4x3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmatrix4x4.html">QMatrix4x4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmdiarea.html">QMdiArea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmdisubwindow.html">QMdiSubWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediabindableinterface.html">QMediaBindableInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediacontent.html">QMediaContent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediacontrol.html">QMediaControl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediametadata.html">QMediaMetaData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediaobject.html">QMediaObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediaplayer.html">QMediaPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediaplaylist.html">QMediaPlaylist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediarecorder.html">QMediaRecorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediaresource.html">QMediaResource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediaservice.html">QMediaService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediatimeinterval.html">QMediaTimeInterval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmediatimerange.html">QMediaTimeRange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmenu.html">QMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmenubar.html">QMenuBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmessageauthenticationcode.html">QMessageAuthenticationCode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmessagebox.html">QMessageBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmessagelogcontext.html">QMessageLogContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmessagelogger.html">QMessageLogger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmetaclassinfo.html">QMetaClassInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmetaenum.html">QMetaEnum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmetamethod.html">QMetaMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmetaobject.html">QMetaObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmetaproperty.html">QMetaProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmetatype.html">QMetaType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmimedata.html">QMimeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmimedatabase.html">QMimeDatabase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmimetype.html">QMimeType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmodelindex.html">QModelIndex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmouseevent.html">QMouseEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmouseeventtransition.html">QMouseEventTransition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmoveevent.html">QMoveEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmovie.html">QMovie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmultimedia.html">QMultimedia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmutex.html">QMutex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qmutexlocker.html">QMutexLocker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qndeffilter.html">QNdefFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qndefmessage.html">QNdefMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qndefnfciconrecord.html">QNdefNfcIconRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qndefnfcsmartposterrecord.html">QNdefNfcSmartPosterRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qndefnfctextrecord.html">QNdefNfcTextRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qndefnfcurirecord.html">QNdefNfcUriRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qndefrecord.html">QNdefRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnearfieldmanager.html">QNearFieldManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnearfieldsharemanager.html">QNearFieldShareManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnearfieldsharetarget.html">QNearFieldShareTarget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnearfieldtarget.html">QNearFieldTarget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkaccessmanager.html">QNetworkAccessManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkaddressentry.html">QNetworkAddressEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkcachemetadata.html">QNetworkCacheMetaData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkconfiguration.html">QNetworkConfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkconfigurationmanager.html">QNetworkConfigurationManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkcookie.html">QNetworkCookie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkcookiejar.html">QNetworkCookieJar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkdiskcache.html">QNetworkDiskCache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkinterface.html">QNetworkInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkproxy.html">QNetworkProxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkproxyfactory.html">QNetworkProxyFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkproxyquery.html">QNetworkProxyQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkreply.html">QNetworkReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworkrequest.html">QNetworkRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnetworksession.html">QNetworkSession</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qnmeapositioninfosource.html">QNmeaPositionInfoSource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qobject.html">QObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qobjectcleanuphandler.html">QObjectCleanupHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qoffscreensurface.html">QOffscreenSurface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglbuffer.html">QOpenGLBuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglcontext.html">QOpenGLContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglcontextgroup.html">QOpenGLContextGroup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopengldebuglogger.html">QOpenGLDebugLogger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopengldebugmessage.html">QOpenGLDebugMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglframebufferobject.html">QOpenGLFramebufferObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglframebufferobjectformat.html">QOpenGLFramebufferObjectFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglpaintdevice.html">QOpenGLPaintDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglshader.html">QOpenGLShader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglshaderprogram.html">QOpenGLShaderProgram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopengltexture.html">QOpenGLTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopengltimemonitor.html">QOpenGLTimeMonitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopengltimerquery.html">QOpenGLTimerQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglvertexarrayobject.html">QOpenGLVertexArrayObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglwidget.html">QOpenGLWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qopenglwindow.html">QOpenGLWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qorientationfilter.html">QOrientationFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qorientationreading.html">QOrientationReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qorientationsensor.html">QOrientationSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpagedpaintdevice.html">QPagedPaintDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpagelayout.html">QPageLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpagesetupdialog.html">QPageSetupDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpagesize.html">QPageSize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpaintdevice.html">QPaintDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpaintdevicewindow.html">QPaintDeviceWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpaintengine.html">QPaintEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpaintenginestate.html">QPaintEngineState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpainter.html">QPainter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpainterpath.html">QPainterPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpainterpathstroker.html">QPainterPathStroker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpaintevent.html">QPaintEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpalette.html">QPalette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpangesture.html">QPanGesture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qparallelanimationgroup.html">QParallelAnimationGroup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpauseanimation.html">QPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpdfwriter.html">QPdfWriter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpen.html">QPen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpersistentmodelindex.html">QPersistentModelIndex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpicture.html">QPicture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpictureio.html">QPictureIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpinchgesture.html">QPinchGesture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpixelformat.html">QPixelFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpixmap.html">QPixmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpixmapcache.html">QPixmapCache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplace.html">QPlace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaceattribute.html">QPlaceAttribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacecategory.html">QPlaceCategory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacecontactdetail.html">QPlaceContactDetail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacecontent.html">QPlaceContent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacecontentreply.html">QPlaceContentReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacecontentrequest.html">QPlaceContentRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacedetailsreply.html">QPlaceDetailsReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaceeditorial.html">QPlaceEditorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaceicon.html">QPlaceIcon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaceidreply.html">QPlaceIdReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaceimage.html">QPlaceImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacemanager.html">QPlaceManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacemanagerengine.html">QPlaceManagerEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacematchreply.html">QPlaceMatchReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacematchrequest.html">QPlaceMatchRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaceproposedsearchresult.html">QPlaceProposedSearchResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaceratings.html">QPlaceRatings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacereply.html">QPlaceReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaceresult.html">QPlaceResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacereview.html">QPlaceReview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacesearchreply.html">QPlaceSearchReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacesearchrequest.html">QPlaceSearchRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacesearchresult.html">QPlaceSearchResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacesearchsuggestionreply.html">QPlaceSearchSuggestionReply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplacesupplier.html">QPlaceSupplier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaceuser.html">QPlaceUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaintextdocumentlayout.html">QPlainTextDocumentLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qplaintextedit.html">QPlainTextEdit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpluginloader.html">QPluginLoader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpoint.html">QPoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpointf.html">QPointF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpolygon.html">QPolygon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpolygonf.html">QPolygonF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpressurefilter.html">QPressureFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpressurereading.html">QPressureReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpressuresensor.html">QPressureSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprintdialog.html">QPrintDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprintengine.html">QPrintEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprinter.html">QPrinter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprinterinfo.html">QPrinterInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprintpreviewdialog.html">QPrintPreviewDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprintpreviewwidget.html">QPrintPreviewWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprocess.html">QProcess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprocessenvironment.html">QProcessEnvironment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprogressbar.html">QProgressBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qprogressdialog.html">QProgressDialog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpropertyanimation.html">QPropertyAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qproximityfilter.html">QProximityFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qproximityreading.html">QProximityReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qproximitysensor.html">QProximitySensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qproxystyle.html">QProxyStyle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qpushbutton.html">QPushButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlabstracturlinterceptor.html">QQmlAbstractUrlInterceptor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlapplicationengine.html">QQmlApplicationEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlcomponent.html">QQmlComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlcontext.html">QQmlContext</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlengine.html">QQmlEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlerror.html">QQmlError</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlexpression.html">QQmlExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlextensionplugin.html">QQmlExtensionPlugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlfileselector.html">QQmlFileSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlimageproviderbase.html">QQmlImageProviderBase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlincubator.html">QQmlIncubator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlincubatorcontrol.html">QQmlIncubatorControl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmllistproperty.html">QQmlListProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmllistreference.html">QQmlListReference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlndefrecord.html">QQmlNdefRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlnetworkaccessmanagerfactory.html">QQmlNetworkAccessManagerFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlparserstatus.html">QQmlParserStatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlproperty.html">QQmlProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlpropertymap.html">QQmlPropertyMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlpropertyvaluesource.html">QQmlPropertyValueSource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qqmlscriptstring.html">QQmlScriptString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquaternion.html">QQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickasyncimageprovider.html">QQuickAsyncImageProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickframebufferobject.html">QQuickFramebufferObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickimageprovider.html">QQuickImageProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickimageresponse.html">QQuickImageResponse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickitem.html">QQuickItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickitemgrabresult.html">QQuickItemGrabResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickpainteditem.html">QQuickPaintedItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickrendercontrol.html">QQuickRenderControl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquicktextdocument.html">QQuickTextDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquicktexturefactory.html">QQuickTextureFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickview.html">QQuickView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickwidget.html">QQuickWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qquickwindow.html">QQuickWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qradialgradient.html">QRadialGradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qradiobutton.html">QRadioButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qradiodata.html">QRadioData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qradiotuner.html">QRadioTuner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrasterwindow.html">QRasterWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrawfont.html">QRawFont</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qreadlocker.html">QReadLocker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qreadwritelock.html">QReadWriteLock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrect.html">QRect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrectf.html">QRectF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qregexp.html">QRegExp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qregexpvalidator.html">QRegExpValidator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qregion.html">QRegion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qregularexpression.html">QRegularExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qregularexpressionmatch.html">QRegularExpressionMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qregularexpressionvalidator.html">QRegularExpressionValidator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qresizeevent.html">QResizeEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qresource.html">QResource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrgba64.html">QRgba64</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrotationfilter.html">QRotationFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrotationreading.html">QRotationReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrotationsensor.html">QRotationSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrubberband.html">QRubberBand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qrunnable.html">QRunnable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsavefile.html">QSaveFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qscreen.html">QScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qscrollarea.html">QScrollArea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qscrollbar.html">QScrollBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qscroller.html">QScroller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qscrollerproperties.html">QScrollerProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qscrollevent.html">QScrollEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qscrollprepareevent.html">QScrollPrepareEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsemaphore.html">QSemaphore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsensor.html">QSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsensorfilter.html">QSensorFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsensorreading.html">QSensorReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsequentialanimationgroup.html">QSequentialAnimationGroup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qserialport.html">QSerialPort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qserialportinfo.html">QSerialPortInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsessionmanager.html">QSessionManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsettings.html">QSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgabstractrenderer.html">QSGAbstractRenderer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgbasicgeometrynode.html">QSGBasicGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgclipnode.html">QSGClipNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgdynamictexture.html">QSGDynamicTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgengine.html">QSGEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgflatcolormaterial.html">QSGFlatColorMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsggeometry.html">QSGGeometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsggeometrynode.html">QSGGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgmaterial.html">QSGMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgmaterialshader.html">QSGMaterialShader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgmaterialtype.html">QSGMaterialType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgnode.html">QSGNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgopacitynode.html">QSGOpacityNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgopaquetexturematerial.html">QSGOpaqueTextureMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgsimplerectnode.html">QSGSimpleRectNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgsimpletexturenode.html">QSGSimpleTextureNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgtexture.html">QSGTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgtexturematerial.html">QSGTextureMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgtextureprovider.html">QSGTextureProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgtransformnode.html">QSGTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsgvertexcolormaterial.html">QSGVertexColorMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsharedmemory.html">QSharedMemory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qshortcut.html">QShortcut</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qshortcutevent.html">QShortcutEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qshowevent.html">QShowEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsignalblocker.html">QSignalBlocker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsignalmapper.html">QSignalMapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsignalspy.html">QSignalSpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsignaltransition.html">QSignalTransition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsimplexmlnodemodel.html">QSimpleXmlNodeModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsize.html">QSize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsizef.html">QSizeF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsizegrip.html">QSizeGrip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsizepolicy.html">QSizePolicy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qslider.html">QSlider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsocketnotifier.html">QSocketNotifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsortfilterproxymodel.html">QSortFilterProxyModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsound.html">QSound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsoundeffect.html">QSoundEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsourcelocation.html">QSourceLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qspaceritem.html">QSpacerItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qspinbox.html">QSpinBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsplashscreen.html">QSplashScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsplitter.html">QSplitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsplitterhandle.html">QSplitterHandle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsql.html">QSql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqldatabase.html">QSqlDatabase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqldriver.html">QSqlDriver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqldrivercreatorbase.html">QSqlDriverCreatorBase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlerror.html">QSqlError</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlfield.html">QSqlField</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlindex.html">QSqlIndex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlquery.html">QSqlQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlquerymodel.html">QSqlQueryModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlrecord.html">QSqlRecord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlrelation.html">QSqlRelation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlrelationaldelegate.html">QSqlRelationalDelegate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqlresult.html">QSqlResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsqltablemodel.html">QSqlTableModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qssl.html">QSsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsslcertificate.html">QSslCertificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsslcertificateextension.html">QSslCertificateExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsslcipher.html">QSslCipher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsslconfiguration.html">QSslConfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsslerror.html">QSslError</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsslkey.html">QSslKey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsslsocket.html">QSslSocket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstackedlayout.html">QStackedLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstackedwidget.html">QStackedWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstandarditem.html">QStandardItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstandarditemmodel.html">QStandardItemModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstandardpaths.html">QStandardPaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstate.html">QState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstatemachine.html">QStateMachine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstatictext.html">QStaticText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstatusbar.html">QStatusBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstatustipevent.html">QStatusTipEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstorageinfo.html">QStorageInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstringlistmodel.html">QStringListModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyle.html">QStyle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleditemdelegate.html">QStyledItemDelegate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstylefactory.html">QStyleFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstylehintreturn.html">QStyleHintReturn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstylehintreturnmask.html">QStyleHintReturnMask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstylehintreturnvariant.html">QStyleHintReturnVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstylehints.html">QStyleHints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoption.html">QStyleOption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionbutton.html">QStyleOptionButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptioncombobox.html">QStyleOptionComboBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptioncomplex.html">QStyleOptionComplex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiondockwidget.html">QStyleOptionDockWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionfocusrect.html">QStyleOptionFocusRect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionframe.html">QStyleOptionFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiongraphicsitem.html">QStyleOptionGraphicsItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiongroupbox.html">QStyleOptionGroupBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionheader.html">QStyleOptionHeader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionmenuitem.html">QStyleOptionMenuItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionprogressbar.html">QStyleOptionProgressBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionrubberband.html">QStyleOptionRubberBand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionsizegrip.html">QStyleOptionSizeGrip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionslider.html">QStyleOptionSlider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionspinbox.html">QStyleOptionSpinBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiontab.html">QStyleOptionTab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiontabbarbase.html">QStyleOptionTabBarBase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiontabwidgetframe.html">QStyleOptionTabWidgetFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiontitlebar.html">QStyleOptionTitleBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiontoolbar.html">QStyleOptionToolBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiontoolbox.html">QStyleOptionToolBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptiontoolbutton.html">QStyleOptionToolButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstyleoptionviewitem.html">QStyleOptionViewItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qstylepainter.html">QStylePainter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsurface.html">QSurface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsurfaceformat.html">QSurfaceFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsvggenerator.html">QSvgGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsvgrenderer.html">QSvgRenderer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsvgwidget.html">QSvgWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qswipegesture.html">QSwipeGesture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsyntaxhighlighter.html">QSyntaxHighlighter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsysinfo.html">QSysInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsystemsemaphore.html">QSystemSemaphore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qsystemtrayicon.html">QSystemTrayIcon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qt.html">Qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtabbar.html">QTabBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtabletevent.html">QTabletEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtableview.html">QTableView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtablewidget.html">QTableWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtablewidgetitem.html">QTableWidgetItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtablewidgetselectionrange.html">QTableWidgetSelectionRange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtabwidget.html">QTabWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtapandholdgesture.html">QTapAndHoldGesture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtapfilter.html">QTapFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtapgesture.html">QTapGesture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtapreading.html">QTapReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtapsensor.html">QTapSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtcpserver.html">QTcpServer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtcpsocket.html">QTcpSocket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtemporarydir.html">QTemporaryDir</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtemporaryfile.html">QTemporaryFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtest.html">QTest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextblock.html">QTextBlock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextblockformat.html">QTextBlockFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextblockgroup.html">QTextBlockGroup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextblockuserdata.html">QTextBlockUserData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextboundaryfinder.html">QTextBoundaryFinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextbrowser.html">QTextBrowser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextcharformat.html">QTextCharFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextcodec.html">QTextCodec</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextcursor.html">QTextCursor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextdecoder.html">QTextDecoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextdocument.html">QTextDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextdocumentfragment.html">QTextDocumentFragment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextdocumentwriter.html">QTextDocumentWriter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextedit.html">QTextEdit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextencoder.html">QTextEncoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextformat.html">QTextFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextfragment.html">QTextFragment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextframe.html">QTextFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextframeformat.html">QTextFrameFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextimageformat.html">QTextImageFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextinlineobject.html">QTextInlineObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextitem.html">QTextItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextlayout.html">QTextLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextlength.html">QTextLength</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextline.html">QTextLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextlist.html">QTextList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextlistformat.html">QTextListFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextobject.html">QTextObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextobjectinterface.html">QTextObjectInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextoption.html">QTextOption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextstream.html">QTextStream</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtextstreammanipulator.html">QTextStreamManipulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtexttable.html">QTextTable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtexttablecell.html">QTextTableCell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtexttablecellformat.html">QTextTableCellFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtexttableformat.html">QTextTableFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qthread.html">QThread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qthreadpool.html">QThreadPool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtiltfilter.html">QTiltFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtiltreading.html">QTiltReading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtiltsensor.html">QTiltSensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtime.html">QTime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtimeedit.html">QTimeEdit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtimeline.html">QTimeLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtimer.html">QTimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtimerevent.html">QTimerEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtimezone.html">QTimeZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtoolbar.html">QToolBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtoolbox.html">QToolBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtoolbutton.html">QToolButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtooltip.html">QToolTip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtouchdevice.html">QTouchDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtouchevent.html">QTouchEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtransform.html">QTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtranslator.html">QTranslator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtreeview.html">QTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtreewidget.html">QTreeWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtreewidgetitem.html">QTreeWidgetItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtreewidgetitemiterator.html">QTreeWidgetItemIterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qtwin.html">QtWin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qudpsocket.html">QUdpSocket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qundocommand.html">QUndoCommand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qundogroup.html">QUndoGroup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qundostack.html">QUndoStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qundoview.html">QUndoView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qurl.html">QUrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qurlquery.html">QUrlQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/quuid.html">QUuid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvalidator.html">QValidator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvariant.html">QVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvariantanimation.html">QVariantAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvboxlayout.html">QVBoxLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvector2d.html">QVector2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvector3d.html">QVector3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvector4d.html">QVector4D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvideoencodersettings.html">QVideoEncoderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvideoframe.html">QVideoFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvideoprobe.html">QVideoProbe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvideosurfaceformat.html">QVideoSurfaceFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qvideowidget.html">QVideoWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwaitcondition.html">QWaitCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebchannel.html">QWebChannel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebchannelabstracttransport.html">QWebChannelAbstractTransport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebdatabase.html">QWebDatabase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebelement.html">QWebElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebelementcollection.html">QWebElementCollection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebenginecertificateerror.html">QWebEngineCertificateError</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebenginecookiestore.html">QWebEngineCookieStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebenginedownloaditem.html">QWebEngineDownloadItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebenginehistory.html">QWebEngineHistory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebenginehistoryitem.html">QWebEngineHistoryItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebenginepage.html">QWebEnginePage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebengineprofile.html">QWebEngineProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebenginescript.html">QWebEngineScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebenginescriptcollection.html">QWebEngineScriptCollection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebenginesettings.html">QWebEngineSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebengineurlrequestinfo.html">QWebEngineUrlRequestInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebengineurlrequestinterceptor.html">QWebEngineUrlRequestInterceptor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebengineurlrequestjob.html">QWebEngineUrlRequestJob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebengineurlschemehandler.html">QWebEngineUrlSchemeHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebengineview.html">QWebEngineView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebframe.html">QWebFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebhistory.html">QWebHistory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebhistoryinterface.html">QWebHistoryInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebhistoryitem.html">QWebHistoryItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebhittestresult.html">QWebHitTestResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebinspector.html">QWebInspector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebpage.html">QWebPage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebpluginfactory.html">QWebPluginFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebsecurityorigin.html">QWebSecurityOrigin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebsettings.html">QWebSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebsocket.html">QWebSocket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebsocketcorsauthenticator.html">QWebSocketCorsAuthenticator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebsocketprotocol.html">QWebSocketProtocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebsocketserver.html">QWebSocketServer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwebview.html">QWebView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwhatsthis.html">QWhatsThis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwhatsthisclickedevent.html">QWhatsThisClickedEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwheelevent.html">QWheelEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwidget.html">QWidget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwidgetaction.html">QWidgetAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwidgetitem.html">QWidgetItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwindow.html">QWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwindowstatechangeevent.html">QWindowStateChangeEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwinjumplist.html">QWinJumpList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwinjumplistcategory.html">QWinJumpListCategory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwinjumplistitem.html">QWinJumpListItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwintaskbarbutton.html">QWinTaskbarButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwintaskbarprogress.html">QWinTaskbarProgress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwinthumbnailtoolbar.html">QWinThumbnailToolBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwinthumbnailtoolbutton.html">QWinThumbnailToolButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwizard.html">QWizard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwizardpage.html">QWizardPage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qwritelocker.html">QWriteLocker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qx11info.html">QX11Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlattributes.html">QXmlAttributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlcontenthandler.html">QXmlContentHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmldeclhandler.html">QXmlDeclHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmldefaulthandler.html">QXmlDefaultHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmldtdhandler.html">QXmlDTDHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlentityresolver.html">QXmlEntityResolver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlerrorhandler.html">QXmlErrorHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlformatter.html">QXmlFormatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlinputsource.html">QXmlInputSource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlitem.html">QXmlItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmllexicalhandler.html">QXmlLexicalHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmllocator.html">QXmlLocator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlname.html">QXmlName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlnamepool.html">QXmlNamePool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlnamespacesupport.html">QXmlNamespaceSupport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlnodemodelindex.html">QXmlNodeModelIndex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlparseexception.html">QXmlParseException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlquery.html">QXmlQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlreader.html">QXmlReader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlresultitems.html">QXmlResultItems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlschema.html">QXmlSchema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlschemavalidator.html">QXmlSchemaValidator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlserializer.html">QXmlSerializer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlsimplereader.html">QXmlSimpleReader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlstreamattribute.html">QXmlStreamAttribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlstreamattributes.html">QXmlStreamAttributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlstreamentitydeclaration.html">QXmlStreamEntityDeclaration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlstreamentityresolver.html">QXmlStreamEntityResolver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlstreamnamespacedeclaration.html">QXmlStreamNamespaceDeclaration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlstreamnotationdeclaration.html">QXmlStreamNotationDeclaration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlstreamreader.html">QXmlStreamReader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/qxmlstreamwriter.html">QXmlStreamWriter</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyqt4_differences.html"
+                        title="previous chapter">Differences Between PyQt4 and PyQt5</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api/enginio.html"
+                        title="next chapter">Enginio</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api/enginio.html" title="Enginio"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyqt4_differences.html" title="Differences Between PyQt4 and PyQt5"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 Riverbank Computing Limited.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

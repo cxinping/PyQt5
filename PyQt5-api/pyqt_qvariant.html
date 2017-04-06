@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Support for QVariant &mdash; PyQt 5.6 Reference Guide</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo_tn.ico"/>
+    <link rel="top" title="PyQt 5.6 Reference Guide" href="index.html" />
+    <link rel="next" title="Support for QSettings" href="pyqt_qsettings.html" />
+    <link rel="prev" title="Support for Qt Interfaces" href="qt_interfaces.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyqt_qsettings.html" title="Support for QSettings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="qt_interfaces.html" title="Support for Qt Interfaces"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="support-for-qvariant">
+<span id="ref-qvariant"></span><h1>Support for <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a><a class="headerlink" href="#support-for-qvariant" title="Permalink to this headline">¶</a></h1>
+<p>PyQt4 implements two APIs for <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a>.  v1 (the default
+for Python v2) exposes the <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a> class to Python and
+requires applications to explicitly convert a <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a>
+to the actual value.  v2 (the default for Python v3) does not expose the
+<a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a> class to Python and automatically converts a
+<a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a> to the actual value.  While this is usually the
+best thing to do, it does raise problems of its own:</p>
+<ul class="simple">
+<li>Information is lost when converting between a C++
+<a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a> and the corresponding Python object.  For
+example a <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a> distinguishes between signed and
+unsigned integers but Python doesn&#8217;t.  Normally this doesn&#8217;t matter but some
+applications may need to make the distinction.</li>
+<li>There is no obvious way to represent a null <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a>
+as a standard Python object.  PyQt4 introduced the <code class="docutils literal"><span class="pre">QPyNullVariant</span></code> class
+to address this problem.</li>
+</ul>
+<p>Multiple APIs are intended to help manage an application&#8217;s use of an old API to
+a newer, incompatible API.  They cannot be used to temporarily change the
+behaviour - modules that rely on different API versions cannot be used in the
+same application.</p>
+<p>In PyQt5 the implementation of <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a> is different to
+those of PyQt4.  By default the behaviour is the same as PyQt4&#8217;s v2 API.
+However it is possible to temporarily suppress the automatic conversion of a
+C++ <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a> to a Python object and to return a wrapped
+Python <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a> instead - behaviour similar to PyQt4&#8217;s
+v1 API - by calling the <code class="xref py py-func docutils literal"><span class="pre">sip.enableautoconversion()</span></code> function.</p>
+<p>The actual value of a wrapped Python <a class="reference internal" href="api/qvariant.html#PyQt5.QtCore.QVariant" title="PyQt5.QtCore.QVariant"><code class="xref py py-class docutils literal"><span class="pre">QVariant</span></code></a> is
+obtained by calling its <code class="xref py py-meth docutils literal"><span class="pre">value()</span></code> method.  (Note
+that in PyQt4&#8217;s v1 API this method is called <code class="docutils literal"><span class="pre">toPyObject()</span></code>.)</p>
+<p>PyQt5 does not support the <code class="docutils literal"><span class="pre">QPyNullVariant</span></code> class as it is no longer needed.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="qt_interfaces.html"
+                        title="previous chapter">Support for Qt Interfaces</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyqt_qsettings.html"
+                        title="next chapter">Support for <code class="docutils literal"><span class="pre">QSettings</span></code></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyqt_qsettings.html" title="Support for QSettings"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="qt_interfaces.html" title="Support for Qt Interfaces"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 Riverbank Computing Limited.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

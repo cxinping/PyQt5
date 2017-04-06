@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Deploying Commercial PyQt5 Applications &mdash; PyQt 5.6 Reference Guide</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo_tn.ico"/>
+    <link rel="top" title="PyQt 5.6 Reference Guide" href="index.html" />
+    <link rel="next" title="The PyQt5 Extension API" href="extension_api.html" />
+    <link rel="prev" title="DBus Support" href="dbus.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="extension_api.html" title="The PyQt5 Extension API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dbus.html" title="DBus Support"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="deploying-commercial-pyqt5-applications">
+<h1>Deploying Commercial PyQt5 Applications<a class="headerlink" href="#deploying-commercial-pyqt5-applications" title="Permalink to this headline">¶</a></h1>
+<p>Deploying commercial PyQt5 applications can be a complicated process for a
+number of reasons:</p>
+<ul class="simple">
+<li>It is usually better not to rely on pre-requisite packages being already
+installed on the user&#8217;s system.  This means that as well as your application
+code, you also need to include the Python interpreter, the standard library,
+third-pary packages and extension modules, and Qt itself.</li>
+<li>Some target platforms (iOS for example) have restrictions on how an
+application is built in order for it to be included in app stores.</li>
+<li>It is necessary to discourage users from accessing the underlying PyQt5
+modules for themselves.  A user that used the modules shipped with your
+application to develop new applications would themselves be considered a
+developer and would need their own commercial PyQt5 license.</li>
+</ul>
+<p>The recommended solution to all of these issues is to use <a class="reference external" href="http://www.riverbankcomputing.com/software/pyqtdeploy/">pyqtdeploy</a>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dbus.html"
+                        title="previous chapter">DBus Support</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="extension_api.html"
+                        title="next chapter">The PyQt5 Extension API</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="extension_api.html" title="The PyQt5 Extension API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dbus.html" title="DBus Support"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt 5.6 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 Riverbank Computing Limited.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>
