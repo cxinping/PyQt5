@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*- 
+
 import sys
 from PyQt5.QtWidgets import QMainWindow , QApplication
 from PyQt5.QtGui import QIcon 
@@ -7,8 +9,8 @@ class MainWidget(QMainWindow):
 		super(MainWidget,self).__init__(parent)
 		self.resize(400, 200) 
 		self.status = self.statusBar()
-		self.status.showMessage("ÕâÊÇ×´Ì¬À¸",5000)
-		self.setWindowTitle("PyQt MainWindowÀı×Ó") 
+		self.status.showMessage("è¿™æ˜¯çŠ¶æ€æ æç¤º",5000)
+		self.setWindowTitle("QMainWindow ä¾‹å­") 
 
 if __name__ == "__main__": 
 	app = QApplication(sys.argv)
