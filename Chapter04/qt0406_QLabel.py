@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
 
+
+'''
+    【简介】
+	PyQT5中Qlabel例子
+   
+  
+'''
+
 from PyQt5.QtWidgets import QApplication,  QLabel  ,QWidget, QVBoxLayout 
 from PyQt5.QtCore import Qt 
 from PyQt5.QtGui import QPixmap ,QPalette
