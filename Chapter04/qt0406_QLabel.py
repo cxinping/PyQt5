@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from PyQt5.QtWidgets import QApplication,  QLabel  ,QWidget, QVBoxLayout 
-from PyQt5 import QtCore  
+from PyQt5.QtCore import Qt 
 from PyQt5.QtGui import QPixmap 
 import sys  
     
@@ -16,10 +16,10 @@ class WindowDemo(QWidget):
         l1.setText("Hello World")
         l4.setText("<A href='http://www.cnblogs.com/wangshuo1/'>欢迎访问信平的小屋</a>")
         l2.setText("<a href='#'>欢迎使用Python GUI 应用</a>")
-        l1.setAlignment(QtCore.Qt.AlignCenter)
-        l3.setAlignment(QtCore.Qt.AlignCenter)
-        l4.setAlignment(QtCore.Qt.AlignRight)
-        l3.setPixmap(QPixmap("./images/python.jpg"))
+        l1.setAlignment( Qt.AlignCenter)
+        l3.setAlignment( Qt.AlignCenter)
+        l4.setAlignment( Qt.AlignRight)
+        l3.setPixmap( QPixmap("./images/python.jpg"))
         
         vbox=QVBoxLayout()
         vbox.addWidget(l1)
@@ -38,7 +38,7 @@ class WindowDemo(QWidget):
         
         # 划过文本框绑定槽事件       
         l2.linkHovered.connect( link_hovered )
-        l1.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse)
+        l1.setTextInteractionFlags( Qt.TextSelectableByMouse )
 
         self.setLayout(vbox)
         self.setWindowTitle("QLabel Demo")
