@@ -5,7 +5,7 @@ from PyQt5 import QtCore
 from PyQt5.QtGui import QPixmap 
 import sys  
     
-class Absolute(QWidget):  
+class WindowDemo(QWidget):  
     def __init__(self ):  
         super().__init__()
                 
@@ -14,7 +14,7 @@ class Absolute(QWidget):
         l3=QLabel(self)
         l4=QLabel(self)
         l1.setText("Hello World")
-        l4.setText("<A href='http://www.baidu.com'>Baidu</a>")
+        l4.setText("<A href='http://www.cnblogs.com/wangshuo1/'>欢迎访问信平的小屋</a>")
         l2.setText("<a href='#'>欢迎使用Python GUI 应用</a>")
         l1.setAlignment(QtCore.Qt.AlignCenter)
         l3.setAlignment(QtCore.Qt.AlignCenter)
@@ -44,13 +44,13 @@ class Absolute(QWidget):
         self.setWindowTitle("QLabel Demo")
         
 def link_hovered():
-    print( "hovering label2")
+    print("当鼠标滑过label-2标签时，触发事件。")
         
 def link_clicked():
-    print( "clicked label4" )
+    print("当鼠标点击label-4标签时，触发事件。" )
   
 if __name__ == "__main__":  
     app = QApplication(sys.argv)  
-    qb = Absolute()  
-    qb.show()  
+    win = WindowDemo()  
+    win.show()  
     sys.exit(app.exec_())
