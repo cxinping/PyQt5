@@ -2,43 +2,53 @@
 
 from PyQt5.QtWidgets import QApplication,  QLabel  ,QWidget, QVBoxLayout 
 from PyQt5.QtCore import Qt 
-from PyQt5.QtGui import QPixmap 
+from PyQt5.QtGui import QPixmap ,QPalette
 import sys  
     
 class WindowDemo(QWidget):  
     def __init__(self ):  
         super().__init__()
                 
-        l1=QLabel(self)
-        l2=QLabel(self)
-        l3=QLabel(self)
-        l4=QLabel(self)
-        l1.setText("Hello World")
-        l4.setText("<A href='http://www.cnblogs.com/wangshuo1/'>欢迎访问信平的小屋</a>")
-        l2.setText("<a href='#'>欢迎使用Python GUI 应用</a>")
-        l1.setAlignment( Qt.AlignCenter)
-        l3.setAlignment( Qt.AlignCenter)
-        l4.setAlignment( Qt.AlignRight)
-        l3.setPixmap( QPixmap("./images/python.jpg"))
+        label1 = QLabel(self)
+        label2 = QLabel(self)
+        label3 = QLabel(self)
+        label4 = QLabel(self)
+        
+        #1
+        label1.setText("这是一个文本标签。")
+        label1.setAutoFillBackground(True) 
+        palette = QPalette()   
+        palette.setColor(QPalette.Window,Qt.blue)  
+        label1.setPalette(palette) 
+        
+        label4.setText("<A href='http://www.cnblogs.com/wangshuo1/'>欢迎访问信平的小屋</a>")
+        label2.setText("<a href='#'>欢迎使用Python GUI 应用</a>")
+        label1.setAlignment( Qt.AlignCenter)
+        label3.setAlignment( Qt.AlignCenter)
+        label3.setToolTip('这是一个图片标签')
+        label4.setAlignment( Qt.AlignRight)
+        label4.setToolTip('这是一个超链接标签')
+        
+        label3.setPixmap( QPixmap("./images/python.jpg"))
         
         vbox=QVBoxLayout()
-        vbox.addWidget(l1)
+        vbox.addWidget(label1)
         vbox.addStretch()
-        vbox.addWidget(l2)
+        vbox.addWidget(label2)
         vbox.addStretch()
-        vbox.addWidget(l3)
+        vbox.addWidget( label3 )
         vbox.addStretch()
-        vbox.addWidget(l4)
+        vbox.addWidget( label4)
         
-        l1.setOpenExternalLinks(True)
+        label1.setOpenExternalLinks(True)
         # 打开允许访问超链接,默认是不允许，需要使用 setOpenExternalLinks(True)允许浏览器访问超链接
-        l4.setOpenExternalLinks( False )
+        label4.setOpenExternalLinks( False )
         # 点击文本框绑定槽事件  
-        l4.linkActivated.connect( link_clicked )
+        label4.linkActivated.connect( link_clicked )
         
         # 划过文本框绑定槽事件       
-        l2.linkHovered.connect( link_hovered )
-        l1.setTextInteractionFlags( Qt.TextSelectableByMouse )
+        label2.linkHovered.connect( link_hovered )
+        label1.setTextInteractionFlags( Qt.TextSelectableByMouse )
 
         self.setLayout(vbox)
         self.setWindowTitle("QLabel Demo")
