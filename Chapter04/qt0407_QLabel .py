@@ -13,7 +13,7 @@ class QlabelDemo(QDialog):
     def __init__(self ):  
         super().__init__()
          
-        self.setWindowTitle('Find Cell')
+        self.setWindowTitle('Qlabel 例子')
         lblFind1=QLabel('&Name')
         editFind1=QLineEdit()
         lblFind1.setBuddy(editFind1)
