@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*- 
+
 '''
     【简介】
-	QWebView打开网页
-  
+	QWebView打开网页 
   
 '''
 
