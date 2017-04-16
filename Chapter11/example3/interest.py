@@ -5,10 +5,7 @@
 	银行复利计算
     
 '''
-
 from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import sys
 from PyQt5.QtWidgets import (QApplication, QComboBox, QDialog,

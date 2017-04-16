@@ -4,8 +4,7 @@
 '''
     【简介】
 	PyQT5中Qlabel例子
-   
-  
+     
 '''
 
 from PyQt5.QtWidgets import QApplication,  QLabel  ,QWidget, QVBoxLayout 
