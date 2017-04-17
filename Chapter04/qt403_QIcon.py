@@ -11,9 +11,9 @@ class Icon(QWidget):
     #2   
     def initUI(self):
         self.setGeometry(300,  300,  250,  150)  
-        self.setWindowTitle('≥Ã–ÚÕº±Í')  
+        self.setWindowTitle('Á®ãÂ∫èÂõæÊ†á')  
         self.setWindowIcon(QIcon('./images/cartoon1.ico'))  
-  
+              
 if __name__ == '__main__':   
     app = QApplication(sys.argv)
     icon = Icon()  

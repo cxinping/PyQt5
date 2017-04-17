@@ -6,6 +6,7 @@
    按住 Alt + N , Alt + P , Alt + O , Alt + C 切换组件控件
   
 '''
+
 from PyQt5.QtWidgets import *
 import sys  
     
