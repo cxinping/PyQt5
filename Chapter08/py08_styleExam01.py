@@ -10,11 +10,10 @@ class MainWindow(QMainWindow):
 		self.setWindowTitle("界面背景图片设置") 
 		self.resize(350,  250)  
 		self.setObjectName("MainWindow")
-		self.setStyleSheet("#MainWindow{border-image:url(images/python.jpg);}")
+		self.setStyleSheet("#MainWindow{border-image:url(e:/images/python.jpg);}")
        
 if __name__ == "__main__": 
 	app = QApplication(sys.argv)
-	app.setWindowIcon(QIcon("./images/cartoon1.ico"))
 	form = MainWindow()
 	form.show()
 	sys.exit(app.exec_())
