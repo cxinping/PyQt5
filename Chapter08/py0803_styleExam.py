@@ -41,10 +41,8 @@ class WindowDemo(QWidget):
         vbox.addStretch()
         vbox.addWidget(btn1)
       
-
         self.setLayout(vbox)
         self.setWindowTitle("按钮和Label添加背景图片例子")
-      
   
 if __name__ == "__main__":  
     app = QApplication(sys.argv)  
