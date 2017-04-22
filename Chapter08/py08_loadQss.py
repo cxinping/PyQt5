@@ -26,7 +26,7 @@ if __name__ == "__main__":
 	app = QApplication(sys.argv)
 	win = MainWindow()
     
-	styleFile = './main.qss'
+	styleFile = './style.qss'
 	style = CommonHelper.readQss( styleFile )
 	
 	win.setStyleSheet( style ) 
