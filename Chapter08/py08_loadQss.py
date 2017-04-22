@@ -4,7 +4,6 @@
 	 加载QSS文件
      
 """
-from PyQt5.QtCore import Qt 
 import sys
 from PyQt5.QtWidgets import QMainWindow , QApplication,  QVBoxLayout , QPushButton
 from CommonHelper import CommonHelper
@@ -27,10 +26,8 @@ if __name__ == "__main__":
 	win = MainWindow()
     
 	styleFile = './style.qss'
-	style = CommonHelper.readQss( styleFile )
-	
-	win.setStyleSheet( style ) 
-	win.setObjectName("MainWindow") 
+	qssStyle = CommonHelper.readQss( styleFile )	
+	win.setStyleSheet( qssStyle ) 
 	win.show()
     
 	sys.exit(app.exec_())

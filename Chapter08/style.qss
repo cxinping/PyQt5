@@ -1,4 +1,4 @@
-MainWindow{
+QMainWindow{
 		border-image:url(./images/python.jpg);
 
 }
