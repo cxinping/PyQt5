@@ -2,9 +2,7 @@
 
 # 导入模块
 import sys
- 
 from PyQt5.QtWidgets import QMainWindow , QApplication
-#from PyQt5.QtGui import QPalette , QBrush , QPixmap
 from PyQt5.QtCore import Qt 
 
 ######################################### 自定义窗口类 ########################################
@@ -15,10 +13,12 @@ class MyWindow( QMainWindow):
         '''构造函数'''
         # 调用父类构造函数
         super(MyWindow,self).__init__(parent)
+
         # 设置窗口标记（无边框|任务栏右键菜单）
         self.setWindowFlags( Qt.FramelessWindowHint |  Qt.WindowSystemMenuHint)
+  
         # 便于显示，设置窗口背景颜色(采用QSS)
-        self.setStyleSheet('''background-color:blue;''')
+        self.setStyleSheet('''background-color:blue; ''')
     ####################################### 覆盖函数 #######################################    
     def showMaximized(self):
         '''最大化'''
