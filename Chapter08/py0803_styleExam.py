@@ -22,14 +22,15 @@ class WindowDemo(QWidget):
         
         #2
         btn1 = QPushButton(self )  
+        btn1.setObjectName('btn1')
         btn1.setMaximumSize(48, 48)
         btn1.setMinimumSize(48, 48)
         style = '''
-                    QPushButton{
+                    #btn1{
                         border-radius: 4px;
                         background-image: url('./images/add.png');
                         }
-                    QPushButton:Pressed{
+                    #btn1:Pressed{
                         background-image: url('./images/addhover.png');
                         }
                 '''
