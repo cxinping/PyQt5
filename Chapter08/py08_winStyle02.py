@@ -5,10 +5,10 @@ import sys
 from PyQt5.QtWidgets import QMainWindow , QApplication
 from PyQt5.QtCore import Qt 
 
-######################################### 自定义窗口类 ########################################
+### 自定义窗口类 
 class MyWindow( QMainWindow):
     '''自定义窗口类'''
-    ###################################### 构造、析构函数 ###################################
+    ###  构造函数 
     def __init__(self,parent=None):
         '''构造函数'''
         # 调用父类构造函数
@@ -19,7 +19,7 @@ class MyWindow( QMainWindow):
   
         # 便于显示，设置窗口背景颜色(采用QSS)
         self.setStyleSheet('''background-color:blue; ''')
-    ####################################### 覆盖函数 #######################################    
+    ###覆盖函数  
     def showMaximized(self):
         '''最大化'''
         # 得到桌面控件
@@ -31,7 +31,7 @@ class MyWindow( QMainWindow):
         # 设置窗口显示
         self.show()
 
-########################################### 主函数 #########################################        
+###  主函数     
 if __name__ == "__main__":
     '''主函数'''
     # 声明变量
