@@ -14,8 +14,8 @@ class MyWindow( QMainWindow):
         # 调用父类构造函数
         super(MyWindow,self).__init__(parent)
 
-        # 设置窗口标记（无边框|任务栏右键菜单）
-        self.setWindowFlags( Qt.FramelessWindowHint |  Qt.WindowSystemMenuHint)
+        # 设置窗口标记（无边框 ）
+        self.setWindowFlags(   Qt.FramelessWindowHint)
   
         # 便于显示，设置窗口背景颜色(采用QSS)
         self.setStyleSheet('''background-color:blue; ''')
