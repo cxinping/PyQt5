@@ -6,7 +6,7 @@
     
 '''
 
-from PyQt5.QtWidgets import QApplication,  QLabel  ,QWidget, QVBoxLayout , QPushButton
+from PyQt5.QtWidgets import QApplication,  QLabel  ,QWidget, QVBoxLayout 
 from PyQt5.QtGui   import QImage , QPixmap 
 from PyQt5.QtCore import Qt 
 import sys

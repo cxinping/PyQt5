@@ -11,9 +11,9 @@ import sys
 from PyQt5.QtWidgets import QApplication  ,QWidget 
 from PyQt5.QtGui import  QPixmap,   QPainter , QBitmap
 
-class MyForm(QWidget):
+class Winform(QWidget):
 	def __init__(self,parent=None):
-		super(MyForm,self).__init__(parent)
+		super(Winform,self).__init__(parent)
 		self.setWindowTitle("不规则窗体的实现例子") 
 		self.resize(600, 400)
         
@@ -24,6 +24,6 @@ class MyForm(QWidget):
          
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
-	form = MyForm()
+	form = Winform()
 	form.show()
 	sys.exit(app.exec_())
