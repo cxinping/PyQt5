@@ -9,7 +9,7 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication  ,QWidget 
-from PyQt5.QtGui import  QPixmap,   QPainter  ,  QCursor 
+from PyQt5.QtGui import  QPixmap,   QPainter  ,  QCursor , QBitmap
 from PyQt5.QtCore import Qt 
 
 class ShapeWidget(QWidget):  
@@ -20,11 +20,11 @@ class ShapeWidget(QWidget):
 
     # 显示不规则 pic
 	def mypix(self):
-		self.mypic = './images/boy.jpg'
-		self.pix = QPixmap(self.mypic , "0", Qt.AvoidDither | Qt.ThresholdDither | Qt.ThresholdAlphaDither)   
-		self.resize(self.pix.size())
-		self.setMask(self.pix.mask())  
-		self.dragPosition=None
+		self.pix = QBitmap( "./images/mask.png" )
+		self.resize(self.pix.size())       
+		self.setMask(self.pix)
+		print( self.pix.size())
+		self.dragPosition = None
 
 	# 重定义鼠标按下响应函数mousePressEvent(QMouseEvent)和鼠标移动响应函数mouseMoveEvent(QMouseEvent)，使不规则窗体能响应鼠标事件，随意拖动。
 	def mousePressEvent(self, event):
@@ -33,7 +33,9 @@ class ShapeWidget(QWidget):
 			self.m_DragPosition=event.globalPos()-self.pos()
 			event.accept()
 			self.setCursor(QCursor(Qt.OpenHandCursor))
-
+		if event.button()==Qt.RightButton:  
+			self.close()  
+			
 	def mouseMoveEvent(self, QMouseEvent):
 		if Qt.LeftButton and self.m_drag:
 		    # 当左键移动窗体修改偏移值
@@ -47,12 +49,8 @@ class ShapeWidget(QWidget):
     #一般 paintEvent 在窗体首次绘制加载， 要重新加载paintEvent 需要重新加载窗口使用 self.update() or  self.repaint()    
 	def paintEvent(self, event):
 		painter = QPainter(self)
-		painter.drawPixmap(0, 0, self.pix.width(),self.pix.height(),self.pix)
-    
-	# 鼠标双击事件
-	def mouseDoubleClickEvent(self, event):
-		self.mypix()
-
+		painter.drawPixmap(0,0,self.width(),self.height(),QPixmap("./images/boy.png"))
+			
 if __name__ == '__main__':
     app=QApplication(sys.argv)
     form=ShapeWidget()
