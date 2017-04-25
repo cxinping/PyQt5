@@ -15,16 +15,15 @@ class Winform(QWidget):
 	def __init__(self,parent=None):
 		super(Winform,self).__init__(parent)
 		self.setWindowTitle("不规则窗体的实现例子") 
-		self.pix = QBitmap("./images/1.png")
-		#self.pix = QBitmap("./images/2.jpg")
+
+		self.pix = QBitmap("./images/mask.png")
 		self.resize(self.pix.size())
 		self.setMask(self.pix)
          
 	def paintEvent(self,event):
 		painter = QPainter(self)
-		#painter.drawPixmap(0,0,self.pix.width(),self.pix.height(),QPixmap("./images/2.jpg"))
-		painter.drawPixmap(0,0,self.width(),self.height(),QPixmap("./images/screen1.jpg"))
-	
+		painter.drawPixmap(0,0,self.pix.width(),self.pix.height(),QPixmap("./images/screen1.jpg"))
+		#painter.drawPixmap(0,0,self.width(),self.height(),QPixmap("./images/screen1.jpg"))
         
 if __name__ == "__main__":  
 		app = QApplication(sys.argv) 
