@@ -2,42 +2,59 @@
  
 """
     【简介】
-    不规则窗体的实现
+    不规则的，可以拖动的窗体实现例子
     
     
 """
 
 import sys
 from PyQt5.QtWidgets import QApplication  ,QWidget 
-from PyQt5.QtGui import  QPixmap,   QPainter 
+from PyQt5.QtGui import  QPixmap,   QPainter  ,  QCursor 
+from PyQt5.QtCore import Qt 
 
-class Winform(QWidget):
-	def __init__(self,parent=None):
-		super(Winform,self).__init__(parent)
-		self.setWindowTitle("不规则窗体的实现例子") 
-		#self.resize(650, 1000)
-		#pixmap = QPixmap(r"./images/left.png")                
-		#self.resize(pixmap.width(),pixmap.height())
-        
-	def paintEvent(self,event):
-		pixmap = QPixmap(r"./images/dog2.jpg")        
+class ShapeWidget(QWidget):  
+	def __init__(self,parent=None):  
+		super(ShapeWidget,self).__init__(parent)
+		self.setWindowTitle("不规则的，可以拖动的窗体实现例子") 
+		self.mypix()	
+
+    # 显示不规则 pic
+	def mypix(self):
+		self.mypic = './images/boy.jpg'
+		self.pix = QPixmap(self.mypic , "0", Qt.AvoidDither | Qt.ThresholdDither | Qt.ThresholdAlphaDither)   
+		self.resize(self.pix.size())
+		self.setMask(self.pix.mask())  
+		self.dragPosition=None
+
+	# 重定义鼠标按下响应函数mousePressEvent(QMouseEvent)和鼠标移动响应函数mouseMoveEvent(QMouseEvent)，使不规则窗体能响应鼠标事件，随意拖动。
+	def mousePressEvent(self, event):
+		if event.button() == Qt.LeftButton:
+			self.m_drag=True
+			self.m_DragPosition=event.globalPos()-self.pos()
+			event.accept()
+			self.setCursor(QCursor(Qt.OpenHandCursor))
+
+	def mouseMoveEvent(self, QMouseEvent):
+		if Qt.LeftButton and self.m_drag:
+		    # 当左键移动窗体修改偏移值
+			self.move(QMouseEvent.globalPos()- self.m_DragPosition )
+			QMouseEvent.accept()
+	
+	def mouseReleaseEvent(self, QMouseEvent):
+		self.m_drag=False
+		self.setCursor(QCursor(Qt.ArrowCursor))
+    
+    #一般 paintEvent 在窗体首次绘制加载， 要重新加载paintEvent 需要重新加载窗口使用 self.update() or  self.repaint()    
+	def paintEvent(self, event):
 		painter = QPainter(self)
-        
-		#painter.drawPixmap(0,0,pixmap.width(),pixmap.height(),pixmap)
-		
-		#print(pixmap.width()) 
-		#print(pixmap.height()) 
-		print('初始化绘制图形-paintEvent')
+		painter.drawPixmap(0, 0, self.pix.width(),self.pix.height(),self.pix)
+    
+	# 鼠标双击事件
+	def mouseDoubleClickEvent(self, event):
+		self.mypix()
 
-	def resizeEvent(self, QResizeEvent) :
-		pixmap = QPixmap(r"./images/left.png")        
-		self.setMask( pixmap.mask() );
-		print('改变窗体时绘制图形-resizeEvent')
-		#print( pixmap)
-		
-        
-if __name__ == "__main__":  
-	app = QApplication(sys.argv)  
-	form = Winform()
-	form.show()
-	sys.exit(app.exec_())
+if __name__ == '__main__':
+    app=QApplication(sys.argv)
+    form=ShapeWidget()
+    form.show()
+    app.exec_()
