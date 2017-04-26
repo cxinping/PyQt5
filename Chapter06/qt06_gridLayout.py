@@ -24,9 +24,7 @@ class Winform(QWidget):
                 '4', '5', '6', '*',  
                  '1', '2', '3', '-',  
                 '0', '.', '=', '+']  
-          
-		print( type(names) )
-        
+                  
 		positions = [(i,j) for i in range(5) for j in range(4)]  
           
 		for position, name in zip(positions, names):                
