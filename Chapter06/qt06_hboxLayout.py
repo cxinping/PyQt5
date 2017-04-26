@@ -19,7 +19,7 @@ class Winform(QWidget):
 
     def initUi(self):
         hlayout = QHBoxLayout()
-         # 局部布局添加部件（例如：按钮）
+         # 按照从左到右的顺序进行添加按钮部件。
         hlayout.addWidget( QPushButton(str(1)))
         hlayout.addWidget( QPushButton(str(2)))
         hlayout.addWidget( QPushButton(str(3)))
