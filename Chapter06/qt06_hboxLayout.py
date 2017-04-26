@@ -14,7 +14,7 @@ class Winform(QWidget):
     def __init__(self,parent=None):
         super(Winform,self).__init__(parent)
         self.setWindowTitle("水平布局管理例子") 
-
+	
         # 水平布局按照从左到右的顺序进行添加按钮部件。
         hlayout = QHBoxLayout()       
         hlayout.addWidget( QPushButton(str(1)))
