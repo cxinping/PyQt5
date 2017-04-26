@@ -10,16 +10,13 @@
 import sys
 from PyQt5.QtWidgets import QApplication  ,QWidget ,QHBoxLayout , QPushButton
 
-
 class Winform(QWidget):
     def __init__(self,parent=None):
         super(Winform,self).__init__(parent)
         self.setWindowTitle("水平布局管理例子") 
-        self.initUI()
 
-    def initUI(self):
-        hlayout = QHBoxLayout()
-         # 按照从左到右的顺序进行添加按钮部件。
+        # 水平布局按照从左到右的顺序进行添加按钮部件。
+        hlayout = QHBoxLayout()       
         hlayout.addWidget( QPushButton(str(1)))
         hlayout.addWidget( QPushButton(str(2)))
         hlayout.addWidget( QPushButton(str(3)))
