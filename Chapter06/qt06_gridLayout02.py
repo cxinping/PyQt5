@@ -8,7 +8,6 @@
 """
 
 import sys
-from PyQt5.QtWidgets import QApplication  ,QWidget  , QGridLayout, QPushButton
 from PyQt5.QtWidgets import (QWidget, QLabel, QLineEdit,     QTextEdit, QGridLayout, QApplication)  
     
 class Winform(QWidget):
@@ -17,10 +16,10 @@ class Winform(QWidget):
 		self.initUI()
 
 	def initUI(self):            
-		title = QLabel('Title')  
-		author = QLabel('Author')  
-		review = QLabel('Review')  
-  
+		title = QLabel('标题')  
+		author = QLabel('提交人')  
+		review = QLabel('申告内容')  
+ 
 		titleEdit = QLineEdit()  
 		authorEdit = QLineEdit()  
 		reviewEdit = QTextEdit()  
@@ -40,7 +39,7 @@ class Winform(QWidget):
 		self.setLayout(grid)   
           
 		self.setGeometry(300, 300, 350, 300)  
-		self.setWindowTitle('Review')
+		self.setWindowTitle('故障申告')
   
 if __name__ == "__main__":  
 		app = QApplication(sys.argv) 
