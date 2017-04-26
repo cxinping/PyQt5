@@ -16,17 +16,21 @@ class Winform(QWidget):
 		self.initUI()
 
 	def initUI(self):            
+        #1
 		grid = QGridLayout()  
 		self.setLayout(grid)  
    
-		names = ['Cls', 'Bck', '', 'Close',  
+        #2
+		names = ['Cls', 'Back', '', 'Close',  
                  '7', '8', '9', '/',  
                 '4', '5', '6', '*',  
                  '1', '2', '3', '-',  
                 '0', '.', '=', '+']  
-                  
+        
+        #3        
 		positions = [(i,j) for i in range(5) for j in range(4)]  
-          
+         
+        #4 
 		for position, name in zip(positions, names):                
 			if name == '':  
 				continue  
