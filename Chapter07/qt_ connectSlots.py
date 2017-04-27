@@ -17,18 +17,18 @@ class CustWidget( QWidget):
     def __init__(self, parent=None):
         super(CustWidget, self).__init__(parent)
         
-        self.ok_button = QPushButton("OK", self)
-        self.ok_button.setObjectName("ok_button")
+        self.okButton = QPushButton("OK", self)
+        self.okButton.setObjectName("okButton")
         
         layout =  QHBoxLayout()
-        layout.addWidget(self.ok_button)
+        layout.addWidget(self.okButton)
         self.setLayout(layout)
         
         QtCore.QMetaObject.connectSlotsByName(self)
         
     @QtCore.pyqtSlot()    
-    def on_ok_button_clicked(self):
-        print( "OK")
+    def on_okButton_clicked(self):
+        print( "点击了OK按钮")
         
         
 if __name__ == "__main__":        
