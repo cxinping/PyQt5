@@ -9,8 +9,7 @@
 
 from PyQt5 import QtCore 
 from PyQt5.QtWidgets import QApplication  ,QWidget ,QHBoxLayout , QPushButton
-import sys
-    
+import sys    
     
 class CustWidget( QWidget):
     
@@ -18,6 +17,7 @@ class CustWidget( QWidget):
         super(CustWidget, self).__init__(parent)
         
         self.okButton = QPushButton("OK", self)
+        #使用setObjectName设置对象名称
         self.okButton.setObjectName("okButton")
         
         layout =  QHBoxLayout()
