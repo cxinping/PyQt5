@@ -6,7 +6,7 @@
     
     
 """
- 
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QImage , QIcon, QPixmap
 from PyQt5.QtWidgets import QApplication  , QMainWindow, QLabel,  QSizePolicy , QAction
 from PyQt5.QtPrintSupport import QPrinter, QPrintDialog
