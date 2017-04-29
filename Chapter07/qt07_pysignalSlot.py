@@ -18,7 +18,8 @@ class QTypeSignal(QObject):
           
       def run( self):
           self.sendmsg.emit('发射信号 ')
-
+          
+          
 class QTypeSlot(QObject):
       def __init__( self):
           QObject.__init__( self)
