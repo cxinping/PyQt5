@@ -27,7 +27,7 @@ class QTypeSlot(QObject):
 	def __init__( self):
 		super( QTypeSlot, self).__init__()
     
-   # 槽对象里的槽函数      
+    # 槽对象里的槽函数      
 	def get(self, msg):
 		print("QSlot get msg => " + msg)
 
@@ -35,11 +35,13 @@ class QTypeSlot(QObject):
 if __name__ == '__main__':
 	send = QTypeSignal()
 	slot = QTypeSlot()
-	print('--- 连接信号槽 ---')    
+   #1 
+	print('--- 把信号绑定到槽函数 ---')    
 	send.sendmsg.connect( slot.get)
 	send.run()
     
-	print('--- 断开信号槽 ---')        
+    #2
+	print('--- 把信号断开槽函数 ---')        
 	send.sendmsg.disconnect( slot.get )
 	send.run()   
 
