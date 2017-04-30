@@ -26,7 +26,7 @@ class CustSignal(QObject):
     # 声明带一个字典类型参数的信号
     signal5 = pyqtSignal(dict)
   
-    # 声明一个多重载版本的信号，包括了一个带int和str类型参数的信号，以及带str参数的信号
+    # 声明一个多重载版本的信号，包括了一个带int和str类型参数的信号或着带str参数的信号
     signal6 = pyqtSignal([int,str], [str])
       
     def __init__(self,parent=None):
