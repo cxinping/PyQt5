@@ -2,7 +2,7 @@
 
 """
     【简介】
-     按钮传递鼠标按下事件点击例子
+     按钮传递鼠标按下事件例子
 
 
 """
@@ -19,6 +19,8 @@ class MyWindow( QWidget):
         '''构造函数'''
         # 调用父类构造函数
         super(MyWindow,self).__init__(parent)
+        #设置窗体标题
+        self.setWindowTitle("按钮传递鼠标按下事件例子") 
         # 设置窗口固定尺寸
         self.setFixedSize( QSize(820,600))
         # 创建主控件
@@ -30,7 +32,7 @@ class MyWindow( QWidget):
             # 创建自定义按钮
             button = MyButton(self)
             # 设置文本内容
-            button.setText("测试%s" % i)
+            button.setText("测试-%s" % i)
             # 添加控件
             mainLayout.addWidget(button)
             # 设置按钮点击连接槽函数
