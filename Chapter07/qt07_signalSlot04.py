@@ -36,14 +36,13 @@ class MyThread(QThread):
 
 	def setVal(self,val):
 		self.times = int(val)
-
         #执行线程的run方法
 		self.start()
 
 	def run(self):
 		while self.times > 0 and self.identity:
 			# 发射信号
-			self.sinOut.emit(self.identity+" "+str(self.times))
+			self.sinOut.emit(self.identity+"==>"+str(self.times))
 			self.times -= 1
 
 if __name__ == '__main__':  
