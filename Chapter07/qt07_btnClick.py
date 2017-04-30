@@ -12,10 +12,9 @@ from PyQt5.QtCore import  QSize
 from PyQt5.QtWidgets import QApplication  ,QWidget  , QVBoxLayout, QMessageBox, QToolButton
 from PyQt5.QtCore import Qt 
 
-################################# 自定义窗口类 #####################################
+### 自定义窗口类  
 class MyWindow( QWidget):
-    '''自定义窗口类'''
-    ############################# 构造、析构函数 #################################
+    '''自定义窗口类''' 
     def __init__(self,parent=None):
         '''构造函数'''
         # 调用父类构造函数
@@ -36,11 +35,11 @@ class MyWindow( QWidget):
             mainLayout.addWidget(button)
             # 设置按钮点击连接槽函数
             button.clicked.connect(self.OnClick)
-    ############################### 命令 ########################################
+			
     def OnClick(self):
         '''响应点击'''
         QMessageBox.about(self,"测试","点击弹出窗口成功")
-    ################################ 事件 ########################################
+
     def mousePressEvent(self,event):
         '''鼠标按下事件'''
         # 判断是否为鼠标左键按下
@@ -48,10 +47,9 @@ class MyWindow( QWidget):
             # 设置窗口背景颜色
             self.setStyleSheet('''background-color:cyan;''')
         
-################################## 自定义按钮类 ####################################
+### 自定义按钮类 
 class MyButton( QToolButton):
     '''自定义按钮类'''
-    ############################## 构造、析构函数 ##################################
     def __init__(self,parent=None):
         '''构造函数'''
         # 调用父类构造函数
@@ -60,7 +58,7 @@ class MyButton( QToolButton):
         self.setFixedSize( QSize(800,120))
         # 设置按钮背景颜色
         self.setStyleSheet('''background-color:red;''')
-    ################################ 事件 #########################################
+
     def mousePressEvent(self,event):
         '''鼠标按下事件'''
         # 判断是否为鼠标左键按下
@@ -70,7 +68,7 @@ class MyButton( QToolButton):
             # 传递至父窗口响应鼠标按下事件
             self.parent().mousePressEvent(event)
         
-################################## 主函数 ##########################################
+###  主函数 ####
 if __name__ == "__main__":
     '''主函数'''
     # 声明变量
