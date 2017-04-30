@@ -8,6 +8,7 @@
 """
 
 from PyQt5.QtWidgets import  QApplication ,QWidget
+from PyQt5.QtCore import QThread ,  pyqtSignal
 import sys
 
 class Main(QWidget):
@@ -24,7 +25,6 @@ class Main(QWidget):
 		print(text)
 
 class MyThread(QThread):
-
 	sinOut = pyqtSignal(str)
 
 	def __init__(self,parent=None):
