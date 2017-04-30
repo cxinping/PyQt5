@@ -9,9 +9,8 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication  ,QWidget 
-from PyQt5.QtGui import  QPixmap,   QPainter , QBitmap ,  QColor,  QCursor 
+from PyQt5.QtGui import  QPixmap,   QPainter ,  QCursor 
 from PyQt5.QtCore import Qt, QTimer
-
 
 class ShapeWidget(QWidget):  
 	def __init__(self,parent=None):  
