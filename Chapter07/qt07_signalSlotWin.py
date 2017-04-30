@@ -19,7 +19,6 @@ class Backend(QThread):
 		while True:
 			data = QDateTime.currentDateTime()
 			currTime = data.toString("yyyy-MM-dd hh:mm:ss")
-			print( currTime )
 			self.update_date.emit( str(currTime) )
 			time.sleep(1)
 
@@ -40,7 +39,5 @@ if __name__ == '__main__':
 	win = Window()
 	backend.update_date.connect(win.handleDisplay)
 	backend.start()
-	win.show()
-    
-     
+	win.show() 
 	sys.exit(app.exec_())
