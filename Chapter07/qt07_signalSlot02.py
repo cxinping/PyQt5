@@ -6,8 +6,8 @@
 
 
 """
-from PyQt5.QtCore import QObject , pyqtSignal
 
+from PyQt5.QtCore import QObject , pyqtSignal
 
 class CustSignal(QObject):
       
@@ -51,25 +51,25 @@ class CustSignal(QObject):
         self.signal6[str].emit("text")
           
     def signalCall1(self):
-        print("sin1 emit")
+        print("signal1 emit")
   
     def signalCall2(self,val):
-        print("sin2 emit,value:",val)
+        print("signal2 emit,value:",val)
   
     def signalCall3(self,val,text):
-        print("sin3 emit,value:",val,text)
+        print("signal3 emit,value:",val,text)
   
     def signalCall4(self,val):
-        print("sin4 emit,value:",val)
+        print("signal4 emit,value:",val)
           
     def signalCall5(self,val):
-        print("sin5 emit,value:",val)
+        print("signal5 emit,value:",val)
   
     def signalCall6(self,val,text):
-        print("sin6 emit,value:",val,text)
+        print("signal6 emit,value:",val,text)
   
     def signalCall6OverLoad(self,val):
-        print("sin6 overload emit,value:",val)
+        print("signal6 overload emit,value:",val)
   
 if __name__ == '__main__':  
     custSignal = CustSignal()
