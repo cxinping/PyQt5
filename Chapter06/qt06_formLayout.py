@@ -8,7 +8,7 @@
 """
 
 import sys
-from PyQt5.QtWidgets import QApplication  ,QWidget ,QFormLayout , QPushButton, QLineEdit, QLabel
+from PyQt5.QtWidgets import QApplication  ,QWidget ,QFormLayout , QLineEdit, QLabel
 
 class Winform(QWidget):
 	def __init__(self,parent=None):
