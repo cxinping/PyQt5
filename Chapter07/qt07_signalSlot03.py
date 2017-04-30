@@ -9,7 +9,6 @@
 
 from PyQt5.QtCore import QObject , pyqtSignal
 
-
 class SignalClass(QObject):
 
     # 声明一个无参数的信号
