@@ -8,9 +8,9 @@
 """
 
 from PyQt5.QtCore import QObject , pyqtSignal
-from PyQt5.QtWidgets import *
 
-class SinClass(QObject):
+
+class SignalClass(QObject):
 
     # 声明一个无参数的信号
 	signal1 = pyqtSignal()
@@ -19,7 +19,7 @@ class SinClass(QObject):
 	signal2 = pyqtSignal(int)
 
 	def __init__(self,parent=None):
-		super(SinClass,self).__init__(parent)
+		super(SignalClass,self).__init__(parent)
 
 		# 信号sin1连接到sin1Call和sin2Call这两个槽
 		self.signal1.connect(self.sin1Call)
@@ -52,4 +52,4 @@ class SinClass(QObject):
 		print("signal-2 emit")
   
 if __name__ == '__main__':  
-	sin = SinClass()
+	signal = SignalClass()
