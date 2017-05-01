@@ -7,7 +7,6 @@
     
 """
 
-
 import sys
 from PyQt5.QtWidgets import QApplication  ,QWidget , QHBoxLayout,  QVBoxLayout,  QGridLayout ,  QFormLayout, QPushButton 
   
@@ -25,7 +24,8 @@ class MyWindow( QWidget):
         glayout = QGridLayout()
         formlayout =  QFormLayout()
         
-        hlayout.addWidget( QPushButton(str(1)) ) # 局部布局添加部件（例如：按钮）
+        # 局部布局添加部件（例如：按钮）
+        hlayout.addWidget( QPushButton(str(1)) ) 
         hlayout.addWidget( QPushButton(str(2)) )
         vlayout.addWidget( QPushButton(str(3)) )
         vlayout.addWidget( QPushButton(str(4)) )
@@ -38,7 +38,8 @@ class MyWindow( QWidget):
         formlayout.addWidget( QPushButton(str(11)) )
         formlayout.addWidget( QPushButton(str(12)) )
         
-        hwg =  QWidget() # 准备四个部件
+        # 准备四个部件
+        hwg =  QWidget() 
         vwg =  QWidget()
         gwg =  QWidget()
         fwg =  QWidget()
@@ -55,7 +56,7 @@ class MyWindow( QWidget):
         wlayout.addWidget(gwg)
         wlayout.addWidget(fwg)
         
-        # 窗体本尊设置全局布局
+        # 窗体本体设置全局布局
         self.setLayout(wlayout) 
   
 if __name__=="__main__":    
