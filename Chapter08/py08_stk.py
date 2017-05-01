@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import random
-from PyQt5 import QtGui, QtCore,Qt
-
-
-from PyQt5.QtWidgets import QWidget, QToolTip , QApplication
+from PyQt5 import QtGui, QtCore 
+from PyQt5.QtWidgets import QWidget  , QApplication
 
 class report_painter:
     '''绘制行情类'''
@@ -18,6 +15,7 @@ class report_painter:
 
         #设置抗锯齿
         #self.paint.setRenderHint(QtGui.QPainter.Antialiasing)
+        
         #度量尺对象
         self.metrics = self.paint.fontMetrics()
         
@@ -540,7 +538,8 @@ class Test( QWidget):
     def paintEvent(self, event):
         report_painter(self)
 
-app =  QApplication(sys.argv)
-dt = Test()
-dt.show()
-app.exec_()
+if __name__=="__main__":    
+	app =  QApplication(sys.argv)
+	dt = Test()
+	dt.show()
+	sys.exit(app.exec_())
