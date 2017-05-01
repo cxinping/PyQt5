@@ -15,12 +15,13 @@ class MyWindow( QWidget):
 
     def __init__(self):  
         super().__init__()
-        self.setWindowTitle('PyQt5布局示例')
+        self.setWindowTitle('PyQt5嵌套布局示例')
         
-        # 开始：
-        wlayout =  QHBoxLayout() # 全局布局（1个）：水平
-        
-        hlayout =  QHBoxLayout() # 局部布局（4个）：水平、竖直、网格、表单
+        # 1 
+        # 全局布局（1个）：水平
+        wlayout =  QHBoxLayout() 
+         # 局部布局（4个）：水平、竖直、网格、表单
+        hlayout =  QHBoxLayout()
         vlayout =  QVBoxLayout()
         glayout = QGridLayout()
         formlayout =  QFormLayout()
@@ -33,10 +34,10 @@ class MyWindow( QWidget):
         glayout.addWidget( QPushButton(str(6)) , 0, 1 )
         glayout.addWidget( QPushButton(str(7)) , 1, 0)
         glayout.addWidget( QPushButton(str(8)) , 1, 1)
-        formlayout.addWidget( QPushButton(str(9))     )
-        formlayout.addWidget( QPushButton(str(10))   )
-        formlayout.addWidget( QPushButton(str(11)))
-        formlayout.addWidget( QPushButton(str(12)))
+        formlayout.addWidget( QPushButton(str(9))  )
+        formlayout.addWidget( QPushButton(str(10)) )
+        formlayout.addWidget( QPushButton(str(11)) )
+        formlayout.addWidget( QPushButton(str(12)) )
         
         hwg =  QWidget() # 准备四个部件
         vwg =  QWidget()
