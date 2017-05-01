@@ -8,58 +8,36 @@
 """
 
 
-import sys
-from PyQt5.QtWidgets import QApplication  ,QWidget , QHBoxLayout,  QVBoxLayout,  QGridLayout ,  QFormLayout, QPushButton 
-  
-class MyWindow( QWidget):  
+from PyQt5.QtWidgets import *
+ 
+ 
+class MyWindow(QWidget):  
 
     def __init__(self):  
         super().__init__()
-        self.setWindowTitle('嵌套布局示例')
+        self.setWindowTitle('PyQt5布局示例')
+        self.resize(400, 300)
+        
+        # 全局部件（注意参数 self），用于"承载"全局布局
+        wwg = QWidget(self)
+        
+        wl = QVBoxLayout(wwg) # 全局布局（注意参数 wwg）
+
+        vl = QVBoxLayout() # 三个局部布局
+        hl = QHBoxLayout()
+        gl = QGridLayout()
+        
+        pass # 这里向局部布局内添加部件
+
+        wl.addLayout(vl) # 加到全局布局
+        wl.addLayout(gl)
+        wl.addLayout(hl)
        
-        # 全局布局（1个）：水平
-        wlayout =  QHBoxLayout() 
-         # 局部布局（4个）：水平、竖直、网格、表单
-        hlayout =  QHBoxLayout()
-        vlayout =  QVBoxLayout()
-        glayout = QGridLayout()
-        formlayout =  QFormLayout()
-        
-        hlayout.addWidget( QPushButton(str(1)) ) # 局部布局添加部件（例如：按钮）
-        hlayout.addWidget( QPushButton(str(2)) )
-        vlayout.addWidget( QPushButton(str(3)) )
-        vlayout.addWidget( QPushButton(str(4)) )
-        glayout.addWidget( QPushButton(str(5)) , 0, 0 )
-        glayout.addWidget( QPushButton(str(6)) , 0, 1 )
-        glayout.addWidget( QPushButton(str(7)) , 1, 0)
-        glayout.addWidget( QPushButton(str(8)) , 1, 1)
-        formlayout.addWidget( QPushButton(str(9))  )
-        formlayout.addWidget( QPushButton(str(10)) )
-        formlayout.addWidget( QPushButton(str(11)) )
-        formlayout.addWidget( QPushButton(str(12)) )
-        
-        hwg =  QWidget() # 准备四个部件
-        vwg =  QWidget()
-        gwg =  QWidget()
-        fwg =  QWidget()
-                
-        # 四个部件设置局部布局
-        hwg.setLayout(hlayout) 
-        vwg.setLayout(vlayout)
-        gwg.setLayout(glayout)
-        fwg.setLayout(formlayout)
-        
-         # 四个部件加至全局布局
-        wlayout.addWidget(hwg)
-        wlayout.addWidget(vwg)
-        wlayout.addWidget(gwg)
-        wlayout.addWidget(fwg)
-        
-        # 窗体本尊设置全局布局
-        self.setLayout(wlayout) 
-  
+
 if __name__=="__main__":    
-    app =  QApplication(sys.argv)    
+    import sys    
+    
+    app = QApplication(sys.argv)    
     win = MyWindow()  
     win.show()  
     sys.exit(app.exec_())
