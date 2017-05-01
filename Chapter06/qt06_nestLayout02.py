@@ -19,14 +19,16 @@ class MyWindow(QWidget):
         
         # 全局部件（注意参数 self），用于"承载"全局布局
 		wwg = QWidget(self)
-		wl = QHBoxLayout(wwg) # 全局布局（注意参数 wwg）
-
+        
+         # 全局布局（注意参数 wwg）
+		wl = QHBoxLayout(wwg)
 		hlayout =  QHBoxLayout()
 		vlayout =  QVBoxLayout()
 		glayout = QGridLayout()
 		formlayout =  QFormLayout()
         
-		hlayout.addWidget( QPushButton(str(1)) ) # 局部布局添加部件（例如：按钮）
+         # 局部布局添加部件（例如：按钮）
+		hlayout.addWidget( QPushButton(str(1)) )
 		hlayout.addWidget( QPushButton(str(2)) )
 		vlayout.addWidget( QPushButton(str(3)) )
 		vlayout.addWidget( QPushButton(str(4)) )
@@ -39,8 +41,8 @@ class MyWindow(QWidget):
 		formlayout.addWidget( QPushButton(str(11)) )
 		formlayout.addWidget( QPushButton(str(12)) )
         
-        # 这里向局部布局内添加部件
-		wl.addLayout(hlayout) # 加到全局布局
+        # 这里向局部布局内添加部件,将他加到全局布局
+		wl.addLayout(hlayout)  
 		wl.addLayout(vlayout)
 		wl.addLayout(glayout)
 		wl.addLayout(formlayout)       
