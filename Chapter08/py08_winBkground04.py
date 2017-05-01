@@ -2,7 +2,7 @@
  
 """
     【简介】
-    paintEvent设置背景
+    使用paintEvent设置窗口背景图片
     
     
 """
