@@ -15,9 +15,8 @@ class MyWindow( QWidget):
 
     def __init__(self):  
         super().__init__()
-        self.setWindowTitle('PyQt5嵌套布局示例')
-        
-        # 1 
+        self.setWindowTitle('嵌套布局示例')
+       
         # 全局布局（1个）：水平
         wlayout =  QHBoxLayout() 
          # 局部布局（4个）：水平、竖直、网格、表单
@@ -43,18 +42,21 @@ class MyWindow( QWidget):
         vwg =  QWidget()
         gwg =  QWidget()
         fwg =  QWidget()
-        
-        hwg.setLayout(hlayout) # 四个部件设置局部布局
+                
+        # 四个部件设置局部布局
+        hwg.setLayout(hlayout) 
         vwg.setLayout(vlayout)
         gwg.setLayout(glayout)
         fwg.setLayout(formlayout)
         
-        wlayout.addWidget(hwg) # 四个部件加至全局布局
+         # 四个部件加至全局布局
+        wlayout.addWidget(hwg)
         wlayout.addWidget(vwg)
         wlayout.addWidget(gwg)
         wlayout.addWidget(fwg)
         
-        self.setLayout(wlayout) # 窗体本尊设置全局布局
+        # 窗体本尊设置全局布局
+        self.setLayout(wlayout) 
   
 if __name__=="__main__":    
     app =  QApplication(sys.argv)    
