@@ -20,8 +20,7 @@ class Winform(QWidget):
 		painter = QPainter(self)
 		pixmap = QPixmap("./images/screen1.jpg")
         #绘制窗口背景，平铺到整个窗口，随着窗口改变而改变
-		painter.drawPixmap(self.rect(),pixmap);
-		
+		painter.drawPixmap(self.rect(),pixmap)    
         
 if __name__ == "__main__":  
 		app = QApplication(sys.argv) 
