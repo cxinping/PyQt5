@@ -19,7 +19,8 @@ class Winform(QWidget):
          
 	def paintEvent(self,event):
 		painter = QPainter(self)
-		painter.setBrush(Qt.black);
+		painter.setBrush(Qt.yellow );
+        # 设置背景颜色
 		painter.drawRect( self.rect()); 
         
 if __name__ == "__main__":  
