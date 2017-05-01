@@ -2,25 +2,25 @@
  
 """
     【简介】
-    使用paintEvent设置窗口背景图片
+    使用paintEvent设置窗口背景颜色
     
     
 """
 
 import sys
 from PyQt5.QtWidgets import QApplication  ,QWidget 
-from PyQt5.QtGui import  QPixmap,   QPainter 
+from PyQt5.QtGui import   QPainter 
+from PyQt5.QtCore import Qt
 
 class Winform(QWidget):
 	def __init__(self,parent=None):
 		super(Winform,self).__init__(parent)
-		self.setWindowTitle("paintEvent设置背景") 
+		self.setWindowTitle("paintEvent设置背景颜色") 
          
 	def paintEvent(self,event):
 		painter = QPainter(self)
-		pixmap = QPixmap("./images/screen1.jpg")
-        #绘制窗口背景，平铺到整个窗口，随着窗口改变而改变
-		painter.drawPixmap(self.rect(),pixmap)    
+		painter.setBrush(Qt.black);
+		painter.drawRect( self.rect()); 
         
 if __name__ == "__main__":  
 		app = QApplication(sys.argv) 

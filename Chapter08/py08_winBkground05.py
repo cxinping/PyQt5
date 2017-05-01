@@ -14,7 +14,7 @@ from PyQt5.QtGui import  QPixmap,   QPainter
 class Winform(QWidget):
 	def __init__(self,parent=None):
 		super(Winform,self).__init__(parent)
-		self.setWindowTitle("paintEvent设置背景") 
+		self.setWindowTitle("paintEvent设置背景图片") 
          
 	def paintEvent(self,event):
 		painter = QPainter(self)
