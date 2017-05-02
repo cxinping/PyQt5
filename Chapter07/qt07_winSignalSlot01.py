@@ -7,9 +7,8 @@
 
 """
 
-from PyQt5.QtCore import *  
-from PyQt5.QtGui import *  
-from PyQt5.QtWidgets import *
+from PyQt5.QtCore import pyqtSignal  
+from PyQt5.QtWidgets import  QMainWindow,QHBoxLayout, QPushButton ,  QApplication, QWidget 
 import sys 
 
 class WinForm(QMainWindow):  
