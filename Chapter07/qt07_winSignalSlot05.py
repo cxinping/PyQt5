@@ -2,22 +2,23 @@
 
 """
     【简介】
-    部件中的信号槽传递，使用lambda表达式传参数示例
+        部件中的信号槽传递，使用partial函数传参数示例
 
 
 """
 
 from PyQt5.QtWidgets import QMainWindow, QPushButton , QWidget , QMessageBox, QApplication, QHBoxLayout
 import sys 
+from functools import partial
 
 class WinForm(QMainWindow):  
 	def __init__(self, parent=None):  
 		super(WinForm, self).__init__(parent)  
 		button1 = QPushButton('Button 1')  
 		button2 = QPushButton('Button 2')  
-        
-		button1.clicked.connect(lambda: self.onButtonClick(1)) 
-		button2.clicked.connect(lambda: self.onButtonClick(2)) 		
+
+		button1.clicked.connect(partial(self.onButtonClick, 1))   		
+		button2.clicked.connect(partial(self.onButtonClick, 2))   
 
 		layout = QHBoxLayout()  
 		layout.addWidget(button1)  
