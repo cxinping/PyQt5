@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import  QPushButton ,  QApplication, QWidget
 from  PyQt5.QtWidgets import QMessageBox  
 import sys 
    
-app =  QApplication([])
+app =  QApplication(sys.argv)
 widget =  QWidget()
 
 def showMsg():

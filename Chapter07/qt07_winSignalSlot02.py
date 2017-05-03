@@ -32,7 +32,9 @@ class WinForm(QMainWindow):
 		self.setCentralWidget(main_frame)  
   
 	def onButtonClick(self, n):  
-		print('Button {0} clicked'.format(n))  
+		print('Button {0} 被按下了'.format(n))  
+		QMessageBox.information(self, "信息提示框", 'Button {0} clicked'.format(n))
+             
   
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  

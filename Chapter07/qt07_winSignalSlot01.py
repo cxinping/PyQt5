@@ -8,7 +8,7 @@
 """
 
 from PyQt5.QtCore import pyqtSignal  
-from PyQt5.QtWidgets import  QMainWindow,QHBoxLayout, QPushButton ,  QApplication, QWidget 
+from PyQt5.QtWidgets import  QMainWindow,QHBoxLayout, QPushButton ,  QApplication, QWidget  , QMessageBox
 import sys 
 
 class WinForm(QMainWindow):  
@@ -29,7 +29,8 @@ class WinForm(QMainWindow):
   
 	def onButtonClick(self ):  
 		self.btnClickedSignal.emit(1)
-		print('The button1 clicked' ) 
+		print('The button1 被按下了' ) 
+		QMessageBox.information(self, "信息提示框", 'The button1 被按下了' )        
         
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
