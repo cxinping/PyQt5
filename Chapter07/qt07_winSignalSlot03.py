@@ -2,40 +2,40 @@
 
 """
     【简介】
-    部件中的信号槽传递额外参数示例
+    部件中的信号槽通信示例
 
 
 """
 
-from PyQt5.QtCore import *  
-from PyQt5.QtGui import *  
-from PyQt5.QtWidgets import *
+from PyQt5.QtCore import pyqtSignal  
+from PyQt5.QtWidgets import QMainWindow,QHBoxLayout, QPushButton ,  QApplication, QWidget  , QMessageBox
 import sys 
-from functools import partial
 
 class WinForm(QMainWindow):  
-	def __init__(self, parent=None):  
-		super(WinForm, self).__init__(parent)  
-		button1 = QPushButton('Button 1')  
-		button2 = QPushButton('Button 2')  
-        
-		button1.clicked.connect(lambda: self.onButtonClick(1)) 
-		
-		button2.clicked.connect(partial(self.onButtonClick, 2))   
+	btnlickedSignal = pyqtSignal(int) 
 
+	def __init__(self, parent=None):  
+		super(WinForm, self).__init__(parent)
+		self.setWindowTitle('部件中的信号槽通信')
+        # 声明自定义的信号
+		self.btnlickedSignal.connect(self.getSignal)  
+		self.button1 = QPushButton('Button 1')  
+		# 使用信号连接槽函数，槽函数不用加括号 
+		self.button1.clicked.connect(self.onButtonClick ) 
+        
 		layout = QHBoxLayout()  
-		layout.addWidget(button1)  
-		layout.addWidget(button2)  
-  
+		layout.addWidget(self.button1)  
 		main_frame = QWidget()  
-		main_frame.setLayout(layout)       
+		main_frame.setLayout(layout)    
 		self.setCentralWidget(main_frame)  
   
-	def onButtonClick(self, n):  
-		print('Button {0} 被按下了'.format(n))  
-		QMessageBox.information(self, "信息提示框", 'Button {0} clicked'.format(n))
-             
-  
+	def onButtonClick(self ):      
+		print('The button1 被按下了' )   		     
+		self.btnlickedSignal.emit(10)
+        
+	def getSignal(self, intVal ): 
+		QMessageBox.information(self, "信息提示框", '收到信号传过来的值：' +  str(intVal) )   
+        
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
 	form = WinForm()  
