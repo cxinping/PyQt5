@@ -7,9 +7,7 @@
 
 """
 
-from PyQt5.QtCore import *  
-from PyQt5.QtGui import *  
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QMainWindow, QPushButton , QWidget , QMessageBox, QApplication, QHBoxLayout
 import sys 
 from functools import partial
 
