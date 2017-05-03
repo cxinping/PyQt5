@@ -7,17 +7,18 @@
 
 """
 
-from PyQt5.QtCore import pyqtSignal  
-from PyQt5.QtWidgets import  QMainWindow,QHBoxLayout, QPushButton ,  QApplication, QWidget  , QMessageBox
+
+from PyQt5.QtWidgets import QMainWindow,QHBoxLayout, QPushButton ,  QApplication, QWidget  
 import sys 
 
 class WinForm(QMainWindow):  
-	btnClickedSignal = pyqtSignal(int) 
-
+	
 	def __init__(self, parent=None):  
 		super(WinForm, self).__init__(parent)
 		self.setWindowTitle('部件中的信号槽通信')
-		self.button1 = QPushButton('Button 1')  		
+     
+		self.button1 = QPushButton('Button 1')  
+		# 
 		self.button1.clicked.connect(self.onButtonClick) 
         
 		layout = QHBoxLayout()  
@@ -27,10 +28,9 @@ class WinForm(QMainWindow):
 		main_frame.setLayout(layout)    
 		self.setCentralWidget(main_frame)  
   
-	def onButtonClick(self ):  
-		self.btnClickedSignal.emit(1)
-		print('The button1 被按下了' ) 
-		QMessageBox.information(self, "信息提示框", 'The button1 被按下了' )        
+	def onButtonClick(self ):      
+		print('The button1 被按下了' )   
+		
         
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
