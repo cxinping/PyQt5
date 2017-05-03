@@ -12,7 +12,7 @@ from PyQt5.QtWidgets import  QMainWindow,QHBoxLayout, QPushButton ,  QApplicatio
 import sys 
 
 class WinForm(QMainWindow):  
-	signal = pyqtSignal(int) 
+	btnClickedSignal = pyqtSignal(int) 
 
 	def __init__(self, parent=None):  
 		super(WinForm, self).__init__(parent)
@@ -28,7 +28,7 @@ class WinForm(QMainWindow):
 		self.setCentralWidget(main_frame)  
   
 	def onButtonClick(self ):  
-		self.signal.emit(1)
+		self.btnClickedSignal.emit(1)
 		print('The button1 clicked' ) 
         
 if __name__ == "__main__":  
