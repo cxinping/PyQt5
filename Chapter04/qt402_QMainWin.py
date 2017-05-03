@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*- 
 
+'''
+    【简介】
+	PyQT5中主窗口例子
+  
+  
+'''
+
 import sys
 from PyQt5.QtWidgets import QMainWindow , QApplication
 from PyQt5.QtGui import QIcon 
