@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+2# -*- coding: utf-8 -*-
 
 '''
     【简介】
@@ -6,7 +6,7 @@
     
 '''
 
-from PyQt5.QtWidgets import QApplication ,QWidget, QVBoxLayout ,QPushButton
+from PyQt5.QtWidgets import QApplication ,QWidget, QVBoxLayout , QHBoxLayout  ,QPushButton
 import sys  
     
 class WindowDemo(QWidget):  
@@ -23,16 +23,16 @@ class WindowDemo(QWidget):
         btn3.setText('button 3')
         
         #2
-        vbox=QVBoxLayout()
-        vbox.addStretch(1)
-        vbox.addWidget(btn1)
-        vbox.addStretch(1)
-        vbox.addWidget(btn2)
-        vbox.addStretch(1)
-        vbox.addWidget( btn3 )
-        vbox.addStretch(1)        
+        hbox = QHBoxLayout()
+        hbox.addStretch(1)
+        hbox.addWidget(btn1)
+        hbox.addStretch(1)
+        hbox.addWidget(btn2)
+        hbox.addStretch(1)
+        hbox.addWidget( btn3 )
+        hbox.addStretch(6)        
 
-        self.setLayout(vbox)
+        self.setLayout(hbox)
         self.setWindowTitle("addStretch 例子")
         
 
