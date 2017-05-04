@@ -10,7 +10,7 @@
 '''
 
 import sys
-from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QDesktopWidget, QTableWidgetItem, QHeaderView)
+from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication , QTableWidgetItem, QHeaderView)
 
 class Table(QWidget):
     def __init__(self):

@@ -7,7 +7,8 @@
 '''
 
 import sys
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
 
 out = sys.stdout
 sys.stdout = open(r'E:\QWidget.txt' , 'w')
