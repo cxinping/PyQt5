@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*- 
+
+'''
+    【简介】
+	 演示程序图标例子
+    
+'''
+
+
 import sys
 from PyQt5.QtGui import QIcon  
 from PyQt5.QtWidgets  import QWidget , QApplication
@@ -11,7 +20,7 @@ class Icon(QWidget):
     #2   
     def initUI(self):
         self.setGeometry(300,  300,  250,  150)  
-        self.setWindowTitle('程序图标')  
+        self.setWindowTitle('演示程序图标例子')  
         self.setWindowIcon(QIcon('./images/cartoon1.ico'))  
               
 if __name__ == '__main__':   

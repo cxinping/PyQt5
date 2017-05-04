@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 
+'''
+    【简介】
+	 布局中用到的addStretch函数例子
+    
+'''
 
 from PyQt5.QtWidgets import QApplication ,QWidget, QVBoxLayout ,QPushButton
 import sys  

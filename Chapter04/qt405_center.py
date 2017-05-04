@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 '''
-    ¡¾¼ò½é¡¿
-	PyQT5½«´°¿Ú·ÅÔÚÆÁÄ»ÖĞ¼ä
+    ã€ç®€ä»‹ã€‘
+	PyQT5å°†çª—å£æ”¾åœ¨å±å¹•ä¸­é—´
     
 '''
+
 import sys
 from PyQt5.QtWidgets import QWidget, QToolTip , QApplication
 from PyQt5.QtGui import QFont
@@ -16,9 +17,9 @@ class exp(QWidget):
 
     def initUI(self):
         QToolTip.setFont(QFont('SansSerif', 10))
-        self.setToolTip('ÕâÊÇÒ»¸ö<b>ÆøÅİÌáÊ¾</b>')
+        self.setToolTip('è¿™æ˜¯ä¸€ä¸ª<b>æ°”æ³¡æç¤º</b>')
         self.setGeometry(200, 300, 400, 400)
-        self.setWindowTitle('ÆøÅİÌáÊ¾demo')
+        self.setWindowTitle('æ°”æ³¡æç¤ºdemo')
         self.show()
 
 if __name__ == '__main__':
