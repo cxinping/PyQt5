@@ -33,6 +33,9 @@ print("widget.geometry().y()=%d" %  widget.geometry().y() )
 print("widget.geometry().width()=%d" %  widget.geometry().width() )
 print("widget.geometry().height()=%d" %  widget.geometry().height() )
 
+print("widget.frameGeometry().width()=%d" %  widget.frameGeometry().width() )
+print("widget.frameGeometry().height()=%d" %  widget.frameGeometry().height() )
+
 sys.exit(app.exec_())  
 
 
