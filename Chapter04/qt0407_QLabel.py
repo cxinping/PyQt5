@@ -23,7 +23,7 @@ class QlabelDemo(QDialog):
         nameEd2 = QLineEdit()
         nameLb2.setBuddy(nameEd2)
         
-        btnOk= QPushButton('&OK')
+        btnOk = QPushButton('&OK')
         btnCancel = QPushButton('&Cancel')
         mainLayout = QGridLayout(self)
         mainLayout.addWidget(nameLb1,0,0)

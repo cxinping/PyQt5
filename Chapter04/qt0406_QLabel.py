@@ -40,7 +40,7 @@ class WindowDemo(QWidget):
         label4.setToolTip('这是一个超链接标签')
         
         #2
-        vbox=QVBoxLayout()
+        vbox = QVBoxLayout()
         vbox.addWidget(label1)
         vbox.addStretch()
         vbox.addWidget(label2)
