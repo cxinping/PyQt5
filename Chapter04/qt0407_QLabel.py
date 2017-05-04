@@ -15,12 +15,12 @@ class QlabelDemo(QDialog):
         super().__init__()
          
         self.setWindowTitle('Qlabel 例子')
-        nameLb1 = QLabel('&Name')
-        nameEd1 = QLineEdit()
+        nameLb1 = QLabel('&Name', self)
+        nameEd1 = QLineEdit( self )
         nameLb1.setBuddy(nameEd1)
         
-        nameLb2 = QLabel('&Password')
-        nameEd2 = QLineEdit()
+        nameLb2 = QLabel('&Password', self)
+        nameEd2 = QLineEdit( self )
         nameLb2.setBuddy(nameEd2)
         
         btnOk = QPushButton('&OK')
