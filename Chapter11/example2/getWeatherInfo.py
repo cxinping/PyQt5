@@ -4,6 +4,7 @@
 	查询城市天气数据
     
 '''
+
 import requests
 
 rep = requests.get('http://www.weather.com.cn/data/sk/101010100.html')

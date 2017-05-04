@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 
+'''
+    【简介】
+
+    
+'''
+
 from PyQt5.QtWidgets import QApplication, QPushButton, QColorDialog , QWidget
 from PyQt5.QtCore import Qt 
 from PyQt5.QtGui import QColor 
