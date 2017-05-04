@@ -31,7 +31,7 @@ class WindowDemo(QWidget):
         hbox.addStretch(1)
         hbox.addWidget( btn3 )
         # 设置伸缩量为1
-        hbox.addStretch(1)        
+        hbox.addStretch(1 )        
 
         self.setLayout(hbox)
         self.setWindowTitle("addStretch 例子")
