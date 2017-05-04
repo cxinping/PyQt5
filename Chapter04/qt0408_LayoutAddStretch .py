@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from PyQt5.QtWidgets import QApplication,  QLabel  ,QWidget, QVBoxLayout ,QPushButton
-from PyQt5.QtCore import Qt 
-from PyQt5.QtGui import QPixmap ,QPalette
+from PyQt5.QtWidgets import QApplication ,QWidget, QVBoxLayout ,QPushButton
 import sys  
     
 class WindowDemo(QWidget):  
@@ -15,9 +13,9 @@ class WindowDemo(QWidget):
         btn2 = QPushButton(self)
         btn3 = QPushButton(self)
       
-        btn1.setText('btn1')
-        btn2.setText('btn2')
-        btn3.setText('btn3')
+        btn1.setText('button 1')
+        btn2.setText('button 2')
+        btn3.setText('button 3')
         
         #2
         vbox=QVBoxLayout()

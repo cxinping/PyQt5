@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
-from PyQt5.QtCore import * 
 
 app = QApplication(sys.argv)
 window = QWidget()
