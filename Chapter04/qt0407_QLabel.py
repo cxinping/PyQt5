@@ -2,7 +2,7 @@
 
 '''
     【简介】
-	PyQT5中Qlabel例子
+	PyQt5中Qlabel例子
    按住 Alt + N , Alt + P , Alt + O , Alt + C 切换组件控件
   
 '''
@@ -15,22 +15,22 @@ class QlabelDemo(QDialog):
         super().__init__()
          
         self.setWindowTitle('Qlabel 例子')
-        lblFind1=QLabel('&Name')
-        editFind1=QLineEdit()
-        lblFind1.setBuddy(editFind1)
+        nameLb1 = QLabel('&Name')
+        nameEd1 = QLineEdit()
+        nameLb1.setBuddy(nameEd1)
         
-        lblFind2=QLabel('&Password')
-        editFind2=QLineEdit()
-        lblFind2.setBuddy(editFind2)
+        nameLb2 = QLabel('&Password')
+        nameEd2 = QLineEdit()
+        nameLb2.setBuddy(nameEd2)
         
         btnOk= QPushButton('&OK')
         btnCancel = QPushButton('&Cancel')
-        mainLayout= QGridLayout(self)
-        mainLayout.addWidget(lblFind1,0,0)
-        mainLayout.addWidget(editFind1,0,1,1,2)
+        mainLayout = QGridLayout(self)
+        mainLayout.addWidget(nameLb1,0,0)
+        mainLayout.addWidget(nameEd1,0,1,1,2)
         
-        mainLayout.addWidget(lblFind2,1,0)
-        mainLayout.addWidget(editFind2,1,1,1,2)
+        mainLayout.addWidget(nameLb2,1,0)
+        mainLayout.addWidget(nameEd2,1,1,1,2)
          
         mainLayout.addWidget(btnOk,2,1)
         mainLayout.addWidget(btnCancel,2,2) 
