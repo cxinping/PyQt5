@@ -6,23 +6,25 @@
     
 '''
 
-import sys
-from PyQt5.QtWidgets import QWidget, QToolTip , QApplication
-from PyQt5.QtGui import QFont
-
-class exp(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.initUI()
-
-    def initUI(self):
-        QToolTip.setFont(QFont('SansSerif', 10))
-        self.setToolTip('这是一个<b>气泡提示</b>')
-        self.setGeometry(200, 300, 400, 400)
-        self.setWindowTitle('气泡提示demo')
-        self.show()
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = exp()
-    sys.exit(app.exec_())
+from PyQt5.QtWidgets import QDesktopWidget, QWidget , QApplication 
+import sys  
+    
+class Winform( QWidget): 
+    
+    def __init__(self, parent=None):
+        super( Winform, self).__init__(parent)
+          
+        self.setWindowTitle('窗口居中例子')  
+        self.resize(350,  250)  
+        self.center()  
+          
+    def center(self):  
+        screen = QDesktopWidget().screenGeometry()  
+        size = self.geometry()        
+        self.move((screen.width() - size.width()) / 2,  (screen.height() - size.height()) / 2)  
+  
+if __name__ == "__main__": 
+    app = QApplication(sys.argv)   
+    win = Winform()  
+    win.show()  
+    sys.exit(app.exec_())  
