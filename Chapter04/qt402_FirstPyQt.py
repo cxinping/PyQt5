@@ -1,4 +1,11 @@
 # -*- coding: UTF-8 -*-
+
+"""
+    【简介】
+    
+    
+"""
+
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 
