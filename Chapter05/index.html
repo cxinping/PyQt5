@@ -1,33 +1,7 @@
-# -*- coding: utf-8 -*- 
-
-'''
-    【简介】
-	QWebView中网页调用JavaScript 
-  
-'''
-
-
-from PyQt5 import QtWidgets 
-from PyQt5 import QtWebEngineWidgets
-
-# Create an application
-app = QtWidgets.QApplication([])
-
-# And a window5
-win = QtWidgets.QWidget()
-win.setWindowTitle('QWebView Interactive Demo')
-
-# And give it a layout
-layout = QtWidgets.QVBoxLayout()
-win.setLayout(layout)
-
-# Create and fill a QWebView
-#view = QtWebKitWidgets.QWebView()  # depecated?
-view = QtWebEngineWidgets.QWebEngineView()
-view.setHtml('''
-  <html>
+ <html>
     <head>
       <title>A Demo Page</title>
+     <script src="./qwebchannel.js"></script>
 
       <script language="javascript">
         // Completes the full-name control and
@@ -42,7 +16,33 @@ view.setHtml('''
 
           return full;
         }
-      </script>
+        
+       
+        
+        document.addEventListener("DOMContentLoaded", function () {
+                 	
+        	new QWebChannel( qt.webChannelTransport, function(channel) {
+	        	//alert('111 channel=' + channel )
+	        	
+	            window.bridge = channel.objects.bridge;
+	            alert('bridge='+bridge+'\nbridge.name=' + window.bridge.intValue ) ;
+	            
+	        });
+        });
+        
+	      function onShowMsgBox() {
+	        //alert('window.bridge=' + window.bridge);
+	        
+	        if ( window.bridge) {
+	        	alert('bridge.intValue=' + window.bridge.intValue ) ;
+	            bridge.sayHello('999')
+	        }
+        	
+        }
+	      
+    
+      
+      </script>     
     </head>
 
     <body>
@@ -57,27 +57,8 @@ view.setHtml('''
         <input disabled type="text" name="fullname" id="fullname"></input>
         <br />
         <input style="display: none;" type="submit" id="submit-btn"></input>
+        <input type="button" value="C++ function callback" onclick="onShowMsgBox()">
+        
       </form>
     </body>
   </html>
-''')
-
-# A button to call our JavaScript
-button = QtWidgets.QPushButton('Set Full Name')
-
-def js_callback(result):
-    print(result)
-    
-def complete_name():
-   view.page().runJavaScript('completeAndReturnName();', js_callback)
-
-# Connect 'complete_name' to the button's 'clicked' signal
-button.clicked.connect(complete_name)
-
-# Add the QWebView and button to the layout
-layout.addWidget(view)
-layout.addWidget(button)
-
-# Show the window and run the app
-win.show()
-app.exec_()
