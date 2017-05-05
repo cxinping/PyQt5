@@ -2,8 +2,8 @@
 
 '''
     【简介】
-	PyQt5中Qlabel例子
-   按住 Alt + N , Alt + P , Alt + O , Alt + C 切换组件控件
+	PyQt5中QButton例子
+    
   
 '''
 
@@ -44,7 +44,7 @@ class Form(QDialog):
 			print("button released" ) 
 
 	def whichbtn(self,b):
-		print("clicked button is "+b.text() ) 
+		print("clicked button is " + b.text() ) 
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
