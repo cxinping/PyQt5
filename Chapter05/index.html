@@ -1,64 +1,18 @@
+ <!DOCTYPE html>
  <html>
     <head>
       <title>A Demo Page</title>
-     <script src="./qwebchannel.js"></script>
-
-      <script language="javascript">
-        // Completes the full-name control and
-        // shows the submit button
-        function completeAndReturnName() {
-          var fname = document.getElementById('fname').value;
-          var lname = document.getElementById('lname').value;
-          var full = fname + ' ' + lname;
-
-          document.getElementById('fullname').value = full;
-          document.getElementById('submit-btn').style.display = 'block';
-
-          return full;
-        }
-        
-       
-        
-        document.addEventListener("DOMContentLoaded", function () {
-                 	
-        	new QWebChannel( qt.webChannelTransport, function(channel) {
-	        	//alert('111 channel=' + channel )
-	        	
-	            window.bridge = channel.objects.bridge;
-	            alert('bridge='+bridge+'\nbridge.name=' + window.bridge.intValue ) ;
-	            
-	        });
-        });
-        
-	      function onShowMsgBox() {
-	        //alert('window.bridge=' + window.bridge);
-	        
-	        if ( window.bridge) {
-	        	alert('bridge.intValue=' + window.bridge.intValue ) ;
-	            bridge.sayHello('999')
-	        }
-        	
-        }
-	      
-    
-      
-      </script>     
-    </head>
-
+      <meta charset="UTF-8">
     <body>
       <form>
-        <label for="fname">First name:</label>
+        <label for="fname">用户名:</label>
         <input type="text" name="fname" id="fname"></input>
         <br />
-        <label for="lname">Last name:</label>
-        <input type="text" name="lname" id="lname"></input>
+        <label for="lname">密码:</label>
+        <input type="password" name="lname" id="lname"></input>
         <br />
-        <label for="fullname">Full name:</label>
-        <input disabled type="text" name="fullname" id="fullname"></input>
-        <br />
-        <input style="display: none;" type="submit" id="submit-btn"></input>
-        <input type="button" value="C++ function callback" onclick="onShowMsgBox()">
-        
+        <input type="button" value="登录" >
+        <input type="button" value="重置" >        
       </form>
     </body>
   </html>
