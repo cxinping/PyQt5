@@ -7,22 +7,21 @@
 '''
 
 
-from PyQt5 import QtWidgets 
+from PyQt5.QtWidgets  import QApplication , QWidget , QVBoxLayout , QPushButton
 from PyQt5 import QtWebEngineWidgets
+import sys
 
-# Create an application
-app = QtWidgets.QApplication([])
 
-# And a window5
-win = QtWidgets.QWidget()
+# 创建一个 application实例
+app = QApplication(sys.argv)  
+win = QWidget()
 win.setWindowTitle('QWebView Interactive Demo')
 
-# And give it a layout
-layout = QtWidgets.QVBoxLayout()
+# 创建一个垂直布局器
+layout = QVBoxLayout()
 win.setLayout(layout)
 
-# Create and fill a QWebView
-#view = QtWebKitWidgets.QWebView()  # depecated?
+# 创建一个  QWebEngineView 对象
 view = QtWebEngineWidgets.QWebEngineView()
 view.setHtml('''
   <html>
@@ -63,7 +62,7 @@ view.setHtml('''
 ''')
 
 # A button to call our JavaScript
-button = QtWidgets.QPushButton('Set Full Name')
+button = QPushButton('设置全名')
 
 def js_callback(result):
     print(result)
@@ -80,4 +79,4 @@ layout.addWidget(button)
 
 # Show the window and run the app
 win.show()
-app.exec_()
+sys.exit(app.exec_())
