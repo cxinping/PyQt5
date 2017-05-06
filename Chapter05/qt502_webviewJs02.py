@@ -6,67 +6,37 @@
   
 '''
 
-
-from PyQt5 import QtWidgets 
-from PyQt5 import QtWebEngineWidgets
-from PyQt5.QtWebChannel import  QWebChannel 
-
+from PyQt5.QtWidgets  import QApplication , QWidget , QVBoxLayout 
+from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl  
 from MySharedObject  import MySharedObject
+from PyQt5.QtWebChannel import  QWebChannel 
 import sys
 
 
-# Create an application
-app = QtWidgets.QApplication(sys.argv)
-
-# And a window5
-win = QtWidgets.QWidget()
+# 创建一个 application实例
+app = QApplication(sys.argv)
+win = QWidget()
 win.setWindowTitle('QWebView Interactive Demo')
 
-# And give it a layout
-layout = QtWidgets.QVBoxLayout()
+# 创建一个垂直布局器
+layout = QVBoxLayout()
 win.setLayout(layout)
 
-# Create and fill a QWebView
-#view = QtWebKitWidgets.QWebView()  # depecated?
-view = QtWebEngineWidgets.QWebEngineView()
-htmlUrl = 'http://127.0.0.1:8020/TestWeb/index.html'
+# 创建一个 QWebEngineView 对象
+view =  QWebEngineView()
+htmlUrl = 'http://127.0.0.1:8020/web/index.html'
 view.load( QUrl( htmlUrl ))
 
-# A button to call our JavaScript
-button = QtWidgets.QPushButton('Set Full Name')
-
+# 创建一个 QWebChannel对象，用来传递pyqt参数到JavaScript
 channel =  QWebChannel( )
-myObj = MySharedObject()
-#print( myObj.name2)
-
-channel.registerObject( "bridge", myObj )
-
-
+myObj = MySharedObject()   
+channel.registerObject( "bridge", myObj )  
 view.page().setWebChannel(channel)
-button2 = QtWidgets.QPushButton('get value')
  
-
-def js_callback(result):
-	print(result)
-    
-def complete_name():
-	view.page().runJavaScript('completeAndReturnName();', js_callback)
-
-def sayHello():
-	print('hello')
-    
-    
-# Connect 'complete_name' to the button's 'clicked' signal
-button.clicked.connect(complete_name)
-button2.clicked.connect(sayHello)
-
-# Add the QWebView and button to the layout
+# 把QWebView和button加载到layout布局中
 layout.addWidget(view)
-layout.addWidget(button)
-layout.addWidget(button2)
-
-# Show the window and run the app
+           
+# 显示窗口和运行app
 win.show()
-
 sys.exit(app.exec_())

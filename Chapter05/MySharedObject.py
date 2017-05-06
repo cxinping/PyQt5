@@ -2,22 +2,26 @@
 
 from PyQt5.QtCore import QObject
 from PyQt5.QtCore import pyqtProperty
+from PyQt5.QtWidgets import QWidget,QMessageBox
 
-class MySharedObject(QObject):
-	name2 = 'aaa'
+class MySharedObject(QWidget):
         
 	def __init__( self):
 		super( MySharedObject, self).__init__()
-		self.name = 'wangwu'
-		#self.intValue = 100
-            
-	def sayHello( self):
-        # 发射信号
-		print('Hi Pyqt5')
+		            
+	def _getStrValue( self):
+        #  
+		return '100'        
 
-	def _getIntValue( self):
-        # 发射信号
-		return '111'        
-	
-	intValue = pyqtProperty(str, fget=_getIntValue)          
+	def _setStrValue( self,  str ):
+        #  
+		print('获得页面参数 ：%s'% str ) 
+		QMessageBox.information(self,"Information", '获得页面参数 ：%s'% str )
         
+        
+	strValue = pyqtProperty(str, fget=_getStrValue, fset=_setStrValue)     
+    
+    
+    
+    
+    

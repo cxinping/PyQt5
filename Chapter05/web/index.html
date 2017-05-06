@@ -1,11 +1,9 @@
  <html>
     <head>
       <title>A Demo Page</title>
-     <script src="./qwebchannel.js"></script>
-
+      <meta charset="UTF-8">
+      <script src="./qwebchannel.js"></script>
       <script language="javascript">
-        // Completes the full-name control and
-        // shows the submit button
         function completeAndReturnName() {
           var fname = document.getElementById('fname').value;
           var lname = document.getElementById('lname').value;
@@ -16,16 +14,14 @@
 
           return full;
         }
-        
-       
-        
+                      
         document.addEventListener("DOMContentLoaded", function () {
                  	
         	new QWebChannel( qt.webChannelTransport, function(channel) {
 	        	//alert('111 channel=' + channel )
 	        	
 	            window.bridge = channel.objects.bridge;
-	            alert('bridge='+bridge+'\nbridge.name=' + window.bridge.intValue ) ;
+	            alert('bridge='+bridge+'\n从pyqt传来的参数=' + window.bridge.strValue ) ;
 	            
 	        });
         });
@@ -34,31 +30,27 @@
 	        //alert('window.bridge=' + window.bridge);
 	        
 	        if ( window.bridge) {
-	        	alert('bridge.intValue=' + window.bridge.intValue ) ;
-	            bridge.sayHello('999')
+	        	//alert('bridge.strValue=' + window.bridge.strValue ) ;
+	            //bridge.sayHello('999')
+	            var fname = document.getElementById('fname').value;
+	            window.bridge.strValue = fname;
+	            
+	            
 	        }
         	
         }
-	      
-    
+	          
       
       </script>     
     </head>
 
     <body>
       <form>
-        <label for="fname">First name:</label>
+        <label for="姓名">user name:</label>
         <input type="text" name="fname" id="fname"></input>
         <br />
-        <label for="lname">Last name:</label>
-        <input type="text" name="lname" id="lname"></input>
-        <br />
-        <label for="fullname">Full name:</label>
-        <input disabled type="text" name="fullname" id="fullname"></input>
-        <br />
-        <input style="display: none;" type="submit" id="submit-btn"></input>
-        <input type="button" value="C++ function callback" onclick="onShowMsgBox()">
-        
+        <input type="button" value="传递参数到pyqt" onclick="onShowMsgBox()">
+        <input type="reset" value='重置'/>
       </form>
     </body>
   </html>
