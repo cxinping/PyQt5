@@ -38,4 +38,4 @@ group.addAnimation(animation)
 group.addAnimation(animation2)
 group.start()
 
-app.exec_()
+sys.exit(app.exec_())
