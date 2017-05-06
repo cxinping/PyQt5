@@ -29,8 +29,13 @@ class MainWindow(QMainWindow):
 				<title></title>
 			</head>
 			<body>
-				<h2>hello PyQt5</h2>
-				
+				<h1>Hello PyQt5</h1>
+				<h1>Hello PyQt5</h1>
+                <h1>hello PyQt5</h1>
+                <h1>hello PyQt5</h1>
+                <h1>hello PyQt5</h1>
+                <h1>Hello PyQt5</h1>
+                
 			</body>
 		</html>
 
