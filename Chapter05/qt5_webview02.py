@@ -17,7 +17,7 @@ class MainWindow(QMainWindow):
 	def __init__(self ):
 		super(QMainWindow, self).__init__()
 		self.setWindowTitle('QWebView打开网页例子')
-		self.setGeometry(5, 30, 555, 330)
+		self.setGeometry(5, 30, 755, 530)
 		self.browser = QWebEngineView()   
         # 加载本地页面
 		url = r'E:\quant\PyQt5\Chapter05\index.html'
