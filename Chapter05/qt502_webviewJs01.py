@@ -8,7 +8,7 @@
 
 
 from PyQt5.QtWidgets  import QApplication , QWidget , QVBoxLayout , QPushButton
-from PyQt5 import QtWebEngineWidgets
+from PyQt5.QtWebEngineWidgets import QWebEngineView
 import sys
 
 
@@ -21,8 +21,8 @@ win.setWindowTitle('QWebView Interactive Demo')
 layout = QVBoxLayout()
 win.setLayout(layout)
 
-# 创建一个  QWebEngineView 对象
-view = QtWebEngineWidgets.QWebEngineView()
+# 创建一个 QWebEngineView 对象
+view = QWebEngineView()
 view.setHtml('''
   <html>
     <head>
@@ -61,7 +61,7 @@ view.setHtml('''
   </html>
 ''')
 
-# A button to call our JavaScript
+# 创建一个按钮去调用 JavaScript代码
 button = QPushButton('设置全名')
 
 def js_callback(result):
@@ -70,13 +70,13 @@ def js_callback(result):
 def complete_name():
    view.page().runJavaScript('completeAndReturnName();', js_callback)
 
-# Connect 'complete_name' to the button's 'clicked' signal
+# 按钮连接 'complete_name'槽，当点击按钮是会触发信号
 button.clicked.connect(complete_name)
 
-# Add the QWebView and button to the layout
+# 把QWebView和button加载到layout布局中
 layout.addWidget(view)
 layout.addWidget(button)
 
-# Show the window and run the app
+# 显示窗口和运行app
 win.show()
 sys.exit(app.exec_())
