@@ -18,7 +18,7 @@ class MySharedObject(QWidget):
 		print('获得页面参数 ：%s'% str ) 
 		QMessageBox.information(self,"Information", '获得页面参数 ：%s'% str )
         
-        
+    #需要定义对外发布的方法    
 	strValue = pyqtProperty(str, fget=_getStrValue, fset=_setStrValue)     
     
     
