@@ -2,53 +2,41 @@
 
 '''
     【简介】
-	PyQt5中 QLineEdit的验证器例子     
+	PyQt5中 QLineEdit的输入掩码例子     
   
 '''
 
 from PyQt5.QtWidgets import QApplication,  QLineEdit , QWidget ,  QFormLayout
-from PyQt5.QtGui import QIntValidator ,QDoubleValidator  , QRegExpValidator
-from PyQt5.QtCore import QRegExp
+#from PyQt5.QtGui import QIntValidator ,QDoubleValidator  , QRegExpValidator
+#from PyQt5.QtCore import QRegExp
 import sys  
 
 class lineEditDemo(QWidget):
 	def __init__(self, parent=None):
 		super(lineEditDemo, self).__init__(parent)
-		self.setWindowTitle("QLineEdit例子")
+		self.setWindowTitle("QLineEdit的输入掩码例子")
 
-		flo = QFormLayout()
-		pIntLineEdit  = QLineEdit( )
-		pDoubleLineEdit  = QLineEdit()
-		pValidatorLineEdit  = QLineEdit( )
+		flo = QFormLayout()          		
+		pIPLineEdit = QLineEdit()
+		pMACLineEdit = QLineEdit()
+		pDateLineEdit = QLineEdit()
+		pLicenseLineEdit = QLineEdit()		
 
-		flo.addRow("整形", pIntLineEdit)
-		flo.addRow("浮点型", pDoubleLineEdit)
-		flo.addRow("字母和数字", pValidatorLineEdit)
+		pIPLineEdit.setInputMask("000.000.000.000;_");
+		pMACLineEdit.setInputMask("HH:HH:HH:HH:HH:HH;_");
+		pDateLineEdit.setInputMask("0000-00-00");
+		pLicenseLineEdit.setInputMask(">AAAAA-AAAAA-AAAAA-AAAAA-AAAAA;#");
+
+		flo.addRow("数字掩码", pIPLineEdit)
+		flo.addRow("Mac掩码", pMACLineEdit)
+		flo.addRow("日期掩码", pDateLineEdit)
+		flo.addRow("许可证掩码", pLicenseLineEdit)
         
-		pIntLineEdit.setPlaceholderText("整形");
-		pDoubleLineEdit.setPlaceholderText("浮点型");
-		pValidatorLineEdit.setPlaceholderText("字母和数字");
-
-		# 整形 范围：[1, 99]
-		pIntValidator = QIntValidator(self);
-		pIntValidator.setRange(1, 99);
-
-		# 浮点型 范围：[-360, 360] 精度：小数点后2位
-		pDoubleValidator = QDoubleValidator(self);
-		pDoubleValidator.setRange(-360, 360);
-		pDoubleValidator.setNotation(QDoubleValidator.StandardNotation);
-		pDoubleValidator.setDecimals(2);
-		
-		# 字符和数字
-		reg = QRegExp("[a-zA-Z0-9]+$");
-		pValidator = QRegExpValidator(self);
-		pValidator.setRegExp(reg);		
-
-        # 设置验证器
-		pIntLineEdit.setValidator(pIntValidator)
-		pDoubleLineEdit.setValidator(pDoubleValidator)
-		pValidatorLineEdit.setValidator(pValidator)
-		                    
+		pIPLineEdit.setPlaceholderText("111");
+		pMACLineEdit.setPlaceholderText("222");
+		pLicenseLineEdit.setPlaceholderText("333");
+		pLicenseLineEdit.setPlaceholderText("444");
+		      		                    
 		self.setLayout(flo)                        
    
 if __name__ == "__main__":       
