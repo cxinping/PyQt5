@@ -33,7 +33,7 @@ class lineEditDemo(QWidget):
 		e5 = QLineEdit()
 		e5.setEchoMode( QLineEdit.Password )
 		flo.addRow("Password",e5)
-		e6 = QLineEdit("Hello Python")
+		e6 = QLineEdit("Hello PyQt5")
 		e6.setReadOnly(True)
 		flo.addRow("Read Only",e6 )
 		e5.editingFinished.connect( self.enterPress )
@@ -41,10 +41,10 @@ class lineEditDemo(QWidget):
 		self.setWindowTitle("QLineEdit例子")
 	
 	def textchanged(self, text):
-		print( "contents of text box: "+text )
+		print( "输入的内容为: "+text )
 
 	def enterPress( self ):
-		print( "edited" )
+		print( "已输入值" )
 
    
 if __name__ == "__main__":       
