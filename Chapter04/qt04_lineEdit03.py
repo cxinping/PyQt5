@@ -7,8 +7,6 @@
 '''
 
 from PyQt5.QtWidgets import QApplication,  QLineEdit , QWidget ,  QFormLayout
-#from PyQt5.QtGui import QIntValidator ,QDoubleValidator  , QRegExpValidator
-#from PyQt5.QtCore import QRegExp
 import sys  
 
 class lineEditDemo(QWidget):
