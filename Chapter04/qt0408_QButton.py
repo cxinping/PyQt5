@@ -17,37 +17,37 @@ class Form(QDialog):
 		super(Form, self).__init__(parent)
 		layout = QVBoxLayout()
 
-		self.b1=QPushButton("Button1")
-		self.b1.setCheckable(True)
-		self.b1.toggle()
-		self.b1.clicked.connect(lambda:self.whichbtn(self.b1) )
-		self.b1.clicked.connect(self.btnstate)
-		layout.addWidget(self.b1)
+		self.btn1 = QPushButton("Button1")
+		self.btn1.setCheckable(True)
+		self.btn1.toggle()
+		self.btn1.clicked.connect(lambda:self.whichbtn(self.btn1) )
+		self.btn1.clicked.connect(self.btnstate)
+		layout.addWidget(self.btn1)
             
-		self.b2 = QPushButton()
-		self.b2.setIcon(QIcon(QPixmap("./images/python.png")))
-		self.b2.clicked.connect(lambda:self.whichbtn(self.b2) )
-		layout.addWidget(self.b2)
+		self.btn2 = QPushButton('image')
+		self.btn2.setIcon(QIcon(QPixmap("./images/python.png")))
+		self.btn2.clicked.connect(lambda:self.whichbtn(self.btn2) )
+		layout.addWidget(self.btn2)
 		self.setLayout(layout) 
 
-		self.b3=QPushButton("Disabled")
-		self.b3.setEnabled(False)
-		layout.addWidget(self.b3)
+		self.btn3 = QPushButton("Disabled")
+		self.btn3.setEnabled(False)
+		layout.addWidget(self.btn3)
         
-		self.b4= QPushButton("&Download")
-		self.b4.setDefault(True)
-		self.b4.clicked.connect(lambda:self.whichbtn(self.b4))
-		layout.addWidget(self.b4)
+		self.btn4= QPushButton("&Download")
+		self.btn4.setDefault(True)
+		self.btn4.clicked.connect(lambda:self.whichbtn(self.btn4))
+		layout.addWidget(self.btn4)
 		self.setWindowTitle("Button demo")
 
 	def btnstate(self):
-		if self.b1.isChecked():
+		if self.btn1.isChecked():
 			print("button pressed" ) 
 		else:
 			print("button released" ) 
 
-	def whichbtn(self,b):
-		print("clicked button is " + b.text() ) 
+	def whichbtn(self,btn):
+		print("clicked button is " + btn.text() ) 
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
