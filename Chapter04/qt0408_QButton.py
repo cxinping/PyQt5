@@ -48,6 +48,8 @@ class Form(QDialog):
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = Form()
-	ex.show()
+	btnDemo = Form()
+	btnDemo.show()
 	sys.exit(app.exec_())
+
+
