@@ -31,7 +31,7 @@ class Form(QDialog):
 		self.b3=QPushButton("Disabled")
 		self.b3.setEnabled(False)
 		layout.addWidget(self.b3)
-		self.b4=QPushButton("&Default")
+		self.b4= QPushButton("&Download")
 		self.b4.setDefault(True)
 		self.b4.clicked.connect(lambda:self.whichbtn(self.b4))
 		layout.addWidget(self.b4)
