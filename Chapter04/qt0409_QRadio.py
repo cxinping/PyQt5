@@ -29,18 +29,18 @@ class Radiodemo(QWidget):
 	def btnstate(self,b):
 		if b.text()=="Button1":
 			if b.isChecked() == True:
-				print( b.text()+" is selected" )
+				print( b.text() + " is selected" )
 			else:
-				print( b.text()+" is deselected" )
+				print( b.text() + " is deselected" )
 		
 		if b.text()=="Button2":
 			if b.isChecked()== True :
-				print( b.text()+" is selected" )
+				print( b.text() + " is selected" )
 			else:
-				print( b.text()+" is deselected" )
+				print( b.text() + " is deselected" )
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = Radiodemo()
-	ex.show()
+	radioDemo = Radiodemo()
+	radioDemo.show()
 	sys.exit(app.exec_())
