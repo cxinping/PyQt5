@@ -44,12 +44,12 @@ class lineEditDemo(QWidget):
 		pValidator = QRegExpValidator(self);
 		pValidator.setRegExp(reg);		
 
+        # 设置验证器
 		pIntLineEdit.setValidator(pIntValidator)
 		pDoubleLineEdit.setValidator(pDoubleValidator)
 		pValidatorLineEdit.setValidator(pValidator)
 		                    
-		self.setLayout(flo)
-                    
+		self.setLayout(flo)                        
    
 if __name__ == "__main__":       
 	app = QApplication(sys.argv)
