@@ -19,7 +19,7 @@ class CheckBoxDemo(QWidget):
 		super(CheckBoxDemo , self).__init__(parent)
 		
 		groupBox = QGroupBox("Checkboxes")
-		groupBox.setFlat(True)
+		groupBox.setFlat( False )
 		
 		layout = QHBoxLayout()
 		self.checkBox1= QCheckBox("&Checkbox1")
@@ -31,7 +31,7 @@ class CheckBoxDemo(QWidget):
 		self.checkBox2.toggled.connect( lambda:self.btnstate(self.checkBox2) )
 		layout.addWidget(self.checkBox2)
 
-		self.checkBox3 = QCheckBox("Checkbox3")
+		self.checkBox3 = QCheckBox("tristateBox")
 		self.checkBox3.setTristate(True)
 		self.checkBox3.setCheckState(Qt.PartiallyChecked )		
 		self.checkBox3.stateChanged.connect( lambda:self.btnstate(self.checkBox3) )
@@ -45,9 +45,10 @@ class CheckBoxDemo(QWidget):
 		self.setWindowTitle("checkbox demo")
 	
 	def btnstate(self,btn ):
-		status = self.checkBox1.text()+":  "+ str(self.checkBox1.checkState()) +"\n" +self.checkBox2.text()+":  "+ str(self.checkBox2.checkState()) \
-                 +"\n"+self.checkBox3.text()+":  "+ str(self.checkBox3.checkState())				 
-		print(status)
+		chk1Status = self.checkBox1.text()+", isChecked="+  str( self.checkBox1.isChecked() ) + ', chekState=' + str(self.checkBox1.checkState())   +"\n"		 
+		chk2Status = self.checkBox2.text()+", isChecked="+  str( self.checkBox2.isChecked() ) + ', checkState=' + str(self.checkBox2.checkState())   +"\n"	
+		chk3Status = self.checkBox3.text()+", isChecked="+  str( self.checkBox3.isChecked() ) + ', checkState=' + str(self.checkBox3.checkState())   +"\n"			
+		print(chk1Status + chk2Status + chk3Status )
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
