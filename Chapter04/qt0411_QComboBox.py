@@ -25,12 +25,11 @@ class ComboxDemo(QWidget):
 		self.cb.currentIndexChanged.connect(self.selectionchange)
 		layout.addWidget(self.cb)
 		self.setLayout(layout)
-
-
+                                    
 	def selectionchange(self,i):
 		print( "Items in the list are :" )
 		for count in range(self.cb.count()):
-			print( self.cb.itemText(count) )
+			print( 'item'+str(count) + '='+ self.cb.itemText(count) )
 			print( "Current index",i,"selection changed ",self.cb.currentText() )
 
 if __name__ == '__main__':
