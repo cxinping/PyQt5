@@ -2,11 +2,7 @@
 '''
     【简介】
 	PyQT5中单元格的基本例子
-  
-    作者：信平
-    QQ： 759949947	
-    Email: xpws2006@163.com   
-  
+    
 '''
 
 import sys
@@ -18,7 +14,7 @@ class Table(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle("QTableWidget demo")
+        self.setWindowTitle("QTableWidget 例子")
         self.resize(400,300);
         conLayout = QHBoxLayout()
         tableWidget=QTableWidget()
