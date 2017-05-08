@@ -17,6 +17,10 @@ class CheckBoxDemo(QWidget):
 
 	def __init__(self, parent=None):
 		super(CheckBoxDemo , self).__init__(parent)
+		
+		groupBox = QGroupBox("Checkboxes")
+		groupBox.setFlat(True)
+		
 		layout = QHBoxLayout()
 		self.checkBox1= QCheckBox("&Checkbox1")
 		self.checkBox1.setChecked(True)
@@ -33,7 +37,11 @@ class CheckBoxDemo(QWidget):
 		self.checkBox3.stateChanged.connect( lambda:self.btnstate(self.checkBox3) )
 		layout.addWidget(self.checkBox3)
         
-		self.setLayout(layout)
+		groupBox.setLayout(layout)
+		mainLayout = QVBoxLayout()
+		mainLayout.addWidget(groupBox)
+		
+		self.setLayout(mainLayout)
 		self.setWindowTitle("checkbox demo")
 	
 	def btnstate(self,btn ):
