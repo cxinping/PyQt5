@@ -31,13 +31,11 @@ class sliderdemo(QWidget):
 		layout.addWidget(self.sl)
 		self.sl.valueChanged.connect(self.valuechange)
 		self.setLayout(layout)
-
-
+                      
 	def valuechange(self):
 		size=self.sl.value()
 		self.l1.setFont(QFont("Arial",size))
-
-
+                      
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	ex = sliderdemo()
