@@ -12,9 +12,9 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-class menudemo(QMainWindow):
+class MenuDemo(QMainWindow):
 	def __init__(self, parent=None):
-		super(menudemo, self).__init__(parent)
+		super(MenuDemo, self).__init__(parent)
 		layout = QHBoxLayout()
 		bar = self.menuBar()
 		file = bar.addMenu("File")
@@ -36,6 +36,6 @@ class menudemo(QMainWindow):
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = menudemo()
-	ex.show()
+	demo = MenuDemo()
+	demo.show()
 	sys.exit(app.exec_())
