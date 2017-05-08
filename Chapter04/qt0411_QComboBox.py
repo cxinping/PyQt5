@@ -31,6 +31,8 @@ class ComboxDemo(QWidget):
                                     
 	def selectionchange(self,i):
 		self.lbl.setText( self.cb.currentText() )
+		self.lbl.adjustSize()
+		
 		print( "Items in the list are :" )
 		for count in range(self.cb.count()):
 			print( 'item'+str(count) + '='+ self.cb.itemText(count) )
