@@ -12,9 +12,11 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-class combodemo(QWidget):
+class ComboxDemo(QWidget):
 	def __init__(self, parent=None):
-		super(combodemo, self).__init__(parent)
+		super(ComboxDemo, self).__init__(parent)
+		self.setWindowTitle("combox 例子")        
+		self.resize(300, 90)                       
 		layout = QHBoxLayout()
 		self.cb = QComboBox()
 		self.cb.addItem("C")
@@ -23,7 +25,7 @@ class combodemo(QWidget):
 		self.cb.currentIndexChanged.connect(self.selectionchange)
 		layout.addWidget(self.cb)
 		self.setLayout(layout)
-		self.setWindowTitle("combobox demo")
+
 
 	def selectionchange(self,i):
 		print( "Items in the list are :" )
@@ -33,6 +35,6 @@ class combodemo(QWidget):
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = combodemo()
-	ex.show()
+	comboxDemo = ComboxDemo()
+	comboxDemo.show()
 	sys.exit(app.exec_())
