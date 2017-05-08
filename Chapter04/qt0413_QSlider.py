@@ -15,6 +15,9 @@ from PyQt5.QtWidgets import *
 class sliderdemo(QWidget):
 	def __init__(self, parent=None):
 		super(sliderdemo, self).__init__(parent)
+		self.setWindowTitle("QSlider 例子")  
+		self.resize(300, 100)
+        
 		layout = QVBoxLayout()
 		self.l1=QLabel("Hello")
 		self.l1.setAlignment(Qt.AlignCenter)
@@ -28,7 +31,7 @@ class sliderdemo(QWidget):
 		layout.addWidget(self.sl)
 		self.sl.valueChanged.connect(self.valuechange)
 		self.setLayout(layout)
-		self.setWindowTitle("QSlider demo")
+
 
 	def valuechange(self):
 		size=self.sl.value()
