@@ -15,6 +15,9 @@ from PyQt5.QtWidgets import *
 class spindemo(QWidget):
 	def __init__(self, parent=None):
 		super(spindemo, self).__init__(parent)
+		self.setWindowTitle("SpinBox 例子")
+		self.resize(300, 100)
+        
 		layout = QVBoxLayout()
 		self.l1=QLabel("current value:")
 		self.l1.setAlignment(Qt.AlignCenter)
@@ -23,7 +26,7 @@ class spindemo(QWidget):
 		layout.addWidget(self.sp)
 		self.sp.valueChanged.connect(self.valuechange)
 		self.setLayout(layout)
-		self.setWindowTitle("SpinBox demo")
+		
 
 	def valuechange(self):	
 		self.l1.setText("current value:"+str(self.sp.value()))
