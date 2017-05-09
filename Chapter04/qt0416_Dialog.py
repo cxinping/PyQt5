@@ -22,8 +22,7 @@ class DialogDemo( QMainWindow ):
 		self.btn = QPushButton( self)
 		self.btn.setText("Pop dialog")  
 		self.btn.move(50,50)		
-		self.btn.clicked.connect(self.showdialog)        		
-		
+		self.btn.clicked.connect(self.showdialog)  
                 
 	def showdialog(self ):
 		d = QDialog()
