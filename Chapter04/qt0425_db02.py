@@ -30,11 +30,12 @@ def createView(title, model):
 	
 def addrow():
 	print( model.rowCount() )
-	ret=model.insertRows(model.rowCount(), 1)
+	ret = model.insertRows( model.rowCount(), 1 )
 	print( ret )
 
 def findrow(i):
-	delrow=i.row()
+	delrow= i.row()
+	print('del row=%s' % str(delrow) )
 
 if __name__ == '__main__':
 	app =  QApplication(sys.argv)
@@ -52,6 +53,7 @@ if __name__ == '__main__':
 	button =  QPushButton("Add a row")
 	button.clicked.connect(addrow)
 	layout.addWidget(button)
+    
 	btn1 =  QPushButton("del a row")
 	btn1.clicked.connect(lambda: model.removeRow(view1.currentIndex().row()))
 	layout.addWidget(btn1)
