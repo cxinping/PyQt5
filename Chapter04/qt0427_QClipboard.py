@@ -9,10 +9,7 @@
 
 import os
 import sys
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import (QMimeData, Qt)
+from PyQt5.QtCore import  QMimeData 
 from PyQt5.QtWidgets import (QApplication, QDialog, QGridLayout, QLabel,QPushButton)
 from PyQt5.QtGui import QPixmap
 
