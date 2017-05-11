@@ -13,7 +13,7 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 
 def drawFunc():
-    #清楚之前画面
+    #清除之前画面
     glClear(GL_COLOR_BUFFER_BIT)
     #(角度,x,y,z)
     glRotatef(0.1, 5, 5, 0)  
