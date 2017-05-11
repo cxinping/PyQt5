@@ -17,6 +17,9 @@ def drawFunc():
 	glClear(GL_COLOR_BUFFER_BIT)
 	#(角度,x,y,z)
 	#glRotatef(0.1, 5, 5, 0)  
+	glLoadIdentity(); 
+	gluLookAt(0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0)
+	
 	glutWireTeapot(0.5)
 	#刷新显示
 	glFlush()
@@ -26,7 +29,7 @@ glutInit()
 #显示模式:GLUT_SINGLE无缓冲直接显示|GLUT_RGBA采用RGB(A非alpha)
 glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA)
 #窗口位置及大小-生成
-glutInitWindowPosition(0,0)
+glutInitWindowPosition(100,100)
 glutInitWindowSize(400,400)
 #参数为b类型而不是string  
 glutCreateWindow(b"Frist OpenGL")
