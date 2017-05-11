@@ -33,6 +33,6 @@ class CustWidget( QWidget):
         
 if __name__ == "__main__":        
     app =  QApplication(sys.argv)
-    w = CustWidget()
-    w.show()
-    app.exec_()
+    demo = CustWidget()
+    demo.show()
+    sys.exit(app.exec_())
