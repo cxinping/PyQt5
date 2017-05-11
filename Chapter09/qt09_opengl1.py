@@ -29,7 +29,7 @@ glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA)
 glutInitWindowPosition(0,0)
 glutInitWindowSize(400,400)
 #参数为b类型而不是string  
-glutCreateWindow(b"second OpenGL")
+glutCreateWindow(b"Frist OpenGL")
 #调用函数绘制图像
 glutDisplayFunc(drawFunc)
 #glutIdleFunc(drawFunc)
