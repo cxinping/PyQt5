@@ -16,7 +16,7 @@ def drawFunc():
     #清除之前画面
     glClear(GL_COLOR_BUFFER_BIT)
     #(角度,x,y,z)
-    glRotatef(0.1, 5, 5, 0)  
+    #glRotatef(0.1, 5, 5, 0)  
     glutWireTeapot(0.5)
     #刷新显示
     glFlush()
@@ -28,9 +28,10 @@ glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA)
 #窗口位置及大小-生成
 glutInitWindowPosition(0,0)
 glutInitWindowSize(400,400)
+#参数为b类型而不是string  
 glutCreateWindow(b"second OpenGL")
 #调用函数绘制图像
 glutDisplayFunc(drawFunc)
-glutIdleFunc(drawFunc)
+#glutIdleFunc(drawFunc)
 #主循环
 glutMainLoop()
