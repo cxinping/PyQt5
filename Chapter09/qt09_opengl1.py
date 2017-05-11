@@ -13,13 +13,13 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 
 def drawFunc():
-    #清除之前画面
-    glClear(GL_COLOR_BUFFER_BIT)
-    #(角度,x,y,z)
-    #glRotatef(0.1, 5, 5, 0)  
-    glutWireTeapot(0.5)
-    #刷新显示
-    glFlush()
+	#清除之前画面
+	glClear(GL_COLOR_BUFFER_BIT)
+	#(角度,x,y,z)
+	#glRotatef(0.1, 5, 5, 0)  
+	glutWireTeapot(0.5)
+	#刷新显示
+	glFlush()
     
 #使用glut初始化OpenGL
 glutInit()
