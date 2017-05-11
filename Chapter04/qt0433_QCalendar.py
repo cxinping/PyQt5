@@ -27,13 +27,13 @@ class Example( QWidget):
 		self.lbl.setText(date.toString())
 		self.lbl.move(20, 300)
 		self.setGeometry(100,100,400,400)
-		self.setWindowTitle('Calendar')
-		self.show()
+		self.setWindowTitle('Calendar 例子')
 		
 	def showDate(self, date): 
 		self.lbl.setText(date.toString())
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = Example()
+	demo = Example()
+	demo.show()
 	sys.exit(app.exec_())
