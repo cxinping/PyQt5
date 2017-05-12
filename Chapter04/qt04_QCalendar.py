@@ -11,6 +11,7 @@ import sys
 from PyQt5 import QtCore
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import QDate
 
 class CalendarExample( QWidget):
 	def __init__(self):
@@ -19,6 +20,8 @@ class CalendarExample( QWidget):
 		
 	def initUI(self): 
 		self.cal =  QCalendarWidget(self)
+		self.cal.setMinimumDate(QDate(1980, 1, 1))
+		self.cal.setMaximumDate(QDate(3000, 1, 1))
 		self.cal.setGridVisible(True)
 		self.cal.move(20, 20)
 		self.cal.clicked[QtCore.QDate].connect(self.showDate)
