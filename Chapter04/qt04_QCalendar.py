@@ -18,12 +18,12 @@ class CalendarExample( QWidget):
 		self.initUI()
 		
 	def initUI(self): 
-		cal =  QCalendarWidget(self)
-		cal.setGridVisible(True)
-		cal.move(20, 20)
-		cal.clicked[QtCore.QDate].connect(self.showDate)
+		self.cal =  QCalendarWidget(self)
+		self.cal.setGridVisible(True)
+		self.cal.move(20, 20)
+		self.cal.clicked[QtCore.QDate].connect(self.showDate)
 		self.lbl =  QLabel(self)
-		date = cal.selectedDate()
+		date = self.cal.selectedDate()
 		self.lbl.setText(date.toString("yyyy-MM-dd dddd"))
 		self.lbl.move(20, 300)
 		self.setGeometry(100,100,400,350)
