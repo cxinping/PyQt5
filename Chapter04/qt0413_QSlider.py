@@ -19,10 +19,10 @@ class sliderdemo(QWidget):
 		self.resize(300, 100)
         
 		layout = QVBoxLayout()
-		self.l1=QLabel("Hello")
+		self.l1 = QLabel("Hello PyQt5")
 		self.l1.setAlignment(Qt.AlignCenter)
 		layout.addWidget(self.l1)
-		self.sl=QSlider(Qt.Horizontal)
+		self.sl = QSlider(Qt.Horizontal)
 		self.sl.setMinimum(10)
 		self.sl.setMaximum(30)
 		self.sl.setValue(20)
@@ -38,6 +38,6 @@ class sliderdemo(QWidget):
                       
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = sliderdemo()
-	ex.show()
+	demo = sliderdemo()
+	demo.show()
 	sys.exit(app.exec_())
