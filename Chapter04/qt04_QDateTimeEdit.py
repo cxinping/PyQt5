@@ -11,7 +11,7 @@ import sys
 #from PyQt5 import QtCore
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import QDate,   QDateTime
+from PyQt5.QtCore import QDate,   QDateTime , QTime 
 
 class DateTimeEditDemo(QWidget):
 	def __init__(self):
@@ -30,6 +30,10 @@ class DateTimeEditDemo(QWidget):
         # 设置最大日期
 		self.dateEdit.setMaximumDate(QDate.currentDate().addDays(365)) 
 		self.dateEdit.setCalendarPopup( True)
+
+		self.dateEdit.dateChanged.connect(self.onDateChanged) 
+		self.dateEdit.dateTimeChanged.connect(self.onDateTimeChanged) 
+		self.dateEdit.timeChanged.connect(self.onTimeChanged) 
 		
 		self.btn = QPushButton('获得日期和时间')  
 		self.btn.clicked.connect(self.onButtonClick) 
@@ -37,7 +41,19 @@ class DateTimeEditDemo(QWidget):
 		vlayout.addWidget( self.dateEdit )
 		vlayout.addWidget( self.btn )
 		self.setLayout(vlayout)   
-		
+
+	# 日期发生改变时执行		
+	def onDateChanged(self , date):
+			print(date)
+	
+	# 无论日期还是时间发生改变，都会执行
+	def onDateTimeChanged(self , dateTime ):
+			print(dateTime)
+			
+	# 时间发生改变时执行
+	def onTimeChanged(self , time):
+			print(time)			
+	
 	def onButtonClick(self ):      
 		dateTime  = self.dateEdit.dateTime()
 		#最大日期
