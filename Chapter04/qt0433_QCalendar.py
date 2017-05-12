@@ -8,20 +8,20 @@
 '''
 
 import sys
-from PyQt5.QtCore import *
+from PyQt5 import QtCore
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-class Example( QWidget):
+class CalendarExample( QWidget):
 	def __init__(self):
-		super(Example, self).__init__()
+		super(CalendarExample, self).__init__()
 		self.initUI()
 		
 	def initUI(self): 
 		cal =  QCalendarWidget(self)
 		cal.setGridVisible(True)
 		cal.move(20, 20)
-		cal.clicked[ QDate].connect(self.showDate)
+		cal.clicked[QtCore.QDate].connect(self.showDate)
 		self.lbl =  QLabel(self)
 		date = cal.selectedDate()
 		self.lbl.setText(date.toString())
@@ -34,6 +34,6 @@ class Example( QWidget):
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	demo = Example()
+	demo = CalendarExample()
 	demo.show()
 	sys.exit(app.exec_())
