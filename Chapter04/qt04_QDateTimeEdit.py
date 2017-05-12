@@ -53,7 +53,7 @@ class DateTimeEditDemo(QWidget):
 		#最小时间	
 		minTime = self.dateEdit.minimumTime() 
 		 
-		print('\n#1 选择日期'  )  	
+		print('\n选择日期时间'  )  	
 		print('dateTime=%s' % str(dateTime) ) 
 		print('maxDate=%s' % str(maxDate) ) 
 		print('maxDateTime=%s' % str(maxDateTime) ) 
