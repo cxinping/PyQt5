@@ -22,18 +22,28 @@ class sliderdemo(QWidget):
 		self.l1 = QLabel("Hello PyQt5")
 		self.l1.setAlignment(Qt.AlignCenter)
 		layout.addWidget(self.l1)
+        # 水平方向
 		self.sl = QSlider(Qt.Horizontal)
+        #设置最小值
 		self.sl.setMinimum(10)
-		self.sl.setMaximum(30)
+		#设置最大值
+		self.sl.setMaximum(50)
+		# 步长
+		self.sl.setSingleStep( 3 ); #10
+		# 设置当前值
 		self.sl.setValue(20)
+		# 刻度位置，刻度在下方
 		self.sl.setTickPosition(QSlider.TicksBelow)
+        # 设置刻度间隔
 		self.sl.setTickInterval(5)
 		layout.addWidget(self.sl)
+        # 连接信号槽
 		self.sl.valueChanged.connect(self.valuechange)
 		self.setLayout(layout)
                       
 	def valuechange(self):
-		size=self.sl.value()
+		print('current slider value=%s' % self.sl.value() )
+		size = self.sl.value()
 		self.l1.setFont(QFont("Arial",size))
                       
 if __name__ == '__main__':
