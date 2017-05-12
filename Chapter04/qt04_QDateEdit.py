@@ -27,6 +27,7 @@ class CalendarExample( QWidget):
 		self.dateEdit.setCalendarPopup( True)
 		
 		self.timeEdit = QTimeEdit(QTime.currentTime(), self)
+		self.timeEdit.setDisplayFormat("HH:mm:ss")
 		self.btn = QPushButton('获得日期和时间')  
 		self.btn.clicked.connect(self.onButtonClick) 
         
@@ -37,9 +38,12 @@ class CalendarExample( QWidget):
 		
 	def onButtonClick(self ):      
 		dateVal = self.dateEdit.dateTime()
-		timeVal = self.timeEdit.time()		
+		time = self.timeEdit.time()		
 		print('dateVal=%s' % dateVal )   
-		print('timeVal=%s' % timeVal )           
+		print('\n#2 选择时间'  )           
+		print('hour=%d' % time.hour() )           
+		print('minute=%d' % time.minute() )  
+		print('second=%d' % time.hour() )  
         
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
