@@ -12,9 +12,9 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-class sliderdemo(QWidget):
+class SliderDemo(QWidget):
 	def __init__(self, parent=None):
-		super(sliderdemo, self).__init__(parent)
+		super(SliderDemo, self).__init__(parent)
 		self.setWindowTitle("QSlider 例子")  
 		self.resize(300, 100)
         
@@ -29,7 +29,7 @@ class sliderdemo(QWidget):
 		#设置最大值
 		self.sl.setMaximum(50)
 		# 步长
-		self.sl.setSingleStep( 3 ); #10
+		self.sl.setSingleStep( 3 ) 
 		# 设置当前值
 		self.sl.setValue(20)
 		# 刻度位置，刻度在下方
@@ -48,6 +48,6 @@ class sliderdemo(QWidget):
                       
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	demo = sliderdemo()
+	demo = SliderDemo()
 	demo.show()
 	sys.exit(app.exec_())
