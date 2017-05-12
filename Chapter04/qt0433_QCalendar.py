@@ -24,13 +24,13 @@ class CalendarExample( QWidget):
 		cal.clicked[QtCore.QDate].connect(self.showDate)
 		self.lbl =  QLabel(self)
 		date = cal.selectedDate()
-		self.lbl.setText(date.toString())
+		self.lbl.setText(date.toString("yyyy-MM-dd"))
 		self.lbl.move(20, 300)
 		self.setGeometry(100,100,400,400)
 		self.setWindowTitle('Calendar 例子')
 		
 	def showDate(self, date): 
-		self.lbl.setText(date.toString())
+		self.lbl.setText(date.toString("yyyy-MM-dd") )
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
