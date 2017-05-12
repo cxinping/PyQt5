@@ -26,7 +26,7 @@ class CalendarExample( QWidget):
 		date = cal.selectedDate()
 		self.lbl.setText(date.toString("yyyy-MM-dd dddd"))
 		self.lbl.move(20, 300)
-		self.setGeometry(100,100,400,400)
+		self.setGeometry(100,100,400,350)
 		self.setWindowTitle('Calendar 例子')
 		
 	def showDate(self, date): 
