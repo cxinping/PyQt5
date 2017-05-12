@@ -76,8 +76,7 @@ class DateTimeEditDemo(QWidget):
 		print('minDate=%s' % str(minDate) ) 
 		print('minDateTime=%s' % str(minDateTime) ) 
 		print('minTime=%s' % str(minTime) ) 
-		
-        
+		              
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	demo = DateTimeEditDemo()
