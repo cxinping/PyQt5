@@ -26,6 +26,13 @@ class DateTimeEditDemo(QWidget):
 		dateTimeEdit2 = QDateTimeEdit(QDateTime.currentDateTime(), self)
 		dateEdit = QDateTimeEdit(QDate.currentDate(), self)
 		timeEdit = QDateTimeEdit(QTime.currentTime(), self)
+
+		# 设置日期时间格式
+		dateTimeEdit.setDisplayFormat("yyyy-MM-dd HH:mm:ss")
+		dateTimeEdit2.setDisplayFormat("yyyy/MM/dd HH-mm-ss")
+		dateEdit.setDisplayFormat("yyyy.M.d")
+		timeEdit.setDisplayFormat("HH:mm:ss")
+                
 		vlayout.addWidget( dateTimeEdit )
 		vlayout.addWidget( dateTimeEdit2)
 		vlayout.addWidget( dateEdit )

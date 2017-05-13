@@ -12,8 +12,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import Qt 
 
-class Drawing(QWidget):
-
+class Drawing(QWidget): 
 	def __init__(self):
 		super().__init__()  
 		self.initUI()
