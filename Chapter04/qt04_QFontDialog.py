@@ -12,25 +12,25 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-class fontdialogdemo(QWidget):
+class FontDialogDemo(QWidget):
 	def __init__(self, parent=None):
-		super(fontdialogdemo, self).__init__(parent)
+		super(FontDialogDemo, self).__init__(parent)
 		layout = QVBoxLayout()
 		self.btn=QPushButton("choose font")
-		self.btn.clicked.connect(self.getfont)
+		self.btn.clicked.connect(self.getFont)
 		layout.addWidget(self.btn)
 		self.le=QLabel("Hello,测试字体例子")
 		layout.addWidget(self.le)
 		self.setLayout(layout)
 		self.setWindowTitle("Font Dialog 例子")
 		
-	def getfont(self):
+	def getFont(self):
 		font, ok = QFontDialog.getFont()
 		if ok:
 			self.le.setFont(font)
 					
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	demo = fontdialogdemo()
+	demo = FontDialogDemo()
 	demo.show()
 	sys.exit(app.exec_())
