@@ -46,7 +46,7 @@ class InputdialogDemo(QWidget):
 			self.le2.setText(str(text)) 
 
 	def getInt(self):
-		num,ok=QInputDialog.getInt(self,"integer input dualog","输入数字")
+		num,ok = QInputDialog.getInt(self,"integer input dualog","输入数字")
 		if ok:
 			self.le3.setText(str(num))
 					
