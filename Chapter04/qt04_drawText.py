@@ -12,9 +12,9 @@ from PyQt5.QtWidgets import QApplication  ,QWidget
 from PyQt5.QtGui import QPainter ,QColor ,QFont
 from PyQt5.QtCore import Qt 
 
-class Winform(QWidget):
+class Drawing(QWidget):
 	def __init__(self,parent=None):
-		super(Winform,self).__init__(parent)
+		super(Drawing,self).__init__(parent)
 		self.setWindowTitle("在窗体中绘画出文字") 
 		self.resize(300, 200)        
 		self.text = '欢迎学习 PyQt5'
@@ -36,6 +36,6 @@ class Winform(QWidget):
 		
 if __name__ == "__main__":  
 	app = QApplication(sys.argv) 
-	form = Winform()
-	form.show()
+	demo = Drawing()
+	demo.show()
 	sys.exit(app.exec_())
