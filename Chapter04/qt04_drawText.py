@@ -34,7 +34,6 @@ class Winform(QWidget):
         #画出文本
 		qp.drawText(event.rect(), Qt.AlignCenter, self.text)
 		
-		
 if __name__ == "__main__":  
 		app = QApplication(sys.argv) 
 		form = Winform()
