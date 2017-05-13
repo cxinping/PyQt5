@@ -15,6 +15,7 @@ from PyQt5.QtGui  import *
 class AppWidget( QWidget):
     def __init__(self, parent=None):
         super(AppWidget, self).__init__(parent)
+        self.setWindowTitle("界面风格例子")
         horizontalLayout =  QHBoxLayout()
         self.styleLabel =  QLabel("Set Style:")
         self.styleComboBox =  QComboBox()
