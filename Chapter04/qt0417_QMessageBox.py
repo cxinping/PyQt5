@@ -15,14 +15,15 @@ from PyQt5.QtWidgets import *
 class MyWindow( QWidget):  
 	def __init__(self):  
 		super(MyWindow,self).__init__()  
-		self.myButton = QPushButton(self)  
-		self.myButton.setObjectName("myButton")  
-		self.myButton.setText("Test")  
+		self.setWindowTitle("QMessage 例子")  
+		self.resize(300, 100)              
+		self.myButton = QPushButton(self)    
+		self.myButton.setText("点击弹出消息框")  
 		self.myButton.clicked.connect(self.msg)  
 
 	def msg(self):  
 		  #使用infomation信息框  
-		reply = QMessageBox.information(self, "标题", "消息", QMessageBox.Yes | QMessageBox.No)  
+		reply = QMessageBox.information(self, "标题", "消息正文", QMessageBox.Yes | QMessageBox.No ,  QMessageBox.Yes )  
 		print( reply )
 		
 if __name__ == '__main__':
