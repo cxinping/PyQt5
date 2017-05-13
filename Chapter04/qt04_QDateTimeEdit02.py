@@ -55,17 +55,17 @@ class DateTimeEditDemo(QWidget):
 	
 	def onButtonClick(self ):      
 		dateTime  = self.dateEdit.dateTime()
-		#最大日期
+		# 最大日期
 		maxDate = self.dateEdit.maximumDate() 
-		#最大日期时间
+		# 最大日期时间
 		maxDateTime = self.dateEdit.maximumDateTime() 
-		#最大时间
+		# 最大时间
 		maxTime = self.dateEdit.maximumTime() 
-		#最小日期
+		# 最小日期
 		minDate = self.dateEdit.minimumDate() 
-		#最小日期时间
+		# 最小日期时间
 		minDateTime = self.dateEdit.minimumDateTime() 
-		#最小时间	
+		# 最小时间	
 		minTime = self.dateEdit.minimumTime() 
 		 
 		print('\n选择日期时间'  )  	
