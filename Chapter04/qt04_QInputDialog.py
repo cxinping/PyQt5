@@ -22,12 +22,12 @@ class InputdialogDemo(QWidget):
 		layout.addRow(self.btn1,self.le1)
 
 		self.btn2 = QPushButton("获得字符串")
-		self.btn2.clicked.connect(self.gettext)
+		self.btn2.clicked.connect(self.getIext)
 		self.le2 = QLineEdit()
 		layout.addRow(self.btn2,self.le2)
 
 		self.btn3 = QPushButton("获得整数")
-		self.btn3.clicked.connect(self.getint)
+		self.btn3.clicked.connect(self.getInt)
 		self.le3 = QLineEdit()
 		layout.addRow(self.btn3,self.le3)
 		self.setLayout(layout)
@@ -40,12 +40,12 @@ class InputdialogDemo(QWidget):
 		if ok and item:
 			self.le1.setText(item)
 	
-	def gettext(self):	
+	def getIext(self):	
 		text, ok = QInputDialog.getText(self, 'Text Input Dialog', '输入姓名:')
 		if ok:
 			self.le2.setText(str(text)) 
 
-	def getint(self):
+	def getInt(self):
 		num,ok=QInputDialog.getInt(self,"integer input dualog","输入数字")
 		if ok:
 			self.le3.setText(str(num))
