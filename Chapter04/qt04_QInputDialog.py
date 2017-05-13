@@ -29,7 +29,7 @@ class InputdialogDemo(QWidget):
 		self.le2 = QLineEdit()
 		layout.addRow(self.btn2,self.le2)
 		self.setLayout(layout)
-		self.setWindowTitle("Input Dialog demo")
+		self.setWindowTitle("Input Dialog 例子")
 		
 	def getItem(self):
 		items = ("C", "C++", "Java", "Python")
