@@ -22,8 +22,8 @@ class WinForm( QWidget):
 		self.myButton.clicked.connect(self.msg)  
 
 	def msg(self):  
-        #使用infomation信息框  
-		reply = QMessageBox.information(self, "标题", "消息正文", QMessageBox.Yes | QMessageBox.No ,  QMessageBox.Yes )  
+        # 使用infomation信息框  
+		reply = QMessageBox.information(self, "标题", "对话框消息正文", QMessageBox.Yes | QMessageBox.No ,  QMessageBox.Yes )  
 		print( reply )
 		
 if __name__ == '__main__':
