@@ -12,9 +12,9 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-class MyWindow( QWidget):  
+class WinForm( QWidget):  
 	def __init__(self):  
-		super(MyWindow,self).__init__()  
+		super(WinForm,self).__init__()  
 		self.setWindowTitle("QMessage 例子")  
 		self.resize(300, 100)              
 		self.myButton = QPushButton(self)    
@@ -22,12 +22,12 @@ class MyWindow( QWidget):
 		self.myButton.clicked.connect(self.msg)  
 
 	def msg(self):  
-		  #使用infomation信息框  
+        #使用infomation信息框  
 		reply = QMessageBox.information(self, "标题", "消息正文", QMessageBox.Yes | QMessageBox.No ,  QMessageBox.Yes )  
 		print( reply )
 		
 if __name__ == '__main__':
 	app= QApplication(sys.argv)    
-	myshow=MyWindow()  
-	myshow.show() 
+	demo = WinForm()  
+	demo.show() 
 	sys.exit(app.exec_())
