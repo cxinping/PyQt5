@@ -30,7 +30,7 @@ class DateTimeEditDemo(QWidget):
 		# 设置日期时间格式
 		dateTimeEdit.setDisplayFormat("yyyy-MM-dd HH:mm:ss")
 		dateTimeEdit2.setDisplayFormat("yyyy/MM/dd HH-mm-ss")
-		dateEdit.setDisplayFormat("yyyy.M.d")
+		dateEdit.setDisplayFormat("yyyy.MM.dd")
 		timeEdit.setDisplayFormat("HH:mm:ss")
                 
 		vlayout.addWidget( dateTimeEdit )
