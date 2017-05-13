@@ -16,10 +16,10 @@ class FontDialogDemo(QWidget):
 	def __init__(self, parent=None):
 		super(FontDialogDemo, self).__init__(parent)
 		layout = QVBoxLayout()
-		self.btn=QPushButton("choose font")
+		self.btn = QPushButton("choose font")
 		self.btn.clicked.connect(self.getFont)
 		layout.addWidget(self.btn)
-		self.le=QLabel("Hello,测试字体例子")
+		self.le = QLabel("Hello,测试字体例子")
 		layout.addWidget(self.le)
 		self.setLayout(layout)
 		self.setWindowTitle("Font Dialog 例子")
