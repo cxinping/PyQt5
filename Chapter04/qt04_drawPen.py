@@ -2,7 +2,7 @@
  
 """
     【简介】
-    绘图中QPen 的例子
+    绘图中QPen 的例子 ,绘制使用不同样式的6条线
     
     
 """
@@ -12,20 +12,16 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import Qt 
 
-class Example(QWidget):
+class Drawing(QWidget):
 	def __init__(self):
 		super().__init__()
-
 		self.initUI()
 
-	def initUI(self):
-
+	def initUI(self):   
 		self.setGeometry(300, 300, 280, 270)
-		self.setWindowTitle('钢笔样式')        
-		self.show()
+		self.setWindowTitle('钢笔样式例子')        
 
-	def paintEvent(self, e):
-
+	def paintEvent(self, e): 
 		qp = QPainter()
 		qp.begin(self)
 		self.drawLines(qp)
@@ -60,5 +56,6 @@ class Example(QWidget):
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = Example()
+	demo = Drawing()
+	demo.show()
 	sys.exit(app.exec_())

@@ -15,7 +15,7 @@ from PyQt5.QtCore import Qt
 class Drawing(QWidget):
 	def __init__(self,parent=None):
 		super(Drawing,self).__init__(parent)
-		self.setWindowTitle("在窗体中绘画出文字") 
+		self.setWindowTitle("在窗体中绘画出文字例子") 
 		self.resize(300, 200)        
 		self.text = '欢迎学习 PyQt5'
          
