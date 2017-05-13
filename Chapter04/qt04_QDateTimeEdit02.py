@@ -43,15 +43,15 @@ class DateTimeEditDemo(QWidget):
 
 	# 日期发生改变时执行		
 	def onDateChanged(self , date):
-			print(date)
+		print(date)
 	
 	# 无论日期还是时间发生改变，都会执行
 	def onDateTimeChanged(self , dateTime ):
-			print(dateTime)
+		print(dateTime)
 			
 	# 时间发生改变时执行
 	def onTimeChanged(self , time):
-			print(time)			
+		print(time)			
 	
 	def onButtonClick(self ):      
 		dateTime  = self.dateEdit.dateTime()
