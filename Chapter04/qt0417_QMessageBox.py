@@ -12,31 +12,21 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-def window():
-	app = QApplication(sys.argv)
-	w = QWidget()
-	b= QPushButton(w)
-	b.setText("Show message!")
-	b.move(50,50)
-	b.clicked.connect(showdialog)
-	w.setWindowTitle("PyQt Dialog 例子") 
-	w.show()
-	sys.exit(app.exec_())
-	
-def showdialog():
-	msg=QMessageBox()
-	msg.setIcon(QMessageBox.Information)
-	msg.setText("This is a message box")
-	msg.setInformativeText("This is additional information")
-	msg.setWindowTitle("MessageBox demo")
-	msg.setDetailedText("The details are as follows:")
-	msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-	msg.buttonClicked.connect(msgbtn)
-	retval=msg.exec_()
-	print("value of pressed message box button:", retval )
-	
-def msgbtn(i):
-	print( "Button pressed is:",i.text() )
-	
+class MyWindow( QWidget):  
+	def __init__(self):  
+		super(MyWindow,self).__init__()  
+		self.myButton = QPushButton(self)  
+		self.myButton.setObjectName("myButton")  
+		self.myButton.setText("Test")  
+		self.myButton.clicked.connect(self.msg)  
+
+	def msg(self):  
+		  #使用infomation信息框  
+		reply = QMessageBox.information(self, "标题", "消息", QMessageBox.Yes | QMessageBox.No)  
+		print( reply )
+		
 if __name__ == '__main__':
-	window()
+	app= QApplication(sys.argv)    
+	myshow=MyWindow()  
+	myshow.show() 
+	sys.exit(app.exec_())
