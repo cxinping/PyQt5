@@ -36,9 +36,9 @@ class TabDemo(QTabWidget):
 	def tab2UI(self):
 		layout=QFormLayout()
 		sex=QHBoxLayout()
-		sex.addWidget(QRadioButton("n")) 
+		sex.addWidget(QRadioButton("男")) 
 
-		sex.addWidget(QRadioButton("Female"))
+		sex.addWidget(QRadioButton("女"))
 		layout.addRow(QLabel("性别"),sex)
 		layout.addRow("生日",QLineEdit())
 		self.setTabText(1,"个人详细信息")
