@@ -20,6 +20,7 @@ class SplitterExample(QWidget):
 	def initUI(self): 
 		hbox = QHBoxLayout(self)
 		self.setWindowTitle('QSplitter 例子')
+		self.setGeometry(300, 300, 300, 200)         
 		topleft = QFrame()
 		topleft.setFrameShape(QFrame.StyledPanel)
 		bottom = QFrame()
@@ -34,9 +35,7 @@ class SplitterExample(QWidget):
 		splitter2.addWidget(bottom)
 		hbox.addWidget(splitter2)
 		self.setLayout(hbox)
-		QApplication.setStyle(QStyleFactory.create('Cleanlooks'))
-		self.setGeometry(300, 300, 300, 200) 
-	
+          	
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	demo = SplitterExample()
