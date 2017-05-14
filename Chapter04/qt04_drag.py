@@ -41,7 +41,7 @@ class Example(QWidget):
 		com = Combo("Button", self)
 		lo.addRow(edit,com)
 		self.setLayout(lo)
-		self.setWindowTitle('Simple drag & drop')
+		self.setWindowTitle('简单拖拽例子')
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
