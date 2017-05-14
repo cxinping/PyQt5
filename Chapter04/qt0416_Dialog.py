@@ -25,12 +25,12 @@ class DialogDemo( QMainWindow ):
 		self.btn.clicked.connect(self.showdialog)  
                 
 	def showdialog(self ):
-		d = QDialog()
-		b1 = QPushButton("ok", d )
-		b1.move(50,50)
-		d.setWindowTitle("Dialog")
-		d.setWindowModality(Qt.ApplicationModal)
-		d.exec_()
+		dialog = QDialog()
+		btn = QPushButton("ok", dialog )
+		btn.move(50,50)
+		dialog.setWindowTitle("Dialog")
+		dialog.setWindowModality(Qt.ApplicationModal)
+		dialog.exec_()
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
