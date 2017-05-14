@@ -11,11 +11,10 @@ import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-
-
-class tabdemo(QTabWidget):
+          
+class TabDemo(QTabWidget):
 	def __init__(self, parent=None):
-		super(tabdemo, self).__init__(parent)
+		super(TabDemo, self).__init__(parent)
 		self.tab1  = QWidget()
 		self.tab2  = QWidget()
 		self.tab3  = QWidget()
@@ -25,36 +24,36 @@ class tabdemo(QTabWidget):
 		self.tab1UI()
 		self.tab2UI()
 		self.tab3UI()
-		self.setWindowTitle("tab demo")
+		self.setWindowTitle("Tab 例子")
 		
 	def tab1UI(self):
 		layout=QFormLayout()
-		layout.addRow("Name",QLineEdit())
-		layout.addRow("Address",QLineEdit())
-		self.setTabText(0,"Contact Details")
+		layout.addRow("姓名",QLineEdit())
+		layout.addRow("地址",QLineEdit())
+		self.setTabText(0,"联系方式")
 		self.tab1.setLayout(layout)
 		
 	def tab2UI(self):
 		layout=QFormLayout()
 		sex=QHBoxLayout()
-		sex.addWidget(QRadioButton("Male")) 
+		sex.addWidget(QRadioButton("n")) 
 
 		sex.addWidget(QRadioButton("Female"))
-		layout.addRow(QLabel("Sex"),sex)
-		layout.addRow("Date of Birth",QLineEdit())
-		self.setTabText(1,"Personal Details")
+		layout.addRow(QLabel("性别"),sex)
+		layout.addRow("生日",QLineEdit())
+		self.setTabText(1,"个人详细信息")
 		self.tab2.setLayout(layout)
 		
 	def tab3UI(self):
 		layout=QHBoxLayout()
-		layout.addWidget(QLabel("subjects"))
-		layout.addWidget(QCheckBox("Physics"))
-		layout.addWidget(QCheckBox("Maths"))
-		self.setTabText(2,"Education Details")
+		layout.addWidget(QLabel("科目"))
+		layout.addWidget(QCheckBox("物理"))
+		layout.addWidget(QCheckBox("高数"))
+		self.setTabText(2,"教育程度")
 		self.tab3.setLayout(layout)
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = tabdemo()
-	ex.show()
+	demo = TabDemo()
+	demo.show()
 	sys.exit(app.exec_())
