@@ -12,9 +12,9 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-class dockdemo(QMainWindow):
+class DockDemo(QMainWindow):
 	def __init__(self, parent=None):
-		super(dockdemo, self).__init__(parent)
+		super(DockDemo, self).__init__(parent)
 		layout = QHBoxLayout()
 		bar=self.menuBar()
 		file=bar.addMenu("File")
@@ -31,10 +31,10 @@ class dockdemo(QMainWindow):
 		self.setCentralWidget(QTextEdit())
 		self.addDockWidget(Qt.RightDockWidgetArea, self.items)
 		self.setLayout(layout)
-		self.setWindowTitle("Dock demo")
+		self.setWindowTitle("Dock 例子")
 					
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = dockdemo()
-	ex.show()
+	demo = DockDemo()
+	demo.show()
 	sys.exit(app.exec_())
