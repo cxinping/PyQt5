@@ -29,7 +29,8 @@ class MenuDemo(QMainWindow):
 		file.addAction(quit)
 		file.triggered[QAction].connect(self.processtrigger) 
 		self.setLayout(layout)
-		self.setWindowTitle("menu demo")
+		self.setWindowTitle("menu 例子")
+		self.resize(350,300)
 		
 	def processtrigger(self,q):
 		print( q.text()+" is triggered" )

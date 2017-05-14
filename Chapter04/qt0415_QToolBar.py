@@ -16,7 +16,7 @@ class ToolBarDemo( QMainWindow ):
 
 	def __init__(self, parent=None):
 		super(ToolBarDemo, self).__init__(parent)
-		self.setWindowTitle("toolbar demo")		
+		self.setWindowTitle("toolbar 例子")		
 		self.resize(300, 200)
 		
 		layout = QVBoxLayout()
@@ -29,12 +29,10 @@ class ToolBarDemo( QMainWindow ):
 		tb.addAction(save)
 		tb.actionTriggered[QAction].connect(self.toolbtnpressed)
 		self.setLayout(layout)
-
-	
+           	
 	def toolbtnpressed(self,a):
-		print(  "pressed tool button is",a.text() )
-
-
+		print("pressed tool button is",a.text() )
+           
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	demo = ToolBarDemo()
