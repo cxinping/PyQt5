@@ -11,16 +11,15 @@ import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-
-
-class Example(QWidget):
+     
+class SplitterExample(QWidget):
 	def __init__(self):
-		super(Example, self).__init__()
+		super(SplitterExample, self).__init__()
 		self.initUI()
 
 	def initUI(self): 
 		hbox = QHBoxLayout(self)
-		self.setWindowTitle('QSplitter demo')
+		self.setWindowTitle('QSplitter 例子')
 		topleft = QFrame()
 		topleft.setFrameShape(QFrame.StyledPanel)
 		bottom = QFrame()
@@ -40,7 +39,7 @@ class Example(QWidget):
 	
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	demo = Example()
+	demo = SplitterExample()
 	demo.show()
 	sys.exit(app.exec_())
 
