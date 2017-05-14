@@ -16,11 +16,11 @@ class DialogDemo( QMainWindow ):
 
 	def __init__(self, parent=None):
 		super(DialogDemo, self).__init__(parent) 		
-		self.setWindowTitle("Dialog demo")
+		self.setWindowTitle("Dialog 例子")
 		self.resize(350,300)
     
 		self.btn = QPushButton( self)
-		self.btn.setText("Pop dialog")  
+		self.btn.setText("弹出对话框")  
 		self.btn.move(50,50)		
 		self.btn.clicked.connect(self.showdialog)  
                 
