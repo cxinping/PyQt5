@@ -26,7 +26,7 @@ class StatusDemo(QMainWindow):
 	
 	def processTrigger(self,q):
 		if (q.text()=="show"):
-			self.statusBar.showMessage(q.text()+" is clicked",2000)
+			self.statusBar.showMessage(q.text()+" 菜单选项被点击了",5000)
 	    
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
