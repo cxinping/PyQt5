@@ -42,7 +42,7 @@ class Form(QDialog):
 		htmlPasteButton.clicked.connect(self.pasteHtml)
 		imageCopyButton.clicked.connect(self.copyImage)
 		imagePasteButton.clicked.connect(self.pasteImage)
-		self.setWindowTitle("Clipboard")
+		self.setWindowTitle("Clipboard 例子")
 		
 	def copyText(self):
 		clipboard = QApplication.clipboard()
