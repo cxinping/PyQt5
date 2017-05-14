@@ -14,7 +14,7 @@ from PyQt5.QtWidgets import *
 
 class ListWidget(QListWidget):
 	def Clicked(self,item):
-		QMessageBox.information(self, "ListWidget", "You clicked: "+item.text())
+		QMessageBox.information(self, "ListWidget", "你选择了: "+item.text())
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
