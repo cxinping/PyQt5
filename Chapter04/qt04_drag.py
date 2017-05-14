@@ -11,12 +11,11 @@ import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-
-
-class combo(QComboBox):
+   
+class Combo(QComboBox):
 
 	def __init__(self, title, parent):
-		super(combo, self).__init__( parent)
+		super(Combo, self).__init__( parent)
 		self.setAcceptDrops(True)
 		
 	def dragEnterEvent(self, e):
@@ -35,11 +34,11 @@ class Example(QWidget):
 		self.initUI()
 
 	def initUI(self):
-		lo=QFormLayout()
-		lo.addRow(QLabel("Type some text in textbox and drag it into combo box"))
+		lo = QFormLayout()
+		lo.addRow(QLabel("请把左边的文本拖拽到右边的下拉菜单中"))
 		edit = QLineEdit()
 		edit.setDragEnabled(True)
-		com = combo("Button", self)
+		com = Combo("Button", self)
 		lo.addRow(edit,com)
 		self.setLayout(lo)
 		self.setWindowTitle('Simple drag & drop')
