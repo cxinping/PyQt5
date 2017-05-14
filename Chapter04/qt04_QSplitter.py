@@ -23,8 +23,10 @@ class SplitterExample(QWidget):
 		self.setGeometry(300, 300, 300, 200)         
 		topleft = QFrame()
 		topleft.setFrameShape(QFrame.StyledPanel)
+        
 		bottom = QFrame()
 		bottom.setFrameShape(QFrame.StyledPanel)
+		
 		splitter1 = QSplitter(Qt.Horizontal)
 		textedit = QTextEdit()
 		splitter1.addWidget(topleft)

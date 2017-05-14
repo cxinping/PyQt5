@@ -11,8 +11,7 @@ import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-
-
+            
 class MainWindow(QMainWindow):
 	count=0
 	def __init__(self, parent=None):
@@ -41,11 +40,10 @@ class MainWindow(QMainWindow):
 			self.mdi.cascadeSubWindows()
 		if q.text()=="Tiled":
 			self.mdi.tileSubWindows()
-
-	
+             	
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = MainWindow()
-	ex.show()
+	demo = MainWindow()
+	demo.show()
 	sys.exit(app.exec_())
 
