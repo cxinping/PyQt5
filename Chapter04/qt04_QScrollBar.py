@@ -41,7 +41,7 @@ class Example(QWidget):
 	def sliderval(self):
 		print( self.s1.value(),self.s2.value(), self.s3.value() )
 		palette = QPalette()
-		c=QColor(self.s1.value(),self.s2.value(), self.s3.value(),255)
+		c = QColor(self.s1.value(),self.s2.value(), self.s3.value(),255)
 		palette.setColor(QPalette.Foreground,c)
 		self.l1.setPalette(palette)
 
