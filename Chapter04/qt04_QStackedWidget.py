@@ -11,18 +11,17 @@ import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-
-
-class stackedExample(QWidget):
+     
+class StackedExample(QWidget):
 	def __init__(self):
-		super(stackedExample, self).__init__()
+		super(StackedExample, self).__init__()
 		self.setGeometry(300, 50, 10,10)
-		self.setWindowTitle('StackedWidget demo')
+		self.setWindowTitle('StackedWidget 例子')
 		
 		self.leftlist = QListWidget ()
-		self.leftlist.insertItem (0, 'Contact' )
-		self.leftlist.insertItem (1, 'Personal' )
-		self.leftlist.insertItem (2, 'Educational' )
+		self.leftlist.insertItem (0, '联系方式' )
+		self.leftlist.insertItem (1, '个人信息' )
+		self.leftlist.insertItem (2, '教育程度' )
 		self.stack1= QWidget()
 		self.stack2= QWidget()
 		self.stack3= QWidget()
@@ -41,34 +40,32 @@ class stackedExample(QWidget):
 
 	def stack1UI(self):
 		layout=QFormLayout()
-		layout.addRow("Name",QLineEdit())
-		layout.addRow("Address",QLineEdit())
-		#self.setTabText(0,"Contact Details")
+		layout.addRow("姓名",QLineEdit())
+		layout.addRow("地址",QLineEdit())
+		#self.setTabText(0,"联系方式2")
 		self.stack1.setLayout(layout)
 
 	def stack2UI(self):
 		layout=QFormLayout()
 		sex=QHBoxLayout()
-		sex.addWidget(QRadioButton("Male"))
-		sex.addWidget(QRadioButton("Female"))
-		layout.addRow(QLabel("Sex"),sex)
-		layout.addRow("Date of Birth",QLineEdit())
-
+		sex.addWidget(QRadioButton("男"))
+		sex.addWidget(QRadioButton("女"))
+		layout.addRow(QLabel("性别"),sex)
+		layout.addRow("生日",QLineEdit())   
 		self.stack2.setLayout(layout)
 
 	def stack3UI(self):
 		layout=QHBoxLayout()
-		layout.addWidget(QLabel("subjects"))
-		layout.addWidget(QCheckBox("Physics"))
-		layout.addWidget(QCheckBox("Maths"))
+		layout.addWidget(QLabel("科目"))
+		layout.addWidget(QCheckBox("物理"))
+		layout.addWidget(QCheckBox("高数"))
 		self.stack3.setLayout(layout)
 	
 	def display(self,i):
 		self.Stack.setCurrentIndex(i)
-	
-	
+	                	
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	demo = stackedExample()
+	demo = StackedExample()
 	demo.show()
 	sys.exit(app.exec_())
