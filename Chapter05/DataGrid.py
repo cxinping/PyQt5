@@ -41,16 +41,16 @@ class DataGrid(QWidget):
 	def CreateWindow(self):
 		# 操作布局
 		operatorLayout = QHBoxLayout()
-		prevButton = QPushButton("前一页")
-		nextButton = QPushButton("下一页")
+		self.prevButton = QPushButton("前一页")
+		self.nextButton = QPushButton("下一页")
 		switchPageButton = QPushButton("Go")
 		switchPageLineEdit = QLineEdit()
 		switchPageLineEdit.setFixedWidth(40)	
 		
 		switchPage =  QLabel("转到第")
 		page = QLabel("页")
-		operatorLayout.addWidget(prevButton)
-		operatorLayout.addWidget(nextButton)
+		operatorLayout.addWidget(self.prevButton)
+		operatorLayout.addWidget(self.nextButton)
 		operatorLayout.addWidget(switchPage)
 		operatorLayout.addWidget(switchPageLineEdit)
 		operatorLayout.addWidget(page)
@@ -89,9 +89,9 @@ class DataGrid(QWidget):
 		# 得到总记录数
 		self.totalRecrodCount = self.GetTotalRecordCount();
 		# 得到总页数
-		#self.totalPage = GetPageCount();
+		self.totalPage = self.GetPageCount();
 		# 刷新状态
-		#UpdateStatus();
+		self.UpdateStatus();
 		# 设置总页数文本
 		#SetTotalPageLabel();
 		# 记录查询
@@ -118,8 +118,20 @@ class DataGrid(QWidget):
 		else :
 			return (self.totalRecrodCount / self.PageRecordCount + 1)
 
-
-
+	# 刷新状态		
+	def UpdateStatus(self):				
+		szCurrentText = ("当前第%d 1页" % self.currentPage )
+		#self.currentPageLabel.setText(szCurrentText)
+		#设置按钮是否可用
+		if( self.currentPage == 1):
+			self.prevButton.setEnabled( False )
+			self.nextButton.setEnabled( True )
+		elif  ( self.currentPage == self.totalPage ):
+			self.prevButton.setEnabled( True )
+			self.nextButton.setEnabled( False )
+		else :
+			self.prevButton.setEnabled( True )
+			self.nextButton.setEnabled( True )
 
 			
 if __name__ == '__main__':
