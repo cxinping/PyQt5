@@ -193,7 +193,7 @@ class DataGrid(QWidget):
 	# 记录查询		
 	def RecordQuery(self, limitIndex ):	
 		szQuery = ("select * from student limit %d,%d" % (  limitIndex , self.PageRecordCount ) )
-		print('szQuery => ' + szQuery )
+		print('query sql=' + szQuery )
 		self.queryModel.setQuery(szQuery)
 		
 	# 刷新状态		
@@ -219,13 +219,15 @@ class DataGrid(QWidget):
 
 	# 前一页按钮按下		
 	def OnPrevButtonClick(self):	
+		print('*** OnPrevButtonClick ');
 		limitIndex = (self.currentPage - 2) * self.PageRecordCount
 		self.RecordQuery( limitIndex) 
 		self.currentPage -= 1 
 		self.UpdateStatus() 
 
 	# 后一页按钮按下	
-	def OnNextButtonClick(self):	
+	def OnNextButtonClick(self):
+		print('*** OnNextButtonClick ');
 		limitIndex =  self.currentPage * self.PageRecordCount
 		self.RecordQuery( limitIndex) 
 		self.currentPage += 1
