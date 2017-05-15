@@ -2,11 +2,9 @@
 
 import sys
 import re
-from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout , QVBoxLayout , QApplication, QPushButton, QLineEdit ,QLabel , QSplitter ,  QTableView , QHeaderView , QMessageBox )
-#from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+from PyQt5.QtWidgets import (QWidget , QHBoxLayout , QVBoxLayout , QApplication, QPushButton, QLineEdit ,QLabel , QSplitter ,  QTableView , QHeaderView , QMessageBox )
 from PyQt5.QtCore import Qt
-from PyQt5.QtSql import QSqlDatabase , QSqlQuery, QSqlQueryModel
+from PyQt5.QtSql import QSqlDatabase  , QSqlQueryModel
 
 def createConnection():
 	# 添加数据库
