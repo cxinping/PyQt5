@@ -95,7 +95,7 @@ class DataGrid(QWidget):
 		# 设置总页数文本
 		self.SetTotalPageLabel();
 		# 记录查询
-		#RecordQuery(0);
+		self.RecordQuery(0);
 		# 设置模型
 		self.tableView.setModel(self.queryModel)
 		
@@ -119,8 +119,8 @@ class DataGrid(QWidget):
 			return (self.totalRecrodCount / self.PageRecordCount + 1)
 
 	# 记录查询		
-	def RecordQuery(self):	
-		szQuery = ("select * from student limit %d,%d" % ( self.limitIndex , self.PageRecordCount ) )
+	def RecordQuery(self, limitIndex ):	
+		szQuery = ("select * from student limit %d,%d" % (  limitIndex , self.PageRecordCount ) )
 
 		
 	# 刷新状态		
