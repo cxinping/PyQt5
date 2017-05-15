@@ -98,7 +98,8 @@ class DataGrid(QWidget):
 		query.exec("insert into student values(28,'王五4','男',21,'经管')")
 
 		return True		
-		
+	
+    # 创建窗口	
 	def CreateWindow(self):
 		# 操作布局
 		operatorLayout = QHBoxLayout()
@@ -142,6 +143,7 @@ class DataGrid(QWidget):
 		mainLayout.addLayout(statusLayout);
 		self.setLayout(mainLayout)
 
+	# 设置表格	
 	def SetTableView(self):		
 		# 声明查询模型
 		self.queryModel = QSqlQueryModel(self);
@@ -191,10 +193,10 @@ class DataGrid(QWidget):
 		self.currentPageLabel.setText( szCurrentText )
         
 		#设置按钮是否可用
-		if( self.currentPage == 1):
+		if self.currentPage == 1 :
 			self.prevButton.setEnabled( False )
 			self.nextButton.setEnabled( True )
-		elif  ( self.currentPage == self.totalPage ):
+		elif  self.currentPage == self.totalPage :
 			self.prevButton.setEnabled( True )
 			self.nextButton.setEnabled( False )
 		else :
