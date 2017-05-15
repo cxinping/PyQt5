@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 
 import sys
-from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QPushButton, QLineEdit ,QLabel , QSplitter ,  QTableView , QHeaderView )
+from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout , QVBoxLayout , QApplication, QPushButton, QLineEdit ,QLabel , QSplitter ,  QTableView , QHeaderView )
 
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -33,6 +33,9 @@ class DataGrid(QWidget):
 		self.initUI()
 
 	def initUI(self):
+		self.CreateWindow()
+		
+	def CreateWindow(self):
 		# 操作布局
 		operatorLayout = QHBoxLayout()
 		prevButton = QPushButton("前一页")
@@ -68,8 +71,12 @@ class DataGrid(QWidget):
 		#self.tableView.horizontalHeader().setStretchLastSection(True)
 		#self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-		
-		self.setLayout(operatorLayout)
+		# 创建界面
+		mainLayout =  QVBoxLayout(self);
+		mainLayout.addLayout(operatorLayout);
+		mainLayout.addWidget(tableView);
+		mainLayout.addLayout(statusLayout);
+		self.setLayout(mainLayout)
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
