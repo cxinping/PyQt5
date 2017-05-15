@@ -2,10 +2,10 @@
 
 import sys
 from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout , QVBoxLayout , QApplication, QPushButton, QLineEdit ,QLabel , QSplitter ,  QTableView , QHeaderView )
-
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from PyQt5.QtSql import QSqlDatabase , QSqlQuery
+from PyQt5.QtCore import pyqtSignal,  Qt
+from PyQt5.QtSql import QSqlDatabase , QSqlQuery, QSqlQueryModel
 
 class DataGrid(QWidget):
 
@@ -82,7 +82,34 @@ class DataGrid(QWidget):
 		self.setLayout(mainLayout)
 
 	def SetTableView(self):		
-		pass
+		# 声明查询模型
+		queryModel = QSqlQueryModel(self);
+		# 设置当前页
+		self.currentPage = 1;
+		# 得到总记录数
+		self.totalRecrodCount = self.GetTotalRecordCount();
+		# 得到总页数
+		#self.totalPage = GetPageCount();
+		# 刷新状态
+		#UpdateStatus();
+		# 设置总页数文本
+		SetTotalPageLabel();
+		# 记录查询
+		#RecordQuery(0);
+		# 设置模型
+		tableView.setModel(queryModel);
+		# 设置表格表头
+		queryModel.setHeaderData(0,Qt.Horizontal,"编号"); 
+		queryModel.setHeaderData(1,Qt.Horizontal,"姓名");
+		queryModel.setHeaderData(2,Qt.Horizontal,"性别");
+		queryModel.setHeaderData(3,Qt.Horizontal,"年龄");
+		queryModel.setHeaderData(4,Qt.Horizontal,"院系");
+
+	def SetTableView(self):			
+		if ( self.totalRecrodCount % self.PageRecordCount == 0 ) :
+			return (self.totalRecrodCount / self.PageRecordCount)
+		else :
+			return (self.totalRecrodCount / self.PageRecordCount + 1)
 		
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
