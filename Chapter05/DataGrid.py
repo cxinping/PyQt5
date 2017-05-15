@@ -145,7 +145,9 @@ class DataGrid(QWidget):
 		self.setLayout(mainLayout)
 
 	# 设置表格	
-	def SetTableView(self):		
+	def SetTableView(self):	
+		print('* step2 SetTableView'  )
+		
 		# 声明查询模型
 		self.queryModel = QSqlQueryModel(self)
 		# 设置当前页
@@ -162,7 +164,8 @@ class DataGrid(QWidget):
 		self.RecordQuery(0)
 		# 设置模型
 		self.tableView.setModel(self.queryModel)
-		
+
+		print('totalRecrodCount=' + str(self.totalRecrodCount) )		
 		print('totalPage=' + str(self.totalPage) )
 
 		
@@ -180,8 +183,8 @@ class DataGrid(QWidget):
 			
 	# 得到页数		
 	def GetPageCount(self):			
-		if ( self.totalRecrodCount % self.PageRecordCount == 0 ) :
-			return (self.totalRecrodCount / self.PageRecordCount)
+		if  self.totalRecrodCount % self.PageRecordCount == 0  :
+			return (self.totalRecrodCount / self.PageRecordCount )
 		else :
 			return (self.totalRecrodCount / self.PageRecordCount + 1)
 
