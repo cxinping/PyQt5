@@ -15,8 +15,8 @@ class DataGrid(QWidget):
 
 	def __init__(self):
 		super().__init__()
-		self.setWindowTitle("QTableWidget 例子")
-		self.resize(400,300);		
+		self.setWindowTitle("分页查询例子")
+		self.resize(600,300);		
 		self.queryModel = None
 		self.tableView = None		
 		self.totalPageLabel = None
@@ -33,7 +33,10 @@ class DataGrid(QWidget):
 		self.initUI()
 
 	def initUI(self):
+		# 创建窗口
 		self.CreateWindow()
+		# 设置表格
+		self.SetTableView()
 		
 	def CreateWindow(self):
 		# 操作布局
@@ -78,6 +81,9 @@ class DataGrid(QWidget):
 		mainLayout.addLayout(statusLayout);
 		self.setLayout(mainLayout)
 
+	def SetTableView(self):		
+		pass
+		
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	example = DataGrid()  
