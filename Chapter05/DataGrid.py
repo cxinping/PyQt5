@@ -9,9 +9,9 @@ from PyQt5.QtSql import QSqlDatabase , QSqlQuery, QSqlQueryModel
 
 class DataGrid(QWidget):
 
-	OnPrevButtonClick = pyqtSignal()
-	OnNextButtonClick = pyqtSignal()
-	OnSwitchPageButtonClick = pyqtSignal()
+	#OnPrevButtonClick = pyqtSignal()
+	#OnNextButtonClick = pyqtSignal()
+	#OnSwitchPageButtonClick = pyqtSignal()
 
 	def __init__(self):
 		super().__init__()
@@ -203,6 +203,8 @@ class DataGrid(QWidget):
 			
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
+	# 创建窗口
 	example = DataGrid()  
+	# 显示窗口
 	example.show()   
 	sys.exit(app.exec_())
