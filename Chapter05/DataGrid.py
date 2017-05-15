@@ -125,7 +125,7 @@ class DataGrid(QWidget):
 		
 	# 刷新状态		
 	def UpdateStatus(self):				
-		szCurrentText = ("当前第%d 1页" % self.currentPage )
+		szCurrentText = ("当前第%d页" % self.currentPage )
 		#self.currentPageLabel.setText(szCurrentText)
 		#设置按钮是否可用
 		if( self.currentPage == 1):
@@ -142,7 +142,14 @@ class DataGrid(QWidget):
 	def SetTotalPageLabel(self):	
 		szPageCountText  = ("总共%d页" % self.totalPage )
 		self.totalPageLabel.setText(szPageCountText)
-			
+
+	# 前一页按钮按下		
+	def OnPrevButtonClick(self):	
+		limitIndex = (self.currentPage - 2) * self.PageRecordCount
+		self.RecordQuery( limitIndex);
+		self.currentPage -= 1;
+		self.UpdateStatus();
+		
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	example = DataGrid()  
