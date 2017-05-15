@@ -168,14 +168,23 @@ class DataGrid(QWidget):
 		
 		# 判断是否为数字
 		if not match :
-			QMessageBox.information(self, tr("提示"), tr("请输入数字"))
+			QMessageBox.information(self, "提示", "请输入数字" )
 			return
 			
 		# 是否为空
 		if szText == '' :
-			QMessageBox.information(this, tr("提示"), tr("请输入跳转页面"))
+			QMessageBox.information(this, "提示" , "请输入跳转页面" )
 			return
 
+		#得到页数
+		pageIndex = int(szText );
+		#判断是否有指定页
+		if pageIndex > self.totalPage or pageIndex < 1 :
+			QMessageBox.information(self, "提示", "没有指定的页面，请重新输入" )
+			return
+			
+			
+			
 			
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
