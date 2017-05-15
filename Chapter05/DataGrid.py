@@ -118,6 +118,11 @@ class DataGrid(QWidget):
 		else :
 			return (self.totalRecrodCount / self.PageRecordCount + 1)
 
+	# 记录查询		
+	def RecordQuery(self):	
+		szQuery = ("select * from student limit %d,%d" % ( self.limitIndex , self.PageRecordCount ) )
+
+		
 	# 刷新状态		
 	def UpdateStatus(self):				
 		szCurrentText = ("当前第%d 1页" % self.currentPage )
