@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*- 
 
 import sys
-from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout , QVBoxLayout , QApplication, QPushButton, QLineEdit ,QLabel , QSplitter ,  QTableView , QHeaderView )
+import re
+from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout , QVBoxLayout , QApplication, QPushButton, QLineEdit ,QLabel , QSplitter ,  QTableView , QHeaderView , QMessageBox )
 #from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import Qt
@@ -146,28 +147,31 @@ class DataGrid(QWidget):
 	# 设置表格	
 	def SetTableView(self):		
 		# 声明查询模型
-		self.queryModel = QSqlQueryModel(self);
+		self.queryModel = QSqlQueryModel(self)
 		# 设置当前页
 		self.currentPage = 1;
 		# 得到总记录数
-		self.totalRecrodCount = self.GetTotalRecordCount();
+		self.totalRecrodCount = self.GetTotalRecordCount()
 		# 得到总页数
-		self.totalPage = self.GetPageCount();
+		self.totalPage = self.GetPageCount()
 		# 刷新状态
-		self.UpdateStatus();
+		self.UpdateStatus()
 		# 设置总页数文本
-		self.SetTotalPageLabel();
+		self.SetTotalPageLabel()
 		# 记录查询
-		self.RecordQuery(0);
+		self.RecordQuery(0)
 		# 设置模型
 		self.tableView.setModel(self.queryModel)
 		
+		print('totalPage=' + str(self.totalPage) )
+
+		
 		# 设置表格表头
-		self.queryModel.setHeaderData(0,Qt.Horizontal,"编号"); 
-		self.queryModel.setHeaderData(1,Qt.Horizontal,"姓名");
-		self.queryModel.setHeaderData(2,Qt.Horizontal,"性别");
-		self.queryModel.setHeaderData(3,Qt.Horizontal,"年龄");
-		self.queryModel.setHeaderData(4,Qt.Horizontal,"院系");
+		self.queryModel.setHeaderData(0,Qt.Horizontal,"编号") 
+		self.queryModel.setHeaderData(1,Qt.Horizontal,"姓名")
+		self.queryModel.setHeaderData(2,Qt.Horizontal,"性别")
+		self.queryModel.setHeaderData(3,Qt.Horizontal,"年龄")
+		self.queryModel.setHeaderData(4,Qt.Horizontal,"院系")
 
 	# 得到记录数	
 	def GetTotalRecordCount(self):			
@@ -219,7 +223,7 @@ class DataGrid(QWidget):
 	def OnNextButtonClick(self):	
 		limitIndex =  self.currentPage * self.PageRecordCount
 		self.RecordQuery( limitIndex) 
-		self.currentPage+= 1
+		self.currentPage += 1
 		self.UpdateStatus() 
 		
 	# 转到页按钮按下
@@ -237,7 +241,7 @@ class DataGrid(QWidget):
 			
 		# 是否为空
 		if szText == '' :
-			QMessageBox.information(this, "提示" , "请输入跳转页面" )
+			QMessageBox.information(self, "提示" , "请输入跳转页面" )
 			return
 
 		#得到页数
