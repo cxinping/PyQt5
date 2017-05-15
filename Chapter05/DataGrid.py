@@ -134,8 +134,8 @@ class DataGrid(QWidget):
 		self.tableView = QTableView()
 		#tableView.horizontalHeader().setResizeMode(QHeaderView.Stretch)
 		#tableView.verticalHeader().setResizeMode(QHeaderView.Stretch)
-		#self.tableView.horizontalHeader().setStretchLastSection(True)
-		#self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+		self.tableView.horizontalHeader().setStretchLastSection(True)
+		self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
 		# 创建界面
 		mainLayout =  QVBoxLayout(self);
@@ -146,7 +146,7 @@ class DataGrid(QWidget):
 
 	# 设置表格	
 	def SetTableView(self):	
-		print('* step2 SetTableView'  )
+		print('*** step2 SetTableView'  )
 		
 		# 声明查询模型
 		self.queryModel = QSqlQueryModel(self)
@@ -178,8 +178,10 @@ class DataGrid(QWidget):
 
 	# 得到记录数	
 	def GetTotalRecordCount(self):			
-		self.queryModel.setQuery("select * from student");
-		return self.queryModel.rowCount()
+		self.queryModel.setQuery("select * from student")
+		rowCount = self.queryModel.rowCount()
+		print('rowCount=' + str(rowCount) )
+		return rowCount
 			
 	# 得到页数		
 	def GetPageCount(self):			
