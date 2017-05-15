@@ -59,11 +59,11 @@ class DataGrid(QWidget):
 	
 	    # 状态布局
 		statusLayout =  QHBoxLayout()
-		totalPageLabel =  QLabel()
-		totalPageLabel.setFixedWidth(70)
+		self.totalPageLabel =  QLabel()
+		self.totalPageLabel.setFixedWidth(70)
 		currentPageLabel =  QLabel()
 		currentPageLabel.setFixedWidth(70)
-		statusLayout.addWidget(totalPageLabel)
+		statusLayout.addWidget(self.totalPageLabel)
 		statusLayout.addWidget(currentPageLabel)
 		statusLayout.addWidget( QSplitter())	
 		
@@ -93,7 +93,7 @@ class DataGrid(QWidget):
 		# 刷新状态
 		self.UpdateStatus();
 		# 设置总页数文本
-		#SetTotalPageLabel();
+		self.SetTotalPageLabel();
 		# 记录查询
 		#RecordQuery(0);
 		# 设置模型
@@ -133,6 +133,10 @@ class DataGrid(QWidget):
 			self.prevButton.setEnabled( True )
 			self.nextButton.setEnabled( True )
 
+	# 设置总数页文本		
+	def SetTotalPageLabel(self):	
+		szPageCountText  = ("总共%d页" % self.totalPage )
+		self.totalPageLabel.setText(szPageCountText)
 			
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
