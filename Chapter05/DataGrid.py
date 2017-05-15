@@ -83,7 +83,7 @@ class DataGrid(QWidget):
 
 	def SetTableView(self):		
 		# 声明查询模型
-		queryModel = QSqlQueryModel(self);
+		self.queryModel = QSqlQueryModel(self);
 		# 设置当前页
 		self.currentPage = 1;
 		# 得到总记录数
@@ -97,16 +97,22 @@ class DataGrid(QWidget):
 		# 记录查询
 		#RecordQuery(0);
 		# 设置模型
-		self.tableView.setModel(queryModel)
+		self.tableView.setModel(self.queryModel)
 		
 		# 设置表格表头
-		queryModel.setHeaderData(0,Qt.Horizontal,"编号"); 
-		queryModel.setHeaderData(1,Qt.Horizontal,"姓名");
-		queryModel.setHeaderData(2,Qt.Horizontal,"性别");
-		queryModel.setHeaderData(3,Qt.Horizontal,"年龄");
-		queryModel.setHeaderData(4,Qt.Horizontal,"院系");
+		self.queryModel.setHeaderData(0,Qt.Horizontal,"编号"); 
+		self.queryModel.setHeaderData(1,Qt.Horizontal,"姓名");
+		self.queryModel.setHeaderData(2,Qt.Horizontal,"性别");
+		self.queryModel.setHeaderData(3,Qt.Horizontal,"年龄");
+		self.queryModel.setHeaderData(4,Qt.Horizontal,"院系");
 
+	# 得到记录数	
 	def GetTotalRecordCount(self):			
+		self.queryModel.setQuery("select * from student");
+		return self.queryModel.rowCount()
+			
+	# 得到页数		
+	def GetPageCount(self):			
 		if ( self.totalRecrodCount % self.PageRecordCount == 0 ) :
 			return (self.totalRecrodCount / self.PageRecordCount)
 		else :
