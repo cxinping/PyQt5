@@ -38,6 +38,11 @@ class DataGrid(QWidget):
 		# 设置表格
 		self.SetTableView()
 		
+		# 信号槽连接
+		self.prevButton.clicked.connect(self.OnPrevButtonClick())		
+		
+		
+		
 	def CreateWindow(self):
 		# 操作布局
 		operatorLayout = QHBoxLayout()
@@ -61,10 +66,10 @@ class DataGrid(QWidget):
 		statusLayout =  QHBoxLayout()
 		self.totalPageLabel =  QLabel()
 		self.totalPageLabel.setFixedWidth(70)
-		currentPageLabel =  QLabel()
-		currentPageLabel.setFixedWidth(70)
+		self.currentPageLabel =  QLabel()
+		self.currentPageLabel.setFixedWidth(70)
 		statusLayout.addWidget(self.totalPageLabel)
-		statusLayout.addWidget(currentPageLabel)
+		statusLayout.addWidget(self.currentPageLabel)
 		statusLayout.addWidget( QSplitter())	
 		
 		# 设置表格属性
@@ -127,7 +132,8 @@ class DataGrid(QWidget):
 	# 刷新状态		
 	def UpdateStatus(self):				
 		szCurrentText = ("当前第%d页" % self.currentPage )
-		#self.currentPageLabel.setText(szCurrentText)
+		self.currentPageLabel.setText( szCurrentText )
+        
 		#设置按钮是否可用
 		if( self.currentPage == 1):
 			self.prevButton.setEnabled( False )
