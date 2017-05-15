@@ -39,8 +39,9 @@ class DataGrid(QWidget):
 		self.SetTableView()
 		
 		# 信号槽连接
-		self.prevButton.clicked.connect(self.OnPrevButtonClick())		
-		
+		self.prevButton.clicked.connect(self.OnPrevButtonClick )		
+		self.nextButton.clicked.connect(self.OnNextButtonClick )	
+		self.switchPageButton.clicked.connect(self.OnSwitchPageButtonClick )	
 		
 		
 	def CreateWindow(self):
@@ -48,18 +49,18 @@ class DataGrid(QWidget):
 		operatorLayout = QHBoxLayout()
 		self.prevButton = QPushButton("前一页")
 		self.nextButton = QPushButton("下一页")
-		switchPageButton = QPushButton("Go")
-		switchPageLineEdit = QLineEdit()
-		switchPageLineEdit.setFixedWidth(40)	
+		self.switchPageButton = QPushButton("Go")
+		self.switchPageLineEdit = QLineEdit()
+		self.switchPageLineEdit.setFixedWidth(40)	
 		
 		switchPage =  QLabel("转到第")
 		page = QLabel("页")
 		operatorLayout.addWidget(self.prevButton)
 		operatorLayout.addWidget(self.nextButton)
 		operatorLayout.addWidget(switchPage)
-		operatorLayout.addWidget(switchPageLineEdit)
+		operatorLayout.addWidget(self.switchPageLineEdit)
 		operatorLayout.addWidget(page)
-		operatorLayout.addWidget(switchPageButton)
+		operatorLayout.addWidget(self.switchPageButton)
 		operatorLayout.addWidget( QSplitter())
 	
 	    # 状态布局
