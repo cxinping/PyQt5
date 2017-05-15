@@ -2,9 +2,9 @@
 
 import sys
 from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout , QVBoxLayout , QApplication, QPushButton, QLineEdit ,QLabel , QSplitter ,  QTableView , QHeaderView )
-from PyQt5.QtCore import *
+#from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from PyQt5.QtCore import pyqtSignal,  Qt
+from PyQt5.QtCore import Qt
 from PyQt5.QtSql import QSqlDatabase , QSqlQuery, QSqlQueryModel
 
 class DataGrid(QWidget):
