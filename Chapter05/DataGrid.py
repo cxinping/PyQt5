@@ -9,25 +9,34 @@ from PyQt5.QtSql import QSqlDatabase , QSqlQuery, QSqlQueryModel
 
 class DataGrid(QWidget):
 
-	#OnPrevButtonClick = pyqtSignal()
-	#OnNextButtonClick = pyqtSignal()
-	#OnSwitchPageButtonClick = pyqtSignal()
-
 	def __init__(self):
 		super().__init__()
 		self.setWindowTitle("分页查询例子")
-		self.resize(600,300);		
+		self.resize(600,300)
+		
+		# 查询模型		
 		self.queryModel = None
+		# 数据表
 		self.tableView = None		
+		# 总数页文本
 		self.totalPageLabel = None
-		self.currentPageLabel = None			
+		# 当前页文本
+		self.currentPageLabel = None
+		# 转到页输入框		
 		self.switchPageLineEdit = None
+		# 前一页按钮
 		self.prevButton = None		
+		# 下一页按钮
 		self.nextButton = None
-		self.switchPageButton = None				
+		# 转到页按钮
+		self.switchPageButton = None	
+		# 当前页	
 		self.currentPage = 0
+		# 总页数
 		self.totalPage = 0		
+		# 总记录数
 		self.totalRecrodCount = 0
+		# 每页显示记录数
 		self.PageRecordCount  = 5			
 	
 		self.initUI()
@@ -42,7 +51,53 @@ class DataGrid(QWidget):
 		self.prevButton.clicked.connect(self.OnPrevButtonClick )		
 		self.nextButton.clicked.connect(self.OnNextButtonClick )	
 		self.switchPageButton.clicked.connect(self.OnSwitchPageButtonClick )	
+
+	# 创建数据库
+	def createDatabase(self):
+		# 添加数据库
+		db =  QSqlDatabase.addDatabase('QSQLITE')
+		# 设置数据库名称
+		db.setDatabaseName('./db/database.db')
+		# 判断是否打开
+		if not db.open():			
+			return False
 		
+		# 声明数据库查询对象
+		query = QSqlQuery()
+		# 创建表
+		query.exec("create table student(id int primary key, name vchar, sex vchar, age int, deparment vchar)")
+		
+		#添加记录
+		query.exec("insert into student values(1,'张三1','男',20,'计算机')")
+		query.exec("insert into student values(2,'李四1','男',19,'经管')")
+		query.exec("insert into student values(3,'王五1','男',22,'机械')")
+		query.exec("insert into student values(4,'赵六1','男',21,'法律')")
+		query.exec("insert into student values(5,'小明1','男',20,'英语')")
+		query.exec("insert into student values(6,'小李1','女',19,'计算机')")
+		query.exec("insert into student values(7,'小张1','男',20,'机械')")
+		query.exec("insert into student values(8,'小刚1','男',19,'经管')")
+		query.exec("insert into student values(9,'张三2','男',21,'计算机')")
+		query.exec("insert into student values(10,'张三3','女',20,'法律')")
+		query.exec("insert into student values(11,'王五2','男',19,'经管')")
+		query.exec("insert into student values(12,'张三4','男',20,'计算机')")
+		query.exec("insert into student values(13,'小李2','男',20,'机械')")
+		query.exec("insert into student values(14,'李四2','女',19,'经管')")
+		query.exec("insert into student values(15,'赵六3','男',21,'英语')")
+		query.exec("insert into student values(16,'李四2','男',19,'法律')")
+		query.exec("insert into student values(17,'小张2','女',22,'经管')")
+		query.exec("insert into student values(18,'李四3','男',21,'英语')")
+		query.exec("insert into student values(19,'小李3','女',19,'法律')")
+		query.exec("insert into student values(20,'王五3','女',20,'机械')")
+		query.exec("insert into student values(21,'张三4','男',22,'计算机')")
+		query.exec("insert into student values(22,'小李2','男',20,'法律')")
+		query.exec("insert into student values(23,'张三5','男',19,'经管')")
+		query.exec("insert into student values(24,'小张3','女',20,'计算机')")
+		query.exec("insert into student values(25,'李四4','男',22,'英语')")
+		query.exec("insert into student values(26,'赵六2','男',20,'机械')")
+		query.exec("insert into student values(27,'小李3','女',19,'英语')")
+		query.exec("insert into student values(28,'王五4','男',21,'经管')")
+
+		return True		
 		
 	def CreateWindow(self):
 		# 操作布局
@@ -205,6 +260,10 @@ if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	# 创建窗口
 	example = DataGrid()  
+	if not example.createDatabase() :
+		pass
+	
+	print('after created database. ')
 	# 显示窗口
 	example.show()   
 	sys.exit(app.exec_())
