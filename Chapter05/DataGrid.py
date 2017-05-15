@@ -177,14 +177,22 @@ class DataGrid(QWidget):
 			return
 
 		#得到页数
-		pageIndex = int(szText );
+		pageIndex = int(szText)
 		#判断是否有指定页
 		if pageIndex > self.totalPage or pageIndex < 1 :
 			QMessageBox.information(self, "提示", "没有指定的页面，请重新输入" )
 			return
 			
+		#得到查询起始行号
+		limitIndex = (pageIndex-1) * self.PageRecordCount			
 			
-			
+		#记录查询
+		self.RecordQuery(limitIndex);
+		#设置当前页
+		self.currentPage = pageIndex
+		#刷新状态
+		self.UpdateStatus();
+
 			
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
