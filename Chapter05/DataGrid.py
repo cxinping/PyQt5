@@ -68,7 +68,7 @@ class DataGrid(QWidget):
 		statusLayout.addWidget( QSplitter())	
 		
 		# 设置表格属性
-		tableView = QTableView()
+		self.tableView = QTableView()
 		#tableView.horizontalHeader().setResizeMode(QHeaderView.Stretch)
 		#tableView.verticalHeader().setResizeMode(QHeaderView.Stretch)
 		#self.tableView.horizontalHeader().setStretchLastSection(True)
@@ -77,7 +77,7 @@ class DataGrid(QWidget):
 		# 创建界面
 		mainLayout =  QVBoxLayout(self);
 		mainLayout.addLayout(operatorLayout);
-		mainLayout.addWidget(tableView);
+		mainLayout.addWidget(self.tableView);
 		mainLayout.addLayout(statusLayout);
 		self.setLayout(mainLayout)
 
@@ -93,11 +93,12 @@ class DataGrid(QWidget):
 		# 刷新状态
 		#UpdateStatus();
 		# 设置总页数文本
-		SetTotalPageLabel();
+		#SetTotalPageLabel();
 		# 记录查询
 		#RecordQuery(0);
 		# 设置模型
-		tableView.setModel(queryModel);
+		self.tableView.setModel(queryModel)
+		
 		# 设置表格表头
 		queryModel.setHeaderData(0,Qt.Horizontal,"编号"); 
 		queryModel.setHeaderData(1,Qt.Horizontal,"姓名");
@@ -105,12 +106,16 @@ class DataGrid(QWidget):
 		queryModel.setHeaderData(3,Qt.Horizontal,"年龄");
 		queryModel.setHeaderData(4,Qt.Horizontal,"院系");
 
-	def SetTableView(self):			
+	def GetTotalRecordCount(self):			
 		if ( self.totalRecrodCount % self.PageRecordCount == 0 ) :
 			return (self.totalRecrodCount / self.PageRecordCount)
 		else :
 			return (self.totalRecrodCount / self.PageRecordCount + 1)
-		
+
+
+
+
+			
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	example = DataGrid()  
