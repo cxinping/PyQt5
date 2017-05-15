@@ -158,9 +158,25 @@ class DataGrid(QWidget):
 		self.currentPage+= 1
 		self.UpdateStatus() 
 		
+	# 转到页按钮按下
+	def OnSwitchPageButtonClick(self):			
+		# 得到输入字符串
+		szText = self.switchPageLineEdit.text()
+		#数字正则表达式		
+		pattern = re.compile(r'-?[0-9]*')
+		match = pattern.match(szText)
 		
-		
-		
+		# 判断是否为数字
+		if not match :
+			QMessageBox.information(self, tr("提示"), tr("请输入数字"))
+			return
+			
+		# 是否为空
+		if szText == '' :
+			QMessageBox.information(this, tr("提示"), tr("请输入跳转页面"))
+			return
+
+			
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	example = DataGrid()  
