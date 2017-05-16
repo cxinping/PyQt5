@@ -54,19 +54,19 @@ class DataGrid(QWidget):
 
 	def initUI(self):
 		# 创建窗口
-		self.CreateWindow()
+		self.createWindow()
 		# 设置表格
-		self.SetTableView()
+		self.setTableView()
 		
 		# 信号槽连接
-		self.prevButton.clicked.connect(self.OnPrevButtonClick )		
-		self.nextButton.clicked.connect(self.OnNextButtonClick )	
-		self.switchPageButton.clicked.connect(self.OnSwitchPageButtonClick )	
+		self.prevButton.clicked.connect(self.onPrevButtonClick )		
+		self.nextButton.clicked.connect(self.onNextButtonClick )	
+		self.switchPageButton.clicked.connect(self.onSwitchPageButtonClick )	
 
 	# 创建数据库
 	
     # 创建窗口	
-	def CreateWindow(self):
+	def createWindow(self):
 		# 操作布局
 		operatorLayout = QHBoxLayout()
 		self.prevButton = QPushButton("前一页")
@@ -110,7 +110,7 @@ class DataGrid(QWidget):
 		self.setLayout(mainLayout)
 
 	# 设置表格	
-	def SetTableView(self):	
+	def setTableView(self):	
 		print('*** step2 SetTableView'  )
 		
 		# 声明查询模型
@@ -118,15 +118,15 @@ class DataGrid(QWidget):
 		# 设置当前页
 		self.currentPage = 1;
 		# 得到总记录数
-		self.totalRecrodCount = self.GetTotalRecordCount()
+		self.totalRecrodCount = self.getTotalRecordCount()
 		# 得到总页数
-		self.totalPage = self.GetPageCount()
+		self.totalPage = self.getPageCount()
 		# 刷新状态
-		self.UpdateStatus()
+		self.updateStatus()
 		# 设置总页数文本
-		self.SetTotalPageLabel()
+		self.setTotalPageLabel()
 		# 记录查询
-		self.RecordQuery(0)
+		self.recordQuery(0)
 		# 设置模型
 		self.tableView.setModel(self.queryModel)
 
@@ -142,27 +142,27 @@ class DataGrid(QWidget):
 		self.queryModel.setHeaderData(4,Qt.Horizontal,"院系")
 
 	# 得到记录数	
-	def GetTotalRecordCount(self):			
+	def getTotalRecordCount(self):			
 		self.queryModel.setQuery("select * from student")
 		rowCount = self.queryModel.rowCount()
 		print('rowCount=' + str(rowCount) )
 		return rowCount
 			
 	# 得到页数		
-	def GetPageCount(self):			
+	def getPageCount(self):			
 		if  self.totalRecrodCount % self.PageRecordCount == 0  :
 			return (self.totalRecrodCount / self.PageRecordCount )
 		else :
 			return (self.totalRecrodCount / self.PageRecordCount + 1)
 
 	# 记录查询		
-	def RecordQuery(self, limitIndex ):	
+	def recordQuery(self, limitIndex ):	
 		szQuery = ("select * from student limit %d,%d" % (  limitIndex , self.PageRecordCount ) )
 		print('query sql=' + szQuery )
 		self.queryModel.setQuery(szQuery)
 		
 	# 刷新状态		
-	def UpdateStatus(self):				
+	def updateStatus(self):				
 		szCurrentText = ("当前第%d页" % self.currentPage )
 		self.currentPageLabel.setText( szCurrentText )
         
@@ -178,28 +178,28 @@ class DataGrid(QWidget):
 			self.nextButton.setEnabled( True )
 
 	# 设置总数页文本		
-	def SetTotalPageLabel(self):	
+	def setTotalPageLabel(self):	
 		szPageCountText  = ("总共%d页" % self.totalPage )
 		self.totalPageLabel.setText(szPageCountText)
 
 	# 前一页按钮按下		
-	def OnPrevButtonClick(self):	
-		print('*** OnPrevButtonClick ');
+	def onPrevButtonClick(self):	
+		print('*** onPrevButtonClick ');
 		limitIndex = (self.currentPage - 2) * self.PageRecordCount
-		self.RecordQuery( limitIndex) 
+		self.recordQuery( limitIndex) 
 		self.currentPage -= 1 
-		self.UpdateStatus() 
+		self.updateStatus() 
 
 	# 后一页按钮按下	
-	def OnNextButtonClick(self):
-		print('*** OnNextButtonClick ');
+	def onNextButtonClick(self):
+		print('*** onNextButtonClick ');
 		limitIndex =  self.currentPage * self.PageRecordCount
-		self.RecordQuery( limitIndex) 
+		self.recordQuery( limitIndex) 
 		self.currentPage += 1
-		self.UpdateStatus() 
+		self.updateStatus() 
 		
 	# 转到页按钮按下
-	def OnSwitchPageButtonClick(self):			
+	def onSwitchPageButtonClick(self):			
 		# 得到输入字符串
 		szText = self.switchPageLineEdit.text()
 		#数字正则表达式		
@@ -227,12 +227,11 @@ class DataGrid(QWidget):
 		limitIndex = (pageIndex-1) * self.PageRecordCount			
 			
 		#记录查询
-		self.RecordQuery(limitIndex);
+		self.recordQuery(limitIndex);
 		#设置当前页
 		self.currentPage = pageIndex
 		#刷新状态
-		self.UpdateStatus();
-
+		self.updateStatus();
 			
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
