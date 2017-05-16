@@ -15,7 +15,7 @@ from PyQt5.QtSql import QSqlDatabase , QSqlTableModel
 from PyQt5.QtCore import Qt 
 
 def initializeModel(model):
-	model.setTable('sportsmen')
+	model.setTable('people')
 	model.setEditStrategy( QSqlTableModel.OnFieldChange)
 	model.select()
 	model.setHeaderData(0, Qt.Horizontal, "ID")
