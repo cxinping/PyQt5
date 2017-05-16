@@ -29,7 +29,6 @@ def createView(title, model):
 	return view
 	
 def addrow():
-	print( model.rowCount() )
 	ret = model.insertRows( model.rowCount(), 1 )
 	print( 'insertRows=%s' %str(ret) )
 
@@ -50,15 +49,16 @@ if __name__ == '__main__':
 	dlg= QDialog()
 	layout = QVBoxLayout()
 	layout.addWidget(view1)
-	button =  QPushButton("Add a row")
+	button =  QPushButton("添加一行")
 	button.clicked.connect(addrow)
 	layout.addWidget(button)
     
-	btn1 =  QPushButton("del a row")
+	btn1 = QPushButton("删除一行")
 	btn1.clicked.connect(lambda: model.removeRow(view1.currentIndex().row()))
 	layout.addWidget(btn1)
 	dlg.setLayout(layout)
-	dlg.setWindowTitle("Database Demo")
+	dlg.setWindowTitle("Database 例子")
+	dlg.resize(430, 450)
 	dlg.show()
 	sys.exit(app.exec_())
 
