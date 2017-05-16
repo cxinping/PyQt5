@@ -11,7 +11,7 @@ import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtSql import QSqlDatabase , QSqlQuery , QSqlDatabase , QSqlTableModel
+from PyQt5.QtSql import QSqlDatabase , QSqlTableModel
 from PyQt5.QtCore import Qt 
 
 def initializeModel(model):
