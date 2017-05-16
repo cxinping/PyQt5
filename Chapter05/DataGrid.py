@@ -91,16 +91,20 @@ class DataGrid(QWidget):
 		self.totalPageLabel.setFixedWidth(70)
 		self.currentPageLabel =  QLabel()
 		self.currentPageLabel.setFixedWidth(70)
+		
+		self.totalRecordLabel =  QLabel()
+		self.totalRecordLabel.setFixedWidth(70)
+		
 		statusLayout.addWidget(self.totalPageLabel)
 		statusLayout.addWidget(self.currentPageLabel)
-		statusLayout.addWidget( QSplitter())	
+		statusLayout.addWidget( QSplitter() )	
+		statusLayout.addWidget(self.totalRecordLabel)
 		
 		# 设置表格属性
 		self.tableView = QTableView()
 		# 最后一个填充最后的空白位置
 		self.tableView.horizontalHeader().setStretchLastSection(True)
 		self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-	
 		
 		# 创建界面
 		mainLayout =  QVBoxLayout(self);
@@ -125,6 +129,9 @@ class DataGrid(QWidget):
 		self.updateStatus()
 		# 设置总页数文本
 		self.setTotalPageLabel()
+		# 设置总记录数
+		self.setTotalRecordLabel()
+		
 		# 记录查询
 		self.recordQuery(0)
 		# 设置模型
@@ -182,6 +189,12 @@ class DataGrid(QWidget):
 		szPageCountText  = ("总共%d页" % self.totalPage )
 		self.totalPageLabel.setText(szPageCountText)
 
+	# 设置总总记录数		
+	def setTotalRecordLabel(self):	
+		szTotalRecordText  = ("共%d条" % self.totalRecrodCount )
+		print('*** setTotalRecordLabel szTotalRecordText=' + szTotalRecordText )
+		self.totalRecordLabel.setText(szTotalRecordText)
+		
 	# 前一页按钮按下		
 	def onPrevButtonClick(self):	
 		print('*** onPrevButtonClick ');
