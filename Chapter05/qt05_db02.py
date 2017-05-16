@@ -31,7 +31,7 @@ def createView(title, model):
 def addrow():
 	print( model.rowCount() )
 	ret = model.insertRows( model.rowCount(), 1 )
-	print( ret )
+	print( 'insertRows=%s' %str(ret) )
 
 def findrow(i):
 	delrow= i.row()
