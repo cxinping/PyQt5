@@ -216,7 +216,7 @@ class DataGrid(QWidget):
 		# 得到输入字符串
 		szText = self.switchPageLineEdit.text()
 		#数字正则表达式		
-		pattern = re.compile(r'-?[0-9]*')
+		pattern = re.compile(r'^[-+]?[0-9]+\.[0-9]+$')
 		match = pattern.match(szText)
 		
 		# 判断是否为数字
