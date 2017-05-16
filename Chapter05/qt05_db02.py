@@ -19,8 +19,8 @@ def initializeModel(model):
 	model.setEditStrategy( QSqlTableModel.OnFieldChange)
 	model.select()
 	model.setHeaderData(0, Qt.Horizontal, "ID")
-	model.setHeaderData(1, Qt.Horizontal, "First name")
-	model.setHeaderData(2, Qt.Horizontal, "Last name")
+	model.setHeaderData(1, Qt.Horizontal, "name")
+	model.setHeaderData(2, Qt.Horizontal, "address")
 	
 def createView(title, model):
 	view =  QTableView()
@@ -40,7 +40,7 @@ def findrow(i):
 if __name__ == '__main__':
 	app =  QApplication(sys.argv)
 	db = QSqlDatabase.addDatabase('QSQLITE')
-	db.setDatabaseName('./db/sports.db')
+	db.setDatabaseName('./db/database.db')
 	model = QSqlTableModel()
 	delrow = -1
 	initializeModel(model)
