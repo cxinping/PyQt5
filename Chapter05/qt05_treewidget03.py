@@ -78,6 +78,9 @@ class TreeWidgetDemo(QWidget):
 		print('--- addTreeNodeBtn ---')
 
 	def updateTreeNodeBtn(self):
+		item = self.tree.currentItem()
+		item.setText(0,'updateNode')
+		item.setText(1,'20')		
 		print('--- updateTreeNodeBtn ---')
 
 	def delTreeNodeBtn(self):
