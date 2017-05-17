@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtWebEngineWidgets import QWebEnginePage 
 out = sys.stdout
-sys.stdout = open(r'E:\QWebEnginePage .txt' , 'w')
-help( QWebEnginePage  )
+sys.stdout = open(r'E:\QTreeWidgetItemIterator.txt' , 'w')
+help( QTreeWidgetItemIterator  )
 sys.stdout.close()
 sys.stdout = out
