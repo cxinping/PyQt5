@@ -10,7 +10,7 @@
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-from PyQt5.QtCore import QUrl  
+from PyQt5.QtCore import QUrl , QDir  ,QFile, QIODevice 
 from PyQt5.QtNetwork import QNetworkAccessManager , QNetworkRequest ,QNetworkReply  
 
 class MainWidget(QWidget):
@@ -21,8 +21,8 @@ class MainWidget(QWidget):
 		manager = QNetworkAccessManager( self )
 		manager.finished.connect( self.onFinished)
 		
-		#url = QUrl("http://www.163.com/")
-		url = QUrl("http://www.baiduaaaaaaabbbbbb.com/")
+		url = QUrl("http://www.cnblogs.com/li-peng/p/3656613.html")
+		#url = QUrl("http://www.baiduaaaaaaabbbbbb.com/")
 		request = QNetworkRequest( url ) 
 		manager.get( request )
 		
@@ -31,8 +31,22 @@ class MainWidget(QWidget):
 	def onFinished(self, reply ):
 		print('--- onFinished ----')
 		
-		if reply.error() == QNetworkReply.NoError : 
-			print( reply.readAll() )
+		if reply.error() == QNetworkReply.NoError : 		
+			thefileName  = 'index.html'
+			thePath = r"E:/mydownload/"
+			createfile = QDir() 
+			exist = createfile.exists(thePath)
+			if not exist : 
+				createfile.mkpath(thePath)
+			
+			thePath += thefileName;
+			file =  QFile(thePath);
+			print( thePath )
+			if file.open(QIODevice.Append) :
+				file.write(reply.readAll())
+				file.flush()
+				file.close()
+			#print( reply.readAll() )
 			 						
 		else  : 	
 			print('---error 2')
