@@ -84,6 +84,10 @@ class TreeWidgetDemo(QWidget):
 		print('--- updateTreeNodeBtn ---')
 
 	def delTreeNodeBtn(self):
+		item = self.tree.currentItem()
+		root = self.tree.invisibleRootItem()
+		for item in self.tree.selectedItems():
+			(item.parent() or root).removeChild(item)
 		print('--- delTreeNodeBtn ---')
         
 		
