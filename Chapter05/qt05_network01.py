@@ -61,7 +61,7 @@ class MainWidget(QWidget):
  
 		
 if __name__ == "__main__":
-	app =  QApplication([])
+	app = QApplication(sys.argv)
 	main = MainWidget()
 	main.show()
 	sys.exit(app.exec_())  
