@@ -24,6 +24,10 @@ class TreeWidgetDemo(QWidget):
 		operatorLayout.addWidget(addBtn)
 		operatorLayout.addWidget(updateBtn)
 		operatorLayout.addWidget(delBtn)
+		# 按钮的信号槽连接
+		addBtn.clicked.connect(self.addTreeNodeBtn )
+		updateBtn.clicked.connect(self.updateTreeNodeBtn )
+		delBtn.clicked.connect(self.delTreeNodeBtn )		
 		
 		self.tree = QTreeWidget(self)
         # 设置列数
@@ -65,7 +69,21 @@ class TreeWidgetDemo(QWidget):
 	def onTreeClicked(self, qmodelindex):
 		item = self.tree.currentItem()
 		print("key=%s ,value=%s" % (item.text(0), item.text(1)))
+		
+	def addTreeNodeBtn(self):
+		item = self.tree.currentItem()
+		node = QTreeWidgetItem(item)
+		node.setText(0,'newNode')
+		node.setText(1,'10')	
+		print('--- addTreeNodeBtn ---')
+
+	def updateTreeNodeBtn(self):
+		print('--- updateTreeNodeBtn ---')
+
+	def delTreeNodeBtn(self):
+		print('--- delTreeNodeBtn ---')
         
+		
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	tree = TreeWidgetDemo()
