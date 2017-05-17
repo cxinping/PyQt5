@@ -10,8 +10,7 @@
 from PyQt5.QtWidgets import *
 import sys
 
-class TreeWidgetDemo(QMainWindow):
-
+class TreeWidgetDemo(QMainWindow):   
 	def __init__(self,parent=None):
 		super(TreeWidgetDemo,self).__init__(parent)
 		self.setWindowTitle('TreeWidget 例子')
@@ -31,13 +30,18 @@ class TreeWidgetDemo(QMainWindow):
 		child4 = QTreeWidgetItem(child3)
 		child4.setText(0,'child4')
 		child4.setText(1,'name4')
+
+		child5 = QTreeWidgetItem(child3)
+		child5.setText(0,'child5')
+		child5.setText(1,'name5')
+        
 		self.tree.addTopLevelItem(root)
-		self.tree.clicked.connect(self.on_tree_widget_clicked)
+		self.tree.clicked.connect( self.onTreeClicked )
 		self.setCentralWidget(self.tree)  
 
-	def on_tree_widget_clicked(self, qmodelindex):
+	def onTreeClicked(self, qmodelindex):
 		item = self.tree.currentItem()
-		print("%s is a '%s' " % (item.text(0), item.text(1)))
+		print("key=%s ,value=%s" % (item.text(0), item.text(1)))
         
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
