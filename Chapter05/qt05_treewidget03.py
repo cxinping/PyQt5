@@ -9,8 +9,8 @@
 
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QIcon ,  QBrush , QColor
-from PyQt5.QtCore import Qt 
+#from PyQt5.QtGui import QIcon ,  QBrush , QColor
+#from PyQt5.QtCore import Qt 
 
 class TreeWidgetDemo(QWidget):   
 	def __init__(self,parent=None):
@@ -71,26 +71,27 @@ class TreeWidgetDemo(QWidget):
 		print("key=%s ,value=%s" % (item.text(0), item.text(1)))
 		
 	def addTreeNodeBtn(self):
+		print('--- addTreeNodeBtn ---')
 		item = self.tree.currentItem()
 		node = QTreeWidgetItem(item)
 		node.setText(0,'newNode')
 		node.setText(1,'10')	
-		print('--- addTreeNodeBtn ---')
+
 
 	def updateTreeNodeBtn(self):
+		print('--- updateTreeNodeBtn ---')
 		item = self.tree.currentItem()
 		item.setText(0,'updateNode')
 		item.setText(1,'20')		
-		print('--- updateTreeNodeBtn ---')
+
 
 	def delTreeNodeBtn(self):
+		print('--- delTreeNodeBtn ---')
 		item = self.tree.currentItem()
 		root = self.tree.invisibleRootItem()
 		for item in self.tree.selectedItems():
 			(item.parent() or root).removeChild(item)
-		print('--- delTreeNodeBtn ---')
-        
-		
+        		
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	tree = TreeWidgetDemo()

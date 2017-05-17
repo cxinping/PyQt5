@@ -39,6 +39,8 @@ class TreeWidgetDemo(QMainWindow):
 		child1.setText(0,'child1')
 		child1.setText(1,'ios')
 		child1.setIcon(0,QIcon("./images/IOS.png"))
+		child1.setCheckState(0, Qt.Checked)
+				
 		# 设置子节点2
 		child2 = QTreeWidgetItem(root)
 		child2.setText(0,'child2')
