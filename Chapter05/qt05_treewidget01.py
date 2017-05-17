@@ -10,10 +10,10 @@
 from PyQt5.QtWidgets import *
 import sys
 
-class TreeWidget(QMainWindow):
+class TreeWidgetDemo(QMainWindow):
 
 	def __init__(self,parent=None):
-		super(TreeWidget,self).__init__(parent)
+		super(TreeWidgetDemo,self).__init__(parent)
 		self.setWindowTitle('TreeWidget 例子')
 		self.tree = QTreeWidget()
 		self.tree.setColumnCount(2)
@@ -41,6 +41,6 @@ class TreeWidget(QMainWindow):
         
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	tree = TreeWidget()
+	tree = TreeWidgetDemo()
 	tree.show()
 	sys.exit(app.exec_())
