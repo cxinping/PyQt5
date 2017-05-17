@@ -7,9 +7,10 @@
   
 '''
 
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QIcon 
 import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QIcon ,  QBrush , QColor
+from PyQt5.QtCore import Qt 
 
 class TreeWidgetDemo(QMainWindow):   
 	def __init__(self,parent=None):
@@ -26,6 +27,12 @@ class TreeWidgetDemo(QMainWindow):
 		root.setIcon(0,QIcon("./images/root.png"))
 		# 设置列宽
 		self.tree.setColumnWidth(0, 160)
+		
+		### 设置节点的背景颜色
+		#brush_red = QBrush(Qt.red)
+		#root.setBackground(0, brush_red) 
+		#brush_green = QBrush(Qt.green)
+		#root.setBackground(1, brush_green) 
 		
 		# 设置子节点1
 		child1 = QTreeWidgetItem(root)
