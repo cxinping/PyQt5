@@ -18,7 +18,7 @@ class Table(QWidget):
         self.setWindowTitle("QTableWidget 例子")
         self.resize(400,300);
         conLayout = QHBoxLayout()
-        tableWidget=QTableWidget()
+        tableWidget = QTableWidget()
         tableWidget.setRowCount(4)
         tableWidget.setColumnCount(3)
         conLayout.addWidget(tableWidget )
