@@ -17,10 +17,10 @@ class Table(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle("QTableWidget demo")
+        self.setWindowTitle("QTableWidget 例子")
         self.resize(600,800);
         conLayout = QHBoxLayout()
-        tableWidget= QTableWidget()
+        tableWidget = QTableWidget()
         tableWidget.setRowCount(35)
         tableWidget.setColumnCount(4)
         conLayout.addWidget(tableWidget )
