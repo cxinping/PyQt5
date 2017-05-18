@@ -24,8 +24,7 @@ class Table(QWidget):
         conLayout.addWidget(tableWidget )
         
         tableWidget.setHorizontalHeaderLabels(['姓名','性别','体重(kg)'])  
-        tableWidget.setVerticalHeaderLabels(['行1','行2','行3','行','行'   ])
-        
+        #tableWidget.setVerticalHeaderLabels(['行1','行2','行3','行4' ])        
         tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
                  
         newItem = QTableWidgetItem("张三")  
