@@ -2,10 +2,7 @@
 '''
     【简介】
     PyQT5的表格中支持右键菜单例子
-  
-    作者：信平
-    QQ： 759949947	
-    Email: xpws2006@163.com   
+    
   
 '''
 
@@ -14,8 +11,7 @@ from PyQt5.QtWidgets import ( QMenu , QPushButton,  QWidget, QTableWidget, QHBox
 from PyQt5.QtCore import pyqtSignal, QObject, Qt, pyqtSlot
 
 class Table( QWidget ):
-  
-     
+                   
     def __init__(self):
         super().__init__()
         self.initUI()

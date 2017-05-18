@@ -7,7 +7,7 @@
 '''
 
 import sys
-from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QDesktopWidget, QTableWidgetItem, QHeaderView)
+from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication , QTableWidgetItem, QHeaderView)
 
 class Table(QWidget):
     def __init__(self):
@@ -18,7 +18,7 @@ class Table(QWidget):
         self.setWindowTitle("QTableWidget demo")
         self.resize(500,300);
         conLayout = QHBoxLayout()
-        tableWidget=QTableWidget()
+        tableWidget= QTableWidget()
         tableWidget.setRowCount(4)
         tableWidget.setColumnCount(3)
         conLayout.addWidget(tableWidget )
