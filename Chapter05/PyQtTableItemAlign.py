@@ -8,7 +8,6 @@
 
 import sys
 from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QTableWidgetItem )
-from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
  
 class Table(QWidget):
@@ -20,7 +19,7 @@ class Table(QWidget):
         self.setWindowTitle("QTableWidget demo")
         self.resize(400,300);
         conLayout = QHBoxLayout()
-        tableWidget=QTableWidget()
+        tableWidget = QTableWidget()
         tableWidget.setRowCount(4)
         tableWidget.setColumnCount(3)
         conLayout.addWidget(tableWidget )
