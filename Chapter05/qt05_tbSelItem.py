@@ -35,8 +35,9 @@ class Table(QWidget):
         text = "(19,1)"
         items = tableWidget.findItems(text, QtCore.Qt.MatchExactly)             
         item = items[0]
+        # 选中单元格
         #item.setSelected( True)
-        
+        # 设置单元格的背景颜色为红色
         item.setForeground(QBrush(QColor(255, 0, 0))) 
                 
         row = item.row()   
