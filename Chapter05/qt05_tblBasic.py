@@ -38,11 +38,15 @@ class Table(QWidget):
 		#tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
 		
 		# 设置表格为整行选择
-		tableWidget.setSelectionBehavior( QAbstractItemView.SelectRows)
+		#tableWidget.setSelectionBehavior( QAbstractItemView.SelectRows)
 
 		# 将行和列的大小设为与内容相匹配
 		#tableWidget.resizeColumnsToContents()
 		#tableWidget.resizeRowsToContents()
+		
+		#表格表头的显示与隐藏
+		tableWidget.verticalHeader().setVisible(False)
+		tableWidget.horizontalHeader().setVisible(False)
 		
 		self.setLayout(conLayout)
 
