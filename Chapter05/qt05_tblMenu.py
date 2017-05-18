@@ -49,7 +49,6 @@ class Table( QWidget ):
         self.tableWidget.setContextMenuPolicy(Qt.CustomContextMenu)######允许右键产生子菜单
         self.tableWidget.customContextMenuRequested.connect(self.generateMenu)   ####右键菜单
         self.setLayout(conLayout)
-    
         
     def generateMenu(self,pos):
         print( pos)
