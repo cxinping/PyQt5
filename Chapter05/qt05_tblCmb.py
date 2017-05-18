@@ -7,7 +7,7 @@
 '''
 
 import sys
-from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QTableWidgetItem, QAbstractItemView ,QComboBox )
+from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QTableWidgetItem, QAbstractItemView ,QComboBox, QPushButton )
 
 class Table(QWidget):
 	def __init__(self):
@@ -31,11 +31,14 @@ class Table(QWidget):
 		comBox = QComboBox()
 		comBox.addItem("男")
 		comBox.addItem("女")
+		comBox.setStyleSheet("QComboBox{margin:3px};")
 		tableWidget.setCellWidget(0,1,comBox)
 		
-		newItem = QTableWidgetItem("160")  
-		tableWidget.setItem(0, 2, newItem)   
-				
+		searchBtn = QPushButton("修改")  
+		searchBtn.setDown( True )
+		searchBtn.setStyleSheet("QPushButton{margin:3px};")
+		tableWidget.setCellWidget(0, 2, searchBtn) 
+		 				
 		self.setLayout(conLayout)
 
 if __name__ == '__main__':
