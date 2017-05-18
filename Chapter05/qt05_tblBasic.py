@@ -7,7 +7,7 @@
 '''
 
 import sys
-from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QTableWidgetItem )
+from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QTableWidgetItem, QAbstractItemView  )
 
 class Table(QWidget):
     def __init__(self):
@@ -16,7 +16,7 @@ class Table(QWidget):
 
     def initUI(self):
         self.setWindowTitle("QTableWidget 例子")
-        self.resize(400,300);
+        self.resize(460,300);
         conLayout = QHBoxLayout()
         tableWidget = QTableWidget()
         tableWidget.setRowCount(4)
@@ -34,6 +34,9 @@ class Table(QWidget):
         newItem = QTableWidgetItem("160")  
         tableWidget.setItem(0, 2, newItem)   
         
+        # 将表格变为禁止编辑
+        #tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
+         
         self.setLayout(conLayout)
 
 if __name__ == '__main__':
