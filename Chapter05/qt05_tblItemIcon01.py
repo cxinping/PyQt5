@@ -39,7 +39,8 @@ class Table( QWidget ):
 		newItem = QTableWidgetItem("160")  
 		self.tableWidget.setItem(0, 2, newItem)   
 		
-		self.tableWidget.setItem(0, 3,  QTableWidgetItem(QIcon("./images/bao1.png"), "背包") ) 
+		newItem = QTableWidgetItem(QIcon("./images/bao1.png"), "背包")
+		self.tableWidget.setItem(0, 3, newItem ) 
 		self.setLayout(conLayout)
 
 if __name__ == '__main__':
