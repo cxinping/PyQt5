@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*- 
+
 '''
     【简介】
 	PyQT5中单元格排序
@@ -8,7 +9,6 @@
 
 import sys
 from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QTableWidgetItem )
-from PyQt5.QtGui import QBrush,  QColor ,  QFont 
 import PyQt5.QtCore as QtCore
 
 class Table(QWidget):
