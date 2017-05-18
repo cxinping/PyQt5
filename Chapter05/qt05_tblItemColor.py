@@ -18,7 +18,7 @@ class Table(QWidget):
 
     def initUI(self):
         self.setWindowTitle("QTableWidget 例子")
-        self.resize(430,300);
+        self.resize(430,230);
         conLayout = QHBoxLayout()
         tableWidget = QTableWidget()
         tableWidget.setRowCount(4)
