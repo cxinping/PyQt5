@@ -48,7 +48,7 @@ class Table(QWidget):
 		#tableWidget.verticalHeader().setVisible(False)
 		#tableWidget.horizontalHeader().setVisible(False)
 		
-		# 不现实表格单元格
+		# 不显示表格单元格的分割线
 		#tableWidget.setShowGrid(False)
         # 不显示垂直表头
 		#tableWidget.verticalHeader().setVisible(False)
