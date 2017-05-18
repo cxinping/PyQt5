@@ -16,7 +16,7 @@ class Table(QWidget):
 
 	def initUI(self):
 		self.setWindowTitle("QTableWidget 例子")
-		self.resize(460,300);
+		self.resize(400,300);
 		conLayout = QHBoxLayout()
 		tableWidget = QTableWidget()
 		tableWidget.setRowCount(4)
@@ -39,6 +39,10 @@ class Table(QWidget):
 		
 		# 设置表格为整行选择
 		tableWidget.setSelectionBehavior( QAbstractItemView.SelectRows)
+
+		# 将行和列的大小设为与内容相匹配
+		#tableWidget.resizeColumnsToContents()
+		#tableWidget.resizeRowsToContents()
 		
 		self.setLayout(conLayout)
 
