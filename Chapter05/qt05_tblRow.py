@@ -16,7 +16,7 @@ class Table(QWidget):
 
     def initUI(self):
         self.setWindowTitle("QTableWidget 例子")
-        self.resize(400,300);
+        self.resize(530,300);
         conLayout = QHBoxLayout()
         tableWidget=QTableWidget()
         tableWidget.setRowCount(4)
@@ -28,8 +28,10 @@ class Table(QWidget):
         newItem = QTableWidgetItem("张三")  
         tableWidget.setItem(0, 0, newItem)  
         
-        tableWidget.setColumnWidth(1,150)  #将第2列的单元格，设置成150宽度
-        tableWidget.setRowHeight(1,120)      #将第2行的单元格，设置成120的高度
+        #将第1列的单元格，设置成150宽度
+        tableWidget.setColumnWidth(0,150)  
+        #将第1行的单元格，设置成120的高度
+        tableWidget.setRowHeight(0,120)      
 
         newItem = QTableWidgetItem("男")  
         tableWidget.setItem(0, 1, newItem)  
