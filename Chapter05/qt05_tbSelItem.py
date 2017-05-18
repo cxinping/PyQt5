@@ -21,18 +21,18 @@ class Table(QWidget):
         self.resize(600,800);
         conLayout = QHBoxLayout()
         tableWidget = QTableWidget()
-        tableWidget.setRowCount(35)
+        tableWidget.setRowCount(30)
         tableWidget.setColumnCount(4)
         conLayout.addWidget(tableWidget )
         
-        for i in range(35):
+        for i in range(30):
             for j in range(4):
                 itemContent = '(%d,%d)'% (i,j)  
                 tableWidget.setItem(i,j, QTableWidgetItem( itemContent ) )
         self.setLayout(conLayout)
         
         #遍历表查找对应的item
-        text = "(19,1)"
+        text = "(10,1)"
         items = tableWidget.findItems(text, QtCore.Qt.MatchExactly)             
         item = items[0]
         # 选中单元格
