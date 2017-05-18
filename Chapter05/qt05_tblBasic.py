@@ -16,7 +16,7 @@ class Table(QWidget):
 
 	def initUI(self):
 		self.setWindowTitle("QTableWidget 例子")
-		self.resize(400,300);
+		self.resize(430,230);
 		conLayout = QHBoxLayout()
 		tableWidget = QTableWidget()
 		tableWidget.setRowCount(4)
@@ -45,8 +45,13 @@ class Table(QWidget):
 		#tableWidget.resizeRowsToContents()
 		
 		#表格表头的显示与隐藏
-		tableWidget.verticalHeader().setVisible(False)
-		tableWidget.horizontalHeader().setVisible(False)
+		#tableWidget.verticalHeader().setVisible(False)
+		#tableWidget.horizontalHeader().setVisible(False)
+		
+		# 不现实表格单元格
+		#tableWidget.setShowGrid(False)
+        # 不显示垂直表头
+		#tableWidget.verticalHeader().setVisible(False)
 		
 		self.setLayout(conLayout)
 
