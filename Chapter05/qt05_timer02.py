@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*- 
 '''
     【简介】
-    PyQT5中QTimer例子
+    PyQT5中 QTimer例子
  
   
 '''
 
 from PyQt5.QtWidgets import QWidget,  QPushButton ,  QApplication ,QListWidget,  QGridLayout , QLabel
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import QTimer ,QDateTime
 import sys 
-import time
 
 class WinForm(QWidget):  
 	
@@ -20,11 +19,14 @@ class WinForm(QWidget):
 		self.startBtn = QPushButton('开始') 
 		self.endBtn = QPushButton('结束') 
 		layout = QGridLayout(self) 
-		
-		#self.timer = QTimer(self) #初始化一个定时器
-		#self.timer.timeout.connect(self.operate) #计时结束调用operate()方法
-		#self.timer.start(2000) #设置计时间隔并启动
 
+		 #初始化一个定时器
+		self.timer = QTimer(self)
+		 #showTime()方法
+		self.timer.timeout.connect(self.showTime)
+		#设置计时间隔并启动
+		self.startTimer()
+		
 		layout.addWidget(self.label,0,0,1,2) 
 
 		layout.addWidget(self.startBtn,1,0) 
@@ -35,18 +37,22 @@ class WinForm(QWidget):
 				
 		self.setLayout(layout)   
 		
-	def slotAdd(self): 
-		for n in range(10): 
-			str_n='File index {0}'.format(n) 
-			self.listFile.addItem(str_n) 
-			QApplication.processEvents() 
-			time.sleep(1) 
+	def showTime(self): 
+		#self.count = self.count + 1 
+		#self.label.setText(str(self.count) )
+		         		                
+		# 获取系统现在的时间
+		time = QDateTime.currentDateTime() 
+		# 设置系统时间显示格式
+		timeDisplay = time.toString("yyyy-MM-dd hh:mm:ss dddd");
+		# 在标签上显示时间
+		self.label.setText( timeDisplay ) 
 
 	def startTimer(self): 
-		print('--- startTimer ')
+		self.timer.start(1000)
 
 	def endTimer(self): 
-		print('--- endTimer ')
+		self.timer.stop()
 	
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
