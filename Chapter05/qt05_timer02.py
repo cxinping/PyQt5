@@ -1,35 +1,33 @@
 # -*- coding: utf-8 -*- 
 '''
     【简介】
-    PyQT5中关闭窗体例子
+    PyQT5中实时刷新界面例子
  
   
 '''
 
-from PyQt5.QtWidgets import QMainWindow,QHBoxLayout, QPushButton ,  QApplication, QWidget  
+from PyQt5.QtWidgets import QWidget,  QPushButton ,  QApplication ,QListWidget,  QGridLayout 
 import sys 
+import time
 
-class WinForm(QMainWindow):  
+class WinForm(QWidget):  
 	
-	def __init__(self, parent=None):  
-		super(WinForm, self).__init__(parent)
-		self.setWindowTitle('部件中的信号槽通信') 		
-		self.button1 = QPushButton('关闭窗体')  		
-		self.button1.clicked.connect(self.onButtonClick) 
-        
-		layout = QHBoxLayout()  
-		layout.addWidget(self.button1)  
-        
-		main_frame = QWidget()  
-		main_frame.setLayout(layout)    
-		self.setCentralWidget(main_frame)  
-  
-	def onButtonClick(self ):  
-        #sender 是发送信号的对象
-		sender = self.sender()         
-		print( sender.text() + ' 被按下了' )  
-		qApp = QApplication.instance()
-		qApp.quit()
+	def __init__(self,parent=None): 
+		super(WinForm,self).__init__(parent) 
+		self.listFile= QListWidget() 
+		self.btnStart = QPushButton('开始') 
+		layout = QGridLayout(self) 
+		layout.addWidget(self.listFile,0,0,1,2) 
+		layout.addWidget(self.btnStart,1,1) 
+		self.btnStart.clicked.connect( self.slotAdd) 
+		self.setLayout(layout)   
+		
+	def slotAdd(self): 
+		for n in range(10): 
+			str_n='File index {0}'.format(n) 
+			self.listFile.addItem(str_n) 
+			QApplication.processEvents() 
+			time.sleep(1) 
 		
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
