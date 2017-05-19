@@ -28,8 +28,10 @@ class WinForm(QMainWindow):
 		main_frame.setLayout(layout)    
 		self.setCentralWidget(main_frame)  
   
-	def onButtonClick(self ):      
-		print('The button1 被按下了' )   
+	def onButtonClick(self ):  
+        #sender 是发送信号的对象
+		sender = self.sender()         
+		print( sender.text() + ' 被按下了' )   
 		
         
 if __name__ == "__main__":  
