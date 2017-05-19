@@ -14,6 +14,7 @@ class WinForm(QWidget):
 	
 	def __init__(self,parent=None): 
 		super(WinForm,self).__init__(parent) 
+		self.setWindowTitle("QTimer demo")
 		self.listFile= QListWidget() 
 		self.label = QLabel('显示当前时间')
 		self.startBtn = QPushButton('开始') 
@@ -38,9 +39,6 @@ class WinForm(QWidget):
 		self.setLayout(layout)   
 		
 	def showTime(self): 
-		#self.count = self.count + 1 
-		#self.label.setText(str(self.count) )
-		         		                
 		# 获取系统现在的时间
 		time = QDateTime.currentDateTime() 
 		# 设置系统时间显示格式
@@ -50,10 +48,14 @@ class WinForm(QWidget):
 
 	def startTimer(self): 
 		self.timer.start(1000)
+		self.startBtn.setEnabled(False)
+		self.endBtn.setEnabled(True)
 
 	def endTimer(self): 
 		self.timer.stop()
-	
+		self.startBtn.setEnabled(True)
+		self.endBtn.setEnabled(False)
+		
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
 	form = WinForm()  
