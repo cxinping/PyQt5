@@ -6,7 +6,7 @@
   
 '''
 
-from PyQt5.QtWidgets import QWidget,  QPushButton ,  QApplication ,QListWidget,  QGridLayout 
+from PyQt5.QtWidgets import QWidget,  QPushButton ,  QApplication ,QListWidget,  QGridLayout , QLabel
 from PyQt5.QtCore import QTimer
 import sys 
 import time
@@ -16,6 +16,7 @@ class WinForm(QWidget):
 	def __init__(self,parent=None): 
 		super(WinForm,self).__init__(parent) 
 		self.listFile= QListWidget() 
+		self.label = QLabel('显示当前时间')
 		self.startBtn = QPushButton('开始') 
 		self.endBtn = QPushButton('结束') 
 		layout = QGridLayout(self) 
@@ -24,7 +25,7 @@ class WinForm(QWidget):
 		#self.timer.timeout.connect(self.operate) #计时结束调用operate()方法
 		#self.timer.start(2000) #设置计时间隔并启动
 
-		layout.addWidget(self.listFile,0,0,1,2) 
+		layout.addWidget(self.label,0,0,1,2) 
 
 		layout.addWidget(self.startBtn,1,0) 
 		layout.addWidget(self.endBtn,1,1) 		
