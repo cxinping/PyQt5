@@ -13,12 +13,9 @@ from PyQt5.QtCore import *
  
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	label = QLabel("<font color=red size=128><b>Hello PyQT!</b></font>")
+	label = QLabel("<font color=red size=128><b>Hello PyQT，窗口会在10秒后消失！</b></font>")
+	label.setWindowFlags(Qt.SplashScreen|Qt.FramelessWindowHint)
 	label.show()
-	window.resize(500, 500)
-	window.move(300, 300)
-	window.setWindowTitle('hello PyQt5')
-	window.show()
 
     # 设置10s后自动退出
 	QTimer.singleShot(10000, app.quit) 

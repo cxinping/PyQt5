@@ -14,6 +14,7 @@ class WinForm(QWidget):
 	
 	def __init__(self,parent=None): 
 		super(WinForm,self).__init__(parent) 
+		self.setWindowTitle("实时刷新界面例子")        
 		self.listFile= QListWidget() 
 		self.btnStart = QPushButton('开始') 
 		layout = QGridLayout(self) 
