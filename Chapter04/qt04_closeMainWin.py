@@ -25,7 +25,7 @@ class WinForm(QMainWindow):
 		self.setCentralWidget(main_frame)  
   
 	def onButtonClick(self ):  
-        #sender 是发送信号的对象
+        #sender 是发送信号的对象，此处发送信号的对象是button1按钮 
 		sender = self.sender()         
 		print( sender.text() + ' 被按下了' )  
 		qApp = QApplication.instance()
