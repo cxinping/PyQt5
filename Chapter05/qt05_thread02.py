@@ -23,17 +23,23 @@ class WorkThread(QThread):
 	def run(self):
 		for i in range(2000000000):
 			pass
-		self.trigger.emit()         #循环完毕后发出信号
+		
+		# 循环完毕后发出信号		
+		self.trigger.emit()        
 
 def countTime():
 	global  sec
-	sec+=1
-	lcdNumber.display(sec)          #LED显示数字+1
+	sec += 1
+	#LED显示数字+1
+	lcdNumber.display(sec)          
 
 def work():
-	timer.start(1000)               #计时器每秒计数
-	workThread.start()              #计时开始
-	workThread.trigger.connect(timeStop)   #当获得循环完毕的信号时，停止计数
+	# 计时器每秒计数
+	timer.start(1000)   
+	# 计时开始	
+	workThread.start()       
+	# 当获得循环完毕的信号时，停止计数	
+	workThread.trigger.connect(timeStop)  
 
 def timeStop():
 	timer.stop()
