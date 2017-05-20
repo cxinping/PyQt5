@@ -30,7 +30,7 @@ class WorkThread(QThread):
 def countTime():
 	global  sec
 	sec += 1
-	#LED显示数字+1
+	# LED显示数字+1
 	lcdNumber.display(sec)          
 
 def work():

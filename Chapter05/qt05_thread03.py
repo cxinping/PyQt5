@@ -44,15 +44,16 @@ class Worker(QThread):
 		self.wait()
 		
 	def run(self):
-		while self.working==True:
+		while self.working == True:
 			file_str = 'File index {0}'.format(self.num)
-			self.num += 1			
+			self.num += 1	
+            # 发出信号	  
 			self.sinOut.emit(file_str)
 			# 线程休眠2秒
 			self.sleep(2)
 
 if __name__ == "__main__":  			
-	app=QApplication(sys.argv)
+	app = QApplication(sys.argv)
 	demo = MainWidget()
 	demo.show()
 	sys.exit(app.exec_())
