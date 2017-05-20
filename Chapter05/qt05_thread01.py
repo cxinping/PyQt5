@@ -30,7 +30,7 @@ def work():
 
 if __name__ == "__main__":  	
 	app = QApplication(sys.argv) 
-	top=QWidget()
+	top = QWidget()
 	# 垂直布局类QVBoxLayout
 	layout = QVBoxLayout(top)    
 	# 加个显示屏	
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 	button=QPushButton("测试")
 	layout.addWidget(button)
 
-	timer=QTimer()
+	timer = QTimer()
 	# 每次计时结束，触发setTime
 	timer.timeout.connect(setTime)      
 	button.clicked.connect(work)
