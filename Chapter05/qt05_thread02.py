@@ -51,9 +51,9 @@ if __name__ == "__main__":
 	app = QApplication(sys.argv) 
 	top = QWidget()
     # 垂直布局类QVBoxLayout
-	layout=QVBoxLayout(top) 
+	layout = QVBoxLayout(top) 
     # 加个显示屏    
-	lcdNumber=QLCDNumber()             
+	lcdNumber = QLCDNumber()             
 	layout.addWidget(lcdNumber)
 	button = QPushButton("测试")
 	layout.addWidget(button)
