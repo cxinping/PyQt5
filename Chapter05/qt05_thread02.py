@@ -62,7 +62,7 @@ if __name__ == "__main__":
 	workThread = WorkThread()
 
 	button.clicked.connect(work)
-    # 每次计时结束，触发setTime
+    # 每次计时结束，触发 countTime
 	timer.timeout.connect(countTime)      
 
 	top.show()
