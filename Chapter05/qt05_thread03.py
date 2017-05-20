@@ -15,7 +15,7 @@ class MainWidget(QWidget):
 	def __init__(self,parent=None):
 		super(MainWidget,self).__init__(parent)
 		self.setWindowTitle("QThread 例子")    
-		self.thread= Worker()
+		self.thread = Worker()
 		self.listFile = QListWidget()
 		self.btnStart = QPushButton('开始')
 		layout = QGridLayout(self)
