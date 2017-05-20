@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 
+'''
+    【简介】
+	转换工具
+     
+'''
+
 import os 
 import os.path 
 
@@ -24,9 +30,8 @@ def runMain():
 	list = listUiFile()
 	for uifile in list :
 		pyfile = transPyFile(uifile)
-		#cmd =   "pyuic5 -o % % " % (uifile, transPyFile(uifile) )   
-		cmd = 'pyuic5 -o {pyfile} {uifile}'.format(uifile=uifile,pyfile=pyfile)  
-		print(cmd)
+		cmd = 'pyuic5 -o {pyfile} {uifile}'.format(pyfile=pyfile,uifile=uifile)  
+		#print(cmd)
 		os.system(cmd)
 	
 if __name__ == "__main__":  	
