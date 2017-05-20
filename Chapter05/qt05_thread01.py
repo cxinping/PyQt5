@@ -42,7 +42,7 @@ if __name__ == "__main__":
 	timer = QTimer()
 	# 每次计时结束，触发setTime
 	timer.timeout.connect(setTime)      
-	button.clicked.connect(work)
-
+	button.clicked.connect(work)  
+    
 	top.show()
 	sys.exit(app.exec_())

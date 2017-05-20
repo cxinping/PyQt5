@@ -50,8 +50,10 @@ def timeStop():
 if __name__ == "__main__":  	
 	app = QApplication(sys.argv) 
 	top = QWidget()
-	layout=QVBoxLayout(top)             #垂直布局类QVBoxLayout；
-	lcdNumber=QLCDNumber()              #加个显示屏
+    # 垂直布局类QVBoxLayout
+	layout=QVBoxLayout(top) 
+    # 加个显示屏    
+	lcdNumber=QLCDNumber()             
 	layout.addWidget(lcdNumber)
 	button = QPushButton("测试")
 	layout.addWidget(button)
@@ -60,7 +62,8 @@ if __name__ == "__main__":
 	workThread = WorkThread()
 
 	button.clicked.connect(work)
-	timer.timeout.connect(countTime)      #每次计时结束，触发setTime
+    # 每次计时结束，触发setTime
+	timer.timeout.connect(countTime)      
 
 	top.show()
 	sys.exit(app.exec_())
