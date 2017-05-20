@@ -173,8 +173,7 @@ class DataGrid(QWidget):
 
 		print('totalRecrodCount=' + str(self.totalRecrodCount) )		
 		print('totalPage=' + str(self.totalPage) )
-
-		
+             		
 		# 设置表格表头
 		self.queryModel.setHeaderData(0,Qt.Horizontal,"编号") 
 		self.queryModel.setHeaderData(1,Qt.Horizontal,"姓名")
