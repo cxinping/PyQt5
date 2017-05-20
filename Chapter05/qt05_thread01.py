@@ -31,6 +31,8 @@ def work():
 if __name__ == "__main__":  	
 	app = QApplication(sys.argv) 
 	top = QWidget()
+	top.resize(300,120)
+    
 	# 垂直布局类QVBoxLayout
 	layout = QVBoxLayout(top)    
 	# 加个显示屏	
