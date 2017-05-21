@@ -44,3 +44,13 @@ class Ui_MainWindow(object):
         # 设置按钮显示文字
         self.pushButton.setText(_translate("MainWindow", "按钮"))
 
+if __name__=="__main__":
+	import sys
+	from PyQt5.QtWidgets import QApplication , QMainWindow
+	app = QApplication(sys.argv)
+	mainWindow = QMainWindow()
+	ui = Ui_MainWindow()
+	ui.setupUi(mainWindow)
+	mainWindow.show()
+	sys.exit(app.exec_())
+
