@@ -6,16 +6,23 @@
 #
 # WARNING! All changes made in this file will be lost!
 
+# 导入模块
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+#创建窗口类，继承object
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        # 设置窗口名
         MainWindow.setObjectName("MainWindow")
+        # 设置窗口大小
         MainWindow.resize(726, 592)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        #创建一个按钮，并将按钮加入到窗口Form中
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        # 设置按钮大小与位置
         self.pushButton.setGeometry(QtCore.QRect(490, 110, 93, 28))
+        # 设置按钮名
         self.pushButton.setObjectName("pushButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -27,10 +34,13 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        # 关联信号槽
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
+        # 设置窗口标题
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        # 设置按钮显示文字
         self.pushButton.setText(_translate("MainWindow", "按钮"))
 
