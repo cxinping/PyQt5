@@ -28,7 +28,7 @@ def listUiFile():
 def transPyFile(filename): 
 	return os.path.splitext(filename)[0] + '.py' 
 
-#调用系统命令把ui转换成py
+# 调用系统命令把ui转换成py
 def runMain():
 	list = listUiFile()
 	for uifile in list :
@@ -37,6 +37,6 @@ def runMain():
 		#print(cmd)
 		os.system(cmd)
 
-### 程序的主入口		
+###### 程序的主入口		
 if __name__ == "__main__":  	
 	runMain()
