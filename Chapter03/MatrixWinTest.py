@@ -2,32 +2,38 @@
 
 """
     【简介】
-    国际化例子
+    测试用例
 
 
 """
 
 import sys
+import unittest
 from PyQt5.QtWidgets import QApplication  ,QWidget ,QVBoxLayout , QPushButton
 from PyQt5.QtGui import *
 from PyQt5.QtTest import QTest
 from PyQt5.QtCore import Qt
+import CallMatrixWinUi
 
+class Winform(unittest.TestCase):
 
-
-class Winform(QWidget):
-	def __init__(self,parent=None):
-		super(Winform,self).__init__(parent)
-		self.setWindowTitle(self.tr('title')) 
-		self.resize(330, 130)  
-		vlayout = QVBoxLayout()
-		vlayout.addWidget( QPushButton( self.tr('upload')) )
-		vlayout.addWidget( QPushButton( self.tr('download')) )
-		self.setLayout(vlayout)   
+    # 初始化工作  
+	def setUp(self):  
+		print('--- setUp ---')
+		#self.form = CallMatrixWinUi.CallMatrixWinUi()		
+		#print( self.form )
+	  
+	# 退出清理工作  
+	def tearDown(self):  
+		print('--- tearDown ---')  
+		
+	def setFormToZero(self):
+		print('* setFormToZero ---')  
+  
+	# 测试滚动条
+	def test_tequilaScrollBar(self):		
+		print('* test_tequilaScrollBar ---')
+		#self.setFormToZero()
   
 if __name__ == "__main__":  
-		app = QApplication(sys.argv) 
-		print('1111111111111')
-		
-		sys.exit(app.exec_())
-		
+	unittest.main() 	
