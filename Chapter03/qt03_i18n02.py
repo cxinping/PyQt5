@@ -22,12 +22,12 @@ class Winform(QWidget):
 		self.setLayout(vlayout)   
   
 if __name__ == "__main__":  
-		app = QApplication(sys.argv) 
-		trans = QTranslator()
-        # 没有后缀.qm
-		trans.load("zh_CN")  
-		app.installTranslator(trans)
-		form = Winform()
-		form.show()
-		sys.exit(app.exec_())
+	app = QApplication(sys.argv) 
+	trans = QTranslator()
+	# 没有后缀.qm
+	trans.load("zh_CN")  
+	app.installTranslator(trans)
+	form = Winform()
+	form.show()
+	sys.exit(app.exec_())
 		

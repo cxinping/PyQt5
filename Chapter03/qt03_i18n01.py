@@ -21,8 +21,8 @@ class Winform(QWidget):
 		self.setLayout(vlayout)   
   
 if __name__ == "__main__":  
-		app = QApplication(sys.argv) 
-		form = Winform()
-		form.show()
-		sys.exit(app.exec_())
+	app = QApplication(sys.argv) 
+	form = Winform()
+	form.show()
+	sys.exit(app.exec_())
 		
