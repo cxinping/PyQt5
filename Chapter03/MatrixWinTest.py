@@ -14,10 +14,6 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtTest import QTest
 from PyQt5.QtCore import Qt
 import CallMatrixWinUi
-import time
-
-
-
 
 class MatrixWinTest(unittest.TestCase):
 
@@ -27,8 +23,6 @@ class MatrixWinTest(unittest.TestCase):
 		self.app = QApplication(sys.argv)	
 		self.form = CallMatrixWinUi.CallMatrixWinUi()
 		self.form.show()
-
-		print( self.form )
 		        	  
 	# 退出清理工作  
 	def tearDown(self):  
@@ -73,6 +67,4 @@ if __name__ == "__main__":
 	#runner = unittest.TextTestRunner()
 	#runner.run(suite)
 	
-	#form = CallMatrixWinUi.CallMatrixWinUi()
-	#form.show()	
 	#sys.exit(app.exec_())
