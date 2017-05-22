@@ -75,9 +75,13 @@ class MatrixWinTest(unittest.TestCase):
 		
 		
 	def test_defaults(self):
-		'''Test the GUI in its default state'''
+		'''测试GUI处于默认状态'''
 		print('* test_defaults *')
-		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 8 )
+		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 8)
+		self.assertEqual(self.form.ui.tripleSecSpinBox.value(), 4)
+		self.assertEqual(self.form.ui.limeJuiceLineEdit.text(), "12.0")
+		self.assertEqual(self.form.ui.iceHorizontalSlider.value(), 12)
+		self.assertEqual(self.form.ui.speedButtonGroup.checkedButton().text(), "&Karate Chop")
 		            		
 		# Push OK with the left mouse button
 		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
