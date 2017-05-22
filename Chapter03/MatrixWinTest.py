@@ -9,13 +9,13 @@
 
 import sys
 import unittest
-from PyQt5.QtWidgets import QApplication  ,QWidget ,QVBoxLayout , QPushButton
-from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+#from PyQt5.QtGui import *
 from PyQt5.QtTest import QTest
 from PyQt5.QtCore import Qt
 import CallMatrixWinUi
 
-app = QApplication(sys.argv)
+#app = QApplication(sys.argv)
 
 class Winform(unittest.TestCase):
 
@@ -23,12 +23,11 @@ class Winform(unittest.TestCase):
 	def setUp(self):  
 		print('--- setUp ---')
 		self.form = CallMatrixWinUi.CallMatrixWinUi()
-			
 		print( self.form )
 	  
 	# 退出清理工作  
-	def tearDown(self):  
-		print('--- tearDown ---')  
+#	def tearDown(self):  
+#		print('--- tearDown ---')  
 		
 	def setFormToZero(self):
 		print('* setFormToZero ---')  
@@ -40,6 +39,7 @@ class Winform(unittest.TestCase):
 
 	def test_defaults(self):
 		'''Test the GUI in its default state'''
+		print('* test_defaults ---')
 		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 8)
 
 		# Push OK with the left mouse button
@@ -59,6 +59,8 @@ class Winform(unittest.TestCase):
 		QTest.mouseClick(okWidget, Qt.LeftButton)
 		
 if __name__ == "__main__":  
-	#app = QApplication(sys.argv)	
+	app = QApplication(sys.argv)	
 	unittest.main() 	
-	#sys.exit(app.exec_())
+	#form = CallMatrixWinUi.CallMatrixWinUi()
+	#form.show()	
+	sys.exit(app.exec_())
