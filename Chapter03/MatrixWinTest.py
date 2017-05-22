@@ -59,11 +59,12 @@ class MatrixWinTest(unittest.TestCase):
 		
 	def setFormToZero(self):
 		print('* setFormToZero *')  
+				
 		self.form.ui.tequilaScrollBar.setValue(0)
-
-		# Test the maximum.  This one goes to 11.
-		self.form.ui.tequilaScrollBar.setValue(12)
-		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 11)
+		self.form.ui.tripleSecSpinBox.setValue(0)
+		self.form.ui.limeJuiceLineEdit.setText("0.0")
+		self.form.ui.iceHorizontalSlider.setValue(0)
+		
 
 	def closeWindow(self):
 		#time.sleep(5)
