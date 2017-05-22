@@ -13,8 +13,8 @@ from PyQt5.QtWidgets import QApplication  ,QWidget ,QVBoxLayout , QPushButton
 class Winform(QWidget):
 	def __init__(self,parent=None):
 		super(Winform,self).__init__(parent)
-		self.setWindowTitle("国际化例子") 
-		#self.resize(330, 150)  
+		self.setWindowTitle(self.tr('title')) 
+		self.resize(330, 130)  
 		vlayout = QVBoxLayout()
 		vlayout.addWidget( QPushButton( self.tr('upload')) )
 		vlayout.addWidget( QPushButton( self.tr('download')) )
