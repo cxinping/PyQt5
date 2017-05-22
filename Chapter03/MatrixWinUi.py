@@ -23,6 +23,11 @@ class Ui_MatrixWin(object):
         self.label = QtWidgets.QLabel(MatrixWin)
         self.label.setGeometry(QtCore.QRect(20, 30, 250, 21))
         self.label.setObjectName("label")
+        self.buttonBox = QtWidgets.QDialogButtonBox(MatrixWin)
+        self.buttonBox.setGeometry(QtCore.QRect(20, 350, 250, 28))
+        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName("buttonBox")
 
         self.retranslateUi(MatrixWin)
         QtCore.QMetaObject.connectSlotsByName(MatrixWin)
@@ -32,4 +37,5 @@ class Ui_MatrixWin(object):
         MatrixWin.setWindowTitle(_translate("MatrixWin", "Form"))
         self.tequilaScrollBar.setToolTip(_translate("MatrixWin", "Jiggers of tequila"))
         self.label.setText(_translate("MatrixWin", "滚动条"))
+        self.buttonBox.setToolTip(_translate("MatrixWin", "Press OK to make the drinks"))
 
