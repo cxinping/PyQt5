@@ -44,6 +44,7 @@ class MatrixWinTest(unittest.TestCase):
 		#新建对象，传入参数
 		self.bkThread = BackWorkThread(int(3))
 		#连接子进程的信号和槽函数
+		#self.bkThread.finishSignal.connect(self.closeWindow)
 		self.bkThread.finishSignal.connect(self.closeWindow)
 		#开始执行 run() 函数里的内容
 		self.bkThread.start()
@@ -53,9 +54,12 @@ class MatrixWinTest(unittest.TestCase):
         
 	# 退出清理工作  
 	def tearDown(self):  
-		print('*** tearDown ***')  
-	
-		sys.exit(self.app.exec_())
+		print('*** tearDown ***')
+		#status = self.app.exec_()
+		#print( 'status=>'+ str(status) )
+		#sys.exit(self.app.exec_() )
+		self.app.exec_()
+		
 		
 	def setFormToZero(self):
 		print('* setFormToZero *')  
@@ -70,7 +74,8 @@ class MatrixWinTest(unittest.TestCase):
 		print( '*  closeWindow  *')
 		#qApp = QApplication.instance()
 		#qApp.quit()		
-		self.form.quit()
+		self.app.quit()
+		
 		
 	def test_defaults(self):
 		'''Test the GUI in its default state'''
