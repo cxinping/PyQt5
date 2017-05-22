@@ -17,7 +17,7 @@ import CallMatrixWinUi
 
 #app = QApplication(sys.argv)
 
-class Winform(unittest.TestCase):
+class MatrixWinTest(unittest.TestCase):
 
     # 初始化工作  
 	def setUp(self):  
@@ -26,8 +26,8 @@ class Winform(unittest.TestCase):
 		print( self.form )
 	  
 	# 退出清理工作  
-#	def tearDown(self):  
-#		print('--- tearDown ---')  
+	def tearDown(self):  
+		print('--- tearDown ---')  
 		
 	def setFormToZero(self):
 		print('* setFormToZero ---')  
@@ -57,7 +57,12 @@ class Winform(unittest.TestCase):
         # Push OK with the left mouse button
 		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
 		QTest.mouseClick(okWidget, Qt.LeftButton)
-		
+
+def suite():
+	suite = unittest.TestSuite()
+	suite.addTest(WidgetTestCase("testSize"))
+	return suite
+	
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)	
 	unittest.main() 	
