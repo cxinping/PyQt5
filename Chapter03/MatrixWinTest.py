@@ -82,10 +82,16 @@ class MatrixWinTest(unittest.TestCase):
 		self.assertEqual(self.form.ui.limeJuiceLineEdit.text(), "12.0")
 		self.assertEqual(self.form.ui.iceHorizontalSlider.value(), 12)
 		self.assertEqual(self.form.ui.speedButtonGroup.checkedButton().text(), "&Karate Chop")
-		            		
-		# Push OK with the left mouse button
+		
+		print('*** speedName='+ self.form.getSpeedName() )
+	
+		# 用鼠标左键按OK
 		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
 		QTest.mouseClick(okWidget, Qt.LeftButton)
+		
+		# 即使没有按OK，Class也处于默认状态
+		self.assertEqual(self.form.getJiggers() , 36.0)
+		self.assertEqual(self.form.getSpeedName(), "&Karate Chop")
 		      	
 		
 	# 测试滚动条

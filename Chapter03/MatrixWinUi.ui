@@ -203,6 +203,9 @@
       <property name="text">
        <string>&amp;Mix</string>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">speedButtonGroup</string>
+      </attribute>
      </widget>
     </item>
     <item row="0" column="2">
@@ -210,6 +213,9 @@
       <property name="text">
        <string>&amp;Puree</string>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">speedButtonGroup</string>
+      </attribute>
      </widget>
     </item>
     <item row="1" column="0">
@@ -217,6 +223,9 @@
       <property name="text">
        <string>&amp;Chop</string>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">speedButtonGroup</string>
+      </attribute>
      </widget>
     </item>
     <item row="1" column="1">
@@ -227,6 +236,9 @@
       <property name="checked">
        <bool>true</bool>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">speedButtonGroup</string>
+      </attribute>
      </widget>
     </item>
     <item row="1" column="2">
@@ -234,6 +246,9 @@
       <property name="text">
        <string>&amp;Beat</string>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">speedButtonGroup</string>
+      </attribute>
      </widget>
     </item>
     <item row="3" column="2">
@@ -241,6 +256,9 @@
       <property name="text">
        <string>&amp;Vaporize</string>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">speedButtonGroup</string>
+      </attribute>
      </widget>
     </item>
     <item row="3" column="1">
@@ -248,6 +266,9 @@
       <property name="text">
        <string>&amp;Liquefy</string>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">speedButtonGroup</string>
+      </attribute>
      </widget>
     </item>
     <item row="3" column="0">
@@ -255,6 +276,9 @@
       <property name="text">
        <string>&amp;Smash</string>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">speedButtonGroup</string>
+      </attribute>
      </widget>
     </item>
     <item row="0" column="1">
@@ -262,6 +286,9 @@
       <property name="text">
        <string>&amp;Whip</string>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">speedButtonGroup</string>
+      </attribute>
      </widget>
     </item>
    </layout>
@@ -311,4 +338,7 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="speedButtonGroup"/>
+ </buttongroups>
 </ui>
