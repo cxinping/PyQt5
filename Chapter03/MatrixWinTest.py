@@ -20,8 +20,9 @@ class Winform(unittest.TestCase):
     # 初始化工作  
 	def setUp(self):  
 		print('--- setUp ---')
-		#self.form = CallMatrixWinUi.CallMatrixWinUi()		
-		#print( self.form )
+		self.form = CallMatrixWinUi.CallMatrixWinUi()
+		self.form.show()		
+		print( self.form )
 	  
 	# 退出清理工作  
 	def tearDown(self):  
@@ -29,11 +30,14 @@ class Winform(unittest.TestCase):
 		
 	def setFormToZero(self):
 		print('* setFormToZero ---')  
+		self.form.ui.tequilaScrollBar.setValue(0)
   
 	# 测试滚动条
-	def test_tequilaScrollBar(self):		
+	def test_moveScrollBar(self):		
 		print('* test_tequilaScrollBar ---')
 		#self.setFormToZero()
   
 if __name__ == "__main__":  
+	app = QApplication(sys.argv)	
 	unittest.main() 	
+	sys.exit(app.exec_())
