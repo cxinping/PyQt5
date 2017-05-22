@@ -19,7 +19,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>210</x>
      <y>30</y>
      <width>361</width>
      <height>21</height>
@@ -46,12 +46,12 @@
     <rect>
      <x>20</x>
      <y>30</y>
-     <width>250</width>
+     <width>151</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>滚动条</string>
+    <string>龙舌兰酒</string>
    </property>
   </widget>
   <widget class="QDialogButtonBox" name="buttonBox">
@@ -71,6 +71,51 @@
    </property>
    <property name="standardButtons">
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>三重蒸馏酒</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="tripleSecSpinBox">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>60</y>
+     <width>250</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Jiggers of triple sec</string>
+   </property>
+   <property name="maximum">
+    <number>11</number>
+   </property>
+   <property name="value">
+    <number>4</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>60</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>毫升</string>
    </property>
   </widget>
  </widget>
