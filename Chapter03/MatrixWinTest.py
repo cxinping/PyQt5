@@ -55,11 +55,7 @@ class MatrixWinTest(unittest.TestCase):
 	# 退出清理工作  
 	def tearDown(self):  
 		print('*** tearDown ***')
-		#status = self.app.exec_()
-		#print( 'status=>'+ str(status) )
-		#sys.exit(self.app.exec_() )
-		self.app.exec_()
-		
+		self.app.exec_()  		
 		
 	def setFormToZero(self):
 		print('* setFormToZero *')  
@@ -85,9 +81,7 @@ class MatrixWinTest(unittest.TestCase):
 		# Push OK with the left mouse button
 		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
 		QTest.mouseClick(okWidget, Qt.LeftButton)
-		
-		
-		
+		      	
 		
 	# 测试滚动条
 	def test_moveScrollBar(self):		
