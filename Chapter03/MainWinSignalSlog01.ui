@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>553</width>
-    <height>406</height>
+    <width>452</width>
+    <height>296</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="closeWinBtn">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>150</y>
+     <x>150</x>
+     <y>80</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -36,12 +36,12 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>208</x>
-     <y>165</y>
+     <x>205</x>
+     <y>89</y>
     </hint>
     <hint type="destinationlabel">
-     <x>295</x>
-     <y>319</y>
+     <x>224</x>
+     <y>199</y>
     </hint>
    </hints>
   </connection>

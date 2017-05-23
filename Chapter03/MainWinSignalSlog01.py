@@ -11,9 +11,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(553, 406)
+        Form.resize(452, 296)
         self.closeWinBtn = QtWidgets.QPushButton(Form)
-        self.closeWinBtn.setGeometry(QtCore.QRect(180, 150, 121, 31))
+        self.closeWinBtn.setGeometry(QtCore.QRect(150, 80, 121, 31))
         self.closeWinBtn.setObjectName("closeWinBtn")
 
         self.retranslateUi(Form)
