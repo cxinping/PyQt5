@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'MainWin02.ui'
+# Form implementation generated from reading ui file 'MainWinSignalSlog01.ui'
 #
 # Created by: PyQt5 UI code generator 5.8.1
 #
@@ -11,18 +11,17 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(678, 431)
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(80, 30, 531, 321))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/pic/images/python.jpg"))
-        self.label.setObjectName("label")
+        Form.resize(553, 406)
+        self.closeWinBtn = QtWidgets.QPushButton(Form)
+        self.closeWinBtn.setGeometry(QtCore.QRect(180, 150, 121, 31))
+        self.closeWinBtn.setObjectName("closeWinBtn")
 
         self.retranslateUi(Form)
+        self.closeWinBtn.clicked.connect(Form.close)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
+        self.closeWinBtn.setText(_translate("Form", "关闭窗口"))
 
-import apprcc_rc
