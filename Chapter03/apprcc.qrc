@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="images">
+  <qresource prefix="pic">
     <file>images/cartoon1.ico</file>
     <file>images/cartoon2.ico</file>
     <file>images/cartoon3.ico</file>
