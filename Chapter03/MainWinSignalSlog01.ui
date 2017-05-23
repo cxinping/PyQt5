@@ -36,12 +36,12 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>235</x>
-     <y>174</y>
+     <x>208</x>
+     <y>165</y>
     </hint>
     <hint type="destinationlabel">
-     <x>381</x>
-     <y>292</y>
+     <x>295</x>
+     <y>319</y>
     </hint>
    </hints>
   </connection>
