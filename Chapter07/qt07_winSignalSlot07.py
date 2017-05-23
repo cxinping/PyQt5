@@ -23,7 +23,6 @@ class WinForm(QWidget):
 
 	# 重新实现信号槽函数
 	def keyPressEvent(self, e):
-
 		if e.key() == Qt.Key_Escape:
 			self.close()
 
