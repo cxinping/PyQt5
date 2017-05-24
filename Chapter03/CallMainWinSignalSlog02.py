@@ -20,14 +20,13 @@ class MyMainWindow(QMainWindow, Ui_Form):
 		#self.helpSignal.connect(self.showHelpMessage)
 		self.printSignal.connect(self.printPaper)
 		self.previewSignal[str].connect(self.previewPaper)
-		#self.previewSignal[int,str].connect(self.previewPaperWithArgs)  
+		self.previewSignal[int,str].connect(self.previewPaperWithArgs)  
 		
 		self.printButton.clicked.connect(self.emitPrintSignal)
 		self.previewButton.clicked.connect(self.emitPreviewSignal)
 
 	# 发射打印预览信号
 	def emitPreviewSignal(self):
-		print( self.previewStatus.isChecked() )
 		if self.previewStatus.isChecked() == True:
 			self.previewSignal[int,str].emit(1080," Full Screen")
 		elif self.previewStatus.isChecked() == False:
