@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>打印控件</string>
   </property>
-  <widget class="QGroupBox" name="groupBox">
+  <widget class="QGroupBox" name="controlsGroup">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -102,7 +102,7 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QGroupBox" name="groupBox_2">
+  <widget class="QGroupBox" name="resultGroup">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -114,6 +114,19 @@
    <property name="title">
     <string>操作结果</string>
    </property>
+   <widget class="QLabel" name="resultLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>151</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
