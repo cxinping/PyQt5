@@ -43,10 +43,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="spinBox"/>
+      <widget class="QSpinBox" name="numberSpinBox"/>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox">
+      <widget class="QComboBox" name="styleCombo">
        <item>
         <property name="text">
          <string>A4</string>
@@ -86,7 +86,7 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="previewStatus">
        <property name="text">
         <string>全屏预览</string>
        </property>
