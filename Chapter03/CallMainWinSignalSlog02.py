@@ -17,7 +17,7 @@ class MyMainWindow(QMainWindow, Ui_Form):
 		self.initUI()
 		
 	def initUI(self):  	
-		#self.helpSignal.connect(self.showHelpMessage)
+		self.helpSignal.connect(self.showHelpMessage)
 		self.printSignal.connect(self.printPaper)
 		self.previewSignal[str].connect(self.previewPaper)
 		self.previewSignal[int,str].connect(self.previewPaperWithArgs)  
@@ -25,13 +25,14 @@ class MyMainWindow(QMainWindow, Ui_Form):
 		self.printButton.clicked.connect(self.emitPrintSignal)
 		self.previewButton.clicked.connect(self.emitPreviewSignal)
 
-	# 发射打印预览信号
+	# 发射预览信号
 	def emitPreviewSignal(self):
 		if self.previewStatus.isChecked() == True:
 			self.previewSignal[int,str].emit(1080," Full Screen")
 		elif self.previewStatus.isChecked() == False:
 			self.previewSignal[str].emit("Preview")
 
+	# 发射打印信号
 	def emitPrintSignal(self):
 		pList = []
 		pList.append(self.numberSpinBox.value() )

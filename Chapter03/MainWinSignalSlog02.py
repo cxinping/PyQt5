@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(723, 190)
+        Form.resize(715, 225)
         self.controlsGroup = QtWidgets.QGroupBox(Form)
         self.controlsGroup.setGeometry(QtCore.QRect(10, 20, 451, 151))
         self.controlsGroup.setObjectName("controlsGroup")
