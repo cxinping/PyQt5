@@ -49,6 +49,11 @@
       <widget class="QComboBox" name="styleCombo">
        <item>
         <property name="text">
+         <string>A3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
          <string>A4</string>
         </property>
        </item>
