@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(671, 188)
+        Form.resize(723, 190)
         self.controlsGroup = QtWidgets.QGroupBox(Form)
         self.controlsGroup.setGeometry(QtCore.QRect(10, 20, 451, 151))
         self.controlsGroup.setObjectName("controlsGroup")
@@ -51,10 +51,10 @@ class Ui_Form(object):
         self.previewButton.setObjectName("previewButton")
         self.horizontalLayout_2.addWidget(self.previewButton)
         self.resultGroup = QtWidgets.QGroupBox(Form)
-        self.resultGroup.setGeometry(QtCore.QRect(470, 20, 191, 151))
+        self.resultGroup.setGeometry(QtCore.QRect(470, 20, 231, 151))
         self.resultGroup.setObjectName("resultGroup")
         self.resultLabel = QtWidgets.QLabel(self.resultGroup)
-        self.resultLabel.setGeometry(QtCore.QRect(20, 30, 151, 101))
+        self.resultLabel.setGeometry(QtCore.QRect(20, 30, 191, 101))
         self.resultLabel.setObjectName("resultLabel")
 
         self.retranslateUi(Form)
