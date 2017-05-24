@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>624</width>
-    <height>200</height>
+    <width>671</width>
+    <height>188</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>打印控件</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>30</y>
-     <width>401</width>
+     <y>20</y>
+     <width>451</width>
      <height>151</height>
     </rect>
    </property>
@@ -29,21 +29,21 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>50</y>
-      <width>381</width>
+      <y>40</y>
+      <width>411</width>
       <height>30</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QSpinBox" name="spinBox"/>
-     </item>
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
         <string>打印份数:</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spinBox"/>
      </item>
      <item>
       <widget class="QComboBox" name="comboBox">
@@ -79,8 +79,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
-      <width>211</width>
+      <y>100</y>
+      <width>201</width>
       <height>30</height>
      </rect>
     </property>
@@ -105,8 +105,8 @@
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>30</y>
+     <x>470</x>
+     <y>20</y>
      <width>191</width>
      <height>151</height>
     </rect>
