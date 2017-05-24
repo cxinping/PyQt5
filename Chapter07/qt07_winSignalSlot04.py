@@ -13,6 +13,7 @@ import sys
 class WinForm(QMainWindow):  
 	def __init__(self, parent=None):  
 		super(WinForm, self).__init__(parent)  
+		self.setWindowTitle("信号和槽传递额外参数例子")
 		button1 = QPushButton('Button 1')  
 		button2 = QPushButton('Button 2')  
         
@@ -29,8 +30,7 @@ class WinForm(QMainWindow):
   
 	def onButtonClick(self, n):  
 		print('Button {0} 被按下了'.format(n))  
-		QMessageBox.information(self, "信息提示框", 'Button {0} clicked'.format(n))
-             
+		QMessageBox.information(self, "信息提示框", 'Button {0} clicked'.format(n))            
   
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
