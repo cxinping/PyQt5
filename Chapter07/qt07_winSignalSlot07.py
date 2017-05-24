@@ -13,11 +13,9 @@ from PyQt5.QtCore import Qt
 class WinForm(QWidget):
 	def __init__(self):
 		super().__init__()
-
 		self.initUI()
 
-	def initUI(self):
-
+	def initUI(self):  
 		self.setGeometry(300, 300, 400, 300)
 		self.setWindowTitle('重新实现信号槽函数例子')
 
