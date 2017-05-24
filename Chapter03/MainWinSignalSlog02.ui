@@ -67,7 +67,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="printButton">
        <property name="text">
         <string>打印</string>
        </property>
@@ -93,7 +93,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="previewButton">
        <property name="text">
         <string>预览</string>
        </property>
