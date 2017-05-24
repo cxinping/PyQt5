@@ -3,7 +3,7 @@
 import sys 	
 from PyQt5.QtWidgets import QApplication , QMainWindow
 from MainWinSignalSlog02 import Ui_Form
-from PyQt5.QtCore import pyqtSignal, QObject, Qt, pyqtSlot
+from PyQt5.QtCore import pyqtSignal , Qt 
 
 class MyMainWindow(QMainWindow, Ui_Form):
 	helpSignal = pyqtSignal(str)
@@ -48,15 +48,16 @@ class MyMainWindow(QMainWindow, Ui_Form):
 	def previewPaper(self,text):
 		self.resultLabel.setText(text)  
 		
+    # 重载点击键盘事件    
 	def keyPressEvent(self, event):
 		if event.key() == Qt.Key_F1:
 			self.helpSignal.emit("help message")
 
+    # 显示帮助消息
 	def showHelpMessage(self,message):
 		self.resultLabel.setText(message)
 		self.statusBar().showMessage(message)
-	
-		
+	     		
 if __name__=="__main__":  
 	app = QApplication(sys.argv)  
 	win = MyMainWindow()  
