@@ -74,7 +74,7 @@ class MatrixWinTest(unittest.TestCase):
 	# 在默认状态下的测试GUI	
 	def test_defaults(self):
 		'''测试GUI处于默认状态'''
-		print('* test_defaults *')
+		print('*** testCase test_defaults begin ***')
 		self.form.setWindowTitle('开始测试用例 test_defaults ')	
 				
 		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 8)
@@ -92,18 +92,18 @@ class MatrixWinTest(unittest.TestCase):
 		# 即使没有按OK，Class也处于默认状态
 		self.assertEqual(self.form.getJiggers() , 36.0)
 		self.assertEqual(self.form.getSpeedName(), "&Karate Chop")
-		      	
+		print('*** testCase test_defaults end ***')		      	
 		
 	# 测试滚动条
 	def test_moveScrollBar(self):		
-		print('* test_moveScrollBar ---')
+		print('*** testCase test_moveScrollBar begin ***')
 		self.form.setWindowTitle('开始测试用例 test_moveScrollBar ')	
 		self.setFormToZero()
 		    			
         # Push OK with the left mouse button
 		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
 		QTest.mouseClick(okWidget, Qt.LeftButton)
-
+		print('*** testCase test_moveScrollBar end ***')
 
 
 	

@@ -34,14 +34,15 @@ class CallMatrixWinUi(QWidget ):
 		return speedButton.text()
 
 	def uiAccept(self):
-		print('---- CallMatrixWinUi accept ')
+		print('* CallMatrixWinUi accept ')
 		'''Execute the command in response to the OK button.'''
 		print('The volume of drinks is {0} liters ({1} jiggers).'.format(self.getLiters() , self.getJiggers() ))
 		print('The blender is running at speed "{0}"'.format(self.getSpeedName() ))
 		#self.close()
 
+	# 点击cancel按钮，关闭窗口	
 	def uiReject(self):
-		print('---- CallMatrixWinUi reject ')
+		print('* CallMatrixWinUi reject ')
 		'''Cancel.'''
 		self.close()
 		
