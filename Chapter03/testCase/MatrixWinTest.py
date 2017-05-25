@@ -149,11 +149,11 @@ class MatrixWinTest(unittest.TestCase):
 		测试它的最小和最大值作为读者的练习。
 		'''
 		self.setFormToZero()		
-        # Clear and then type "3.5" into the lineEdit widget
+        # 清除lineEdit小部件值，然后在lineEdit小部件中键入“3.5”
 		self.form.ui.limeJuiceLineEdit.clear()		
 		QTest.keyClicks(self.form.ui.limeJuiceLineEdit, "3.5")
 		
-        # Push OK with the left mouse button
+        # 用鼠标左键按OK按钮
 		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
 		QTest.mouseClick(okWidget, Qt.LeftButton)
 		self.assertEqual(self.form.getJiggers() , 3.5)
@@ -167,9 +167,19 @@ class MatrixWinTest(unittest.TestCase):
 		'''
 		self.setFormToZero()
 		self.form.ui.iceHorizontalSlider.setValue(4)
-		
+
+		# 用鼠标左键按OK按钮
+		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		QTest.mouseClick(okWidget, Qt.LeftButton)
+		self.assertEqual(self.form.getJiggers(), 4)		
 		print('*** testCase test_iceHorizontalSlider end ***')
-		
+
+	# 测试用例- 
+	def test_liters(self):
+		print('*** testCase test_liters begin ***')		
+
+		print('*** testCase test_liters end ***')
+	
 if __name__ == "__main__":  
 	# 默认测试所有的测试用例
 	#unittest.main() 	
@@ -180,7 +190,8 @@ if __name__ == "__main__":
 	#suite.addTest(MatrixWinTest("test_moveScrollBar"))
 	#suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
 	#suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
-	suite.addTest(MatrixWinTest("test_iceHorizontalSlider"))
+	#suite.addTest(MatrixWinTest("test_iceHorizontalSlider"))
+	suite.addTest(MatrixWinTest("test_liters"))
 	
 	runner = unittest.TextTestRunner()
 	runner.run(suite)
