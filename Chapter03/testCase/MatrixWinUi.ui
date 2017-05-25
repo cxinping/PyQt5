@@ -89,9 +89,9 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>660</x>
      <y>60</y>
-     <width>151</width>
+     <width>61</width>
      <height>21</height>
     </rect>
    </property>
@@ -140,9 +140,9 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>660</x>
      <y>120</y>
-     <width>151</width>
+     <width>61</width>
      <height>21</height>
     </rect>
    </property>
@@ -153,9 +153,9 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>660</x>
      <y>30</y>
-     <width>151</width>
+     <width>61</width>
      <height>21</height>
     </rect>
    </property>
@@ -277,7 +277,7 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>23</x>
+     <x>20</x>
      <y>90</y>
      <width>131</width>
      <height>21</height>
@@ -306,9 +306,9 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>660</x>
      <y>90</y>
-     <width>151</width>
+     <width>61</width>
      <height>21</height>
     </rect>
    </property>
@@ -338,6 +338,19 @@
      </rect>
     </property>
    </widget>
+  </widget>
+  <widget class="QLabel" name="selIceSliderLbl">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>120</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
   <widget class="QWidget" name="">
    <property name="geometry">
@@ -423,11 +436,28 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>iceHorizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MatrixWin</receiver>
+   <slot>uiIceSliderValueChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>329</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>518</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>uiAccept()</slot>
   <slot>uiReject()</slot>
   <slot>uiClear()</slot>
+  <slot>uiIceSliderValueChanged()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="speedButtonGroup"/>

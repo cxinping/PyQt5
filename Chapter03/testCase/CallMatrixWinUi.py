@@ -56,6 +56,11 @@ class CallMatrixWinUi(QWidget ):
 	def uiClear(self):
 		print('* CallMatrixWinUi uiClear ')
 		self.ui.resultText.clear()		
+
+	def uiIceSliderValueChanged( self):
+		print('------ uiIceSliderValueChanged ---------')
+		pos = self.ui.iceHorizontalSlider.value()
+		self.ui.selIceSliderLbl.setText( str(pos) )
 		
 		
 if __name__=="__main__":  
