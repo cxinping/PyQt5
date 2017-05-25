@@ -75,6 +75,8 @@ class MatrixWinTest(unittest.TestCase):
 	def test_defaults(self):
 		'''测试GUI处于默认状态'''
 		print('* test_defaults *')
+		self.form.setWindowTitle('开始测试用例 test_defaults ')	
+				
 		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 8)
 		self.assertEqual(self.form.ui.tripleSecSpinBox.value(), 4)
 		self.assertEqual(self.form.ui.limeJuiceLineEdit.text(), "12.0")
@@ -95,6 +97,7 @@ class MatrixWinTest(unittest.TestCase):
 	# 测试滚动条
 	def test_moveScrollBar(self):		
 		print('* test_moveScrollBar ---')
+		self.form.setWindowTitle('开始测试用例 test_moveScrollBar ')	
 		self.setFormToZero()
 		    			
         # Push OK with the left mouse button
