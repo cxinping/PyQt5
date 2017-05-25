@@ -159,10 +159,15 @@ class MatrixWinTest(unittest.TestCase):
 		self.assertEqual(self.form.getJiggers() , 3.5)
 		print('*** testCase test_limeJuiceLineEdit end ***')
 
-
+	# 测试用例-测试iceHorizontalSlider
 	def test_iceHorizontalSlider(self):
 		print('*** testCase test_iceHorizontalSlider begin ***')		
-
+		'''测试ice slider.
+		测试它的最小和最大值作为读者的练习。
+		'''
+		self.setFormToZero()
+		self.form.ui.iceHorizontalSlider.setValue(4)
+		
 		print('*** testCase test_iceHorizontalSlider end ***')
 		
 if __name__ == "__main__":  
