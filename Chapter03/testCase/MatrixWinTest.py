@@ -66,7 +66,7 @@ class MatrixWinTest(unittest.TestCase):
 	# 关闭窗口
 	def closeWindow(self):
 		#time.sleep(5)
-		print( '*  closeWindow  *')
+		print( '*  关闭窗口')
 		#qApp = QApplication.instance()
 		#qApp.quit()		
 		self.app.quit()
