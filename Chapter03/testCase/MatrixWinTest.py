@@ -39,6 +39,7 @@ class MatrixWinTest(unittest.TestCase):
 		print('*** setUp ***')
 		self.app = QApplication(sys.argv)	
 		self.form = CallMatrixWinUi.CallMatrixWinUi()
+		self.form.show()		
 		
 		# 新建对象，传入参数。每5秒执行一个测试用例 TestCase。
 		self.bkThread = BackWorkThread(int(5))
@@ -46,8 +47,6 @@ class MatrixWinTest(unittest.TestCase):
 		self.bkThread.finishSignal.connect(self.closeWindow)
 		# 启动线程，开始执行run()函数里的内容
 		self.bkThread.start()
-		
-		self.form.show()
 		
         
 	# 退出清理工作  
