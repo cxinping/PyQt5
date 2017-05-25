@@ -116,7 +116,7 @@ class Ui_MatrixWin(object):
 
     def retranslateUi(self, MatrixWin):
         _translate = QtCore.QCoreApplication.translate
-        MatrixWin.setWindowTitle(_translate("MatrixWin", "Form"))
+        MatrixWin.setWindowTitle(_translate("MatrixWin", "玛格丽特鸡尾酒*调酒器"))
         self.tequilaScrollBar.setToolTip(_translate("MatrixWin", "Jiggers of tequila"))
         self.label.setText(_translate("MatrixWin", "龙舌兰酒"))
         self.buttonBox.setToolTip(_translate("MatrixWin", "Press OK to make the drinks"))

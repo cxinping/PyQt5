@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>玛格丽特鸡尾酒*调酒器</string>
   </property>
   <widget class="QScrollBar" name="tequilaScrollBar">
    <property name="enabled">
