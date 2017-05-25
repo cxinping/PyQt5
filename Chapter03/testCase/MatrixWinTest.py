@@ -177,7 +177,12 @@ class MatrixWinTest(unittest.TestCase):
 	# 测试用例- 
 	def test_liters(self):
 		print('*** testCase test_liters begin ***')		
-
+		self.setFormToZero()
+		self.assertAlmostEqual(self.form.getLiters() , 0.0)
+		self.form.ui.iceHorizontalSlider.setValue(1 )
+		self.assertAlmostEqual(self.form.getLiters(), 0.0444)
+		self.form.ui.iceHorizontalSlider.setValue(2)
+		self.assertAlmostEqual(self.form.getLiters(), 0.0444 * 2)
 		print('*** testCase test_liters end ***')
 	
 if __name__ == "__main__":  
