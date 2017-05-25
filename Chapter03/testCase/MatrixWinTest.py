@@ -32,8 +32,7 @@ class BackWorkThread(QThread):
 		# 休眠结束，发送一个信号告诉主线程窗口
 		self.finishSignal.emit('ok , begin to close Window')
 		
-class MatrixWinTest(unittest.TestCase):
-
+class MatrixWinTest(unittest.TestCase):  
     # 初始化工作  
 	def setUp(self):  
 		print('*** setUp ***')
@@ -42,13 +41,12 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.show()		
 		
 		# 新建对象，传入参数。每5秒执行一个测试用例 TestCase。
-		self.bkThread = BackWorkThread(int(5))
+		self.bkThread = BackWorkThread(int(5 * 3 ))
 		# 连接子进程的信号和槽函数
 		self.bkThread.finishSignal.connect(self.closeWindow)
 		# 启动线程，开始执行run()函数里的内容
 		self.bkThread.start()
-		
-        
+		        
 	# 退出清理工作  
 	def tearDown(self):  
 		print('*** tearDown ***')
@@ -71,7 +69,7 @@ class MatrixWinTest(unittest.TestCase):
 		#qApp.quit()		
 		self.app.quit()
 		
-	# 在默认状态下的测试GUI	
+	# 测试用例-在默认状态下的测试GUI	
 	def test_defaults(self):
 		'''测试GUI处于默认状态'''
 		print('*** testCase test_defaults begin ***')
@@ -94,14 +92,18 @@ class MatrixWinTest(unittest.TestCase):
 		self.assertEqual(self.form.getSpeedName(), "&Karate Chop")
 		print('*** testCase test_defaults end ***')		      	
 		
-	# 测试滚动条
+	# 测试用例-测试滚动条
 	def test_moveScrollBar(self):		
 		print('*** testCase test_moveScrollBar begin ***')
 		self.form.setWindowTitle('开始测试用例 test_moveScrollBar ')	
 		self.setFormToZero()
 		
-        # Test the maximum.  This one goes to 11.
-		self.form.ui.tequilaScrollBar.setValue(12)
+        # 设置龙舌兰就的滚动条的最大值为10
+		self.form.ui.tequilaScrollBar.setValue( 10 )
+		print( self.form.ui.tequilaScrollBar.value() )
+		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 10 )
+		
+		#self.form.ui.iceHorizontalSlider.setValue(5)
 		
         # 用鼠标左键按OK
 		#okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
