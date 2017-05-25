@@ -40,8 +40,8 @@ class MatrixWinTest(unittest.TestCase):
 		self.app = QApplication(sys.argv)	
 		self.form = CallMatrixWinUi.CallMatrixWinUi()
 		
-		# 新建对象，传入参数
-		self.bkThread = BackWorkThread(int(3))
+		# 新建对象，传入参数。每5秒执行一个测试用例 TestCase。
+		self.bkThread = BackWorkThread(int(5))
 		# 连接子进程的信号和槽函数
 		self.bkThread.finishSignal.connect(self.closeWindow)
 		# 启动线程，开始执行run()函数里的内容
