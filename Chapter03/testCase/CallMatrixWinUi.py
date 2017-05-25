@@ -10,7 +10,7 @@ class CallMatrixWinUi(QWidget ):
 		self.ui = Ui_MatrixWin()
 		self.ui.setupUi(self)
 
-	# 
+	# 获得一量杯的酒
 	def getJiggers(self):
 	   # Return the total volume of the margaritas in units of jiggers.
 	   # One jigger is 0.0444 liters.
@@ -33,14 +33,15 @@ class CallMatrixWinUi(QWidget ):
 			return None
 		return speedButton.text()
 
-	def accept(self):
+	def uiAccept(self):
+		print('---- CallMatrixWinUi accept ')
 		'''Execute the command in response to the OK button.'''
-		print('The volume of drinks is {0} liters ({1} jiggers).'
-			  ''.format(self.liters, self.jiggers))
-		print('The blender is running at speed "{0}"'.format(self.speedName))
-		self.close()
+		print('The volume of drinks is {0} liters ({1} jiggers).'.format(self.getLiters() , self.getJiggers() ))
+		print('The blender is running at speed "{0}"'.format(self.getSpeedName() ))
+		#self.close()
 
-	def reject(self):
+	def uiReject(self):
+		print('---- CallMatrixWinUi reject ')
 		'''Cancel.'''
 		self.close()
 		

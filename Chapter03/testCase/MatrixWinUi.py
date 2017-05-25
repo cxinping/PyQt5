@@ -110,6 +110,8 @@ class Ui_MatrixWin(object):
         self.label_8.setObjectName("label_8")
 
         self.retranslateUi(MatrixWin)
+        self.buttonBox.rejected.connect(MatrixWin.uiReject)
+        self.buttonBox.accepted.connect(MatrixWin.uiAccept)
         QtCore.QMetaObject.connectSlotsByName(MatrixWin)
 
     def retranslateUi(self, MatrixWin):
