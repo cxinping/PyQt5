@@ -191,6 +191,10 @@ class MatrixWinTest(unittest.TestCase):
 		'''测试选择搅拌速度按钮'''
 		self.form.ui.speedButton1.click()
 		self.assertEqual(self.form.getSpeedName(), "&Mix")		
+		self.form.ui.speedButton2.click()
+		self.assertEqual(self.form.getSpeedName(), "&Whip")
+		
+		
 		
 		print('*** testCase test_blenderSpeedButtons end ***')
 
