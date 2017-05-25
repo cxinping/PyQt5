@@ -184,7 +184,17 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.ui.iceHorizontalSlider.setValue(2)
 		self.assertAlmostEqual(self.form.getLiters(), 0.0444 * 2)
 		print('*** testCase test_liters end ***')
-	
+
+	# 测试用例- 		
+	def test_blenderSpeedButtons(self):
+		print('*** testCase test_blenderSpeedButtons begin ***')		
+		'''测试选择搅拌速度按钮'''
+		self.form.ui.speedButton1.click()
+		self.assertEqual(self.form.speedName, "&Mix")		
+		
+		print('*** testCase test_blenderSpeedButtons end ***')
+
+		
 if __name__ == "__main__":  
 	# 默认测试所有的测试用例
 	#unittest.main() 	
@@ -196,7 +206,8 @@ if __name__ == "__main__":
 	#suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
 	#suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
 	#suite.addTest(MatrixWinTest("test_iceHorizontalSlider"))
-	suite.addTest(MatrixWinTest("test_liters"))
+	#suite.addTest(MatrixWinTest("test_liters"))
+	suite.addTest(MatrixWinTest("test_blenderSpeedButtons"))
 	
 	runner = unittest.TextTestRunner()
 	runner.run(suite)
