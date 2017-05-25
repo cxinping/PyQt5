@@ -98,16 +98,22 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.setWindowTitle('开始测试用例 test_moveScrollBar ')	
 		self.setFormToZero()
 		
-        # 设置龙舌兰就的滚动条的最大值为10
-		self.form.ui.tequilaScrollBar.setValue( 10 )
-		print( self.form.ui.tequilaScrollBar.value() )
-		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 10 )
+        # 测试将龙舌兰就的滚动条的值设定为12，ui中它实际的最大值为11
+		self.form.ui.tequilaScrollBar.setValue( 12 )
+		print('* 当执行self.form.ui.tequilaScrollBar.setValue(12) 后，ui.tequilaScrollBar.value() => ' + str( self.form.ui.tequilaScrollBar.value() ) )
+		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 11 )
 		
-		#self.form.ui.iceHorizontalSlider.setValue(5)
+        # 测试将龙舌兰就的滚动条的值设定为-1，ui中它实际的最小值为0
+		self.form.ui.tequilaScrollBar.setValue(-1)
+		print('* 当执行self.form.ui.tequilaScrollBar.setValue(-1) 后，ui.tequilaScrollBar.value() => ' + str( self.form.ui.tequilaScrollBar.value() ) )
+		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 0)
+		
+		self.form.ui.tequilaScrollBar.setValue(5)
+				
 		
         # 用鼠标左键按OK
-		#okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
-		#QTest.mouseClick(okWidget, Qt.LeftButton)
+		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		QTest.mouseClick(okWidget, Qt.LeftButton)
 		
 		print('*** testCase test_moveScrollBar end ***')
 
