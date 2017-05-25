@@ -41,7 +41,7 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.show()		
 		
 		# 新建对象，传入参数。每5秒执行一个测试用例 TestCase。
-		self.bkThread = BackWorkThread(int(5 * 3 ))
+		self.bkThread = BackWorkThread(int( 5 ))
 		# 连接子进程的信号和槽函数
 		self.bkThread.finishSignal.connect(self.closeWindow)
 		# 启动线程，开始执行run()函数里的内容
@@ -54,12 +54,14 @@ class MatrixWinTest(unittest.TestCase):
 	
 	# 设置窗口中所有部件的值为0，状态为初始状态。	
 	def setFormToZero(self):
-		print('* setFormToZero *')  
-				
+		print('* setFormToZero *')  				
 		self.form.ui.tequilaScrollBar.setValue(0)
 		self.form.ui.tripleSecSpinBox.setValue(0)
 		self.form.ui.limeJuiceLineEdit.setText("0.0")
 		self.form.ui.iceHorizontalSlider.setValue(0)
+		
+		self.form.ui.selScrollBarLbl.setText("0")	
+		self.form.ui.selIceSliderLbl.setText("0")	
 		
 	# 关闭窗口
 	def closeWindow(self):
@@ -83,8 +85,8 @@ class MatrixWinTest(unittest.TestCase):
 		
 		print('*** speedName='+ self.form.getSpeedName() )
 	
-		# 用鼠标左键按OK
-		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		# 用鼠标左键按OK		
+		okWidget = self.form.ui.okBtn
 		QTest.mouseClick(okWidget, Qt.LeftButton)
 		
 		# 即使没有按OK，Class也处于默认状态
@@ -112,7 +114,7 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.ui.tequilaScrollBar.setValue(5)
 				
         # 用鼠标左键按OK按钮
-		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		okWidget = self.form.ui.okBtn
 		QTest.mouseClick(okWidget, Qt.LeftButton)
 		self.assertEqual(self.form.getJiggers() , 5)
 		print('*** testCase test_moveScrollBar end ***')
@@ -137,7 +139,7 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.ui.tripleSecSpinBox.setValue(2)
 
         # 用鼠标左键按OK按钮
-		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		okWidget = self.form.ui.okBtn
 		QTest.mouseClick(okWidget, Qt.LeftButton)
 		self.assertEqual(self.form.getJiggers(), 2)		
 		print('*** testCase test_tripleSecSpinBox end ***')
@@ -154,7 +156,7 @@ class MatrixWinTest(unittest.TestCase):
 		QTest.keyClicks(self.form.ui.limeJuiceLineEdit, "3.5")
 		
         # 用鼠标左键按OK按钮
-		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		okWidget = self.form.ui.okBtn
 		QTest.mouseClick(okWidget, Qt.LeftButton)
 		self.assertEqual(self.form.getJiggers() , 3.5)
 		print('*** testCase test_limeJuiceLineEdit end ***')
@@ -169,7 +171,7 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.ui.iceHorizontalSlider.setValue(4)
 
 		# 用鼠标左键按OK按钮
-		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		okWidget = self.form.ui.okBtn
 		QTest.mouseClick(okWidget, Qt.LeftButton)
 		self.assertEqual(self.form.getJiggers(), 4)		
 		print('*** testCase test_iceHorizontalSlider end ***')
@@ -222,8 +224,7 @@ if __name__ == "__main__":
 	#suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
 	#suite.addTest(MatrixWinTest("test_iceHorizontalSlider"))
 	#suite.addTest(MatrixWinTest("test_liters"))
-	suite.addTest(MatrixWinTest("test_blenderSpeedButtons"))
-	
+	suite.addTest(MatrixWinTest("test_blenderSpeedButtons"))    	
 	runner = unittest.TextTestRunner()
 	runner.run(suite)
 	
