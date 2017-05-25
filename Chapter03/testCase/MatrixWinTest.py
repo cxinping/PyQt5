@@ -45,6 +45,8 @@ class MatrixWinTest(unittest.TestCase):
 		self.bkThread = BackWorkThread(int( 5 ))
 		# 连接子进程的信号和槽函数
 		self.bkThread.finishSignal.connect(self.closeWindow)
+		#self.bkThread.finishSignal.connect(self.app.exec_)
+		
 		# 启动线程，开始执行run()函数里的内容
 		self.bkThread.start()
 		        
@@ -96,7 +98,8 @@ class MatrixWinTest(unittest.TestCase):
 		print('*** testCase test_defaults end ***')		      	
 		
 	# 测试用例-测试滚动条
-	def test_moveScrollBar(self):		
+	def test_moveScrollBar(self):
+		'''测试用例test_moveScrollBar'''	
 		print('*** testCase test_moveScrollBar begin ***')
 		self.form.setWindowTitle('开始测试用例 test_moveScrollBar ')	
 		self.setFormToZero()
@@ -122,6 +125,7 @@ class MatrixWinTest(unittest.TestCase):
 
 	# 测试用例-测试滚动条
 	def test_tripleSecSpinBox(self):
+		'''测试用例 test_tripleSecSpinBox '''	
 		print('*** testCase test_tripleSecSpinBox begin ***')
 		self.form.setWindowTitle('开始测试用例 test_tripleSecSpinBox ')	
 		'''测试修改spinBox部件的最大最小值
@@ -148,6 +152,7 @@ class MatrixWinTest(unittest.TestCase):
 
 	# 测试用例-测试柠檬汁单行文本框		
 	def test_limeJuiceLineEdit(self):
+		'''测试用例 test_limeJuiceLineEdit '''	
 		print('*** testCase test_limeJuiceLineEdit begin ***')
 		self.form.setWindowTitle('开始测试用例 test_limeJuiceLineEdit ')			
 		'''测试修改juice line edit部件的最大最小值
@@ -166,6 +171,7 @@ class MatrixWinTest(unittest.TestCase):
 
 	# 测试用例-测试iceHorizontalSlider
 	def test_iceHorizontalSlider(self):
+		'''测试用例 test_iceHorizontalSlider '''	
 		print('*** testCase test_iceHorizontalSlider begin ***')	
 		self.form.setWindowTitle('开始测试用例 test_iceHorizontalSlider ')	
 				
@@ -183,6 +189,7 @@ class MatrixWinTest(unittest.TestCase):
 
 	# 测试用例- 
 	def test_liters(self):
+		'''测试用例 test_liters '''		
 		print('*** testCase test_liters begin ***')		
 		self.form.setWindowTitle('开始测试用例 test_liters ')	
 		
@@ -254,8 +261,8 @@ def runUnitTest3( ):
 	
 if __name__ == "__main__":  
 	#runUnitTest1()
-    #runUnitTest1()
-	runUnitTest3()
+    runUnitTest2()
+	#runUnitTest3()
 	
 
 	
