@@ -53,7 +53,8 @@ class MatrixWinTest(unittest.TestCase):
 	def tearDown(self):  
 		print('*** tearDown ***')
 		self.app.exec_()  		
-		
+	
+	# 设置窗口中所有部件的值为0，状态为初始状态。	
 	def setFormToZero(self):
 		print('* setFormToZero *')  
 				
@@ -62,7 +63,7 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.ui.limeJuiceLineEdit.setText("0.0")
 		self.form.ui.iceHorizontalSlider.setValue(0)
 		
-
+	# 关闭窗口
 	def closeWindow(self):
 		#time.sleep(5)
 		print( '*  closeWindow  *')
@@ -70,7 +71,7 @@ class MatrixWinTest(unittest.TestCase):
 		#qApp.quit()		
 		self.app.quit()
 		
-		
+	# 在默认状态下的测试GUI	
 	def test_defaults(self):
 		'''测试GUI处于默认状态'''
 		print('* test_defaults *')
