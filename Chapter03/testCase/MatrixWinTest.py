@@ -9,28 +9,27 @@
 
 import sys
 import unittest
+import time
 from PyQt5.QtWidgets import *
-#from PyQt5.QtGui import *
 from PyQt5.QtTest import QTest
 from PyQt5.QtCore import Qt , QThread  ,  pyqtSignal
 import CallMatrixWinUi
-import time
 
-#继承 QThread 类
+# 继承 QThread 类
 class BackWorkThread(QThread):  
-	#声明一个信号，同时返回一个str
+	# 声明一个信号，同时返回一个str
 	finishSignal = pyqtSignal(str)
-	#构造函数里增加形参
+	# 构造函数里增加形参
 	def __init__(self, sleepTime,parent=None):
 		super(BackWorkThread, self).__init__(parent)
-		#储存参数
+		# 储存参数
 		self.sleepTime = sleepTime
 
-	#重写 run() 函数，在里面定时执行业务。
+	#重写run()函数，在里面定时执行业务。
 	def run(self):
-		#休眠一段时间
+		# 休眠一段时间
 		time.sleep(self.sleepTime)
-		#休眠结束，发送一个信号告诉主线程窗口
+		# 休眠结束，发送一个信号告诉主线程窗口
 		self.finishSignal.emit('ok , begin to close Window')
 		
 class MatrixWinTest(unittest.TestCase):
@@ -41,12 +40,11 @@ class MatrixWinTest(unittest.TestCase):
 		self.app = QApplication(sys.argv)	
 		self.form = CallMatrixWinUi.CallMatrixWinUi()
 		
-		#新建对象，传入参数
+		# 新建对象，传入参数
 		self.bkThread = BackWorkThread(int(3))
-		#连接子进程的信号和槽函数
-		#self.bkThread.finishSignal.connect(self.closeWindow)
+		# 连接子进程的信号和槽函数
 		self.bkThread.finishSignal.connect(self.closeWindow)
-		#开始执行 run() 函数里的内容
+		# 启动线程，开始执行run()函数里的内容
 		self.bkThread.start()
 		
 		self.form.show()
