@@ -139,12 +139,18 @@ class MatrixWinTest(unittest.TestCase):
         # 用鼠标左键按OK按钮
 		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
 		QTest.mouseClick(okWidget, Qt.LeftButton)
-		self.assertEqual(self.form.getJiggers(), 2)
-		
+		self.assertEqual(self.form.getJiggers(), 2)		
 		print('*** testCase test_tripleSecSpinBox end ***')
 
-
-
+	# 测试用例-测试单行文本框		
+	def test_limeJuiceLineEdit(self):
+		print('*** testCase test_limeJuiceLineEdit begin ***')
+		
+		self.setFormToZero()		
+		
+		
+		print('*** testCase test_limeJuiceLineEdit end ***')
+		
 		
 if __name__ == "__main__":  
 	# 默认测试所有的测试用例
@@ -154,7 +160,9 @@ if __name__ == "__main__":
 	suite = unittest.TestSuite()
 	#suite.addTest(MatrixWinTest("test_defaults"))
 	#suite.addTest(MatrixWinTest("test_moveScrollBar"))
-	suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
+	#suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
+	suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
+
 	
 	runner = unittest.TextTestRunner()
 	runner.run(suite)
