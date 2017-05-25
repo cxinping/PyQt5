@@ -98,23 +98,23 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.setWindowTitle('开始测试用例 test_moveScrollBar ')	
 		self.setFormToZero()
 		
-        # 测试将龙舌兰就的滚动条的值设定为12，ui中它实际的最大值为11
+        # 测试将龙舌兰就的滚动条的值设定为 12 ，ui中它实际的最大值为 11
 		self.form.ui.tequilaScrollBar.setValue( 12 )
 		print('* 当执行self.form.ui.tequilaScrollBar.setValue(12) 后，ui.tequilaScrollBar.value() => ' + str( self.form.ui.tequilaScrollBar.value() ) )
 		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 11 )
 		
-        # 测试将龙舌兰就的滚动条的值设定为-1，ui中它实际的最小值为0
+        # 测试将龙舌兰就的滚动条的值设定为 -1 ，ui中它实际的最小值为 0
 		self.form.ui.tequilaScrollBar.setValue(-1)
 		print('* 当执行self.form.ui.tequilaScrollBar.setValue(-1) 后，ui.tequilaScrollBar.value() => ' + str( self.form.ui.tequilaScrollBar.value() ) )
 		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 0)
 		
+		# 重新将将龙舌兰就的滚动条的值设定为 5
 		self.form.ui.tequilaScrollBar.setValue(5)
 				
-		
         # 用鼠标左键按OK
 		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
 		QTest.mouseClick(okWidget, Qt.LeftButton)
-		
+		self.assertEqual(self.form.getJiggers() , 5)
 		print('*** testCase test_moveScrollBar end ***')
 
 
