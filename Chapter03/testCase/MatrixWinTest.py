@@ -117,8 +117,13 @@ class MatrixWinTest(unittest.TestCase):
 		self.assertEqual(self.form.getJiggers() , 5)
 		print('*** testCase test_moveScrollBar end ***')
 
+	# 测试用例-测试滚动条
+	def test_tripleSecSpinBox(self):
+		print('*** testCase test_tripleSecSpinBox begin ***')
 
-	
+
+		print('*** testCase test_tripleSecSpinBox end ***')
+		
 if __name__ == "__main__":  
 	# 默认测试所有的测试用例
 	#unittest.main() 	
@@ -126,8 +131,9 @@ if __name__ == "__main__":
     # 按照指定顺序执行测试用例
 	suite = unittest.TestSuite()
 	#suite.addTest(MatrixWinTest("test_defaults"))
-	suite.addTest(MatrixWinTest("test_moveScrollBar"))
-		
+	#suite.addTest(MatrixWinTest("test_moveScrollBar"))
+	suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
+	
 	runner = unittest.TextTestRunner()
 	runner.run(suite)
 	
