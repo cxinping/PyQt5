@@ -111,7 +111,7 @@ class MatrixWinTest(unittest.TestCase):
 		# 重新将将龙舌兰就的滚动条的值设定为 5
 		self.form.ui.tequilaScrollBar.setValue(5)
 				
-        # 用鼠标左键按OK
+        # 用鼠标左键按OK按钮
 		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
 		QTest.mouseClick(okWidget, Qt.LeftButton)
 		self.assertEqual(self.form.getJiggers() , 5)
@@ -120,9 +120,31 @@ class MatrixWinTest(unittest.TestCase):
 	# 测试用例-测试滚动条
 	def test_tripleSecSpinBox(self):
 		print('*** testCase test_tripleSecSpinBox begin ***')
+		'''测试修改spinBox部件
+			测试它的最小和最大值作为读者的练习。
+        '''		
+		self.setFormToZero()
+		# tripleSecSpinBox在界面中的取值范围为 0 到 11， 将它的最大值设为 12，看是否显示正常。
+		self.form.ui.tripleSecSpinBox.setValue(12)
+		print('* 当执行self.form.ui.tripleSecSpinBox.setValue(12) 后，ui.tripleSecSpinBox.value() => ' + str( self.form.ui.tripleSecSpinBox.value() ) )				
+		self.assertEqual(self.form.ui.tripleSecSpinBox.value(), 11 )	
 
+		# tripleSecSpinBox在界面中的取值范围为 0 到 11， 将它的最小值设为 -1， 看是否显示正常。
+		self.form.ui.tripleSecSpinBox.setValue(-1)
+		print('* 当执行self.form.ui.tripleSecSpinBox.setValue(-1) 后，ui.tripleSecSpinBox.value() => ' + str( self.form.ui.tripleSecSpinBox.value() ) )				
+		self.assertEqual(self.form.ui.tripleSecSpinBox.value(), 0 )	
+		
+		self.form.ui.tripleSecSpinBox.setValue(2)
 
+        # 用鼠标左键按OK按钮
+		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		QTest.mouseClick(okWidget, Qt.LeftButton)
+		self.assertEqual(self.form.getJiggers(), 2)
+		
 		print('*** testCase test_tripleSecSpinBox end ***')
+
+
+
 		
 if __name__ == "__main__":  
 	# 默认测试所有的测试用例
