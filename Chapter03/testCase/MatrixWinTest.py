@@ -99,21 +99,31 @@ class MatrixWinTest(unittest.TestCase):
 		print('*** testCase test_moveScrollBar begin ***')
 		self.form.setWindowTitle('开始测试用例 test_moveScrollBar ')	
 		self.setFormToZero()
-		    			
-        # Push OK with the left mouse button
-		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
-		QTest.mouseClick(okWidget, Qt.LeftButton)
+		
+        # Test the maximum.  This one goes to 11.
+		self.form.ui.tequilaScrollBar.setValue(12)
+		
+        # 用鼠标左键按OK
+		#okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		#QTest.mouseClick(okWidget, Qt.LeftButton)
+		
 		print('*** testCase test_moveScrollBar end ***')
 
 
 	
 if __name__ == "__main__":  
-	#app = QApplication(sys.argv)	
-	unittest.main() 	
+	# 默认测试所有的测试用例
+	#unittest.main() 	
 	
-	#suite = unittest.TestSuite()
+    # 按照指定顺序执行测试用例
+	suite = unittest.TestSuite()
 	#suite.addTest(MatrixWinTest("test_defaults"))
-	#runner = unittest.TextTestRunner()
-	#runner.run(suite)
+	suite.addTest(MatrixWinTest("test_moveScrollBar"))
+		
+	runner = unittest.TextTestRunner()
+	runner.run(suite)
 	
-	#sys.exit(app.exec_())
+	
+	
+	
+	
