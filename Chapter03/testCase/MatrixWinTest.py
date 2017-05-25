@@ -9,6 +9,7 @@
 
 import sys
 import unittest
+import HTMLTestRunner
 import time
 from PyQt5.QtWidgets import *
 from PyQt5.QtTest import QTest
@@ -211,22 +212,41 @@ class MatrixWinTest(unittest.TestCase):
 		self.assertEqual(self.form.getSpeedName(), "&Vaporize")		
 		print('*** testCase test_blenderSpeedButtons end ***')
 
-		
-if __name__ == "__main__":  
+def runUnitTest1(  ):
 	# 默认测试所有的测试用例
-	#unittest.main() 	
-	
-    # 按照指定顺序执行测试用例
+	unittest.main() 	
+
+def runUnitTest2(  ):
+	# 按照指定顺序执行测试用例
 	suite = unittest.TestSuite()
-	#suite.addTest(MatrixWinTest("test_defaults"))
-	#suite.addTest(MatrixWinTest("test_moveScrollBar"))
-	#suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
-	#suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
-	#suite.addTest(MatrixWinTest("test_iceHorizontalSlider"))
-	#suite.addTest(MatrixWinTest("test_liters"))
+	suite.addTest(MatrixWinTest("test_defaults"))
+	suite.addTest(MatrixWinTest("test_moveScrollBar"))
+	suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
+	suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
+	suite.addTest(MatrixWinTest("test_iceHorizontalSlider"))
+	suite.addTest(MatrixWinTest("test_liters"))
 	suite.addTest(MatrixWinTest("test_blenderSpeedButtons"))    	
 	runner = unittest.TextTestRunner()
 	runner.run(suite)
+
+def runUnitTest3( ):	
+	now = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))	
+	print( now )
+	testunit = unittest.TestSuite()
+	testunit.addTest(MatrixWinTest("test_moveScrollBar"))
+	HtmlFile = ".\\"+now+"HTMLtemplate.html"
+	print( HtmlFile)
+	#fp = file(HtmlFile, "wb")
+	fp = open(HtmlFile,'wb')
+	runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title="测试报告", description="用例测试情况")
+	runner.run(testunit)
+	
+if __name__ == "__main__":  
+	#runUnitTest1()
+    #runUnitTest1()
+	runUnitTest3()
+	
+
 	
 	
 	
