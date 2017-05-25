@@ -199,7 +199,14 @@ class MatrixWinTest(unittest.TestCase):
 		self.assertEqual(self.form.getSpeedName(), "&Chop")
 		self.form.ui.speedButton5.click()
 		self.assertEqual(self.form.getSpeedName(), "&Karate Chop")		
-		
+		self.form.ui.speedButton6.click()
+		self.assertEqual(self.form.getSpeedName(), "&Beat")
+		self.form.ui.speedButton7.click()
+		self.assertEqual(self.form.getSpeedName(), "&Smash")
+		self.form.ui.speedButton8.click()
+		self.assertEqual(self.form.getSpeedName(), "&Liquefy")
+		self.form.ui.speedButton9.click()
+		self.assertEqual(self.form.getSpeedName(), "&Vaporize")		
 		print('*** testCase test_blenderSpeedButtons end ***')
 
 		
