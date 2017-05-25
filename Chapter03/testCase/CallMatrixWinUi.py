@@ -26,7 +26,7 @@ class CallMatrixWinUi(QWidget ):
 		'''Return the total volume of the margaritas in liters.'''
 		return 0.0444 * self.getJiggers()
 
-	# 
+	# 获得搅拌速度
 	def getSpeedName(self):
 		speedButton = self.ui.speedButtonGroup.checkedButton()
 		if speedButton is None:

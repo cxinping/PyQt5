@@ -26,7 +26,7 @@ class BackWorkThread(QThread):
 		#储存参数
 		self.sleepTime = sleepTime
 
-	#重写 run() 函数，在里面干大事。
+	#重写 run() 函数，在里面定时执行业务。
 	def run(self):
 		#休眠一段时间
 		time.sleep(self.sleepTime)
