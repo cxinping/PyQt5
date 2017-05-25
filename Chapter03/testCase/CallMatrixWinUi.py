@@ -57,8 +57,13 @@ class CallMatrixWinUi(QWidget ):
 		print('* CallMatrixWinUi uiClear ')
 		self.ui.resultText.clear()		
 
+	def uiScrollBarValueChanged(self):
+		print('* uiScrollBarValueChanged ---------')
+		pos = self.ui.tequilaScrollBar.value()	
+		self.ui.selScrollBarLbl.setText( str(pos) )		
+		
 	def uiIceSliderValueChanged( self):
-		print('------ uiIceSliderValueChanged ---------')
+		print('* uiIceSliderValueChanged ---------')
 		pos = self.ui.iceHorizontalSlider.value()
 		self.ui.selIceSliderLbl.setText( str(pos) )
 		

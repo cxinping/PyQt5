@@ -352,6 +352,19 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="selScrollBarLbl">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>30</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
@@ -452,12 +465,29 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>tequilaScrollBar</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MatrixWin</receiver>
+   <slot>uiScrollBarValueChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>369</x>
+     <y>14</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>uiAccept()</slot>
   <slot>uiReject()</slot>
   <slot>uiClear()</slot>
   <slot>uiIceSliderValueChanged()</slot>
+  <slot>uiScrollBarValueChanged()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="speedButtonGroup"/>

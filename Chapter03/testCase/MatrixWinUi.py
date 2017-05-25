@@ -113,6 +113,10 @@ class Ui_MatrixWin(object):
         self.selIceSliderLbl.setGeometry(QtCore.QRect(590, 120, 51, 21))
         self.selIceSliderLbl.setText("")
         self.selIceSliderLbl.setObjectName("selIceSliderLbl")
+        self.selScrollBarLbl = QtWidgets.QLabel(MatrixWin)
+        self.selScrollBarLbl.setGeometry(QtCore.QRect(590, 30, 51, 21))
+        self.selScrollBarLbl.setText("")
+        self.selScrollBarLbl.setObjectName("selScrollBarLbl")
         self.widget = QtWidgets.QWidget(MatrixWin)
         self.widget.setGeometry(QtCore.QRect(10, 370, 301, 30))
         self.widget.setObjectName("widget")
@@ -134,6 +138,7 @@ class Ui_MatrixWin(object):
         self.cancelBtn.clicked.connect(MatrixWin.uiReject)
         self.clearBtn.clicked.connect(MatrixWin.uiClear)
         self.iceHorizontalSlider.valueChanged['int'].connect(MatrixWin.uiIceSliderValueChanged)
+        self.tequilaScrollBar.valueChanged['int'].connect(MatrixWin.uiScrollBarValueChanged)
         QtCore.QMetaObject.connectSlotsByName(MatrixWin)
 
     def retranslateUi(self, MatrixWin):
