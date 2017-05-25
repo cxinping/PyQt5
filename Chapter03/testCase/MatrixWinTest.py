@@ -120,7 +120,7 @@ class MatrixWinTest(unittest.TestCase):
 	# 测试用例-测试滚动条
 	def test_tripleSecSpinBox(self):
 		print('*** testCase test_tripleSecSpinBox begin ***')
-		'''测试修改spinBox部件
+		'''测试修改spinBox部件的最大最小值
 			测试它的最小和最大值作为读者的练习。
         '''		
 		self.setFormToZero()
@@ -142,15 +142,28 @@ class MatrixWinTest(unittest.TestCase):
 		self.assertEqual(self.form.getJiggers(), 2)		
 		print('*** testCase test_tripleSecSpinBox end ***')
 
-	# 测试用例-测试单行文本框		
+	# 测试用例-测试柠檬汁单行文本框		
 	def test_limeJuiceLineEdit(self):
 		print('*** testCase test_limeJuiceLineEdit begin ***')
-		
+		'''测试修改juice line edit部件的最大最小值
+		测试它的最小和最大值作为读者的练习。
+		'''
 		self.setFormToZero()		
+        # Clear and then type "3.5" into the lineEdit widget
+		self.form.ui.limeJuiceLineEdit.clear()		
+		QTest.keyClicks(self.form.ui.limeJuiceLineEdit, "3.5")
 		
-		
+        # Push OK with the left mouse button
+		okWidget = self.form.ui.buttonBox.button(self.form.ui.buttonBox.Ok)
+		QTest.mouseClick(okWidget, Qt.LeftButton)
+		self.assertEqual(self.form.getJiggers() , 3.5)
 		print('*** testCase test_limeJuiceLineEdit end ***')
-		
+
+
+	def test_iceHorizontalSlider(self):
+		print('*** testCase test_iceHorizontalSlider begin ***')		
+
+		print('*** testCase test_iceHorizontalSlider end ***')
 		
 if __name__ == "__main__":  
 	# 默认测试所有的测试用例
@@ -161,8 +174,8 @@ if __name__ == "__main__":
 	#suite.addTest(MatrixWinTest("test_defaults"))
 	#suite.addTest(MatrixWinTest("test_moveScrollBar"))
 	#suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
-	suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
-
+	#suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
+	suite.addTest(MatrixWinTest("test_iceHorizontalSlider"))
 	
 	runner = unittest.TextTestRunner()
 	runner.run(suite)
