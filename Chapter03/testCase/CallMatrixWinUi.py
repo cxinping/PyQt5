@@ -10,18 +10,19 @@ class CallMatrixWinUi(QWidget ):
 		self.ui = Ui_MatrixWin()
 		self.ui.setupUi(self)
 
-	# 获得一量杯的酒
+	# 获得一量杯酒的重量，单位：克
 	def getJiggers(self):
-	   # Return the total volume of the margaritas in units of jiggers.
-	   # One jigger is 0.0444 liters.
-	
+	    # Return the total volume of the margaritas in units of jiggers.
+	    # One jigger is 0.0444 liters.
+	    # 返回玛格丽特就得总容量，以jigger量酒器为单位。
+		# 一个量酒器可以容纳0.0444升的酒。
 		jiggersTequila = self.ui.tequilaScrollBar.value()
 		jiggersTripleSec = self.ui.tripleSecSpinBox.value()
 		jiggersLimeJuice = float(self.ui.limeJuiceLineEdit.text())
 		jiggersIce = self.ui.iceHorizontalSlider.value()
 		return jiggersTequila + jiggersTripleSec + jiggersLimeJuice + jiggersIce
 
-	# 获得升
+	# 获得一量杯酒的体积，单位：升
 	def getLiters(self):
 		'''Return the total volume of the margaritas in liters.'''
 		return 0.0444 * self.getJiggers()
@@ -38,13 +39,24 @@ class CallMatrixWinUi(QWidget ):
 		'''Execute the command in response to the OK button.'''
 		print('The volume of drinks is {0} liters ({1} jiggers).'.format(self.getLiters() , self.getJiggers() ))
 		print('The blender is running at speed "{0}"'.format(self.getSpeedName() ))
-		#self.close()
+		msg1 = '饮料量为： {0} 升 ({1} 克)。'.format(self.getLiters() , self.getJiggers() )
+		msg2 = '调酒器的搅拌速度是： "{0}"。'.format(self.getSpeedName() )
+		self.ui.resultText.clear()	
+		self.ui.resultText.append(msg1)
+		self.ui.resultText.append(msg2)
+				
 
 	# 点击cancel按钮，关闭窗口	
 	def uiReject(self):
 		print('* CallMatrixWinUi reject ')
 		'''Cancel.'''
 		self.close()
+
+	# 点击clear按钮，清空操作结果			
+	def uiClear(self):
+		print('* CallMatrixWinUi uiClear ')
+		self.ui.resultText.clear()		
+		
 		
 if __name__=="__main__":  
 	app = QApplication(sys.argv)  
