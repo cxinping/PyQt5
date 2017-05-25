@@ -123,6 +123,7 @@ class MatrixWinTest(unittest.TestCase):
 	# 测试用例-测试滚动条
 	def test_tripleSecSpinBox(self):
 		print('*** testCase test_tripleSecSpinBox begin ***')
+		self.form.setWindowTitle('开始测试用例 test_tripleSecSpinBox ')	
 		'''测试修改spinBox部件的最大最小值
 			测试它的最小和最大值作为读者的练习。
         '''		
@@ -148,6 +149,7 @@ class MatrixWinTest(unittest.TestCase):
 	# 测试用例-测试柠檬汁单行文本框		
 	def test_limeJuiceLineEdit(self):
 		print('*** testCase test_limeJuiceLineEdit begin ***')
+		self.form.setWindowTitle('开始测试用例 test_limeJuiceLineEdit ')			
 		'''测试修改juice line edit部件的最大最小值
 		测试它的最小和最大值作为读者的练习。
 		'''
@@ -164,7 +166,9 @@ class MatrixWinTest(unittest.TestCase):
 
 	# 测试用例-测试iceHorizontalSlider
 	def test_iceHorizontalSlider(self):
-		print('*** testCase test_iceHorizontalSlider begin ***')		
+		print('*** testCase test_iceHorizontalSlider begin ***')	
+		self.form.setWindowTitle('开始测试用例 test_iceHorizontalSlider ')	
+				
 		'''测试ice slider.
 		测试它的最小和最大值作为读者的练习。
 		'''
@@ -180,6 +184,8 @@ class MatrixWinTest(unittest.TestCase):
 	# 测试用例- 
 	def test_liters(self):
 		print('*** testCase test_liters begin ***')		
+		self.form.setWindowTitle('开始测试用例 test_liters ')	
+		
 		self.setFormToZero()
 		self.assertAlmostEqual(self.form.getLiters() , 0.0)
 		self.form.ui.iceHorizontalSlider.setValue(1 )
@@ -233,9 +239,9 @@ def runUnitTest3( ):
 	now = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))	
 	print( now )
 	testunit = unittest.TestSuite()
-	testunit.addTest(MatrixWinTest("test_defaults"))
-	testunit.addTest(MatrixWinTest("test_moveScrollBar"))
-	#testunit.addTest(MatrixWinTest("test_tripleSecSpinBox"))
+	#testunit.addTest(MatrixWinTest("test_defaults"))
+	#testunit.addTest(MatrixWinTest("test_moveScrollBar"))
+	testunit.addTest(MatrixWinTest("test_tripleSecSpinBox"))
 	#testunit.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
 	#testunit.addTest(MatrixWinTest("test_iceHorizontalSlider"))
 	#testunit.addTest(MatrixWinTest("test_liters"))
