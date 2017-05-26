@@ -1,0 +1,81 @@
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 35.369s
+
+OK
+*** setUp ***
+*** testCase test_blenderSpeedButtons begin ***
+*** testCase test_blenderSpeedButtons end ***
+*** tearDown ***
+*  关闭窗口
+*** setUp ***
+*** testCase test_defaults begin ***
+*** speedName=&Karate Chop
+* CallMatrixWinUi accept 
+The volume of drinks is 1.5984 liters (36.0 jiggers).
+The blender is running at speed "&Karate Chop"
+*** testCase test_defaults end ***
+*** tearDown ***
+*  关闭窗口
+*** setUp ***
+*** testCase test_iceHorizontalSlider begin ***
+* setFormToZero *
+* uiScrollBarValueChanged ---------
+* uiIceSliderValueChanged ---------
+* uiIceSliderValueChanged ---------
+* CallMatrixWinUi accept 
+The volume of drinks is 0.1776 liters (4.0 jiggers).
+The blender is running at speed "&Karate Chop"
+*** testCase test_iceHorizontalSlider end ***
+*** tearDown ***
+*  关闭窗口
+*** setUp ***
+*** testCase test_limeJuiceLineEdit begin ***
+* setFormToZero *
+* uiScrollBarValueChanged ---------
+* uiIceSliderValueChanged ---------
+* CallMatrixWinUi accept 
+The volume of drinks is 0.1554 liters (3.5 jiggers).
+The blender is running at speed "&Karate Chop"
+*** testCase test_limeJuiceLineEdit end ***
+*** tearDown ***
+*  关闭窗口
+*** setUp ***
+*** testCase test_liters begin ***
+* setFormToZero *
+* uiScrollBarValueChanged ---------
+* uiIceSliderValueChanged ---------
+* uiIceSliderValueChanged ---------
+* uiIceSliderValueChanged ---------
+*** testCase test_liters end ***
+*** tearDown ***
+*  关闭窗口
+*** setUp ***
+*** testCase test_moveScrollBar begin ***
+* setFormToZero *
+* uiScrollBarValueChanged ---------
+* uiIceSliderValueChanged ---------
+* uiScrollBarValueChanged ---------
+* 当执行self.form.ui.tequilaScrollBar.setValue(12) 后，ui.tequilaScrollBar.value() => 11
+* uiScrollBarValueChanged ---------
+* 当执行self.form.ui.tequilaScrollBar.setValue(-1) 后，ui.tequilaScrollBar.value() => 0
+* uiScrollBarValueChanged ---------
+* CallMatrixWinUi accept 
+The volume of drinks is 0.222 liters (5.0 jiggers).
+The blender is running at speed "&Karate Chop"
+*** testCase test_moveScrollBar end ***
+*** tearDown ***
+*  关闭窗口
+*** setUp ***
+*** testCase test_tripleSecSpinBox begin ***
+* setFormToZero *
+* uiScrollBarValueChanged ---------
+* uiIceSliderValueChanged ---------
+* 当执行self.form.ui.tripleSecSpinBox.setValue(12) 后，ui.tripleSecSpinBox.value() => 11
+* 当执行self.form.ui.tripleSecSpinBox.setValue(-1) 后，ui.tripleSecSpinBox.value() => 0
+* CallMatrixWinUi accept 
+The volume of drinks is 0.0888 liters (2.0 jiggers).
+The blender is running at speed "&Karate Chop"
+*** testCase test_tripleSecSpinBox end ***
+*** tearDown ***
+*  关闭窗口
