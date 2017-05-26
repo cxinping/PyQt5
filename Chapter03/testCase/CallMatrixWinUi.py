@@ -52,8 +52,7 @@ class CallMatrixWinUi(QWidget ):
 		self.ui.resultText.clear()	
 		self.ui.resultText.append(msg1)
 		self.ui.resultText.append(msg2)
-				
-
+				      
 	# 点击cancel按钮，关闭窗口	
 	def uiReject(self):
 		print('* CallMatrixWinUi reject ')
@@ -74,8 +73,7 @@ class CallMatrixWinUi(QWidget ):
 		print('* uiIceSliderValueChanged ---------')
 		pos = self.ui.iceHorizontalSlider.value()
 		self.ui.selIceSliderLbl.setText( str(pos) )
-		
-		
+		          		
 if __name__=="__main__":  
 	app = QApplication(sys.argv)  
 	demo = CallMatrixWinUi()  

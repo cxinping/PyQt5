@@ -11,16 +11,14 @@ import sys
 import unittest
 import HTMLTestRunner
 import time
-from PyQt5.QtWidgets import *
-from PyQt5.QtTest import QTest
-from PyQt5.QtCore import Qt , QThread  ,  pyqtSignal
+#from PyQt5.QtWidgets import *
+#from PyQt5.QtTest import QTest
+#from PyQt5.QtCore import Qt , QThread  ,  pyqtSignal
 
 from MatrixWinTest import MatrixWinTest
 	
 if __name__ == "__main__":  
-	#runUnitTest1()
-    #runUnitTest2()
-	#runUnitTest3()
+
 	
 	now = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))	
 	print( now )
