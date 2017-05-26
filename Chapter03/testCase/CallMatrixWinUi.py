@@ -47,7 +47,7 @@ class CallMatrixWinUi(QWidget ):
 		'''Execute the command in response to the OK button.'''
 		print('The volume of drinks is {0} liters ({1} jiggers).'.format(self.getLiters() , self.getJiggers() ))
 		print('The blender is running at speed "{0}"'.format(self.getSpeedName() ))
-		msg1 = '饮料量为： {0} 升 ({1} 克)。'.format(self.getLiters() , self.getJiggers() )
+		msg1 = '饮料量为： {0} 升 ({1} 个量酒器)。'.format(self.getLiters() , self.getJiggers() )
 		msg2 = '调酒器的搅拌速度是： "{0}"。'.format(self.getSpeedName() )
 		self.ui.resultText.clear()	
 		self.ui.resultText.append(msg1)
