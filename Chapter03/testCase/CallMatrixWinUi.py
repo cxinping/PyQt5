@@ -9,7 +9,15 @@ class CallMatrixWinUi(QWidget ):
 		super(CallMatrixWinUi, self).__init__(parent)
 		self.ui = Ui_MatrixWin()
 		self.ui.setupUi(self)
-
+		self.initUi()
+		
+	# 初始化窗口	
+	def initUi(self):
+		scrollVal = self.ui.tequilaScrollBar.value()	
+		self.ui.selScrollBarLbl.setText( str(scrollVal) )	
+		sliderVal = self.ui.iceHorizontalSlider.value()
+		self.ui.selIceSliderLbl.setText( str(sliderVal) )		
+		
 	# 获得一量杯酒的重量，单位：克
 	def getJiggers(self):
 	    # Return the total volume of the margaritas in units of jiggers.
