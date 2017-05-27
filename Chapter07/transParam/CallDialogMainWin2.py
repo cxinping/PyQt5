@@ -37,7 +37,7 @@ class WinForm(QWidget):
 
 	def openDialog(self):
 		dialog = DateDialog(self)			
-		dialog.datetime.dateTimeChanged.connect( self.getDate  )
+		dialog.datetime.dateTimeChanged.connect( self.getDate )
 		dialog.Signal_OneParameter.connect(self.getStrDate)		
 		dialog.show()
 
