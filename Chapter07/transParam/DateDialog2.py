@@ -16,20 +16,20 @@ class DateDialog(QDialog):
 	 
 	def __init__(self, parent = None):
 		super(DateDialog, self).__init__(parent)
-		self.setWindowTitle('DateDialog') 	
+		self.setWindowTitle('对话框关闭时返回值给主窗口例子') 	
 		
+		# 在布局中添加部件
 		layout = QVBoxLayout(self)
-
 		self.datetime = QDateTimeEdit(self)
 		self.datetime.setCalendarPopup(True)
 		self.datetime.setDateTime(QDateTime.currentDateTime())
 		self.lineedit = QLineEdit(self)
-		self.btn = QPushButton('emit signal')
+		self.btn = QPushButton('发射信号')
 		layout.addWidget(self.lineedit)
 		layout.addWidget(self.datetime)
 		layout.addWidget(self.btn)
 
-		# OK and Cancel buttons
+		# 使用两个button(ok和cancel)分别连接accept()和reject()槽函数
 		buttons = QDialogButtonBox(
 			QDialogButtonBox.Ok | QDialogButtonBox.Cancel,
 			Qt.Horizontal, self)
@@ -39,21 +39,10 @@ class DateDialog(QDialog):
 
 		self.datetime.dateTimeChanged.connect( self.showDate )
 		self.datetime.dateTimeChanged.connect( self.showDate )
-		self.btn.clicked.connect( self.myfunc )
-		
-		buttons.accepted.connect( self.clickOkBtn )
-		buttons.rejected.connect( self.clickCancelBtn )		
-
-	def clickOkBtn(self):
-		print('--- clickOkBtn ---')
-		self.Signal_OneParameter.emit('ok')
-		
-	def clickCancelBtn(self):
-		print('--- clickCancelBtn ---')
-		self.Signal_OneParameter.emit('cancel')
-		
+		self.btn.clicked.connect( self.handleTimeFun )
+				
 	@pyqtSlot()
-	def myfunc(self):
+	def handleTimeFun(self):
 		self.Signal_OneParameter.emit((self.datetime.dateTime()).toString())
 		self.lineedit.setText(str((self.datetime.dateTime()).toString()))
     
@@ -62,11 +51,11 @@ class DateDialog(QDialog):
 		self.lineedit.setText(datetime.toString())
 		self.update()
 		    
-	# get current date and time from the dialog
+	# 从对话框中获取当前日期和时间
 	def dateTime(self):
 		return self.datetime.dateTime()
 		
-    # static method to create the dialog and return (date, time, accepted)
+    # 静态方法创建对话框并返回 (date, time, accepted)
 	@staticmethod
 	def getDateTime(parent = None):
 		dialog = DateDialog(parent)
