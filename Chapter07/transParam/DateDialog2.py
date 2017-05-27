@@ -38,7 +38,6 @@ class DateDialog(QDialog):
 		layout.addWidget(buttons)
 
 		self.datetime.dateTimeChanged.connect( self.showDate )
-		self.datetime.dateTimeChanged.connect( self.showDate )
 		self.btn.clicked.connect( self.handleTimeFun )
 				
 	@pyqtSlot()
