@@ -17,6 +17,9 @@ class CustWin( QWidget):
 	
 	# 声明带一个字典类型参数的信号
 	signal2 = pyqtSignal(dict)
+
+	# 声明带一个元祖类型参数的信号
+	signal3 = pyqtSignal(tuple)
 	
 	def __init__(self, parent=None):  
 		super(CustWin, self).__init__(parent)  
@@ -33,6 +36,7 @@ class CustWin( QWidget):
 	def emitDictSign(self):  
 		self.signal1.emit([1,2,3,4])  
 		self.signal2.emit({"monday":1, "tuesday":2, "Wednesday":3})  
+		self.signal3.emit( (1,'2',('learn', 'python') ))  
 	
 
 class MainWin( QWidget):  
@@ -45,6 +49,7 @@ class MainWin( QWidget):
 		self.setLayout(mainLayout)   
 		widget.signal1.connect(self.displayDict)  
 		widget.signal2.connect(self.displayList)  
+		widget.signal3.connect(self.displayTuple) 
 		
 	def displayDict(self, data):  
 		print( '--- displayDict ---' ) 
@@ -54,7 +59,10 @@ class MainWin( QWidget):
 		print( '--- displayList ---' ) 
 		print( data)  
 
-				
+	def displayTuple(self,data):
+		print( '--- displayTuple ---' ) 
+		print( data)  
+		
 if __name__ == '__main__':   
 	app = QApplication(sys.argv)  
 	win = MainWin()  
