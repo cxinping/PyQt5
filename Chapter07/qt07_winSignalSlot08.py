@@ -36,8 +36,7 @@ class CustWin( QWidget):
 		self.signal1.emit([1,2,3,4])  
 		self.signal2.emit({"monday":1, "tuesday":2, "Wednesday":3})  
 		self.signal3.emit( (1,'2',('learn', 'python') ))  
-	
-
+	  
 class MainWin( QWidget):  
 	def __init__(self, parent=None):  
 		super(MainWin, self).__init__(parent)
