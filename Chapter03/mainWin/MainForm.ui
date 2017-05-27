@@ -50,7 +50,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionAddWinAction"/>
+   <addaction name="addWinAction"/>
   </widget>
   <action name="fileOpenAction">
    <property name="text">
@@ -76,7 +76,7 @@
     <string>Alt+C</string>
    </property>
   </action>
-  <action name="actionAddWinAction">
+  <action name="addWinAction">
    <property name="text">
     <string>添加窗体</string>
    </property>
