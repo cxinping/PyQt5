@@ -16,15 +16,14 @@ class DateDialog(QDialog):
 		super(DateDialog, self).__init__(parent)
 		self.setWindowTitle('DateDialog') 	
 
+		# 在布局中添加部件
 		layout = QVBoxLayout(self)
-
-		# nice widget for editing the date
 		self.datetime = QDateTimeEdit(self)
 		self.datetime.setCalendarPopup(True)
 		self.datetime.setDateTime(QDateTime.currentDateTime())
 		layout.addWidget(self.datetime)
 
-		# OK and Cancel buttons
+		# 使用两个button(ok和cancel)分别连接accept()和reject()槽函数
 		buttons = QDialogButtonBox(
 		QDialogButtonBox.Ok | QDialogButtonBox.Cancel,
 		Qt.Horizontal, self)
@@ -32,11 +31,11 @@ class DateDialog(QDialog):
 		buttons.rejected.connect(self.reject)
 		layout.addWidget(buttons)
 
-	# get current date and time from the dialog
+	# 从对话框中获取当前日期和时间
 	def dateTime(self):
 		return self.datetime.dateTime()
 
-	# static method to create the dialog and return (date, time, accepted)
+	# 静态方法创建对话框并返回 (date, time, accepted)
 	@staticmethod
 	def getDateTime(parent = None):
 		dialog = DateDialog(parent)
