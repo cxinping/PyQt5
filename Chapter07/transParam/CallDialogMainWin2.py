@@ -17,7 +17,7 @@ class WinForm(QWidget):
 	
 	def __init__(self, parent=None):  
 		super(WinForm, self).__init__(parent)
-		self.resize(500, 100)
+		self.resize(500, 50)
 		self.setWindowTitle('对话框关闭时返回值给主窗口例子') 		
 
 		self.open_btn = QPushButton('OPEN')
