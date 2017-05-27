@@ -31,8 +31,7 @@ class WinForm(QWidget):
 		gridLayout.addWidget(self.lineEdit )
 		gridLayout.addWidget( self.button1 )
 		gridLayout.addWidget( self.button2 )
-		self.setLayout(gridLayout)
-        
+		self.setLayout(gridLayout)       
 	    		  
 	def onButton1Click(self ):          
 		dialog = DateDialog(self)
@@ -52,8 +51,7 @@ class WinForm(QWidget):
 		print('date=%s' %   str(date) )  	
 		print('time=%s' %  str(time ) )  	
 		print('result=%s' %  result )  			
-		#dialog.destroy()		
-		
+				
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
 	form = WinForm()  
