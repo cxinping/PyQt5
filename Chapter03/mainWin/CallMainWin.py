@@ -3,15 +3,11 @@
 import sys 	
 from PyQt5.QtWidgets import QApplication , QMainWindow, QWidget , QFileDialog 
 from MainForm import Ui_MainWindow  
-from ChildrenForm import Ui_ChildrenForm  
 
 class MainForm( QMainWindow , Ui_MainWindow):  
 	def __init__(self):  
 		super(MainForm,self).__init__()  
-		self.setupUi(self)  
-		
-		# self.child = children()生成子窗口实例self.child  
-		self.child = ChildrenForm()                          
+		self.setupUi(self) 
 		# 菜单的点击事件，当点击关闭菜单时连接槽函数 close()     
 		self.fileCloseAction.triggered.connect(self.close)  
 		# 菜单的点击事件，当点击打开菜单时连接槽函数 openMsg()     
