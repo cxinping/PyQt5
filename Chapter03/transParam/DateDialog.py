@@ -15,6 +15,7 @@ from PyQt5.QtWidgets import *
 class DateDialog(QDialog):
 	def __init__(self, parent = None):
 		super(DateDialog, self).__init__(parent)
+		self.setWindowTitle('DateDialog') 	
 
 		layout = QVBoxLayout(self)
 

@@ -22,11 +22,16 @@ class WinForm(QWidget):
 
 		self.open_btn = QPushButton('OPEN')
 		self.le_btn = QLineEdit(self)
-		self.le1_btn = QLineEdit(self)
-		self.le2_btn = QLineEdit(self)
-		self.le3_btn = QLineEdit(self)
+		self.le1_btn = QLineEdit(self )
+		self.le2_btn = QLineEdit(self )
+		self.le3_btn = QLineEdit(self )
 		self.open_btn.clicked.connect( self.openDialog)
 
+		self.le_btn.setText('le_btn') 		
+		self.le1_btn.setText('le1_btn') 	
+		self.le2_btn.setText('le2_btn') 	
+		self.le3_btn.setText('le3_btn') 	
+		
 		grid = QGridLayout()
 		grid.addWidget(self.le_btn)
 		grid.addWidget(self.le1_btn)
@@ -41,7 +46,9 @@ class WinForm(QWidget):
 		#self.connect(dialog,SIGNAL('sendDate(QDateTime)'),self,SLOT('copyDate(QDateTime)'))
 		#self.connect(dialog.datetime,SIGNAL('dateTimeChanged(QDateTime)'),self,SLOT('getDate(QDateTime)'))
 		#self.connect(dialog,SIGNAL('Signal_OneParameter_Overload(str)'),self,SLOT('getStrDate(str)'))
-		dialog.Signal_OneParameter.connect(self.getStrDate)
+		
+		dialog.datetime.dateTimeChanged.connect( self.getDate  )
+		#dialog.Signal_OneParameter.connect(self.getStrDate)
 		
 		dialog.show()
 
@@ -55,6 +62,7 @@ class WinForm(QWidget):
 
 	@pyqtSlot(QDateTime)
 	def getDate(self,date):
+		print('--- getDate ---')
 		self.le2_btn.setText(date.toString())
 		
 	@pyqtSlot(QDateTime)

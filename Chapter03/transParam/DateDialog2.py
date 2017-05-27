@@ -17,7 +17,8 @@ class DateDialog(QDialog):
 	 
 	def __init__(self, parent = None):
 		super(DateDialog, self).__init__(parent)
-
+		self.setWindowTitle('DateDialog') 	
+		
 		layout = QVBoxLayout(self)
 
 		self.datetime = QDateTimeEdit(self)
@@ -37,8 +38,8 @@ class DateDialog(QDialog):
 		buttons.rejected.connect(self.reject)
 		layout.addWidget(buttons)
 
-		self.datetime.dateTimeChanged.connect( lambda: self.showDate(QDateTime) )
-		#self.datetime.dateTimeChanged.connect( lambda: sendDate(QDateTime) )
+		self.datetime.dateTimeChanged.connect( self.showDate )
+		self.datetime.dateTimeChanged.connect( self.showDate )
 		self.btn.clicked.connect( self.myfunc )
 		
 		buttons.accepted.connect( self.clickOkBtn )
@@ -61,8 +62,7 @@ class DateDialog(QDialog):
 	def showDate(self,datetime):
 		self.lineedit.setText(datetime.toString())
 		self.update()
-		#print '12345'
-    
+		    
 	# get current date and time from the dialog
 	def dateTime(self):
 		return self.datetime.dateTime()
