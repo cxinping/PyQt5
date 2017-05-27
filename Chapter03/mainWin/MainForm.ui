@@ -57,7 +57,7 @@
     <string>打开</string>
    </property>
    <property name="shortcut">
-    <string>Alt+S</string>
+    <string>Alt+O</string>
    </property>
   </action>
   <action name="fileNewAction">

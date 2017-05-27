@@ -54,7 +54,7 @@ class Ui_MainWindow(object):
         self.menu_E.setTitle(_translate("MainWindow", "编辑(&E)"))
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
         self.fileOpenAction.setText(_translate("MainWindow", "打开"))
-        self.fileOpenAction.setShortcut(_translate("MainWindow", "Alt+S"))
+        self.fileOpenAction.setShortcut(_translate("MainWindow", "Alt+O"))
         self.fileNewAction.setText(_translate("MainWindow", "新建"))
         self.fileNewAction.setShortcut(_translate("MainWindow", "Alt+N"))
         self.fileCloseAction.setText(_translate("MainWindow", "关闭"))
