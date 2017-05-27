@@ -17,30 +17,28 @@ class WinForm(QWidget):
 	
 	def __init__(self, parent=None):  
 		super(WinForm, self).__init__(parent)
-		self.resize(700, 200)
+		self.resize(500, 100)
 		self.setWindowTitle('对话框关闭时返回值给主窗口例子') 		
 
+		self.lineEdit = QLineEdit(self)
 		self.button1 = QPushButton('弹出对话框1')  		
 		self.button1.clicked.connect(self.onButton1Click) 
 
 		self.button2 = QPushButton('弹出对话框2')  		
 		self.button2.clicked.connect(self.onButton2Click ) 
-		
-		wwg = QWidget(self)
-		# 全局布局
-		wl = QHBoxLayout(wwg)
-		hlayout =  QHBoxLayout()
-		hlayout.addWidget( self.button1 )
-		hlayout.addWidget( self.button2 )
 
-		# 这里向局部布局内添加部件,将他加到全局布局
-		wl.addLayout(hlayout)  
+		gridLayout = QGridLayout()
+		gridLayout.addWidget(self.lineEdit )
+		gridLayout.addWidget( self.button1 )
+		gridLayout.addWidget( self.button2 )
+		self.setLayout(gridLayout)
+        
 	    		  
 	def onButton1Click(self ):          
 		dialog = DateDialog(self)
 		result = dialog.exec_()
 		date = dialog.dateTime()
-		
+		self.lineEdit.setText( date.date().toString() )
 		print('\n日期对话框的返回值'  )  	
 		print('date=%s' %   str(date.date()) )  	
 		print('time=%s' %  str(date.time()) )  	
@@ -49,7 +47,7 @@ class WinForm(QWidget):
 
 	def onButton2Click(self ):          
 		date, time, result = DateDialog.getDateTime()
-		
+		self.lineEdit.setText( date.toString() )		
 		print('\n日期对话框的返回值'  )  	
 		print('date=%s' %   str(date) )  	
 		print('time=%s' %  str(time ) )  	
