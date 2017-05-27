@@ -20,6 +20,8 @@ class Ui_MainWindow(object):
         self.menubar.setObjectName("menubar")
         self.menu = QtWidgets.QMenu(self.menubar)
         self.menu.setObjectName("menu")
+        self.menu_E = QtWidgets.QMenu(self.menubar)
+        self.menu_E.setObjectName("menu_E")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -34,6 +36,7 @@ class Ui_MainWindow(object):
         self.menu.addAction(self.fileNewAction)
         self.menu.addAction(self.fileCloseAction)
         self.menubar.addAction(self.menu.menuAction())
+        self.menubar.addAction(self.menu_E.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -41,9 +44,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.menu.setTitle(_translate("MainWindow", "文件"))
+        self.menu.setTitle(_translate("MainWindow", "文件(&F)"))
+        self.menu_E.setTitle(_translate("MainWindow", "编辑(&E)"))
         self.fileOpenAction.setText(_translate("MainWindow", "打开"))
-        self.fileOpenAction.setShortcut(_translate("MainWindow", "Ctrl+Q"))
+        self.fileOpenAction.setShortcut(_translate("MainWindow", "Alt+S"))
         self.fileNewAction.setText(_translate("MainWindow", "新建"))
         self.fileNewAction.setShortcut(_translate("MainWindow", "Alt+N"))
         self.fileCloseAction.setText(_translate("MainWindow", "关闭"))
