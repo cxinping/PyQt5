@@ -13,21 +13,12 @@ import time
 from MatrixWinTest import MatrixWinTest
 	
 if __name__ == "__main__":  
-
-	
+    
 	now = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))	
 	print( now )
 	testunit = unittest.TestSuite()
 	testunit.addTest(unittest.makeSuite(MatrixWinTest ))
-	
-	#testunit.addTest(MatrixWinTest("test_defaults"))
-	#testunit.addTest(MatrixWinTest("test_moveScrollBar"))
-	#testunit.addTest(MatrixWinTest("test_tripleSecSpinBox"))
-	#testunit.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
-	#testunit.addTest(MatrixWinTest("test_iceHorizontalSlider"))
-	#testunit.addTest(MatrixWinTest("test_liters"))
-	#testunit.addTest(MatrixWinTest("test_blenderSpeedButtons"))  
-    
+	    
 	htmlFile = ".\\"+now+"HTMLtemplate.html"
 	print( 'htmlFile='+ htmlFile)
 	fp = open(htmlFile,'wb')
