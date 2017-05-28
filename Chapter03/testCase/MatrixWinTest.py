@@ -68,24 +68,20 @@ class MatrixWinTest(unittest.TestCase):
 		
 	# 关闭窗口
 	def closeWindow(self):
-		#time.sleep(5)
 		print( '*  关闭窗口')
-		#qApp = QApplication.instance()
-		#qApp.quit()		
 		self.app.quit()
 		
 	# 测试用例-在默认状态下的测试GUI	
 	def test_defaults(self):
 		'''测试GUI处于默认状态'''
 		print('*** testCase test_defaults begin ***')
-		self.form.setWindowTitle('开始测试用例 test_defaults ')	
+		self.form.setWindowTitle('开始测试用例 test_defaults ')
 				
 		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 8)
 		self.assertEqual(self.form.ui.tripleSecSpinBox.value(), 4)
 		self.assertEqual(self.form.ui.limeJuiceLineEdit.text(), "12.0")
 		self.assertEqual(self.form.ui.iceHorizontalSlider.value(), 12)
-		self.assertEqual(self.form.ui.speedButtonGroup.checkedButton().text(), "&Karate Chop")
-		
+		self.assertEqual(self.form.ui.speedButtonGroup.checkedButton().text(), "&Karate Chop") 		
 		print('*** speedName='+ self.form.getSpeedName() )
 	
 		# 用鼠标左键按OK		
@@ -104,17 +100,17 @@ class MatrixWinTest(unittest.TestCase):
 		self.form.setWindowTitle('开始测试用例 test_moveScrollBar ')	
 		self.setFormToZero()
 		
-        # 测试将龙舌兰就的滚动条的值设定为 12 ，ui中它实际的最大值为 11
+        # 测试将龙舌兰酒的滚动条的值设定为 12 ，ui中它实际的最大值为 11
 		self.form.ui.tequilaScrollBar.setValue( 12 )
 		print('* 当执行self.form.ui.tequilaScrollBar.setValue(12) 后，ui.tequilaScrollBar.value() => ' + str( self.form.ui.tequilaScrollBar.value() ) )
 		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 11 )
 		
-        # 测试将龙舌兰就的滚动条的值设定为 -1 ，ui中它实际的最小值为 0
+        # 测试将龙舌兰酒的滚动条的值设定为 -1 ，ui中它实际的最小值为 0
 		self.form.ui.tequilaScrollBar.setValue(-1)
 		print('* 当执行self.form.ui.tequilaScrollBar.setValue(-1) 后，ui.tequilaScrollBar.value() => ' + str( self.form.ui.tequilaScrollBar.value() ) )
 		self.assertEqual(self.form.ui.tequilaScrollBar.value(), 0)
 		
-		# 重新将将龙舌兰就的滚动条的值设定为 5
+		# 重新将将龙舌兰酒的滚动条的值设定为 5
 		self.form.ui.tequilaScrollBar.setValue(5)
 				
         # 用鼠标左键按OK按钮
@@ -233,12 +229,12 @@ def runUnitTest2(  ):
 	# 按照指定顺序执行测试用例
 	suite = unittest.TestSuite()
 	suite.addTest(MatrixWinTest("test_defaults"))
-	suite.addTest(MatrixWinTest("test_moveScrollBar"))
-	suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
-	suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
-	suite.addTest(MatrixWinTest("test_iceHorizontalSlider"))
-	suite.addTest(MatrixWinTest("test_liters"))
-	suite.addTest(MatrixWinTest("test_blenderSpeedButtons"))    	
+	#suite.addTest(MatrixWinTest("test_moveScrollBar"))
+	#suite.addTest(MatrixWinTest("test_tripleSecSpinBox"))
+	#suite.addTest(MatrixWinTest("test_limeJuiceLineEdit"))
+	#suite.addTest(MatrixWinTest("test_iceHorizontalSlider"))
+	#suite.addTest(MatrixWinTest("test_liters"))
+	#suite.addTest(MatrixWinTest("test_blenderSpeedButtons"))    	
 	runner = unittest.TextTestRunner()
 	runner.run(suite)
 	
