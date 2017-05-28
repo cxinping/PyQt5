@@ -11,10 +11,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ChildrenForm(object):
     def setupUi(self, ChildrenForm):
         ChildrenForm.setObjectName("ChildrenForm")
-        ChildrenForm.resize(444, 351)
+        ChildrenForm.resize(435, 339)
         ChildrenForm.setStyleSheet("")
         self.textEdit = QtWidgets.QTextEdit(ChildrenForm)
-        self.textEdit.setGeometry(QtCore.QRect(-7, -4, 451, 361))
+        self.textEdit.setGeometry(QtCore.QRect(0, 0, 471, 391))
         self.textEdit.setObjectName("textEdit")
 
         self.retranslateUi(ChildrenForm)
