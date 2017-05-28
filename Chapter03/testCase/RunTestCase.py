@@ -2,19 +2,14 @@
 
 """
     【简介】
-    自动画测试用例
+    自动化测试用例
 
 
 """
-
-import sys
+ 
 import unittest
 import HTMLTestRunner
-import time
-#from PyQt5.QtWidgets import *
-#from PyQt5.QtTest import QTest
-#from PyQt5.QtCore import Qt , QThread  ,  pyqtSignal
-
+import time   
 from MatrixWinTest import MatrixWinTest
 	
 if __name__ == "__main__":  
