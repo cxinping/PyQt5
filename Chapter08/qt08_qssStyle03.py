@@ -21,8 +21,8 @@ class WindowDemo(QWidget):
 		combo.addItem('Ubuntu')
 		combo.addItem('Red Hat')
 		combo.move(50,50)  	
-		self.setGeometry(250,200,350,250)
-		self.setWindowTitle('QComboBox')
+		self.setGeometry(250,200,320,150)
+		self.setWindowTitle('QComboBox样式')
   
 if __name__ == "__main__":  
 	app = QApplication(sys.argv)  
