@@ -70,8 +70,10 @@ class Winform(QWidget):
 
 	def mouseReleaseEvent( self, event):
 		print('---- 000000000 mouseReleaseEvent ' + str( self.isDrawing))
+		print('---- 11111111111 event.buttons() ' + str( event.buttons()) )		
+		print('---- 2222222222 Qt.LeftButton ' + str(Qt.LeftButton ) )		
 		# 鼠标左键释放   
-		if event.buttons() == Qt.LeftButton :
+		if event.button() == Qt.LeftButton :
 			print('---- 111 mouseReleaseEvent ' + str( self.isDrawing))
 			self.endPoint = event.pos()
 			#进行重新绘制
