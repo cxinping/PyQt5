@@ -20,7 +20,7 @@ class Winform(QWidget):
 		self.lastPoint =  QPoint()
 		self.endPoint =  QPoint()
 		# 辅助画布
-		tempPix = QPixmap()
+		self.tempPix = QPixmap()
 		# 标志是否正在绘图
 		self.isDrawing = False    
 		self.initUi()
@@ -41,24 +41,28 @@ class Winform(QWidget):
 
 		# 如果正在绘图，就在辅助画布上绘制
 		if self.isDrawing :
+			print('----11111111 ' + str( self.isDrawing) )
+			
 			# 将以前pix中的内容复制到tempPix中，保证以前的内容不消失
 			self.tempPix = self.pix
 			pp = QPainter( self.tempPix)
 			pp.drawRect(x,y,w,h)
 			painter.drawPixmap(0, 0, self.tempPix)
 		else :
-			pp = QPainter(self.pix)
+			print('----22222 ' + str( self.isDrawing))
+			pp = QPainter(self.pix )
 			pp.drawRect(x, y, w, h)
 			painter.drawPixmap(0, 0, self.pix)
 		
 	def mousePressEvent(self, event) :   
 		#鼠标左键按下   
 		if event.button() == Qt.LeftButton :
+			print('111--- mousePressEvent ---' + str( self.isDrawing))
 			self.lastPoint = event.pos()   
 			self.endPoint = self.lastPoint
 			# 正在绘图
 			self.isDrawing = True 
-	
+			print('222--- mousePressEvent ---' + str( self.isDrawing))			
 	def mouseMoveEvent(self, event):	
 		# 鼠标左键按下的同时移动鼠标
 		if event.buttons() and Qt.LeftButton :
