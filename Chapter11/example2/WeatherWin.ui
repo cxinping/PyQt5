@@ -19,7 +19,7 @@
      <x>10</x>
      <y>10</y>
      <width>451</width>
-     <height>271</height>
+     <height>251</height>
     </rect>
    </property>
    <property name="title">
@@ -50,11 +50,11 @@
      </property>
     </item>
    </widget>
-   <widget class="QTextEdit" name="rstEdit">
+   <widget class="QTextEdit" name="resultText">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>80</y>
+      <y>70</y>
       <width>411</width>
       <height>171</height>
      </rect>
@@ -102,5 +102,42 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>clearBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>clearResult()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>363</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>okButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>queryWeather()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>313</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>64</x>
+     <y>286</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>clearResult()</slot>
+  <slot>queryWeather()</slot>
+ </slots>
 </ui>

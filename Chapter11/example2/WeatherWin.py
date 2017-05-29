@@ -13,7 +13,7 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(473, 347)
         self.groupBox = QtWidgets.QGroupBox(Form)
-        self.groupBox.setGeometry(QtCore.QRect(10, 10, 451, 271))
+        self.groupBox.setGeometry(QtCore.QRect(10, 10, 451, 251))
         self.groupBox.setObjectName("groupBox")
         self.weatherComboBox = QtWidgets.QComboBox(self.groupBox)
         self.weatherComboBox.setGeometry(QtCore.QRect(110, 40, 221, 21))
@@ -21,9 +21,9 @@ class Ui_Form(object):
         self.weatherComboBox.addItem("")
         self.weatherComboBox.addItem("")
         self.weatherComboBox.addItem("")
-        self.rstEdit = QtWidgets.QTextEdit(self.groupBox)
-        self.rstEdit.setGeometry(QtCore.QRect(20, 80, 411, 171))
-        self.rstEdit.setObjectName("rstEdit")
+        self.resultText = QtWidgets.QTextEdit(self.groupBox)
+        self.resultText.setGeometry(QtCore.QRect(20, 70, 411, 171))
+        self.resultText.setObjectName("resultText")
         self.label = QtWidgets.QLabel(self.groupBox)
         self.label.setGeometry(QtCore.QRect(20, 40, 72, 15))
         self.label.setObjectName("label")
@@ -35,6 +35,8 @@ class Ui_Form(object):
         self.clearBtn.setObjectName("clearBtn")
 
         self.retranslateUi(Form)
+        self.clearBtn.clicked.connect(Form.clearResult)
+        self.okButton.clicked.connect(Form.queryWeather)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
