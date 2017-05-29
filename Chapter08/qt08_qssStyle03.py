@@ -16,6 +16,7 @@ class WindowDemo(QWidget):
 
 	def InitUI(self):                   	
 		combo = QComboBox(self)
+		combo.setObjectName('myQComboBox')
 		combo.addItem('Window')
 		combo.addItem('Ubuntu')
 		combo.addItem('Red Hat')
@@ -27,7 +28,7 @@ if __name__ == "__main__":
 	app = QApplication(sys.argv)  
 	win = WindowDemo()  
 	qssStyle = '''      			  			
-			QComboBox::drop-down { 
+			QComboBox#myQComboBox::drop-down { 
                  image: url( ./images/dropdown.png)
             }
 				
