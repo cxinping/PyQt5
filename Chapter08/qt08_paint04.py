@@ -18,7 +18,7 @@ class ShapeWidget(QWidget):
 		self.i = 1
 		self.mypix()
 		self.timer = QTimer()
-		self.timer.setInterval(500)  # 500秒
+		self.timer.setInterval(500)  # 500毫秒
 		self.timer.timeout.connect(self.timeChange)   
 		self.timer.start()
 
