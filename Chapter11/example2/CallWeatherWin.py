@@ -16,14 +16,16 @@ class MainWindow(QMainWindow ):
 		rep = requests.get('http://www.weather.com.cn/data/sk/101010100.html')
 		rep.encoding = 'utf-8'
 		print( rep.json() ) 
-		print('城市: %s' % rep.json()['weatherinfo']['city'] )
-		print('风向: %s' % rep.json()['weatherinfo']['WD'] )
-		print('温度: %s' % rep.json()['weatherinfo']['temp'] + " 度")
-		print('风力: %s' % rep.json()['weatherinfo']['WS'] )
-		print('湿度: %s' % rep.json()['weatherinfo']['SD'] )
-	
-
-
+		
+		msg1 = '城市: %s' % rep.json()['weatherinfo']['city'] + '\n'
+		msg2 = '风向: %s' % rep.json()['weatherinfo']['WD'] + '\n'
+		msg3 = '温度: %s' % rep.json()['weatherinfo']['temp'] + ' 度' + '\n'
+		msg4 = '风力: %s' % rep.json()['weatherinfo']['WS'] + '\n'
+		msg5 = '湿度: %s' % rep.json()['weatherinfo']['SD'] + '\n'
+		result = msg1 + msg2 + msg3 + msg4 + msg5
+		self.ui.resultText.setText(result)
+		
+		
 	def clearResult(self):
 		print('* clearResult  ')
 		self.ui.resultText.clear()	
