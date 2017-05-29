@@ -50,7 +50,14 @@ class Winform(QWidget):
 			self.endPoint = event.pos()
 			#进行重新绘制
 			self.update()
-        
+
+	def mouseReleaseEvent( self, event):
+		# 鼠标左键释放   
+		if event.buttons() and Qt.LeftButton :
+			self.endPoint = event.pos()
+			#进行重新绘制
+			self.update()
+			
 if __name__ == "__main__":  
 		app = QApplication(sys.argv) 
 		form = Winform()
