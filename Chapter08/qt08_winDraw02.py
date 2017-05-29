@@ -47,7 +47,8 @@ class Winform(QWidget):
 	
 	def mouseMoveEvent(self, event):	
 		# 鼠标左键按下的同时移动鼠标
-		if event.button() == Qt.LeftButton :
+		if event.buttons() == Qt.LeftButton :
+			print('111111')
 			self.endPoint = event.pos()
 			#进行重新绘制
 			self.update()
