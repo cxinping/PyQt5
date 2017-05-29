@@ -13,6 +13,8 @@ class MainWindow(QMainWindow ):
  		
 	def queryWeather(self):
 		print('* queryWeather  ')
+		city = self.ui.weatherComboBox.currentText()
+		print(city )
 		rep = requests.get('http://www.weather.com.cn/data/sk/101010100.html')
 		rep.encoding = 'utf-8'
 		print( rep.json() ) 
