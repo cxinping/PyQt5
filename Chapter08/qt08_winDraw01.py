@@ -23,10 +23,10 @@ class Winform(QWidget):
 		
 	def initUi(self):
 		#窗口大小设置为600*500
-		self.resize(600, 500);   
+		self.resize(600, 500)  
 		# 画布大小为400*400，背景为白色
-		self.pix = QPixmap(400, 400);
-		self.pix.fill(Qt.white);
+		self.pix = QPixmap(400, 400)
+		self.pix.fill(Qt.white)
          
 	def paintEvent(self,event):
 		pp = QPainter( self.pix)
