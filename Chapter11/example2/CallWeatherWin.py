@@ -13,9 +13,10 @@ class MainWindow(QMainWindow ):
  		
 	def queryWeather(self):
 		print('* queryWeather  ')
-		city = self.ui.weatherComboBox.currentText()
-		print(city )
-		rep = requests.get('http://www.weather.com.cn/data/sk/101010100.html')
+		cityName = self.ui.weatherComboBox.currentText()
+		cityCode = self.transCityName(cityName)
+
+		rep = requests.get('http://www.weather.com.cn/data/sk/' + cityCode + '.html')
 		rep.encoding = 'utf-8'
 		print( rep.json() ) 
 		
@@ -27,7 +28,17 @@ class MainWindow(QMainWindow ):
 		result = msg1 + msg2 + msg3 + msg4 + msg5
 		self.ui.resultText.setText(result)
 		
-		
+	def transCityName(self ,cityName):
+		cityCode = ''
+		if cityName == '北京' :
+			cityCode = '101010100'
+		elif cityName == '天津' :
+			cityCode = '101030100'
+		elif cityName == '上海' :
+			cityCode = '101020100'
+			
+		return cityCode
+				
 	def clearResult(self):
 		print('* clearResult  ')
 		self.ui.resultText.clear()	
