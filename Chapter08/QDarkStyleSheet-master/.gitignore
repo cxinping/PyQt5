@@ -1,0 +1,28 @@
+*.pyc
+/style.rcc
+/style_pyside_rc.py
+./.idea
+/.idea/
+/dist/
+/QDarkStyle.egg-info/
+/build/
+__pycache__
+*.tar
+*.tar.*
+*.log
+*.log.*
+*.sig
+pkg/
+src/
+
+# stdeb files
+*.tar.gz
+deb_dist
+/gpg_key
+
+# gedit temp files
+*~
+
+# hackedit project files
+.hackedit
+
