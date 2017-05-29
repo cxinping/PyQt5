@@ -39,6 +39,8 @@ class Winform(QWidget):
 		w = self.endPoint.x() - x
 		h = self.endPoint.y() - y
 
+		print('----000 paintEvent ' + str( self.isDrawing) )
+					
 		# 如果正在绘图，就在辅助画布上绘制
 		if self.isDrawing :
 			print('----111 paintEvent ' + str( self.isDrawing) )
@@ -70,7 +72,7 @@ class Winform(QWidget):
 
 	def mouseReleaseEvent( self, event):
 		print('---- 000000000 mouseReleaseEvent ' + str( self.isDrawing))
-		print('---- 11111111111 event.buttons() ' + str( event.buttons()) )		
+		print('---- 11111111111 event.button() ' + str( event.button()) )		
 		print('---- 2222222222 Qt.LeftButton ' + str(Qt.LeftButton ) )		
 		# 鼠标左键释放   
 		if event.button() == Qt.LeftButton :
