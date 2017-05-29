@@ -2,7 +2,7 @@
  
 """
     【简介】
-    不规则窗体的实现
+    不规则窗体的动画实现
     
     
 """
@@ -59,13 +59,13 @@ class ShapeWidget(QWidget):
 			self.i += 1
 			self.mypix()
 
-    # 每**秒修改paint
+    # 每500毫秒修改paint
 	def timeChange(self):
 		self.i += 1
 		self.mypix()
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    form = ShapeWidget()
-    form.show()
-    app.exec_()
+	app = QApplication(sys.argv)
+	form = ShapeWidget()
+	form.show()
+	sys.exit(app.exec_())
