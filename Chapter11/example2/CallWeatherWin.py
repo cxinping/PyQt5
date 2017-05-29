@@ -12,9 +12,9 @@ class MainWindow(QMainWindow ):
 		self.ui.setupUi(self)
  		
 	def queryWeather(self):
+		print('* queryWeather  ')
 		rep = requests.get('http://www.weather.com.cn/data/sk/101010100.html')
 		rep.encoding = 'utf-8'
-
 		print( rep.json() ) 
 		print('城市: %s' % rep.json()['weatherinfo']['city'] )
 		print('风向: %s' % rep.json()['weatherinfo']['WD'] )
@@ -22,10 +22,10 @@ class MainWindow(QMainWindow ):
 		print('风力: %s' % rep.json()['weatherinfo']['WS'] )
 		print('湿度: %s' % rep.json()['weatherinfo']['SD'] )
 	
-		print('* queryWeather reject ')
+
 
 	def clearResult(self):
-		print('* clearResult reject ')
+		print('* clearResult  ')
 		self.ui.resultText.clear()	
 		
 if __name__=="__main__":  
