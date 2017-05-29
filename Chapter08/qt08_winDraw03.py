@@ -63,7 +63,7 @@ class Winform(QWidget):
 	
 	def mouseMoveEvent(self, event):	
 		# 鼠标左键按下的同时移动鼠标
-		if event.buttons() and Qt.LeftButton :
+		if event.buttons() == Qt.LeftButton :
 			self.endPoint = event.pos()
 			#进行重新绘制
 			self.update()
@@ -71,7 +71,7 @@ class Winform(QWidget):
 	def mouseReleaseEvent( self, event):
 		print('---- 000000000 mouseReleaseEvent ' + str( self.isDrawing))
 		# 鼠标左键释放   
-		if event.buttons() and Qt.LeftButton :
+		if event.buttons() == Qt.LeftButton :
 			print('---- 111 mouseReleaseEvent ' + str( self.isDrawing))
 			self.endPoint = event.pos()
 			#进行重新绘制
