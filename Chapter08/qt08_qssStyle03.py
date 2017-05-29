@@ -28,7 +28,7 @@ if __name__ == "__main__":
 	win = WindowDemo()  
 	qssStyle = '''      			  			
 			QComboBox::drop-down { 
-                 image: url( ./images/drop.png)
+                 image: url( ./images/dropdown.png)
             }
 				
 		'''
