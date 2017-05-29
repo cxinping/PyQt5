@@ -14,11 +14,10 @@ class WindowDemo(QWidget):
 		super().__init__()
 		
 		btn1 = QPushButton(self ) 
-		btn1.setProperty( 'flat' , True ) 
 		btn1.setText('按钮1')
 	
 		btn2 = QPushButton(self )  
-		btn2.setProperty( 'flat' , False )
+		btn2.setProperty( 'name' , 'myBtn' )
 		btn2.setText('按钮2')	
 		
 		vbox=QVBoxLayout()
@@ -31,7 +30,7 @@ if __name__ == "__main__":
 	app = QApplication(sys.argv)  
 	win = WindowDemo()  
 	qssStyle = '''      			  			
-			QPushButton[flat="false"] { 
+			QPushButton[name="myBtn"] { 
 				background-color: red 				
 			}
 				
