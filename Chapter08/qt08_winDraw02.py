@@ -15,7 +15,7 @@ from PyQt5.QtCore import Qt , QPoint
 class Winform(QWidget):
 	def __init__(self,parent=None):
 		super(Winform,self).__init__(parent)
-		self.setWindowTitle("paintEvent设置背景颜色") 
+		self.setWindowTitle("双缓冲绘图例子") 
 		self.pix =  QPixmap()
 		self.lastPoint =  QPoint()
 		self.endPoint =  QPoint()
@@ -27,17 +27,17 @@ class Winform(QWidget):
 		# 画布大小为400*400，背景为白色
 		self.pix = QPixmap(400, 400);
 		self.pix.fill(Qt.white);
-
          
 	def paintEvent(self,event):
-		pp = QPainter( self.pix)
-		# 根据鼠标指针前后两个位置绘制直线
-		pp.drawLine( self.lastPoint, self.endPoint)
-		# 让前一个坐标值等于后一个坐标值，
-		# 这样就能实现画出连续的线
-		self.lastPoint = self.endPoint
 		painter = QPainter(self)
-		painter.drawPixmap(0, 0, self.pix)	
+		x = self.lastPoint.x()
+		y = self.lastPoint.y()
+		w = self.endPoint.x() - x
+		h = self.endPoint.y() - y
+
+		pp = QPainter(self.pix)
+		pp.drawRect(x, y, w, h)
+		painter.drawPixmap(0, 0, self.pix);
 
 	def mousePressEvent(self, event) :   
 		#鼠标左键按下   

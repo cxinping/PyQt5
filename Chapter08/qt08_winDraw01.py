@@ -15,7 +15,7 @@ from PyQt5.QtCore import Qt , QPoint
 class Winform(QWidget):
 	def __init__(self,parent=None):
 		super(Winform,self).__init__(parent)
-		self.setWindowTitle("paintEvent设置背景颜色") 
+		self.setWindowTitle("绘图例子") 
 		self.pix =  QPixmap()
 		self.lastPoint =  QPoint()
 		self.endPoint =  QPoint()
@@ -27,7 +27,6 @@ class Winform(QWidget):
 		# 画布大小为400*400，背景为白色
 		self.pix = QPixmap(400, 400);
 		self.pix.fill(Qt.white);
-
          
 	def paintEvent(self,event):
 		pp = QPainter( self.pix)
