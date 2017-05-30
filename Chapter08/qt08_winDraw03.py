@@ -38,51 +38,34 @@ class Winform(QWidget):
 		y = self.lastPoint.y()
 		w = self.endPoint.x() - x
 		h = self.endPoint.y() - y
-
-		print('----000 paintEvent ' + str( self.isDrawing) )
 					
 		# 如果正在绘图，就在辅助画布上绘制
-		if self.isDrawing :
-			print('----111 paintEvent ' + str( self.isDrawing) )
-			
+		if self.isDrawing :			
 			# 将以前pix中的内容复制到tempPix中，保证以前的内容不消失
 			self.tempPix = self.pix
 			pp = QPainter( self.tempPix)
 			pp.drawRect(x,y,w,h)
 			painter.drawPixmap(0, 0, self.tempPix)
 		else :
-			print('----222 paintEvent ' + str( self.isDrawing))
 			pp = QPainter(self.pix )
 			pp.drawRect(x, y, w, h)
 			painter.drawPixmap(0, 0, self.pix)
 		
 	def mousePressEvent(self, event) :   
-		#鼠标左键按下   
+		# 鼠标左键按下   
 		if event.button() == Qt.LeftButton :
 			self.lastPoint = event.pos()   
 			self.endPoint = self.lastPoint
 			self.isDrawing = True
 	
-	def mousePressEvent(self, event) :   
-		# 鼠标左键按下的同时移动鼠标  
-		if event.buttons() and Qt.LeftButton :
-			self.endPoint = event.pos()
-			#进行重新绘制
-			self.update()
-
-	def mouseReleaseEvent( self, event):
-		print('---- 000000000 mouseReleaseEvent ' + str( self.isDrawing))
-		print('---- 11111111111 event.button() ' + str( event.button()) )		
-		print('---- 2222222222 Qt.LeftButton ' + str(Qt.LeftButton ) )		
+	def mouseReleaseEvent( self, event):	
 		# 鼠标左键释放   
 		if event.button() == Qt.LeftButton :
-			print('---- 111 mouseReleaseEvent ' + str( self.isDrawing))
 			self.endPoint = event.pos()
 			#进行重新绘制
 			self.update()
 			self.isDrawing = False
-			print('---- 222 mouseReleaseEvent ' + str( self.isDrawing))
-			
+						
 if __name__ == "__main__":  
 		app = QApplication(sys.argv) 
 		form = Winform()
