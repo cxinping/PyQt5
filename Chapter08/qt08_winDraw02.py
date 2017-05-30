@@ -15,7 +15,7 @@ from PyQt5.QtCore import Qt , QPoint
 class Winform(QWidget):
 	def __init__(self,parent=None):
 		super(Winform,self).__init__(parent)
-		self.setWindowTitle("双缓冲绘图例子") 
+		self.setWindowTitle("绘制矩形图形例子") 
 		self.pix =  QPixmap()
 		self.lastPoint =  QPoint()
 		self.endPoint =  QPoint()
