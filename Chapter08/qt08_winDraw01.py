@@ -39,14 +39,14 @@ class Winform(QWidget):
 		painter.drawPixmap(0, 0, self.pix)	
 
 	def mousePressEvent(self, event) :   
-		# 鼠标左键按下的同时移动鼠标  
-		if event.buttons() and Qt.LeftButton :
+		# 鼠标左键按下  
+		if event.button() == Qt.LeftButton :
 			self.lastPoint = event.pos()   
 			self.endPoint = self.lastPoint
 	
 	def mouseMoveEvent(self, event):	
 		# 鼠标左键按下的同时移动鼠标
-		if event.button() == Qt.LeftButton :
+		if event.buttons() and Qt.LeftButton :
 			self.endPoint = event.pos()
 			#进行重新绘制
 			self.update()
