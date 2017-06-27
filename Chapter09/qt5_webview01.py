@@ -37,7 +37,7 @@ class MainWindow(QMainWindow):
 
 		std = [10.271, 8.552, 9.123, 10.839, 10.529]
 
-		xticks = ['2016/9', '2016/10', '2016/11', '2016/12', '2017/1', ]
+		xticks = ['2017/01', '2017/02', '2017/03', '2017/04', '2017/05', ]
 
 		trace1 = go.Bar(
 			x=xticks,
@@ -74,12 +74,12 @@ class MainWindow(QMainWindow):
 		''' % (merge_div )
         
 		#print( message )
-		fh = open('./test1111.html', 'w')
+		fh = open('./plotlyWeb.html', 'w')
 		fh.write(message)
 		fh.close()
 	
 		#self.browser.setHtml( message)
-		self.browser.load( QUrl( r'E:/quant/PyQt5/Chapter09/test1111.html' ))	
+		self.browser.load( QUrl( r'./plotlyWeb.html' ))	
         
 		self.setCentralWidget(self.browser)
 		
