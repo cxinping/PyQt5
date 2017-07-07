@@ -1,18 +1,28 @@
 # -*- coding: utf-8 -*-
+ 
+import functools
 
-def f01(a,b,c):
-    print('a,b,c,',a,b,c)
-    a2,b2,c2,=a+c,b*2,c*2
-    return a2,b2,c2
-    
+def add(a, b):
+    return a + b
 
 #1
 print('\n#1')
-x,y,z=f01(1,2,3)
-print('x,y,z,',x,y,z)
+rst1 = add(4, 2)
+print('add(4, 2)=' , rst1)
+
+plus3 = functools.partial(add, 3)
+plus5 = functools.partial(add, 5)
 
 #2
 print('\n#2')
-x,y,z=f01(x,y,z)
-print('x,y,z,',x,y,z)
+rst2 = plus3(4)
+print('plus3(4)=' , rst2)
+
+rst3 = plus3(7)
+print('plus3(7)=' , rst3)
+
+rst4 = plus5(10)
+print('plus5(10)=' , rst4)
+
+
 
