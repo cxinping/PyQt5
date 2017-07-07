@@ -17,7 +17,7 @@ elif x>z:
    print('x>z') 
 
 #3
-print('\n#3,whiel')
+print('\n#3,while')
 x=3
 while x>0:
     print(x)
