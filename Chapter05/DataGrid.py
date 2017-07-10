@@ -136,7 +136,7 @@ class DataGrid(QWidget):
 		
 		# 设置表格属性
 		self.tableView = QTableView()
-		# 最后一个填充最后的空白位置
+		# 表格宽度的自适应调整
 		self.tableView.horizontalHeader().setStretchLastSection(True)
 		self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 		
