@@ -71,7 +71,7 @@ class DataGrid(QWidget):
 		self.switchPageLineEdit = None
 		# 前一页按钮
 		self.prevButton = None		
-		# 下一页按钮
+		# 后一页按钮
 		self.nextButton = None
 		# 转到页按钮
 		self.switchPageButton = None	
@@ -104,7 +104,7 @@ class DataGrid(QWidget):
 		# 操作布局
 		operatorLayout = QHBoxLayout()
 		self.prevButton = QPushButton("前一页")
-		self.nextButton = QPushButton("下一页")
+		self.nextButton = QPushButton("后一页")
 		self.switchPageButton = QPushButton("Go")
 		self.switchPageLineEdit = QLineEdit()
 		self.switchPageLineEdit.setFixedWidth(40)	
