@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project FirstPyQtPro -->
-<!-- Saved: 2017-05-29, 14:43:28 -->
+<!-- Saved: 2017-07-10, 10:33:13 -->
 <!-- Copyright (C) 2017 ,  -->
 <Project version="5.1">
   <Language></Language>
@@ -13,6 +13,7 @@
   <Email></Email>
   <Eol index="0"/>
   <Sources>
+    <Source>FirstWin.py</Source>
     <Source>__init__.py</Source>
   </Sources>
   <Forms/>
