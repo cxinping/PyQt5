@@ -24,8 +24,8 @@ class Example(QWidget):
         lbl3 = QLabel('PyQt5 !', self)  
         lbl3.move(55, 70)          
           
-        self.setGeometry(300, 300, 270, 120)  
-        self.setWindowTitle('绝对布局例子')      
+        self.setGeometry(300, 300, 320, 120)  
+        self.setWindowTitle('绝对位置布局例子')      
                                   
 if __name__ == '__main__':  
     app = QApplication(sys.argv)  
