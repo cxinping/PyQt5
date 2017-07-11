@@ -74,7 +74,7 @@
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="okButton">
+  <widget class="QPushButton" name="queryBtn">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -120,7 +120,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>okButton</sender>
+   <sender>queryBtn</sender>
    <signal>clicked()</signal>
    <receiver>Form</receiver>
    <slot>queryWeather()</slot>

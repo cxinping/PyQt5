@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'WeatherWin.ui'
 #
-# Created by: PyQt5 UI code generator 5.8.1
+# Created by: PyQt5 UI code generator 5.6
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -27,16 +27,16 @@ class Ui_Form(object):
         self.label = QtWidgets.QLabel(self.groupBox)
         self.label.setGeometry(QtCore.QRect(20, 30, 72, 21))
         self.label.setObjectName("label")
-        self.okButton = QtWidgets.QPushButton(Form)
-        self.okButton.setGeometry(QtCore.QRect(90, 300, 93, 28))
-        self.okButton.setObjectName("okButton")
+        self.queryBtn = QtWidgets.QPushButton(Form)
+        self.queryBtn.setGeometry(QtCore.QRect(90, 300, 93, 28))
+        self.queryBtn.setObjectName("queryBtn")
         self.clearBtn = QtWidgets.QPushButton(Form)
         self.clearBtn.setGeometry(QtCore.QRect(230, 300, 93, 28))
         self.clearBtn.setObjectName("clearBtn")
 
         self.retranslateUi(Form)
         self.clearBtn.clicked.connect(Form.clearResult)
-        self.okButton.clicked.connect(Form.queryWeather)
+        self.queryBtn.clicked.connect(Form.queryWeather)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -47,6 +47,6 @@ class Ui_Form(object):
         self.weatherComboBox.setItemText(1, _translate("Form", "天津"))
         self.weatherComboBox.setItemText(2, _translate("Form", "上海"))
         self.label.setText(_translate("Form", "城市"))
-        self.okButton.setText(_translate("Form", "查询"))
+        self.queryBtn.setText(_translate("Form", "查询"))
         self.clearBtn.setText(_translate("Form", "清空"))
 
