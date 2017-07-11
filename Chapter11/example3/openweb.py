@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import time
 
 from PyQt5.QtWebEngineWidgets import QWebEngineView
-import time
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import  *
 
@@ -14,3 +14,10 @@ class WebView(QWebEngineView):
         self.load( QUrl( url ) )             
         self.show()
         QTimer.singleShot(1000*5 , self.close)  
+		
+
+if __name__ == '__main__':   
+	app = QApplication(sys.argv)
+	web = WebView()  
+	print('### exec succeed !')
+	sys.exit(app.exec_())  	
