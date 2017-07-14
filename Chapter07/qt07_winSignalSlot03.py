@@ -16,7 +16,7 @@ class WinForm(QMainWindow):
 
 	def __init__(self, parent=None):  
 		super(WinForm, self).__init__(parent)
-		self.setWindowTitle('部件中的信号槽通信')
+		self.setWindowTitle('控件中的信号槽通信')
         # 声明自定义的信号
 		self.btnlickedSignal.connect(self.getSignal)  
 		self.button1 = QPushButton('Button 1')  
