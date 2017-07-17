@@ -13,10 +13,10 @@ import time
 import sys
 
 class Backend(QThread):
-    #  通过类成员对象定义信号对象  
+    # 通过类成员对象定义信号对象  
 	update_date = pyqtSignal(str)
 	
-      # 处理要做的业务逻辑
+    # 处理要做的业务逻辑
 	def run(self):
 		while True:
 			data = QDateTime.currentDateTime()
@@ -34,14 +34,14 @@ class Window(QDialog):
 		self.initUI()
 
 	def initUI(self):
-         # 创建线程  
+        # 创建线程  
 		self.backend = Backend()
         # 连接信号 
 		self.backend.update_date.connect(self.handleDisplay)
-         # 开始线程  
+        # 开始线程  
 		self.backend.start()
     
-     #将当前时间输出到文本框
+    #将当前时间输出到文本框
 	def handleDisplay(self, data):
 		self.input.setText(data)
 
