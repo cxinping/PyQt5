@@ -12,7 +12,7 @@ from PyQt5.QtWidgets import QApplication,  QDialog,  QLineEdit
 import time
 import sys
 
-class Backend(QThread):
+class BackendThread(QThread):
     # 通过类成员对象定义信号对象  
 	update_date = pyqtSignal(str)
 	
@@ -35,7 +35,7 @@ class Window(QDialog):
 
 	def initUI(self):
         # 创建线程  
-		self.backend = Backend()
+		self.backend = BackendThread()
         # 连接信号 
 		self.backend.update_date.connect(self.handleDisplay)
         # 开始线程  
