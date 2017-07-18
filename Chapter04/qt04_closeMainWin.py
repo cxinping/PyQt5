@@ -13,8 +13,9 @@ class WinForm(QMainWindow):
 	
 	def __init__(self, parent=None):  
 		super(WinForm, self).__init__(parent)
-		self.setWindowTitle('关闭窗体例子') 		
-		self.button1 = QPushButton('关闭窗体')  		
+		self.resize(330,  100)  
+		self.setWindowTitle('关闭主窗口例子') 		
+		self.button1 = QPushButton('关闭主窗口')  		
 		self.button1.clicked.connect(self.onButtonClick) 
         
 		layout = QHBoxLayout()  
