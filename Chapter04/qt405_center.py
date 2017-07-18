@@ -2,20 +2,20 @@
 
 '''
     【简介】
-	PyQT5将窗口放在屏幕中间
+	PyQT5将窗口放在屏幕中间例子
     
 '''
 
-from PyQt5.QtWidgets import QDesktopWidget, QWidget , QApplication 
+from PyQt5.QtWidgets import QDesktopWidget, QApplication ,QMainWindow
 import sys  
     
-class Winform( QWidget): 
+class Winform( QMainWindow): 
     
     def __init__(self, parent=None):
         super( Winform, self).__init__(parent)
           
-        self.setWindowTitle('窗口居中例子')  
-        self.resize(350,  250)  
+        self.setWindowTitle('主窗口放在屏幕中间例子')  
+        self.resize(370,  250)  
         self.center()  
           
     def center(self):  
