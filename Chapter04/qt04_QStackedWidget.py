@@ -42,7 +42,6 @@ class StackedExample(QWidget):
 		layout=QFormLayout()
 		layout.addRow("姓名",QLineEdit())
 		layout.addRow("地址",QLineEdit())
-		#self.setTabText(0,"联系方式2")
 		self.stack1.setLayout(layout)
 
 	def stack2UI(self):
