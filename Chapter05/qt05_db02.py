@@ -46,10 +46,10 @@ if __name__ == '__main__':
 	view1 = createView("Table Model (View 1)", model) 
 	view1.clicked.connect(findrow)
 	
-	dlg= QDialog()
+	dlg = QDialog()
 	layout = QVBoxLayout()
 	layout.addWidget(view1)
-	addBtn =  QPushButton("添加一行")
+	addBtn = QPushButton("添加一行")
 	addBtn.clicked.connect(addrow)
 	layout.addWidget(addBtn)
     
