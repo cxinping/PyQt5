@@ -25,8 +25,7 @@ class MainWindow(QMainWindow):
 		self.setCentralWidget(self.browser)
 
 if __name__ == '__main__':
-	app = QApplication(sys.argv)
-    
+	app = QApplication(sys.argv)       
 	win = MainWindow()
 	win.show()
 	sys.exit(app.exec_())
