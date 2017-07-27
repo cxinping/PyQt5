@@ -63,6 +63,8 @@ def createDB():
 	query.exec("insert into student values(26,'赵六2','男',20,'机械')")
 	query.exec("insert into student values(27,'小李3','女',19,'英语')")
 	query.exec("insert into student values(28,'王五4','男',21,'经管')")
+	# 关闭数据库
+	db.close()
 
 	return True
 
