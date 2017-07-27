@@ -32,6 +32,7 @@ def createDB():
 	query.exec_("insert into people values(3, 'wangwu1', 'HenNan')")
 	query.exec_("insert into people values(4, 'lisi2', 'HeBei')")
 	query.exec_("insert into people values(5, 'wangwu2', 'shanghai')")
+	db.close()
 	return True
 
 if __name__ == '__main__':
