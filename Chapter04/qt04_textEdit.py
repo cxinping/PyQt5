@@ -14,11 +14,11 @@ class TextEditDemo(QWidget):
 		super(TextEditDemo, self).__init__(parent)
 		self.setWindowTitle("QTextEdit 例子")
 		self.resize(300, 270)    
-		self.textEdt = QTextEdit( )      
+		self.textEdit = QTextEdit( )      
 		self.btnPress1 = QPushButton("显示文本")
 		self.btnPress2 = QPushButton("显示HTML")        
 		layout = QVBoxLayout()
-		layout.addWidget(self.textEdt)
+		layout.addWidget(self.textEdit)
 		layout.addWidget(self.btnPress1)   
 		layout.addWidget(self.btnPress2)   		
 		self.setLayout(layout)
@@ -26,12 +26,10 @@ class TextEditDemo(QWidget):
 		self.btnPress2.clicked.connect(self.btnPress2_Clicked)
 		
 	def btnPress1_Clicked(self):
-		print( self.textEdt.toPlainText())
-		self.textEdt.setPlainText("Hello PyQt5!\n点击按钮")
+		self.textEdit.setPlainText("Hello PyQt5!\n点击按钮")
 
 	def btnPress2_Clicked(self):
-		print( self.textEdt.toPlainText())
-		self.textEdt.setHtml("<font color='red' size='6'><red>Hello PyQt5!\n点击按钮。</font>")
+		self.textEdit.setHtml("<font color='red' size='6'><red>Hello PyQt5!\n点击按钮。</font>")
 		
 if __name__ == "__main__":       
 	app = QApplication(sys.argv)
