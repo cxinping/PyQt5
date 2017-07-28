@@ -49,7 +49,7 @@ def createTableAndInit():
 	query.exec("insert into student values(26,'赵六2','男',20,'机械')")
 	query.exec("insert into student values(27,'小李3','女',19,'英语')")
 	query.exec("insert into student values(28,'王五4','男',21,'经管')")
-	
+	db.close()
 	return True		
            		
 class DataGrid(QWidget):
@@ -83,7 +83,8 @@ class DataGrid(QWidget):
 		self.totalRecrodCount = 0
 		# 每页显示记录数
 		self.PageRecordCount  = 5			
-	
+
+		self.db = None
 		self.initUI()
 
 	def initUI(self):
@@ -97,7 +98,10 @@ class DataGrid(QWidget):
 		self.nextButton.clicked.connect(self.onNextButtonClick )	
 		self.switchPageButton.clicked.connect(self.onSwitchPageButtonClick )	
 
-	# 创建数据库
+	def closeEvent(self, event):
+		# 关闭数据库
+		self.db.close()
+
 	
     # 创建窗口	
 	def createWindow(self):
@@ -150,7 +154,12 @@ class DataGrid(QWidget):
 	# 设置表格	
 	def setTableView(self):	
 		print('*** step2 SetTableView'  )
-		
+		self.db =  QSqlDatabase.addDatabase('QSQLITE')
+		# 设置数据库名称
+		self.db.setDatabaseName('./db/database.db')
+		# 打开数据库
+		self.db.open() 
+	
 		# 声明查询模型
 		self.queryModel = QSqlQueryModel(self)
 		# 设置当前页
