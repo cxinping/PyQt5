@@ -26,11 +26,11 @@ class TextEditDemo(QWidget):
 		self.btnPress2.clicked.connect(self.btnPress2_Clicked)
 		
 	def btnPress1_Clicked(self):
-		#print( self.textEdt.text())
+		print( self.textEdt.toPlainText())
 		self.textEdt.setPlainText("Hello PyQt5!\n点击按钮")
 
 	def btnPress2_Clicked(self):
-		#print( self.textEdt.text())
+		print( self.textEdt.toPlainText())
 		self.textEdt.setHtml("<font color='red' size='6'><red>Hello PyQt5!\n点击按钮。</font>")
 		
 if __name__ == "__main__":       
