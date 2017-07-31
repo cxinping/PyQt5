@@ -6,7 +6,7 @@
   
 '''
 
-from PyQt5.QtWidgets import QApplication, QWidget , QVBoxLayout , QListView
+from PyQt5.QtWidgets import QApplication, QWidget , QVBoxLayout , QListView, QMessageBox
 from PyQt5.QtCore import QStringListModel  
 import sys  
 
@@ -19,11 +19,15 @@ class ListViewDemo(QWidget):
 		
 		listView = QListView()      
 		slm = QStringListModel();
-		qList = ['a','b','c','f','g','h']	
-		slm.setStringList(qList)
+		self.qList = ['Item 1','Item 2','Item 3','Item 4' ]	
+		slm.setStringList(self.qList)
 		listView.setModel(slm )
+		listView.clicked.connect(self.clicked)		
 		layout.addWidget( listView )
 		self.setLayout(layout) 		 
+
+	def clicked(self, qModelIndex):
+		QMessageBox.information(self, "ListWidget", "你选择了: "+ self.qList[qModelIndex.row()])
 		
 if __name__ == "__main__":       
 	app = QApplication(sys.argv)
