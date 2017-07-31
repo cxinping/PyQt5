@@ -27,7 +27,7 @@ class ListViewDemo(QWidget):
 		self.setLayout(layout) 		 
 
 	def clicked(self, qModelIndex):
-		QMessageBox.information(self, "ListWidget", "你选择了: "+ self.qList[qModelIndex.row()])
+		QMessageBox.information(self, "QListView", "你选择了: "+ self.qList[qModelIndex.row()])
 		
 if __name__ == "__main__":       
 	app = QApplication(sys.argv)
