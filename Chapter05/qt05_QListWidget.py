@@ -13,7 +13,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
 class ListWidget(QListWidget):
-	def Clicked(self,item):
+	def clicked(self,item):
 		QMessageBox.information(self, "ListWidget", "你选择了: "+item.text())
 
 if __name__ == '__main__':
@@ -25,6 +25,6 @@ if __name__ == '__main__':
 	listWidget.addItem("Item 3");
 	listWidget.addItem("Item 4");
 	listWidget.setWindowTitle('QListwidget 例子')
-	listWidget.itemClicked.connect(listWidget.Clicked)
+	listWidget.itemClicked.connect(listWidget.clicked)
 	listWidget.show() 
 	sys.exit(app.exec_())
