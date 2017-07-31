@@ -17,12 +17,12 @@ class ListViewDemo(QWidget):
 		self.resize(300, 270)    
 		layout = QVBoxLayout()
 		
-		self.listView = QListView()      
-		self.slm = QStringListModel();
-		qList = ['a','b','c']	
-		self.slm.setStringList(qList)
-		self.listView.setModel(self.slm )
-		layout.addWidget( self.listView )
+		listView = QListView()      
+		slm = QStringListModel();
+		qList = ['a','b','c','f','g','h']	
+		slm.setStringList(qList)
+		listView.setModel(slm )
+		layout.addWidget( listView )
 		self.setLayout(layout) 		 
 		
 if __name__ == "__main__":       
