@@ -16,7 +16,7 @@ class MainWindow(QMainWindow):
 		btn1 = QPushButton( self)  
 		btn1.setText('添加')
 		btn1.setToolTip('测试提示')
-		vbox=QVBoxLayout()
+		vbox = QVBoxLayout()
 		vbox.addWidget( btn1 )
       
 		self.setLayout(vbox) 
@@ -28,6 +28,5 @@ if __name__ == "__main__":
 	styleFile = './style.qss'
 	qssStyle = CommonHelper.readQss( styleFile )	
 	win.setStyleSheet( qssStyle ) 
-	win.show()
-    
+	win.show()     
 	sys.exit(app.exec_())
