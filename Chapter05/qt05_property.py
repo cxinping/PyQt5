@@ -3,20 +3,24 @@
 from PyQt5.QtCore import QObject, pyqtProperty
 
 class MyObject(QObject):
-	def __init__(self, inVal=42):
+	def __init__(self, inVal=20):
 		self.val = inVal
 
 	def readVal(self):
-		print('read val: %s' %  self.val )  
+		print('readVal=%s' %  self.val )  
 		return self.val
 
 	def setVal(self,val):
-		print('set val: %s' %  val )    
+		print('setVal=%s' %  val )    
 		self.val = val
 
-	pp = pyqtProperty(int, readVal, setVal )
-		
+	ppVal = pyqtProperty(int, readVal, setVal )
+			
 if __name__ == '__main__':
 	obj = MyObject()
-	obj.pp = 10
-	print( 'get val: %s' % obj.pp) 
+	print('\n#1')		
+	obj.ppVal = 10
+	print('\n#2')	
+	print( 'obj.ppVal=%s' % obj.ppVal ) 
+	print( 'obj.readVal()=%s' % obj.readVal() ) 
+	
