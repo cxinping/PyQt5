@@ -2,7 +2,7 @@
 
 '''
     【简介】
-	QWebView中网页调用JavaScript 
+	QWebEngineView加载网页，使网页中的用JavaScript 失效
   
 '''
 
@@ -27,7 +27,6 @@ class Web(QWebEngineView):
 		settings = QWebEngineSettings.globalSettings()
 		settings.setAttribute(QWebEngineSettings.JavascriptEnabled, False)
 		
-
 class Main(QWidget):
 
 	def __init__(self):
@@ -49,7 +48,6 @@ class Main(QWidget):
 		lay.addWidget(web)
 		
 if __name__=="__main__":  
-		
 	app = QApplication(sys.argv)
 	main = Main()
 	main.show()
