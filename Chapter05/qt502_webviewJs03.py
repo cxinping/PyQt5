@@ -39,7 +39,7 @@ class Main(QWidget):
 		self.setWindowIcon(QIcon('./images/cartoon1.ico'))  
 		web = Web()                                         
 		
-		web.load("http://127.0.0.1:8020/TestWeb/test4.html")
+		web.load("http://127.0.0.1:8020/web/index2.html")
 		web.disableJS()
 		
 		self.btn = QPushButton('Button', self)

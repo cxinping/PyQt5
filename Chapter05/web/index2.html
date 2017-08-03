@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title></title>
+<script>
+function copyText()
+{
+	document.getElementById("field2").value=document.getElementById("field1").value;	 
+}
+
+function clearText()
+{
+	document.getElementById("field2").value='' ;	 
+}
+
+</script>
+</head>
+<body>
+
+字段1: <input type="text" id="field1" value="Hello World!"><br>
+字段2: <input type="text" id="field2">
+<br><br>
+<button onclick="copyText()">复制文本</button>
+<button onclick="clearText()">清空文本</button>
+<p>在按钮点击时触发函数。函数将字段1的文字信息复制到字段2。</p>
+
+</body>
+</html>
