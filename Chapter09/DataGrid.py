@@ -231,7 +231,7 @@ class DataGrid(QWidget):
 		szPageCountText  = ("总共%d页" % self.totalPage )
 		self.totalPageLabel.setText(szPageCountText)
 
-	# 设置总总记录数		
+	# 设置总记录数		
 	def setTotalRecordLabel(self):	
 		szTotalRecordText  = ("共%d条" % self.totalRecrodCount )
 		print('*** setTotalRecordLabel szTotalRecordText=' + szTotalRecordText )
