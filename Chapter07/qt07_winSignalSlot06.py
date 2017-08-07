@@ -30,7 +30,7 @@ class WinForm(QWidget):
         slider.valueChanged.connect(lcd.display)
 
         self.setGeometry(300,300,350,150)
-        self.setWindowTitle("信号槽连接滑块LCD")
+        self.setWindowTitle("信号与槽：连接滑块LCD")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
