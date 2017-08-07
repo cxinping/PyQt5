@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'MainForm.ui'
+# Form implementation generated from reading ui file 'MainForm2.ui'
 #
 # Created by: PyQt5 UI code generator 5.6
 #
@@ -11,12 +11,18 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(608, 500)
+        MainWindow.resize(391, 500)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(-1, -1, 611, 441))
+        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
+        self.MaingridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
+        self.MaingridLayout.setContentsMargins(0, 0, 0, 0)
+        self.MaingridLayout.setObjectName("MaingridLayout")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 608, 23))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 391, 23))
         self.menubar.setObjectName("menubar")
         self.menu = QtWidgets.QMenu(self.menubar)
         self.menu.setObjectName("menu")
