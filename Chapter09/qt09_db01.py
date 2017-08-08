@@ -25,8 +25,7 @@ def createDB():
 		return False
 	
 	query = QSqlQuery()
-	query.exec_("create table people(id int primary key, "
-	"name varchar(20), address varchar(30))")
+	query.exec_("create table people(id int primary key, name varchar(20), address varchar(30))")
 	query.exec_("insert into people values(1, 'zhangsan1', 'BeiJing')")
 	query.exec_("insert into people values(2, 'lisi1', 'TianJing')")
 	query.exec_("insert into people values(3, 'wangwu1', 'HenNan')")
