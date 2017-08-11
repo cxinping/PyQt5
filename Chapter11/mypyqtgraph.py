@@ -1,11 +1,9 @@
 '''
 ParameterTree的主函数，用来显示基金产品的文本/数值信息
-
 '''
 
 import copy
 import pickle
-
 from pyqtgraph.parametertree import Parameter
 
 

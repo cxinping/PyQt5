@@ -85,7 +85,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tableWidget_content.cellClicked.connect(self.view_one_new)
         '状态条显示'
         self.signal_status.connect(self.show_status)  # 状态栏信号绑定槽
-        'lineEdit按下Enter就可以触发搜索或跳转到页码'
+        '在lineEdit控件上按下Enter就可以触发搜索或跳转到页码'
         self.lineEdit.returnPressed.connect(self.on_pushButton_search_clicked)
         self.lineEdit_filter_title.returnPressed.connect(self.on_pushButton_search_clicked)
         self.lineEdit_filter_content.returnPressed.connect(self.on_pushButton_search_clicked)
@@ -549,7 +549,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.sort_type = 'desc'
         elif self.comboBox_name.currentText() == '相关度': # 对于相关度，有些特殊
             self.comboBox_name.setEnabled(True)
-            self.comboBox_type.setEnabled(False) # 上面为comboBox_name的text为相关度则这个不可以用。这个是模拟官网的操作。
+            self.comboBox_type.setEnabled(False) # 上面comboBox_name.currentText()=="相关度"则这个控件不可以用。这个是模拟官网的操作。
             self.sort_name = 'nothing'
             self.sort_type = 'desc'
         else:# 对于其他，则设置对应参数

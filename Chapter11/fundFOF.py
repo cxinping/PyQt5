@@ -42,7 +42,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tabWidget.setMinimumHeight(400)
 
 
-        '''显示parametertree，这里通过布局管理器来把ParameterTree间接地嵌套进Widget里面'''
+        '''显示parametertree，这里通过布局管理器来把ParameterTree间接地嵌套进Widget窗口里面'''
         from mypyqtgraph import  p
         from pyqtgraph.parametertree import  ParameterTree
 

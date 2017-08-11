@@ -229,8 +229,6 @@ class Plotly_PyQt5():
 
         port_returns = np.array(port_returns)
         port_variance = np.array(port_variance)
-
-
         color_array = (port_returns - risk_free) / port_variance # 夏普比，不同的夏普比对应的颜色是不同的。
 
         trace1 = go.Scatter(
@@ -239,7 +237,7 @@ class Plotly_PyQt5():
             mode='markers',
             marker=dict(
                 size='6',
-                color=color_array,  # 把颜色赋值给一个可变的变量，结果是绘图颜色可变。
+                color=color_array,  # 通过一个可变的变量表示颜色，结果是绘图颜色可变。
                 colorscale='Viridis',
                 # 设置colorbar
                 colorbar=dict(
@@ -254,8 +252,8 @@ class Plotly_PyQt5():
 
         pyof.plot(data, filename=path_plotly, auto_open=False)
         return path_plotly
-    def get_plotly_path_combination_table(self,file_name='产品组合信息表.html',df=None,w=None):
 
+    def get_plotly_path_combination_table(self,file_name='产品组合信息表.html',df=None,w=None):
         '''画产品组合信息表
         df为dataframe，末尾一列为组合。
         w为权重
