@@ -17,7 +17,7 @@ import sys
 # 创建一个 application实例
 app = QApplication(sys.argv)
 win = QWidget()
-win.setWindowTitle('QWebView Interactive Demo')
+win.setWindowTitle('Web页面中的JavaScript与 QWebEngineView交互例子')
 
 # 创建一个垂直布局器
 layout = QVBoxLayout()
