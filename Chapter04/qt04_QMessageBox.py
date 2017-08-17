@@ -15,7 +15,7 @@ from PyQt5.QtWidgets import *
 class WinForm( QWidget):  
 	def __init__(self):  
 		super(WinForm,self).__init__()  
-		self.setWindowTitle("QMessage 例子")  
+		self.setWindowTitle("QMessageBox 例子")  
 		self.resize(300, 100)              
 		self.myButton = QPushButton(self)    
 		self.myButton.setText("点击弹出消息框")  
