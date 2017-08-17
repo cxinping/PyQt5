@@ -2,7 +2,7 @@
 
 '''
     【简介】
-	QWebView打开网页例子 
+	QWebEngineView 打开本地网页例子 
   
 '''
 
@@ -16,11 +16,11 @@ class MainWindow(QMainWindow):
 
 	def __init__(self ):
 		super(QMainWindow, self).__init__()
-		self.setWindowTitle('QWebView打开网页例子')
+		self.setWindowTitle('加载并显示本地页面例子')
 		self.setGeometry(5, 30, 755, 530)
 		self.browser = QWebEngineView()   
         # 加载本地页面
-		url = r'E:\quant\PyQt5\Chapter05\index.html'
+		url = r'E:/quant/PyQt5/Chapter05/index.html'
 		self.browser.load( QUrl( url ))	
 		self.setCentralWidget(self.browser)
 
