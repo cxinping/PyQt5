@@ -7,8 +7,8 @@
 '''
 
 import sys
-from PyQt5.QtWidgets import ( QMenu , QPushButton,  QWidget, QTableWidget, QHBoxLayout, QApplication, QDesktopWidget, QTableWidgetItem, QHeaderView)
-from PyQt5.QtCore import pyqtSignal, QObject, Qt, pyqtSlot
+from PyQt5.QtWidgets import ( QMenu , QPushButton,  QWidget, QTableWidget, QHBoxLayout, QApplication, QTableWidgetItem, QHeaderView)
+from PyQt5.QtCore import  QObject, Qt 
 
 class Table( QWidget ):
                    
