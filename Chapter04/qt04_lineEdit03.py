@@ -20,20 +20,20 @@ class lineEditDemo(QWidget):
 		pDateLineEdit = QLineEdit()
 		pLicenseLineEdit = QLineEdit()		
 
-		pIPLineEdit.setInputMask("000.000.000.000;_");
-		pMACLineEdit.setInputMask("HH:HH:HH:HH:HH:HH;_");
-		pDateLineEdit.setInputMask("0000-00-00");
-		pLicenseLineEdit.setInputMask(">AAAAA-AAAAA-AAAAA-AAAAA-AAAAA;#");
+		pIPLineEdit.setInputMask("000.000.000.000;_")
+		pMACLineEdit.setInputMask("HH:HH:HH:HH:HH:HH;_")
+		pDateLineEdit.setInputMask("0000-00-00")
+		pLicenseLineEdit.setInputMask(">AAAAA-AAAAA-AAAAA-AAAAA-AAAAA;#")
 
 		flo.addRow("数字掩码", pIPLineEdit)
 		flo.addRow("Mac掩码", pMACLineEdit)
 		flo.addRow("日期掩码", pDateLineEdit)
 		flo.addRow("许可证掩码", pLicenseLineEdit)
         
-		pIPLineEdit.setPlaceholderText("111");
-		pMACLineEdit.setPlaceholderText("222");
-		pLicenseLineEdit.setPlaceholderText("333");
-		pLicenseLineEdit.setPlaceholderText("444");
+		#pIPLineEdit.setPlaceholderText("111")
+		#pMACLineEdit.setPlaceholderText("222")
+		#pLicenseLineEdit.setPlaceholderText("333")
+		#pLicenseLineEdit.setPlaceholderText("444")
 		      		                    
 		self.setLayout(flo)                        
    

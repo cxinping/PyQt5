@@ -25,16 +25,16 @@ class lineEditDemo(QWidget):
 		flo.addRow("Password", pPasswordLineEdit)
 		flo.addRow("PasswordEchoOnEdit", pPasswordEchoOnEditLineEdit)
         
-		pNormalLineEdit.setPlaceholderText("Normal");
-		pNoEchoLineEdit.setPlaceholderText("NoEcho");
-		pPasswordLineEdit.setPlaceholderText("Password");
-		pPasswordEchoOnEditLineEdit.setPlaceholderText("PasswordEchoOnEdit");
+		pNormalLineEdit.setPlaceholderText("Normal")
+		pNoEchoLineEdit.setPlaceholderText("NoEcho")
+		pPasswordLineEdit.setPlaceholderText("Password")
+		pPasswordEchoOnEditLineEdit.setPlaceholderText("PasswordEchoOnEdit")
 
 		# 设置显示效果
-		pNormalLineEdit.setEchoMode(QLineEdit.Normal);
-		pNoEchoLineEdit.setEchoMode(QLineEdit.NoEcho);
-		pPasswordLineEdit.setEchoMode(QLineEdit.Password);
-		pPasswordEchoOnEditLineEdit.setEchoMode(QLineEdit.PasswordEchoOnEdit);
+		pNormalLineEdit.setEchoMode(QLineEdit.Normal)
+		pNoEchoLineEdit.setEchoMode(QLineEdit.NoEcho)
+		pPasswordLineEdit.setEchoMode(QLineEdit.Password)
+		pPasswordEchoOnEditLineEdit.setEchoMode(QLineEdit.PasswordEchoOnEdit)
 		                    
 		self.setLayout(flo)
                     

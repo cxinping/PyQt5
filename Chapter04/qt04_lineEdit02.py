@@ -30,19 +30,19 @@ class lineEditDemo(QWidget):
 		pValidatorLineEdit.setPlaceholderText("字母和数字");
 
 		# 整形 范围：[1, 99]
-		pIntValidator = QIntValidator(self);
-		pIntValidator.setRange(1, 99);
+		pIntValidator = QIntValidator(self)
+		pIntValidator.setRange(1, 99)
 
 		# 浮点型 范围：[-360, 360] 精度：小数点后2位
-		pDoubleValidator = QDoubleValidator(self);
-		pDoubleValidator.setRange(-360, 360);
-		pDoubleValidator.setNotation(QDoubleValidator.StandardNotation);
-		pDoubleValidator.setDecimals(2);
+		pDoubleValidator = QDoubleValidator(self)
+		pDoubleValidator.setRange(-360, 360)
+		pDoubleValidator.setNotation(QDoubleValidator.StandardNotation)
+		pDoubleValidator.setDecimals(2)
 		
 		# 字符和数字
-		reg = QRegExp("[a-zA-Z0-9]+$");
-		pValidator = QRegExpValidator(self);
-		pValidator.setRegExp(reg);		
+		reg = QRegExp("[a-zA-Z0-9]+$")
+		pValidator = QRegExpValidator(self)
+		pValidator.setRegExp(reg)	
 
         # 设置验证器
 		pIntLineEdit.setValidator(pIntValidator)
