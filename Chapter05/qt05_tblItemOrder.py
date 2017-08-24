@@ -9,7 +9,7 @@
 
 import sys
 from PyQt5.QtWidgets import (QWidget, QTableWidget, QHBoxLayout, QApplication, QTableWidgetItem )
-import PyQt5.QtCore as QtCore
+from PyQt5.QtCore import Qt
 
 class Table(QWidget):
     def __init__(self):
@@ -55,9 +55,9 @@ class Table(QWidget):
         tableWidget.setItem(2, 2, newItem)        
         
    
-        # QtCore.Qt.DescendingOrder 降序
-        # QtCore.Qt.AscendingOrder 升序
-        tableWidget.sortItems(2,  QtCore.Qt.DescendingOrder )
+        # Qt.DescendingOrder 降序
+        # Qt.AscendingOrder 升序
+        tableWidget.sortItems(2,  Qt.DescendingOrder )
         
         self.setLayout(conLayout)
 
