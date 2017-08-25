@@ -61,4 +61,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     dialog = EventFilter()
     dialog.show()
-    app.exec_()
+    sys.exit(app.exec_())

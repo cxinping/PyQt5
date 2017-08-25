@@ -63,4 +63,4 @@ if __name__ == '__main__':
     dialog = EventFilter()
     app.installEventFilter(dialog)
     dialog.show()
-    app.exec_()
+    sys.exit(app.exec_())
