@@ -87,4 +87,4 @@ if __name__ == '__main__':
     ui.mpl.start_static_plot()  # 测试静态图效果
     # ui.mpl.start_dynamic_plot() # 测试动态图效果
     ui.show()
-    app.exec_()
+    sys.exit(app.exec_()) 
