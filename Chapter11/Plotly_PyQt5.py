@@ -9,7 +9,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pandas import Series
 from pandas import DataFrame
-import tushare as ts
 
 import os
 import plotly.offline as pyof
@@ -294,7 +293,7 @@ class Plotly_PyQt5():
         pyof.plot(fig, filename=path_plotly, auto_open=False)
         return path_plotly
 
-    def get_plotly_path_combination_versus(self,file_name='产品组合VS沪深300.html',df=None,w=None):
+    def get_plotly_path_combination_versus(self,file_name='产品组合VS沪深300.html',df=None,df_base=None,w=None):
         '''
         画产品组合VS沪深300
         df为dataframe，末尾一列为组合。
@@ -303,9 +302,7 @@ class Plotly_PyQt5():
         '''
         path_plotly = self.path_dir_plotly_html + os.sep + file_name
 
-        data_hs300 = ts.get_hist_data('hs300')
-        data_hs300 = data_hs300.rename_axis(lambda x: pd.to_datetime(x))
-        df_contra = pd.concat([data_hs300.close, df['组合']], axis=1, join='inner')
+        df_contra = pd.concat([df_base.close, df['组合']], axis=1, join='inner')
         df_contra = df_contra / df_contra.iloc[0, :]
         df_contra.rename(columns={'close': '沪深300'}, inplace=True)
 

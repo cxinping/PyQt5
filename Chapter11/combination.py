@@ -75,12 +75,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         w = [0.4, 0.2, 0.4]
         df['组合'] = (df * w).sum(axis=1)
 
+
+        df_hs300 = pd.read_excel(r'data\组合.xlsx',index_col=[0], sheetname='Sheet2')
+        df_hs300.rename_axis(lambda x:pd.to_datetime(x),inplace=True)
+
         self.QWebEngineview_Combination_monte_markovitz.load(
             QUrl.fromLocalFile(self.plotly_pyqt5.get_plotly_path_monte_markovitz(monte_count=600)))
         self.QWebEngineview_Combination_Pie.load(
             QUrl.fromLocalFile(self.plotly_pyqt5.get_plotly_path_combination_pie(df=df, w=w)))
         self.QWebEngineview_Combination_Versus.load(
-            QUrl.fromLocalFile(self.plotly_pyqt5.get_plotly_path_combination_versus(df=df, w=w)))
+            QUrl.fromLocalFile(self.plotly_pyqt5.get_plotly_path_combination_versus(df=df,df_base=df_hs300, w=w)))
         self.QWebEngineview_Combination_Table.load(
             QUrl.fromLocalFile(self.plotly_pyqt5.get_plotly_path_combination_table(df=df, w=w)))
 
