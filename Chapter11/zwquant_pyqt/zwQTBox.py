@@ -16,7 +16,7 @@ import sys, os
 import numpy as np
 import tushare as ts
 import pandas as pd
-import pandas_datareader.data as web
+#import pandas_datareader.data as web
 
 from numba import *
 
@@ -588,9 +588,10 @@ def down_stk_inx(qx, finx):
         qx.code = code
         down_stk_cn020inx(qx, xtim0)
 
+'''
 
 def down_stk_yahoo010(qx, ftg):
-    '''
+   
 		美股数据下载子程序
 		Args:
         qx (zwDatX): 
@@ -598,7 +599,7 @@ def down_stk_yahoo010(qx, ftg):
         
     :ivar xcod (int): 股票代码
     :ivar xdat (pd.DataFrame): yahoo xcod股票数据
-    '''
+   
     try:
         xcod = qx.code
         xdat = web.DataReader(xcod, "yahoo", start="1/1/1900")
@@ -607,6 +608,7 @@ def down_stk_yahoo010(qx, ftg):
     except IOError:
         pass  # skip,error
 
+'''
 
 # --------stk.InxLib.xxx
 
