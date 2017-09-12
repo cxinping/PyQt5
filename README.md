@@ -68,4 +68,5 @@ PyQt近年来发展很快，从最初的1998年的PyQt0.1，到PyQt1、PyQt2、P
 
 汪星人： 
 > 老大说的对，读者最棒了。
+> 
 ![](http://ow6532qce.bkt.clouddn.com/dogQQ%E5%9B%BE%E7%89%8720170912210033.gif)
