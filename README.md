@@ -69,11 +69,9 @@ PyQt近年来发展很快，从最初的1998年的PyQt0.1，到PyQt1、PyQt2、P
 
 本书封面
 =========
-本书的封面是
+这是本书的封面，希望读者喜欢。是不是很漂亮？
 ![](http://onl5wa4sd.bkt.clouddn.com/111mmexport1505189476516.jpg)
-猫星人： 
-> 哇，见到了传说中的作者。两位作者是不是好帅？
-![](http://onl5wa4sd.bkt.clouddn.com/catmmexport1505202175252.jpg)
-汪星人：
-> 同意，听你的老大。
+汪星人： 
+> 同意，两位作者最帅了。
+
 ![](http://onl5wa4sd.bkt.clouddn.com/dogQQ%E5%9B%BE%E7%89%8720170912210033.gif)
