@@ -1,6 +1,6 @@
 # 《PyQt5快速开发与实战》
 
-![](http://i.imgur.com/CQ37559.jpg)
+![](http://ow6532qce.bkt.clouddn.com/PyQt5%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E4%B8%8E%E5%AE%9E%E6%88%98%E5%B0%81%E9%9D%A2.jpg)
 
 为什么要编写本书？
 =========
