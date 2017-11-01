@@ -52,7 +52,7 @@ PyQt近年来发展很快，从最初的1998年的PyQt0.1，到PyQt1、PyQt2、P
 《PyQt5快速开发与实战》已经在京东商城上线了，欢迎大家购买
 
 **亲爱的读者们，现在也可以在笔者的店铺正式订购《PyQt5快速开发与实战》了**。店铺地址是：
-[http://eshop001.vpubao.com.cn/index.php?c=item&goods_id=1&shop_id=86175658&isappshared=1](http://eshop001.vpubao.com.cn/index.php?c=item&goods_id=1&shop_id=86175658&isappshared=1)
+[http://eshop002.vpubao.com.cn/index.php?c=item&goods_id=1&shop_id=86175658&isappshared=1](http://eshop002.vpubao.com.cn/index.php?c=item&goods_id=1&shop_id=86175658&isappshared=1)
 
 - 2017年8月24日已经通过稿件一排。
 - 2017年8月28日提交稿件二排。
