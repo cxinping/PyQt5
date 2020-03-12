@@ -76,3 +76,8 @@ https://item.jd.com/12194083.html
 
 ![](http://images.cnblogs.com/cnblogs_com/wangshuo1/857745/o_%E6%94%B6%E6%AC%BE%E8%B4%A6%E5%8F%B7.png)
 
+
+打赏通道
+=========
+![](https://images.cnblogs.com/cnblogs_com/wangshuo1/857745/o_alipay.png)
+
