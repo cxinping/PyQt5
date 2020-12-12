@@ -68,15 +68,6 @@ https://item.jd.com/12194083.html
 
 路漫漫其修远兮，吾将上下而求索。在读者的不断求索中，能够与本书相遇也是一种缘分，如果读者能够从本书中获取自己想要的东西，那就是对笔者最大的欣慰。最后，提前预祝读者学习上轻松愉快、工作上更进一步、生活上幸福美满,学有所成。
 
-
-赞助
-=========
-为了让作者更好的专心的写下一本书，如果读者觉的本书有用，可以赞助作者一些小额的比特币，让作者专心研究技术，谢谢。 
-收款地址：**3NTPbsJKRKhe1RE1g2rZdr2dFTDgkBUgUa**
-
-![](http://images.cnblogs.com/cnblogs_com/wangshuo1/857745/o_%E6%94%B6%E6%AC%BE%E8%B4%A6%E5%8F%B7.png)
-
-
 打赏通道
 =========
 ![](https://images.cnblogs.com/cnblogs_com/wangshuo1/857745/o_alipay.png)
